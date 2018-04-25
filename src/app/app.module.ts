@@ -27,6 +27,7 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import {
   AgmCoreModule
 } from '@agm/core';
+import { HistoriaSimpleComponent } from './asignacion-historias/shared/historia-simple/historia-simple.component';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    HistoriaSimpleComponent,
 
   ],
   providers: [],
