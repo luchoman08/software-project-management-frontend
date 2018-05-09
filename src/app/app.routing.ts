@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -11,7 +11,6 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import { HistoriaSimpleComponent } from './asignacion-historias/shared/historia-simple/historia-simple.component';
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -20,18 +19,35 @@ const routes: Routes =[
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
+    {
+    path: 'userstories',
+    loadChildren: './userstory/userstory.module#UserStoryModule'
+  },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'historia-simple',        component: HistoriaSimpleComponent },
     { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({
+  
+    imports: [RouterModule.forRoot(routes, {
+    // preload all modules; optionally we could
+    // implement a custom preloading strategy for just some
+    // of the modules (PRs welcome 😉)
+    preloadingStrategy: PreloadAllModules
+  })],
+  exports: [RouterModule]
+  
+/*
   imports: [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
-  ],
+  ],*/
 })
+
+
+
+
 export class AppRoutingModule { }

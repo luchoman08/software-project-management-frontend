@@ -16,6 +16,9 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 
+import { CoreModule } from './core/core.module';
+
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
@@ -24,10 +27,11 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+
+
 import {
   AgmCoreModule
 } from '@agm/core';
-import { HistoriaSimpleComponent } from './asignacion-historias/shared/historia-simple/historia-simple.component';
 import { DevelopersComponent } from './developers/developers.component';
 
 @NgModule({
@@ -56,7 +60,6 @@ import { DevelopersComponent } from './developers/developers.component';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    HistoriaSimpleComponent,
     DevelopersComponent,
 
   ],

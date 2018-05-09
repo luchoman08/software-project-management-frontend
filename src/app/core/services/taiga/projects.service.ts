@@ -7,7 +7,7 @@ import { Project } from '../../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class ProjectService {
+export class ProjectsService {
   constructor (
     private apiService: ApiService
   ) {}

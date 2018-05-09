@@ -7,7 +7,7 @@ import { Point } from '../../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class PointService {
+export class PointsService {
   constructor (
     private apiService: ApiService
   ) {}
