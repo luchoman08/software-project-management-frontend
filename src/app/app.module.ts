@@ -17,7 +17,7 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
-
+import { HttpClientModule } from '@angular/common/http'
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -37,12 +37,14 @@ import { DevelopersComponent } from './developers/developers.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     HttpModule,
     ComponentsModule,
     RouterModule,
     MatButtonModule,
     MatRippleModule,
+    CoreModule, 
     MatInputModule,
     MatTooltipModule,
     AppRoutingModule,
