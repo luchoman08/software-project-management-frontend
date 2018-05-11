@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule
   ],
-  declarations: [],
-  providers: []: 
+  declarations: []
 })
 export class TaigaModule { }
