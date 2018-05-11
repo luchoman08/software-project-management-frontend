@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { 
@@ -14,7 +14,7 @@ from '../../../core';
 })
 export class SimpleUserStoryDetailComponent implements OnInit {
   
-  public userstory: UserStory;
+  @Input() public userStory: UserStory;
   constructor(
     private userStoryService: UserStoriesService,
     private rolesService: RolesService,
@@ -22,8 +22,9 @@ export class SimpleUserStoryDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-      this.userStoryService.get('2239865')
+    /*  this.userStoryService.get('2239865')
       .subscribe(userstory => {this.userstory = userstory; console.log(this.userstory.points[1632608]);});
+      */
   }
   /*
     Obtain the role name from TaigaApi  

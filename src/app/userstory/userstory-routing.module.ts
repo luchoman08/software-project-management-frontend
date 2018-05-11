@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'simpleuserstory',
+    path: 'simplestory',
     loadChildren: './simple-userstory/simple-userstory.module#SimpleUserStoryModule'
   }
 ];
