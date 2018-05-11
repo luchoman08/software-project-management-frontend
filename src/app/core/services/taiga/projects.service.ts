@@ -16,4 +16,5 @@ export class ProjectsService {
     return this.apiService.get('/projects/' + slug)
       .pipe(map(data => data));
   }
+
 }

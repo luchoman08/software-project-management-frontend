@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { SimpleUserStoryRoutingModule } from './simple-userstory-routing.module';
 import { SimpleUserStoryDetailComponent } from './';
+import { SimpleUserStoryListComponent } from './simple-userstory-list/simple-userstory-list.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { SimpleUserStoryDetailComponent } from './';
       CommonModule
   ],
   declarations: [
-    SimpleUserStoryDetailComponent
+    SimpleUserStoryDetailComponent,
+    SimpleUserStoryListComponent
   ],
   providers: [
   ]

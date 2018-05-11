@@ -7,7 +7,8 @@ import {
     ApiService,
     PointsService,
     ProjectsService,
-    UserStoryService,
+    UserStoriesService,
+    RolesService,
     JwtService,
 } from './services';
 
@@ -20,7 +21,8 @@ import {
     ApiService,
     PointsService,
     ProjectsService,
-    UserStoryService,
+    UserStoriesService,
+    RolesService,
     JwtService
   ],
   declarations: []

@@ -6,7 +6,7 @@ import { UserStory } from '../../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class UserStoryService {
+export class UserStoriesService {
   constructor (
     private apiService: ApiService
   ) {}
@@ -15,4 +15,13 @@ export class UserStoryService {
     return this.apiService.get('/userstories/' + slug)
       .pipe(map(data => data)); 
   }
+  
+  getProjectStories(project_id): Observable<UserStory[]> {
+    
+    const params = new HttpParams().set('project', String(project_id));
+    
+    return this.apiService.get('/userstories',  params)
+    .pipe(map(data => data));
+  }
+  
 }
