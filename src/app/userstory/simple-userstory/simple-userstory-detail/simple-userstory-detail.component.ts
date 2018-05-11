@@ -2,10 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { 
-  UserStory, UserStoriesService, 
+  UserStory,
+  
+  UserStoriesService, 
   Role, RolesService,
   Point, PointsService } 
-from '../../../core';
+from '../../../project-managers/taiga';
 
 @Component({
   selector: 'app-simple-userstory-detail',

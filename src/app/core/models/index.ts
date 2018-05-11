@@ -1,6 +1,2 @@
-export * from './taiga';
-/*
-    Models used as core structure of business, are the unique models than can
-    be used or imported directly in app components.
-*/
-export * from './main';
+export * from './base-user-story.model';
+export * from './simple-user-story.model';

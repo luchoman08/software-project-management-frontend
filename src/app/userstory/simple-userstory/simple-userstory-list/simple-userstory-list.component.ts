@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import {  UserStory, UserStoriesService } from '../../../core';
+import {  UserStory, UserStoriesService } from '../../../project-managers/taiga';
 
 @Component({
   selector: 'app-simple-userstory-list',

@@ -5,10 +5,6 @@ import { HttpTokenInterceptor } from './interceptors';
 
 import {
     ApiService,
-    PointsService,
-    ProjectsService,
-    UserStoriesService,
-    RolesService,
     JwtService,
 } from './services';
 
@@ -19,10 +15,6 @@ import {
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     ApiService,
-    PointsService,
-    ProjectsService,
-    UserStoriesService,
-    RolesService,
     JwtService
   ],
   declarations: []

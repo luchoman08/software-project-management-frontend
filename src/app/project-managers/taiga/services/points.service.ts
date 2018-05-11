@@ -2,19 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-import { ApiService } from '../api.service';
-import { Project } from '../../models';
+import { ApiService } from '../../../core/services';
+import { Point } from '../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class ProjectsService {
+export class PointsService {
   constructor (
     private apiService: ApiService
   ) {}
 
-  get(slug): Observable<Project> {
-    return this.apiService.get('/projects/' + slug)
+  get(slug): Observable<Point> {
+    return this.apiService.get('/points/' + slug)
       .pipe(map(data => data));
   }
-
 }
