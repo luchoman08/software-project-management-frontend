@@ -1,5 +1,5 @@
 export interface Project {
-    id: string[];
+    id: string;
     members: string[];
     description: string;
   }

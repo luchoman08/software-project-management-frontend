@@ -13,6 +13,6 @@ export class UserStoryService {
 
   get(slug): Observable<UserStory> {
     return this.apiService.get('/userstories/' + slug)
-      .pipe(map(data => data));
+      .pipe(map(data => data)); 
   }
 }

@@ -14,6 +14,6 @@ export class PointsService {
 
   get(slug): Observable<Point> {
     return this.apiService.get('/points/' + slug)
-      .pipe(map(data => data.article));
+      .pipe(map(data => data));
   }
 }

@@ -15,7 +15,7 @@ export class SimpleUserStoryDetailComponent implements OnInit {
 
   ngOnInit() {
       this.userStoryService.get('2239865')
-      .subscribe(userstory => {this.userstory = userstory; console.log(this.userstory);});
+      .subscribe(userstory => {this.userstory = userstory; console.log(this.userstory.points[1632608]);});
   }
 
 }

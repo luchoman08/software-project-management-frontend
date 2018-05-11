@@ -1,4 +1,4 @@
 export interface Point {
-    id: string[];
+    id: string;
     value: number;
   }
