@@ -7,7 +7,7 @@ import { Role } from '../../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class PointsService {
+export class RolesService {
   constructor (
     private apiService: ApiService
   ) {}
