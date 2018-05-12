@@ -14,7 +14,7 @@ import {
   MatInputModule,
   MatDialogModule,
   MatButtonModule,
-  MatButtonToggleModule 
+  MatButtonToggleModule
 } from '@angular/material';
 
 @NgModule({
