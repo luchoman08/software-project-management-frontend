@@ -9,6 +9,10 @@ import {
   MatInputModule,
   MatRippleModule,
   MatTooltipModule,
+  MatDialogModule,
+  MatDialog,
+  MatFormFieldModule,
+  MatFormField
 } from '@angular/material';
 
 import { AppRoutingModule } from './app.routing';
@@ -33,6 +37,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { DevelopersComponent } from './developers/developers.component';
+import { UserStoryModule } from './userstory/userstory.module';
 
 @NgModule({
   imports: [
@@ -42,11 +47,13 @@ import { DevelopersComponent } from './developers/developers.component';
     HttpModule,
     MainPageComponentsModule,
     RouterModule,
-    MatButtonModule,
-    MatRippleModule,
     CoreModule,
     MatInputModule,
     MatTooltipModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatRippleModule,
+    MatFormFieldModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'

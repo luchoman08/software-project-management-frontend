@@ -12,7 +12,6 @@ RolesService
 
 @NgModule({
   imports: [
-      SimpleUserStoryModule,
       UserStoryRoutingModule
   ],
   declarations: [

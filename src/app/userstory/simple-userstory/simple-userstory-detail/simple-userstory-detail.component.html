@@ -4,17 +4,19 @@
             <i class="material-icons">bookmark</i>
         </div>
         <p class="card-category">Puntos de historia</p>
-        <h3 class="card-title">8
+        <h3 class="card-title">
+        <p *ngIf = "userStory.points_unitary; else noPointsBlock"> {{userStory.points_unitary}} </p>
+        <ng-template #noPointsBlock><i (click)="openEditPointsDialog()" class="material-icons">add_circle</i></ng-template>
         </h3>
     </div>
    <div class="card-body">
             <h3>Titulo</h3>
            <p> {{userStory.subject}}</p>
     </div>
-    <div class="card-footer">
-            <div class="stats">
-                <i class="material-icons ">edit</i>
-                <a>Editar</a>
+    <div *ngIf = "userStory.points_unitary" class="card-footer">
+            <div (click)="openEditPointsDialog()" class="stats">
+                <i  class="material-icons ">edit</i>
+                <a  >Editar puntuación</a>
             </div>
     </div>
 
