@@ -9,7 +9,7 @@
       <div class="card-description">
       Horas disponibles a la semana
         <p *ngIf = "simpleDeveloper.available_hours_per_week; else noHoursInit"> {{simpleDeveloper.available_hours_per_week}} </p>
-        <ng-template #noHoursInit><i class="material-icons">add_circle</i></ng-template>
+        <ng-template #noHoursInit><i (click) = "openEditAvailableHoursPerWeekDialog()" class="material-icons">add_circle</i></ng-template>
       </div>
       <button *ngIf = "!simpleDeveloper.available_hours_per_week" mat-button>Editar horas disponibles</button>
     </div>
