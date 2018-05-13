@@ -1,4 +1,4 @@
-export class Sprint {
+export interface SprintInterface {
     id: string;
     name: string;
     estimated_start: string; //  iso date (YYYY-MM-DD)

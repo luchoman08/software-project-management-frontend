@@ -7,6 +7,6 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data.value">Cancelar</button>
   <button mat-button [mat-dialog-close]="data.value" cdkFocusInitial>Ok</button>
 </div>

@@ -4,7 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
 } from '../../../page-components/common-components/';
-import { SimpleUserStory } from '../../../core/models/simple-assignment/simple-user-story';
+import { SimpleUserStory } from '../../../core/models/';
 
 
 @Component({
@@ -28,7 +28,7 @@ export class SimpleUserStoryDetailComponent implements OnInit {
       data: {
         value: this.simpleUserStory.points,
         valueName: 'puntos de historia',
-        type: "number"}
+        type: 'number'}
     });
 
     dialogRef.afterClosed().subscribe(value => {

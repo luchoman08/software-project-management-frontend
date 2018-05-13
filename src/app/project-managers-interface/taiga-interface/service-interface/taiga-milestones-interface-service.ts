@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Sprint } from '../../../core/models';
+import { SimpleSprint } from '../../../core/models';
 
 import {
-    taigaMilestonesToSprints,
-    taigaMilestoneToSprint
+    taigaMilestonesToSimpleSprints,
+    taigaMilestoneToSimpleSprint
  } from '../model-interface';
 
 import 'rxjs/add/observable/of';
@@ -18,19 +18,19 @@ export class TaigaMilestonesServiceInterface {
     private taigaMilestonesService: TaigaMilestonesService
   ) {}
 
-  get(slug): Observable<Sprint> {
-      let simpleDeveloper$: Observable<Sprint>;
+  get(slug): Observable<SimpleSprint> {
+      let simpleDeveloper$: Observable<SimpleSprint>;
       this.taigaMilestonesService.get(slug)
           .subscribe( (taigaMilestone: TaigaMilestone) => {
-                    simpleDeveloper$ = Observable.of(taigaMilestoneToSprint(taigaMilestone));
+                    simpleDeveloper$ = Observable.of(taigaMilestoneToSimpleSprint(taigaMilestone));
             } );
     return simpleDeveloper$;
 }
 
-getProjectSprints(project_id): Observable<Sprint[]> {
+getProjectSprints(project_id): Observable<SimpleSprint[]> {
     return this.taigaMilestonesService.getProjectMilestones(project_id)
     .map( (taigaMilestones: TaigaMilestone[]) => {
-              return taigaMilestonesToSprints(taigaMilestones);
+              return taigaMilestonesToSimpleSprints(taigaMilestones);
       } );
   }
 

@@ -1,11 +1,10 @@
 import { ProjectInterface } from '../generics';
-import { Sprint } from '../';
-import { SimpleDeveloper, SimpleUserStory} from './';
+import { SimpleDeveloper, SimpleUserStory, SimpleSprint} from './';
 export class SimpleProject implements ProjectInterface {
     id: string;
     created_date: string; // long format
     description: string;
-    sprints: Sprint[];
+    sprints: SimpleSprint[];
     simpleDevelopers: SimpleDeveloper[];
     SimpleUserStories: SimpleUserStory[];
 }

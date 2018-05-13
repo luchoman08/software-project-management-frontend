@@ -32,7 +32,7 @@ import { IconsComponent } from './icons/icons.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { ProjectManagersInterfaceModule } from './project-managers-interface/project-managers-interface.module';
-import { UserStoriesService } from './project-managers-interface/services/' ;
+import { SimpleUserStoriesService } from './project-managers-interface/services/' ;
 import {
   AgmCoreModule
 } from '@agm/core';
@@ -74,7 +74,7 @@ import { CommonComponentsModule } from './page-components/common-components/comm
 
   ],
   providers: [
-    UserStoriesService,
+    SimpleUserStoriesService,
   ],
   bootstrap: [AppComponent]
 })

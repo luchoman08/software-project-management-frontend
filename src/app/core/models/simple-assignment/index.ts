@@ -1,3 +1,4 @@
-export * from './simple-developer';
-export * from './simple-user-story';
-export * from './simple-assignment';
+export * from './simple-developer.model';
+export * from './simple-user-story.model';
+export * from './simple-assignment.model';
+export * from './simple-sprint.model';

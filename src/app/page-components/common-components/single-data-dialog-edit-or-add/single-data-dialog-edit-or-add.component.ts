@@ -12,9 +12,7 @@ export class SingleDataDialogEditOrAddComponent implements OnInit {
   constructor( public dialogRef: MatDialogRef<SingleDataDialogEditOrAddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+
 
   ngOnInit() {
   }

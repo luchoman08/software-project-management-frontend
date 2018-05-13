@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SimpleDeveloper } from '../../../core/models/simple-assignment/simple-developer';
+import { SimpleDeveloper } from '../../../core/models/';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import * as mocksSimpleDevels from '../../../mocks/simple-developers';
 import { SIMPLEDEVELS } from '../../../mocks/simple-developers';

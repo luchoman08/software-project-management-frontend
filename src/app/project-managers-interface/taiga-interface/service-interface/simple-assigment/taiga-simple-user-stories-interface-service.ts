@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleUserStory } from '../../../core/models';
+import { SimpleUserStory } from '../../../../core/models';
 
 import {
     taigaStoryToSimpleUserStory,
     taigaStoriesToSimpleUserStories
- } from '../model-interface';
+ } from '../../model-interface';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { TaigaUserStoriesService } from '../../../project-managers/taiga/services/taiga-user-stories.service';
-import { TaigaUserStory } from '../../../project-managers/taiga/models/taiga-user-story.model';
+import { TaigaUserStoriesService } from '../../../../project-managers/taiga/services/';
+import { TaigaUserStory } from '../../../../project-managers/taiga/models';
 
 @Injectable()
-export class TaigaUserStoriesInterfaceService {
+export class TaigaSimpleUserStoriesInterfaceService {
   constructor (
     private taigaUserStoriesService: TaigaUserStoriesService
   ) {}

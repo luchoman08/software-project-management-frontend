@@ -5,5 +5,4 @@ export interface TaigaProject {
     members: TaigaMembership[];
     description: string;
     milestones: any[];
-
   }

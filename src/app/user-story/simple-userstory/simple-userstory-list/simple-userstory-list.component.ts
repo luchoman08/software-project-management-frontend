@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { SimpleUserStory } from '../../../core/models/simple-assignment/simple-user-story';
-import { UserStoriesService } from '../../../project-managers-interface/services/user-stories.service';
+import { SimpleUserStory } from '../../../core/models/';
+import { SimpleUserStoriesService } from '../../../project-managers-interface/services/';
 
 @Component({
   selector: 'app-simple-userstory-list',
@@ -13,11 +13,11 @@ export class SimpleUserStoryListComponent implements OnInit {
 
   simpleUserStories: SimpleUserStory[];
   constructor(
-    private userStoryService: UserStoriesService
+    private userStoryService: SimpleUserStoriesService
     ) { }
 
   ngOnInit() {
-    this.userStoryService.getProjectStories(267733).
+    this.userStoryService.getSimpleProjectStories(267733).
     subscribe(simpleUserStories => {this.simpleUserStories = simpleUserStories; console.log(this.simpleUserStories); });
   }
 

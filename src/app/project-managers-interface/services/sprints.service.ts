@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../core/services';
-import { Sprint } from '../../core/models';
+import { SimpleSprint } from '../../core/models';
 import { TaigaMilestonesServiceInterface } from '../taiga-interface/service-interface';
 import { ProjectManagersInterfaceService } from './project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
@@ -17,14 +17,14 @@ export class SprintsService {
   ) {
   }
 
-  get(slug): Observable<Sprint> {
+  get(slug): Observable<SimpleSprint> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaMilestonesServiceInterface.get(slug);
       }
     }
   }
-  getProjectSprints(project_id): Observable<Sprint[]> {
+  getProjectSprints(project_id): Observable<SimpleSprint[]> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaMilestonesServiceInterface.getProjectSprints(project_id);
