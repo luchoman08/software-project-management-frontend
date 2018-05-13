@@ -1,15 +1,17 @@
-<div class="card card-profile">
-  <div class="card-avatar">
-    <a href="#pablo">
-    <img class="img" src="../assets/img/faces/marc.jpg" />
-    </a>
-  </div>
-  <div class="card-body">
-    <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-    <h4 class="card-title">Alec Thompson</h4>
-    <p class="card-description">
-    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-    </p>
-    <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+<div  class="main-content">
+  <div class="card card-profile">
+    <div class="card-avatar">
+      <div [style.background]="simpleDeveloper.color" class="simple-color-avatar"> </div>
+    </div>
+    <div class="card-body">
+      <h6 class="card-category text-gray"> {{simpleDeveloper.role_name}}</h6>
+      <h4 class="card-title">{{simpleDeveloper.full_name}}</h4>
+      <div class="card-description">
+      Horas disponibles a la semana
+        <p *ngIf = "simpleDeveloper.available_hours_per_week; else noHoursInit"> {{simpleDeveloper.available_hours_per_week}} </p>
+        <ng-template #noHoursInit><i class="material-icons">add_circle</i></ng-template>
+      </div>
+      <button *ngIf = "!simpleDeveloper.available_hours_per_week" mat-button>Editar horas disponibles</button>
+    </div>
   </div>
 </div>

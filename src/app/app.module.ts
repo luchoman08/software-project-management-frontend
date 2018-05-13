@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import {
   MatButtonModule,
+  MatButtonToggleModule,
   MatInputModule,
   MatRippleModule,
   MatTooltipModule,
@@ -35,7 +36,8 @@ import { UserStoriesService } from './project-managers-interface/services/' ;
 import {
   AgmCoreModule
 } from '@agm/core';
-
+import { SingleDataDialogEditOrAddComponent } from './page-components/common-components';
+import { CommonComponentsModule } from './page-components/common-components/common-components.module';
 
 @NgModule({
   imports: [
@@ -49,10 +51,12 @@ import {
     MatInputModule,
     MatTooltipModule,
     MatDialogModule,
+    MatButtonToggleModule,
     MatButtonModule,
     MatRippleModule,
     MatFormFieldModule,
     AppRoutingModule,
+    CommonComponentsModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),

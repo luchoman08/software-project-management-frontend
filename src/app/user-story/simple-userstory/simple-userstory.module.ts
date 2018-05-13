@@ -6,8 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SimpleUserStoryRoutingModule } from './simple-userstory-routing.module';
 import { SimpleUserStoryDetailComponent } from './simple-userstory-detail/simple-userstory-detail.component';
 import { SimpleUserStoryListComponent } from './simple-userstory-list/simple-userstory-list.component';
-import { SimpleStoryEditPointsComponent } from './simple-story-edit-points/simple-story-edit-points.component';
-
 import {
   MatFormFieldModule,
   MatFormField,
@@ -31,10 +29,6 @@ import {
   declarations: [
     SimpleUserStoryDetailComponent,
     SimpleUserStoryListComponent,
-    SimpleStoryEditPointsComponent
-  ],
-  entryComponents: [
-    SimpleStoryEditPointsComponent
   ],
   providers: [
   ]

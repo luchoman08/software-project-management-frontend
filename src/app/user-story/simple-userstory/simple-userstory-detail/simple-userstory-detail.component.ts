@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { SimpleStoryEditPointsComponent } from '../simple-story-edit-points/simple-story-edit-points.component';
+import {
+  SingleDataDialogEditOrAddComponent
+} from '../../../page-components/common-components/';
 import { SimpleUserStory } from '../../../core/models/simple-assignment/simple-user-story';
 
 
@@ -21,13 +23,16 @@ export class SimpleUserStoryDetailComponent implements OnInit {
 
   }
   openEditPointsDialog(): void {
-    const dialogRef = this.dialog.open(SimpleStoryEditPointsComponent, {
+    const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {
       width: '320px',
-      data: { points: this.simpleUserStory.points}
+      data: {
+        value: this.simpleUserStory.points,
+        valueName: 'puntos de historia',
+        type: "number"}
     });
 
-    dialogRef.afterClosed().subscribe(points => {
-      this.simpleUserStory.points = points;
+    dialogRef.afterClosed().subscribe(value => {
+      this.simpleUserStory.points = value;
     });
   }
   // getRolePoints(id_punctuation): Obserbable <Role

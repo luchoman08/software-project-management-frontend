@@ -22,7 +22,7 @@ const routes: Routes = [
     loadChildren: './user-story/user-story.module#UserStoryModule'
     },
     {
-      path: 'develpers',
+      path: 'developers',
       loadChildren: './developer/developer.module#DeveloperModule'
     },
     { path: 'upgrade',        component: UpgradeComponent },
