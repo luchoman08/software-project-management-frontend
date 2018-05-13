@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators/map';
 import 'rxjs/add/operator/map'
 
 @Injectable()
-export class TaigaDevelopersService {
+export class TaigaMembershipsService {
   constructor (
     private apiService: ApiService
   ) {}

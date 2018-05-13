@@ -30,18 +30,12 @@ import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-
-import { ProjectManagersInterfaceService } from './project-managers-interface/project-managers-interface.service';
-import { TaigaInterfaceUserStories } from './project-managers-interface/taiga-interface/service-conversions';
-import {
-UserStoriesService,
-} from './project-managers-interface/services';
-import { TaigaUserStoriesService } from './project-managers/taiga/services';
-
-
+import { ProjectManagersInterfaceModule } from './project-managers-interface/project-managers-interface.module';
+import { UserStoriesService } from './project-managers-interface/services/' ;
 import {
   AgmCoreModule
 } from '@agm/core';
+
 
 @NgModule({
   imports: [
@@ -61,7 +55,8 @@ import {
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+    }),
+    ProjectManagersInterfaceModule
   ],
   declarations: [
     AppComponent,
@@ -76,9 +71,6 @@ import {
   ],
   providers: [
     UserStoriesService,
-    ProjectManagersInterfaceService,
-    TaigaInterfaceUserStories,
-    TaigaUserStoriesService
   ],
   bootstrap: [AppComponent]
 })

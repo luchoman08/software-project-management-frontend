@@ -1,17 +1,22 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
+import { ProjectManagersInterfaceService } from './services';
 
-
-import { ProjectManagersInterfaceService } from './project-managers-interface.service';
-import { TaigaInterfaceUserStories } from './taiga-interface/service-conversions';
+import {
+  TaigaUserStoriesInterfaceService
+} from './taiga-interface/service-interface';
+import {
+  TaigaUserStoriesService
+} from '../project-managers/taiga/services';
 @NgModule({
   imports: [
   ],
   declarations: [
   ],
   providers: [
-    ProjectManagersInterfaceService,
-    TaigaInterfaceUserStories
+    TaigaUserStoriesInterfaceService,
+    TaigaUserStoriesService,
+    ProjectManagersInterfaceService
   ]
 })
 export class ProjectManagersInterfaceModule {}

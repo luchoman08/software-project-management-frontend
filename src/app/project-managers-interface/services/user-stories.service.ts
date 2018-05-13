@@ -3,31 +3,31 @@ import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../core/services';
 import { SimpleUserStory } from '../../core/models';
-import { TaigaInterfaceUserStories } from '../taiga-interface/service-conversions';
-import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
+import { TaigaUserStoriesInterfaceService } from '../taiga-interface/service-interface';
+import { ProjectManagersInterfaceService } from './project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
-import { EnumProjectManagers } from '../project-managers-enum';
+import { ProjectManagersEnum } from '../enums';
 
 @Injectable()
 export class UserStoriesService {
 
   constructor (
-    private taigaInterface: TaigaInterfaceUserStories,
+    private taigaUserStoriesServiceInterface: TaigaUserStoriesInterfaceService,
     private projectManagersInterfaceService: ProjectManagersInterfaceService
   ) {
   }
 
   get(slug): Observable<SimpleUserStory> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
-      case EnumProjectManagers.TAIGA: {
-        return this.taigaInterface.get(slug);
+      case ProjectManagersEnum.TAIGA: {
+        return this.taigaUserStoriesServiceInterface.get(slug);
       }
     }
   }
   getProjectStories(project_id): Observable<SimpleUserStory[]> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
-      case EnumProjectManagers.TAIGA: {
-        return this.taigaInterface.getProjectStories(project_id);
+      case ProjectManagersEnum.TAIGA: {
+        return this.taigaUserStoriesServiceInterface.getProjectStories(project_id);
       }
     }
   }

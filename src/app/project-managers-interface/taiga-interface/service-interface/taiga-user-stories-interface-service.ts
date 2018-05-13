@@ -5,7 +5,7 @@ import { SimpleUserStory } from '../../../core/models';
 import {
     taigaStoryToSimpleUserStory,
     taigaStoriesToSimpleUserStories
- } from '../model-conversions';
+ } from '../model-interface';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
@@ -13,24 +13,22 @@ import { TaigaUserStoriesService } from '../../../project-managers/taiga/service
 import { TaigaUserStory } from '../../../project-managers/taiga/models/taiga-user-story.model';
 
 @Injectable()
-export class TaigaInterfaceUserStories {
+export class TaigaUserStoriesInterfaceService {
   constructor (
     private taigaUserStoriesService: TaigaUserStoriesService
   ) {}
 
   get(slug): Observable<SimpleUserStory> {
-      let simpleUserStory$: Observable<SimpleUserStory>;
-      this.taigaUserStoriesService.get(slug)
-          .subscribe( taigaUserStory => {
+      return this.taigaUserStoriesService.get(slug)
+          .map( (taigaUserStory: TaigaUserStory) => {
                     console.log(taigaUserStory);
-                    simpleUserStory$ = Observable.of(taigaStoryToSimpleUserStory(taigaUserStory));
+                    return taigaStoryToSimpleUserStory(taigaUserStory);
             } );
-    return simpleUserStory$;
 }
 
   getProjectStories(project_id): Observable<SimpleUserStory[]> {
     return this.taigaUserStoriesService.getProjectStories(project_id)
-    .map( taigaUserStories => {
+    .map( (taigaUserStories: TaigaUserStory[]) => {
               console.log(taigaUserStories);
               return taigaStoriesToSimpleUserStories(taigaUserStories);
       } );
