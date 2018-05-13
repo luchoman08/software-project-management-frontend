@@ -10,7 +10,7 @@ import { UserStoriesService } from '../../../project-managers-interface/services
   styleUrls: ['./simple-userstory-list.component.scss']
 })
 export class SimpleUserStoryListComponent implements OnInit {
-  
+
   simpleUserStories: SimpleUserStory[];
   constructor(
     private userStoryService: UserStoriesService
@@ -18,7 +18,7 @@ export class SimpleUserStoryListComponent implements OnInit {
 
   ngOnInit() {
     this.userStoryService.getProjectStories(267733).
-    subscribe(simpleUserStories => {this.simpleUserStories = simpleUserStories; console.log(this.simpleUserStories);});
+    subscribe(simpleUserStories => {this.simpleUserStories = simpleUserStories; console.log(this.simpleUserStories); });
   }
 
 }

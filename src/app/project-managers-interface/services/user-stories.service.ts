@@ -18,7 +18,7 @@ export class UserStoriesService {
   }
 
   get(slug): Observable<SimpleUserStory> {
-    switch (this.projectManagersInterfaceService.chosenProjectManager){
+    switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case EnumProjectManagers.TAIGA: {
         return this.taigaInterface.get(slug);
       }
