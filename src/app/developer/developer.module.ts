@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SimpleDeveloperModule } from './simple-developer/simple-developer.module';
-
+import { DeveloperRoutingModule } from './developer-routing.module';
 @NgModule({
   imports: [
     CommonModule,
-    SimpleDeveloperModule
+    DeveloperRoutingModule
   ],
   declarations: []
 })
