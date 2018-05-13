@@ -29,7 +29,7 @@ export class TaigaMembershipsServiceInterface {
     return simpleDeveloper$;
 }
 
-  getProjectMemberships(project_id): Observable<SimpleDeveloper[]> {
+  getProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
     return this.taigaMembershipsService.getProjectMembership(project_id)
     .map( (taigaMemberships: TaigaMembership[]) => {
               console.log(taigaMemberships);

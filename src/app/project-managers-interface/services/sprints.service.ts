@@ -2,32 +2,32 @@ import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../core/services';
-import { SimpleDeveloper } from '../../core/models';
-import { TaigaMembershipsServiceInterface } from '../taiga-interface/service-interface';
-import { ProjectManagersInterfaceService } from '../services/project-managers-interface.service';
+import { Sprint } from '../../core/models';
+import { TaigaMilestonesServiceInterface } from '../taiga-interface/service-interface';
+import { ProjectManagersInterfaceService } from './project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
 import { ProjectManagersEnum } from '../enums';
 
 @Injectable()
-export class DevelopersService {
+export class SprintsService {
 
   constructor (
-    private taigaMembershipsServiceInterface: TaigaMembershipsServiceInterface,
+    private taigaMilestonesServiceInterface: TaigaMilestonesServiceInterface,
     private projectManagersInterfaceService: ProjectManagersInterfaceService
   ) {
   }
 
-  get(slug): Observable<SimpleDeveloper> {
+  get(slug): Observable<Sprint> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
-        return this.taigaMembershipsServiceInterface.get(slug);
+        return this.taigaMilestonesServiceInterface.get(slug);
       }
     }
   }
-  getProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
+  getProjectSprints(project_id): Observable<Sprint[]> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
-        return this.taigaMembershipsServiceInterface.getProjectDevelopers(project_id);
+        return this.taigaMilestonesServiceInterface.getProjectSprints(project_id);
       }
     }
   }
