@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { SimpleUserStory } from '../../../core/models/';
-import { SimpleUserStoriesService } from '../../../project-managers-interface/services/';
+import { SimpleUserStoriesService } from '../../../project-managers/project-managers-interface/services/';
 
 @Component({
   selector: 'app-simple-userstory-list',

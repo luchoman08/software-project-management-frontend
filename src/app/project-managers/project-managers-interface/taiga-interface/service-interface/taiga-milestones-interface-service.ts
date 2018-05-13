@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleSprint } from '../../../core/models';
+import { SimpleSprint } from '../../../../core/models';
 
 import {
     taigaMilestonesToSimpleSprints,
@@ -9,8 +9,8 @@ import {
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { TaigaMilestonesService } from '../../../project-managers/taiga/services/';
-import { TaigaMilestone } from '../../../project-managers/taiga/models';
+import { TaigaMilestonesService } from '../../../../project-managers/taiga/services/';
+import { TaigaMilestone } from '../../../../project-managers/taiga/models';
 
 @Injectable()
 export class TaigaMilestonesServiceInterface {

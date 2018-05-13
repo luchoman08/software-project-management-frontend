@@ -7,7 +7,7 @@ import {
 } from './taiga-interface/service-interface';
 import {
   TaigaUserStoriesService
-} from '../project-managers/taiga/services';
+} from '../../project-managers/taiga/services';
 @NgModule({
   imports: [
   ],

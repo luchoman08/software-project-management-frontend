@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleDeveloper } from '../../../core/models';
+import { SimpleDeveloper } from '../../../../core/models';
 
 import {
     taigaMembershipToSimpleDeveloper,
@@ -9,9 +9,9 @@ import {
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { TaigaMembershipsService } from '../../../project-managers/taiga/services/';
-import { TaigaUserStory } from '../../../project-managers/taiga/models/taiga-user-story.model';
-import { TaigaMembership } from '../../../project-managers/taiga/models/taiga-membership.model';
+import { TaigaMembershipsService } from '../../../../project-managers/taiga/services/';
+import { TaigaUserStory } from '../../../../project-managers/taiga/models';
+import { TaigaMembership } from '../../../../project-managers/taiga/models';
 
 @Injectable()
 export class TaigaMembershipsServiceInterface {

@@ -1,5 +1,5 @@
-import { TaigaUserStory } from '../../../../project-managers/taiga/models';
-import { SimpleUserStory } from '../../../../core/models';
+import { TaigaUserStory } from '../../../../../project-managers/taiga/models';
+import { SimpleUserStory } from '../../../../../core/models/';
 
 export function taigaStoryToSimpleUserStory(
     taigaUserStory: TaigaUserStory): SimpleUserStory {

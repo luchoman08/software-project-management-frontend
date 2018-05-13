@@ -24,9 +24,9 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http'
 
-import { DashboardComponent } from './dashboard/dashboard.component';;
-import { ProjectManagersInterfaceModule } from './project-managers-interface/project-managers-interface.module';
-import { SimpleUserStoriesService } from './project-managers-interface/services/' ;
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProjectManagersInterfaceModule } from './project-managers/project-managers-interface/project-managers-interface.module';
+import { SimpleUserStoriesService } from './project-managers/project-managers-interface/services/' ;
 import {
   AgmCoreModule
 } from '@agm/core';

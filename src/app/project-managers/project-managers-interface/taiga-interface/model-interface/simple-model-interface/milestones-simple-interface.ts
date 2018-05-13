@@ -1,5 +1,5 @@
-import { TaigaMilestone } from '../../../../project-managers/taiga/models';
-import { SimpleSprint } from '../../../../core/models';
+import { TaigaMilestone } from '../../../../../project-managers/taiga/models';
+import { SimpleSprint } from '../../../../../core/models';
 
 export function taigaMilestoneToSimpleSprint(
     taigaMilestone: TaigaMilestone): SimpleSprint {

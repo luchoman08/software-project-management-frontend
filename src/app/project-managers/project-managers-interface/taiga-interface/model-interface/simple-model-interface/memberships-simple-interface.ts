@@ -1,5 +1,5 @@
-import { TaigaMembership } from '../../../../project-managers/taiga/models/';
-import { SimpleDeveloper } from '../../../../core/models/';
+import { TaigaMembership } from '../../../../../project-managers/taiga/models/';
+import { SimpleDeveloper } from '../../../../../core/models/';
 
 export function taigaMembershipToSimpleDeveloper(
     taigaMembership: TaigaMembership): SimpleDeveloper {
