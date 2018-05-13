@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SimpleUserStoryDetailComponent } from './';
-import { SimpleUserStoryListComponent } from './';
+import { SimpleUserStoryDetailComponent } from './simple-userstory-detail/simple-userstory-detail.component';
+import { SimpleUserStoryListComponent } from './simple-userstory-list/simple-userstory-list.component';
 const routes: Routes = [
   {
     path: '',
