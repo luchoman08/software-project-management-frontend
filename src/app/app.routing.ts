@@ -21,14 +21,14 @@ const routes: Routes =[
     { path: 'notifications',  component: NotificationsComponent },
     {
     path: 'userstories',
-    loadChildren: './userstory/userstory.module#UserStoryModule'
+    loadChildren: './user-story/user-story.module#UserStoryModule'
   },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({
-  
+
     imports: [RouterModule.forRoot(routes, {
     // preload all modules; optionally we could
     // implement a custom preloading strategy for just some
@@ -36,7 +36,7 @@ const routes: Routes =[
     preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]
-  
+
 /*
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
-export class SimpleDeveloper {
+export interface TaigaMembership {
     id: string;
     full_name: string;
     role_name: string;
-    available_hours_per_week: number;
+    is_user_active: boolean;
     color: string;
-}
+  }

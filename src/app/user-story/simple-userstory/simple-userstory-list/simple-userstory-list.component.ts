@@ -17,7 +17,6 @@ export class SimpleUserStoryListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    console.log(this.userStoryService.numero)
     this.userStoryService.getProjectStories(267733).
     subscribe(simpleUserStories => {this.simpleUserStories = simpleUserStories; console.log(this.simpleUserStories);});
   }

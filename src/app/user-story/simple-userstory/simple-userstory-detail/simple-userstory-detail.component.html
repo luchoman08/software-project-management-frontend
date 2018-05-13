@@ -5,7 +5,7 @@
         </div>
         <p class="card-category">Puntos de historia</p>
         <h3 class="card-title">
-        <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{userStory.points_unitary}} </p>
+        <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{simpleUserStory.points}} </p>
         <ng-template #noPointsBlock><i (click)="openEditPointsDialog()" class="material-icons">add_circle</i></ng-template>
         </h3>
     </div>

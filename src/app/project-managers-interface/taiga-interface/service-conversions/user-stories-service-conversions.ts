@@ -5,7 +5,7 @@ import { SimpleUserStory } from '../../../core/models';
 import {
     taigaStoryToSimpleUserStory,
     taigaStoriesToSimpleUserStories
- } from './model-conversions';
+ } from '../model-conversions';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';

@@ -3,15 +3,14 @@ import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../core/services';
 import { SimpleUserStory } from '../../core/models';
-import { TaigaInterfaceUserStories } from '../taiga-interface/lib/service-conversions';
+import { TaigaInterfaceUserStories } from '../taiga-interface/service-conversions';
 import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
 import { EnumProjectManagers } from '../project-managers-enum';
 
 @Injectable()
 export class UserStoriesService {
-  numero = 50;
-  
+
   constructor (
     private taigaInterface: TaigaInterfaceUserStories,
     private projectManagersInterfaceService: ProjectManagersInterfaceService

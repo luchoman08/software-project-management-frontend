@@ -32,12 +32,17 @@ import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 
+import { ProjectManagersInterfaceService } from './project-managers-interface/project-managers-interface.service';
+import { TaigaInterfaceUserStories } from './project-managers-interface/taiga-interface/service-conversions';
+import {
+UserStoriesService,
+} from './project-managers-interface/services';
+import { TaigaUserStoriesService } from './project-managers/taiga/services';
+
 
 import {
   AgmCoreModule
 } from '@agm/core';
-import { DevelopersComponent } from './developers/developers.component';
-import { UserStoryModule } from './userstory/userstory.module';
 
 @NgModule({
   imports: [
@@ -69,10 +74,14 @@ import { UserStoryModule } from './userstory/userstory.module';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    DevelopersComponent,
 
   ],
-  providers: [],
+  providers: [
+    UserStoriesService,
+    ProjectManagersInterfaceService,
+    TaigaInterfaceUserStories,
+    TaigaUserStoriesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
