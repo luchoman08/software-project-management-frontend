@@ -3,17 +3,17 @@ import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { ApiService } from '../../../core/services';
-import { Point } from '../models';
+import { TaigaRole } from '../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class PointsService {
+export class TaigaRolesService {
   constructor (
     private apiService: ApiService
   ) {}
 
-  get(slug): Observable<Point> {
-    return this.apiService.get('/points/' + slug)
+  get(slug): Observable<TaigaRole> {
+    return this.apiService.get('/roles/' + slug)
       .pipe(map(data => data));
   }
 }

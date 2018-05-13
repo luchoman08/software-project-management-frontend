@@ -2,11 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { SimpleStoryEditPointsComponent } from '../simple-story-edit-points/simple-story-edit-points.component';
-import {
-  UserStory,
-  UserStoriesService,
-  Role, RolesService,
-  Point, PointsService } from '../../../project-managers/taiga';
+import { SimpleUserStory } from '../../../core/models/simple-assignment/simple-user-story';
+import { UserStoriesService } from '../../../project-managers-interface/services';
 
 
 @Component({
@@ -16,12 +13,10 @@ import {
 })
 export class SimpleUserStoryDetailComponent implements OnInit {
 
-  @Input() public userStory: UserStory;
+  @Input() public simpleUserStory: SimpleUserStory;
   constructor(
     public dialog: MatDialog,
     private userStoryService: UserStoriesService,
-    private rolesService: RolesService,
-    private pointsService: PointsService
     ) { }
 
   ngOnInit() {
@@ -29,20 +24,14 @@ export class SimpleUserStoryDetailComponent implements OnInit {
       .subscribe(userstory => {this.userstory = userstory; console.log(this.userstory.points[1632608]);});
       */
   }
-  /*
-    Obtain the role name from TaigaApi
-  */
-  getRoleName(id_role: number): Observable <Role> {
-    return this.rolesService.get(id_role);
-  }
   openEditPointsDialog(): void {
     const dialogRef = this.dialog.open(SimpleStoryEditPointsComponent, {
       width: '320px',
-      data: { points: this.userStory.points_unitary}
+      data: { points: this.simpleUserStory.points}
     });
 
     dialogRef.afterClosed().subscribe(points => {
-      this.userStory.points_unitary = points;
+      this.simpleUserStory.points = points;
     });
   }
   // getRolePoints(id_punctuation): Obserbable <Role

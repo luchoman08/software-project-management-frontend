@@ -1,4 +1,4 @@
-export interface Point {
+export interface TaigaPoint {
     id: string;
     value: number;
   }

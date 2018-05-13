@@ -1,22 +1,22 @@
-<div  *ngIf="userStory" class="card card-stats">
+<div  *ngIf="simpleUserStory" class="card card-stats">
     <div class="card-header card-header-warning card-header-icon">
         <div class="card-icon">
             <i class="material-icons">bookmark</i>
         </div>
         <p class="card-category">Puntos de historia</p>
         <h3 class="card-title">
-        <p *ngIf = "userStory.points_unitary; else noPointsBlock"> {{userStory.points_unitary}} </p>
+        <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{userStory.points_unitary}} </p>
         <ng-template #noPointsBlock><i (click)="openEditPointsDialog()" class="material-icons">add_circle</i></ng-template>
         </h3>
     </div>
    <div class="card-body">
             <h3>Titulo</h3>
-           <p> {{userStory.subject}}</p>
+           <p> {{simpleUserStory.subject}}</p>
     </div>
-    <div *ngIf = "userStory.points_unitary" class="card-footer">
+    <div *ngIf = "simpleUserStory.points" class="card-footer">
             <div (click)="openEditPointsDialog()" class="stats">
                 <i  class="material-icons ">edit</i>
-                <a  >Editar puntuación</a>
+                <a> Editar puntuación </a>
             </div>
     </div>
 

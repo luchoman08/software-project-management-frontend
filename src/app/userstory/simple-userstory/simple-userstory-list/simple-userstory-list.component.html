@@ -1,8 +1,8 @@
-<div *ngIf = "userStories" class="main-content">
+<div *ngIf = "simpleUserStories" class="main-content">
   <div class="container-fluid">
       <div class = "row">
-          <div *ngFor = "let userStory of userStories" class = "col-lg-4 col-md-6 col-sm-12">
-              <app-simple-userstory-detail  [userStory] = "userStory"> </app-simple-userstory-detail>
+          <div *ngFor = "let simpleUserStory of simpleUserStories" class = "col-lg-4 col-md-6 col-sm-12">
+              <app-simple-userstory-detail  [simpleUserStory] = "simpleUserStory"> </app-simple-userstory-detail>
            </div>
       </div>
     </div>
