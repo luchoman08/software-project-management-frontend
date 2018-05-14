@@ -3,6 +3,7 @@ import { TaigaMembership } from './taiga-membership.model';
 export interface TaigaProject {
     id: string;
     members: TaigaMembership[];
+    name: string;
     description: string;
     slug: string;
     milestones: any[];

@@ -4,8 +4,11 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SimpleAssignmentComponent } from './simple-assignment/simple-assignment.component';
 const routes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },    {
+    { path: 'dashboard',      component: DashboardComponent },
+    { path: 'simpleassignment',      component: SimpleAssignmentComponent },
+    {
     path: 'userstories',
     loadChildren: './user-story/user-story.module#UserStoryModule'
     },

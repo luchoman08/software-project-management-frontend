@@ -9,6 +9,9 @@ import {
   TaigaUserStoriesService
 } from '../../project-managers/taiga/services';
 import { TaigaProjectsService } from '../taiga/services/taiga-projects.service';
+import {
+  TaigaProjectsSimpleInterfaceService
+} from './taiga-interface/service-interface/simple-assigment/taiga-simple-project-interface.service';
 
 @NgModule({
   imports: [
@@ -17,6 +20,7 @@ import { TaigaProjectsService } from '../taiga/services/taiga-projects.service';
   ],
   providers: [
     TaigaUserStoriesSimpleInterfaceService,
+    TaigaProjectsSimpleInterfaceService,
     TaigaUserStoriesService,
     TaigaProjectsService,
     ProjectManagersInterfaceService

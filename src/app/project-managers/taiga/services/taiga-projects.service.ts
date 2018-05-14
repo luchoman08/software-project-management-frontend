@@ -16,6 +16,15 @@ export class TaigaProjectsService {
     return this.apiService.get('/projects/' + id)
       .pipe(map(data => data));
   }
+
+  /*
+    Return all projects where a given member is part of there
+  */
+  getByMember(member_id): Observable<TaigaProject[]> {
+    const params = new HttpParams().set('member', String(member_id));
+    return this.apiService.get('/projects', params)
+    .pipe(map(data => data));
+  }
   getBySlug(slug): Observable<TaigaProject> {
     const params = new HttpParams().set('slug', String(slug));
     return this.apiService.get('/projects', params)

@@ -1,4 +1,4 @@
-import { SimpleDeveloper } from '../core/models/simple-assignment/simple-developer.model';
+import { SimpleDeveloper } from '../../core/models/simple-assignment/simple-developer.model';
 export const SIMPLEDEVELS: SimpleDeveloper[] = [
     { id: '100', full_name: 'Luis Gerardo Manrique',
      color:  '#2196F3',  available_hours_per_week:  null,

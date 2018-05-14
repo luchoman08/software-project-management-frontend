@@ -6,6 +6,7 @@ export function taigaProjectToSimpleProject(
         const simpleProject: SimpleProject = new SimpleProject();
         simpleProject.id = taigaProject.id;
         simpleProject.description = taigaProject.description;
+        simpleProject.name = taigaProject.name;
         simpleProject.created_date = taigaProject.created_date;
         return simpleProject;
     }

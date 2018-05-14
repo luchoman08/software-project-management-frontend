@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators/map';
 import { ProjectManagersEnum } from '../../enums';
 
 @Injectable()
-export class SprintsService {
+export class SimpleSprintsService {
 
   constructor (
     private taigaMilestonesServiceInterface: TaigaMilestonesSimpleServiceInterface,

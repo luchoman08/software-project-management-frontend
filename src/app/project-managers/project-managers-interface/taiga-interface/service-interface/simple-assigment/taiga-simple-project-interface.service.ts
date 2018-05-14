@@ -24,11 +24,20 @@ export class TaigaProjectsSimpleInterfaceService {
                     return taigaProjectToSimpleProject(taigaProject);
             } );
 }
+  /**
+   * Get all projects where a given member is part of them
+  */
+  getSimpleProjectsByMemberId(member_id): Observable <SimpleProject[]> {
+    return this.taigaProjectsService.getByMember(member_id)
+    .map ((taigaProjects: TaigaProject[]) => {
+      return taigaProjectsToSimpleProjects(taigaProjects);
+    }
+  );
+  }
 
   getSimpleProjectBySlug(slug): Observable<SimpleProject> {
     return this.taigaProjectsService.getBySlug(slug)
     .map( (taigaProject: TaigaProject) => {
-              console.log(taigaProject);
               return taigaProjectToSimpleProject(taigaProject);
       } );
   }

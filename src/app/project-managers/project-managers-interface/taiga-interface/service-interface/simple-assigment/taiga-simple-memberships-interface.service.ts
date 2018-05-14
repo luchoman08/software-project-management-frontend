@@ -23,7 +23,6 @@ export class TaigaMembershipsSimpleServiceInterface {
       let simpleDeveloper$: Observable<SimpleDeveloper>;
       this.taigaMembershipsService.get(slug)
           .subscribe( (taigaMembership: TaigaMembership) => {
-                    console.log(taigaMembership);
                     simpleDeveloper$ = Observable.of(taigaMembershipToSimpleDeveloper(taigaMembership));
             } );
     return simpleDeveloper$;
@@ -32,7 +31,6 @@ export class TaigaMembershipsSimpleServiceInterface {
   getSimpleProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
     return this.taigaMembershipsService.getProjectMembership(project_id)
     .map( (taigaMemberships: TaigaMembership[]) => {
-              console.log(taigaMemberships);
               return taigaMembershipsToSimpleDevelopers(taigaMemberships);
       } );
   }

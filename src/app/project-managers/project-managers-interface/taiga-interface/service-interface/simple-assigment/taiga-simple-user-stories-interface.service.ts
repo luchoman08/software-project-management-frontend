@@ -21,7 +21,6 @@ export class TaigaUserStoriesSimpleInterfaceService {
   get(slug): Observable<SimpleUserStory> {
       return this.taigaUserStoriesService.get(slug)
           .map( (taigaUserStory: TaigaUserStory) => {
-                    console.log(taigaUserStory);
                     return taigaStoryToSimpleUserStory(taigaUserStory);
             } );
 }
@@ -29,7 +28,6 @@ export class TaigaUserStoriesSimpleInterfaceService {
   getSimpleProjectStories(project_id): Observable<SimpleUserStory[]> {
     return this.taigaUserStoriesService.getProjectStories(project_id)
     .map( (taigaUserStories: TaigaUserStory[]) => {
-              console.log(taigaUserStories);
               return taigaStoriesToSimpleUserStories(taigaUserStories);
       } );
   }

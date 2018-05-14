@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators/map';
 import { ProjectManagersEnum } from '../../enums';
 
 @Injectable()
-export class ProjectsService {
+export class SimpleProjectsService {
 
   constructor (
     private taigaProjectsSimpleInterfaceService: TaigaProjectsSimpleInterfaceService,
@@ -28,6 +28,16 @@ export class ProjectsService {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaProjectsSimpleInterfaceService.getSimpleProjectBySlug(slug);
+      }
+    }
+  }
+  /**
+   * Get all projects where a given member is part of them
+  */
+  getSimpleProjectsByMemberId(member_id): Observable<SimpleProject[]> {
+    switch (this.projectManagersInterfaceService.chosenProjectManager) {
+      case ProjectManagersEnum.TAIGA: {
+        return this.taigaProjectsSimpleInterfaceService.getSimpleProjectsByMemberId(member_id);
       }
     }
   }
