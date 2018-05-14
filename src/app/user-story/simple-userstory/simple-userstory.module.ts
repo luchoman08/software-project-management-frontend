@@ -14,6 +14,7 @@ import {
   MatButtonModule,
   MatButtonToggleModule
 } from '@angular/material';
+import { SimpleUserStoryListOneLineComponent } from './simple-user-story-list-one-line/simple-user-story-list-one-line.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,10 @@ import {
   declarations: [
     SimpleUserStoryDetailComponent,
     SimpleUserStoryListComponent,
+    SimpleUserStoryListOneLineComponent,
+  ],
+  exports: [
+    SimpleUserStoryListOneLineComponent
   ],
   providers: [
   ]

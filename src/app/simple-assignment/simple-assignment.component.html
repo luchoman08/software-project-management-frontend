@@ -5,7 +5,7 @@
     <form  [formGroup]="formSelectProject">
       <ng-template matStepLabel>Seleccione el proyecto</ng-template>
       <mat-form-field>
-    <mat-select  (ngModel)="selectedSimpleProject" 
+    <mat-select  [(ngModel)]="selectedSimpleProject" 
     placeholder="Proyecto"
        [formControl]="formSelectProject.controls['projectContrl']" required >
 
@@ -16,22 +16,38 @@
       <mat-error *ngIf="formSelectProject.controls['projectContrl'].hasError('required')">Por favor, seleccione un proyecto</mat-error>
     </mat-form-field>    
       <div>
-        <button mat-button matStepperNext>Siguiente</button>
+        <button (click)="selectedSimpleProject? initSimpleSprints(selectedSimpleProject.id) : null" mat-button matStepperNext>Siguiente</button>
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+
+  <mat-step [stepControl]="formSelectSprint">
+       <form  [formGroup]="formSelectSprint">
+      <ng-template matStepLabel>Seleccione el sprint</ng-template>
       <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
-      </mat-form-field>
+    <mat-select  [(ngModel)]="selectedSimpleSprint" 
+    placeholder="Sprint"
+       [formControl]="formSelectSprint.controls['sprintCntrl']" required >
+
+      <mat-option   *ngFor="let simpleSprint of simpleSprints" [value]="simpleSprint">
+        {{ simpleSprint.name }}
+      </mat-option>
+    </mat-select>  
+      <mat-error *ngIf="formSelectSprint.controls['sprintCntrl'].hasError('required')">Por favor, seleccione un sprint</mat-error>
+    </mat-form-field>    
       <div>
-        <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button matStepperNext>Siguiente</button>
       </div>
     </form>
   </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Completar historias</ng-template>
+    <app-simple-user-story-list-one-line *ngIf="selectedSimpleSprint" [simpleUserStories] = "selectedSimpleSprint.user_stories"> 
+    </app-simple-user-story-list-one-line>
+
+  </mat-step>
+
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
     You are now done.

@@ -1,0 +1,33 @@
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">Lista de historias de usuario</h4>
+        <p class="card-category">Debe configurar todos los puntos de historia antes de avanzar</p>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class=" text-primary">
+                    <th>
+                        Título
+                    </th>
+                    <th>
+                        Puntos
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let simpleUserStory of simpleUserStories">
+                        <td>
+                            {{simpleUserStory.subject}}
+                        </td>
+                        <td>
+                            <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{simpleUserStory.points}} </p>
+                            <ng-template #noPointsBlock><i (click)="openEditPointsDialog(simpleUserStory)" class="material-icons">add_circle</i></ng-template>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

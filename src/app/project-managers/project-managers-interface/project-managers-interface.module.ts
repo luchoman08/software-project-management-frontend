@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common'
 import { ProjectManagersInterfaceService } from './services';
 
 import {
-  TaigaUserStoriesSimpleInterfaceService
+  TaigaUserStoriesSimpleInterfaceService,
+  TaigaMilestonesSimpleServiceInterface,
+  TaigaMembershipsSimpleServiceInterface,
+  TaigaProjectsSimpleInterfaceService
 } from './taiga-interface/service-interface';
 import {
-  TaigaUserStoriesService
+  TaigaUserStoriesService,
+  TaigaMilestonesService,
+  TaigaProjectsService,
+  TaigaMembershipsService
 } from '../../project-managers/taiga/services';
-import { TaigaProjectsService } from '../taiga/services/taiga-projects.service';
-import {
-  TaigaProjectsSimpleInterfaceService
-} from './taiga-interface/service-interface/simple-assigment/taiga-simple-project-interface.service';
-
 @NgModule({
   imports: [
   ],
@@ -21,8 +22,12 @@ import {
   providers: [
     TaigaUserStoriesSimpleInterfaceService,
     TaigaProjectsSimpleInterfaceService,
+    TaigaMilestonesSimpleServiceInterface,
+    TaigaMembershipsSimpleServiceInterface,
     TaigaUserStoriesService,
     TaigaProjectsService,
+    TaigaMilestonesService,
+    TaigaMembershipsService,
     ProjectManagersInterfaceService
   ]
 })
