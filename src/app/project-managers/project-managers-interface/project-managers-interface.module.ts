@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { ProjectManagersInterfaceService } from './services';
 
 import {
-  TaigaSimpleUserStoriesInterfaceService
+  TaigaUserStoriesSimpleInterfaceService
 } from './taiga-interface/service-interface';
 import {
   TaigaUserStoriesService
@@ -14,7 +14,7 @@ import {
   declarations: [
   ],
   providers: [
-    TaigaSimpleUserStoriesInterfaceService,
+    TaigaUserStoriesSimpleInterfaceService,
     TaigaUserStoriesService,
     ProjectManagersInterfaceService
   ]

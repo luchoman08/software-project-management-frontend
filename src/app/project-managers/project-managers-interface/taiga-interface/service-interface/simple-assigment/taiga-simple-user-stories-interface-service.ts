@@ -13,7 +13,7 @@ import { TaigaUserStoriesService } from '../../../../../project-managers/taiga/s
 import { TaigaUserStory } from '../../../../../project-managers/taiga/models';
 
 @Injectable()
-export class TaigaSimpleUserStoriesInterfaceService {
+export class TaigaUserStoriesSimpleInterfaceService {
   constructor (
     private taigaUserStoriesService: TaigaUserStoriesService
   ) {}
@@ -26,7 +26,7 @@ export class TaigaSimpleUserStoriesInterfaceService {
             } );
 }
 
-  getProjectStories(project_id): Observable<SimpleUserStory[]> {
+  getSimpleProjectStories(project_id): Observable<SimpleUserStory[]> {
     return this.taigaUserStoriesService.getProjectStories(project_id)
     .map( (taigaUserStories: TaigaUserStory[]) => {
               console.log(taigaUserStories);

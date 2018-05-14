@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleDeveloper } from '../../../../core/models';
+import { SimpleDeveloper } from '../../../../../core/models';
 
 import {
     taigaMembershipToSimpleDeveloper,
     taigaMembershipsToSimpleDevelopers
- } from '../model-interface';
+ } from '../../model-interface';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { TaigaMembershipsService } from '../../../../project-managers/taiga/services/';
-import { TaigaUserStory } from '../../../../project-managers/taiga/models';
-import { TaigaMembership } from '../../../../project-managers/taiga/models';
+import { TaigaMembershipsService } from '../../../../../project-managers/taiga/services/';
+import { TaigaUserStory } from '../../../../../project-managers/taiga/models';
+import { TaigaMembership } from '../../../../../project-managers/taiga/models';
 
 @Injectable()
-export class TaigaMembershipsServiceInterface {
+export class TaigaMembershipsSimpleServiceInterface {
   constructor (
     private taigaMembershipsService: TaigaMembershipsService
   ) {}
@@ -29,7 +29,7 @@ export class TaigaMembershipsServiceInterface {
     return simpleDeveloper$;
 }
 
-  getProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
+  getSimpleProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
     return this.taigaMembershipsService.getProjectMembership(project_id)
     .map( (taigaMemberships: TaigaMembership[]) => {
               console.log(taigaMemberships);

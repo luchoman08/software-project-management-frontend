@@ -3,7 +3,7 @@ import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../../../core/services';
 import { SimpleUserStory } from '../../../../core/models';
-import { TaigaSimpleUserStoriesInterfaceService } from '../../taiga-interface/service-interface';
+import { TaigaUserStoriesSimpleInterfaceService } from '../../taiga-interface/service-interface';
 import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
 import { ProjectManagersEnum } from '../../enums';
@@ -12,7 +12,7 @@ import { ProjectManagersEnum } from '../../enums';
 export class SimpleUserStoriesService {
 
   constructor (
-    private taigaUserStoriesServiceInterface: TaigaSimpleUserStoriesInterfaceService,
+    private taigaUserStoriesServiceInterface: TaigaUserStoriesSimpleInterfaceService,
     private projectManagersInterfaceService: ProjectManagersInterfaceService
   ) {
   }
@@ -27,7 +27,7 @@ export class SimpleUserStoriesService {
   getSimpleProjectStories(project_id): Observable<SimpleUserStory[]> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
-        return this.taigaUserStoriesServiceInterface.getProjectStories(project_id);
+        return this.taigaUserStoriesServiceInterface.getSimpleProjectStories(project_id);
       }
     }
   }
