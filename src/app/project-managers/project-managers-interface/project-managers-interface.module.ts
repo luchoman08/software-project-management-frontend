@@ -8,6 +8,8 @@ import {
 import {
   TaigaUserStoriesService
 } from '../../project-managers/taiga/services';
+import { TaigaProjectsService } from '../taiga/services/taiga-projects.service';
+
 @NgModule({
   imports: [
   ],
@@ -16,6 +18,7 @@ import {
   providers: [
     TaigaUserStoriesSimpleInterfaceService,
     TaigaUserStoriesService,
+    TaigaProjectsService,
     ProjectManagersInterfaceService
   ]
 })

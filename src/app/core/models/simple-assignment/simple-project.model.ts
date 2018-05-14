@@ -6,5 +6,5 @@ export class SimpleProject implements ProjectInterface {
     description: string;
     sprints: SimpleSprint[];
     simpleDevelopers: SimpleDeveloper[];
-    SimpleUserStories: SimpleUserStory[];
+    simpleUserStories: SimpleUserStory[];
 }

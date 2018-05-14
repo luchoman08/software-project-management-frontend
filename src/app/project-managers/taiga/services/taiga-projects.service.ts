@@ -12,9 +12,13 @@ export class TaigaProjectsService {
     private apiService: ApiService
   ) {}
 
-  get(slug): Observable<TaigaProject> {
-    return this.apiService.get('/projects/' + slug)
+  get(id): Observable<TaigaProject> {
+    return this.apiService.get('/projects/' + id)
       .pipe(map(data => data));
   }
-
+  getBySlug(slug): Observable<TaigaProject> {
+    const params = new HttpParams().set('slug', String(slug));
+    return this.apiService.get('/projects', params)
+    .pipe(map(data => data));
+  }
 }
