@@ -6,18 +6,25 @@ import { SimpleDeveloperRoutingModule } from './simple-developer-routing.module'
 
 import {
   MatButtonModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatTooltipModule
 } from '@angular/material';
+import { SimpleDeveloperListOneLineComponent } from './simple-developer-list-one-line/simple-developer-list-one-line.component';
 @NgModule({
   imports: [
     CommonModule,
+    MatTooltipModule,
     SimpleDeveloperRoutingModule,
     MatButtonToggleModule,
     MatButtonModule
   ],
   declarations: [
     SimpleDeveloperListComponent,
-    SimpleDeveloperDetailComponent
-  ]
+    SimpleDeveloperDetailComponent,
+    SimpleDeveloperListOneLineComponent
+  ],
+  exports: [
+    SimpleDeveloperListOneLineComponent
+  ],
 })
 export class SimpleDeveloperModule { }

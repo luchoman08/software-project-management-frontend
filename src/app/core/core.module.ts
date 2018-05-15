@@ -7,6 +7,7 @@ import {
     ApiService,
     JwtService,
 } from './services';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {
     ApiService,
     JwtService
   ],
-  declarations: []
+  declarations: [CapitalizePipe],
+  exports: [CapitalizePipe]
 })
 export class CoreModule { }

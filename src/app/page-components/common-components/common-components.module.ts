@@ -9,8 +9,10 @@ import {
   MatButtonModule,
   MatButtonToggleModule,
 } from '@angular/material';
+import { CoreModule } from '../../core/core.module';
 @NgModule({
   imports: [
+    CoreModule,
     CommonModule,
     FormsModule,
     MatFormFieldModule,

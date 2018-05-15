@@ -1,7 +1,5 @@
-<h1 *ngIf="data.value; else noValue" mat-dialog-title>Editar {{data.valueName}}</h1>
-<ng-template #noValue><h1 mat-dialog-title>Adicionar {{data.valueName}}</h1> </ng-template>
 <div mat-dialog-content>
-  <p>Insertar {{data.valueName}}</p>
+  <p>{{data.valueName | capitalize}} </p>
   <mat-form-field>
     <input matInput [(ngModel)]="data.value" type="{{data.type}}">
   </mat-form-field>

@@ -5,7 +5,8 @@ const routes: Routes = [
   {
     path: 'simpledeveloper',
     loadChildren: './simple-developer/simple-developer.module#SimpleDeveloperModule'
-  }
+  },
+  
 ];
 
 @NgModule({

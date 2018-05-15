@@ -16,13 +16,26 @@
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let simpleUserStory of simpleUserStories">
+                    <tr *ngFor="let simpleUserStory of simpleUserStories; let i=index">
                         <td>
                             {{simpleUserStory.subject}}
                         </td>
                         <td>
-                            <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{simpleUserStory.points}} </p>
-                            <ng-template #noPointsBlock><i (click)="openEditPointsDialog(simpleUserStory)" class="material-icons">add_circle</i></ng-template>
+                       <!--     <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{simpleUserStory.points}}                                
+                            <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                <i *ngIf = "simpleUserStory.points" (click)="openEditPointsDialog(simpleUserStory)"  class="material-icons small ">edit</i>
+                            </button> 
+                            </p>
+                            <ng-template #noPointsBlock>
+                            <button (click)="openEditPointsDialog(simpleUserStory)" type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                             <i class="material-icons">add_circle</i>
+                                </button>
+                            
+                            </ng-template>  
+                        -->
+                        <mat-form-field>
+                            <input matInput  #Name="ngModel" type="number" [(ngModel)]="simpleUserStory.points">
+                        </mat-form-field>
                         </td>
                     </tr>
                     

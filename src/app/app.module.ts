@@ -42,6 +42,7 @@ import { CommonComponentsModule } from './page-components/common-components/comm
 import { SimpleAssignmentComponent } from './simple-assignment/simple-assignment.component';
 import { SimpleSprintsService } from './project-managers/project-managers-interface/services/simple-services/simple-sprints.service';
 import { SimpleUserStoryModule } from './user-story/simple-userstory/simple-userstory.module';
+import { SimpleDeveloperModule } from './developer/simple-developer/simple-developer.module';
 
 @NgModule({
   imports: [
@@ -65,6 +66,7 @@ import { SimpleUserStoryModule } from './user-story/simple-userstory/simple-user
     AppRoutingModule,
     CommonComponentsModule,
     SimpleUserStoryModule,
+    SimpleDeveloperModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),

@@ -10,6 +10,7 @@ import {
   MatFormFieldModule,
   MatFormField,
   MatInputModule,
+  MatTooltipModule,
   MatDialogModule,
   MatButtonModule,
   MatButtonToggleModule
@@ -22,6 +23,7 @@ import { SimpleUserStoryListOneLineComponent } from './simple-user-story-list-on
       CommonModule,
       FormsModule,
       MatFormFieldModule,
+      MatTooltipModule,
       MatDialogModule,
       MatInputModule,
       MatButtonModule,
