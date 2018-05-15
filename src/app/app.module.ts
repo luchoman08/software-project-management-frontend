@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 import {
   MatButtonModule,
   MatButtonToggleModule,
@@ -13,6 +13,7 @@ import {
   MatTooltipModule,
   MatDialogModule,
   MatDialog,
+  MatProgressBarModule,
   MatFormFieldModule,
   MatSelectModule,
   MatOption,
@@ -60,8 +61,10 @@ import { SimpleDeveloperModule } from './developer/simple-developer/simple-devel
     MatSelectModule,
     MatButtonToggleModule,
     MatButtonModule,
+    MatProgressBarModule,
     MatRippleModule,
     MatFormFieldModule,
+    LoadingBarModule.forRoot(),
     AppRoutingModule,
     CommonComponentsModule,
     SimpleUserStoryModule,

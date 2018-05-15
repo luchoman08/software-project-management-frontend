@@ -5,6 +5,7 @@ import { NavbarComponent } from './page-components/main-components/navbar/navbar
 import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd  } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { LoadingBarService } from '@ngx-loading-bar/core';
 
 declare const $: any;
 
@@ -18,7 +19,10 @@ export class AppComponent implements OnInit {
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
 
-    constructor( public location: Location, private router: Router) {}
+    constructor(
+        public location: Location,
+        private router: Router,
+        public loader: LoadingBarService) {}
 
     ngOnInit() {
         const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
