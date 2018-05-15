@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import { SimpleProject, SimpleSprint, SimpleDeveloper } from '../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
@@ -13,22 +14,32 @@ import {
   styleUrls: ['./simple-assignment.component.scss']
 })
 export class SimpleAssignmentComponent implements OnInit {
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
 
   selectedSimpleProject: SimpleProject;
   selectedSimpleSprint: SimpleSprint;
   simpleProjects: SimpleProject[];
-  formSelectProject: FormGroup;
-  formSelectSprint: FormGroup;
   simpleSprints: SimpleSprint[];
   simpleDevelopers: SimpleDeveloper[];
+  
+  formSelectProject: FormGroup;
+  formSelectSprint: FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher,
     private _formBuilder: FormBuilder,
     private simpleProjectService: SimpleProjectsService,
     private simpleSprintService: SimpleSprintsService,
     private simpleDeveloperService: SimpleDevelopersService,
-    private loadingBar: LoadingBarService) { }
+    private loadingBar: LoadingBarService) { 
+      this.mobileQuery = media.matchMedia('(max-width: 600px)');
+      this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+      this.mobileQuery.addListener(this._mobileQueryListener);
+    }
 
   initSimpleSprints(project_id) {
     this.loadingBar.start();

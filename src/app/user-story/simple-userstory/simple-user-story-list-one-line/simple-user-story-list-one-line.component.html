@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-stories">
                 <thead class=" text-primary">
                     <th>
                         Título
@@ -18,7 +18,9 @@
                 <tbody>
                     <tr *ngFor="let simpleUserStory of simpleUserStories; let i=index">
                         <td>
+                            <p align="justify">
                             {{simpleUserStory.subject}}
+                            </p>
                         </td>
                         <td>
                        <!--     <p *ngIf = "simpleUserStory.points; else noPointsBlock"> {{simpleUserStory.points}}                                
