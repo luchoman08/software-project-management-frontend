@@ -25,7 +25,7 @@
        <form  [formGroup]="formSelectSprint">
       <ng-template matStepLabel>Seleccione el sprint</ng-template>
       <mat-form-field>
-    <mat-select  [(ngModel)]="selectedSimpleSprint" 
+    <mat-select  [disabled]="!simpleSprints" [(ngModel)]="selectedSimpleSprint" 
     placeholder="Sprint"
        [formControl]="formSelectSprint.controls['sprintCntrl']" required >
 

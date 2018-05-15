@@ -14,7 +14,7 @@ const routes: Routes = [
       path: 'developers',
       loadChildren: './developer/developer.module#DeveloperModule'
     },
-    { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
+    { path: '',               redirectTo: 'simpleassignment', pathMatch: 'full' }
 ];
 
 @NgModule({
