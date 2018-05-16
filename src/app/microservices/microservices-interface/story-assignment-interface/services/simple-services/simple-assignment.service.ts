@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { ApiService } from '../../../../core/services';
+import { ApiService } from '../../../../../core/services';
 import { SimpleAssignmentOutput, SimpleAssignmentInput } from '../../../../core/models';
 import { TaigaUserStoriesSimpleInterfaceService } from '../../taiga-interface/service-interface';
 import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
