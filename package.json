@@ -1,17 +1,19 @@
 {
-  "name": "material-dashboard-angular",
+  "name": "story-asssignment",
   "version": "2.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host $IP --port $PORT --public $C9_HOSTNAME",
     "build": "ng build",
+    "build_prod": "ng build  --base-href /asignacion_frontend/ --prod ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
+    "7": "0.0.1",
     "@agm/core": "1.0.0-beta.2",
     "@angular/animations": "5.2.9",
     "@angular/cdk": "5.2.4",
@@ -25,6 +27,7 @@
     "@angular/platform-browser-dynamic": "5.2.9",
     "@angular/platform-server": "5.2.9",
     "@angular/router": "5.2.9",
+    "@ngx-loading-bar/core": "^1.5.0",
     "ajv": "6.4.0",
     "arrive": "2.4.1",
     "bootstrap": "4.1.0",

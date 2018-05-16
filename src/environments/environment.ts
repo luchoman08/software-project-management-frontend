@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  api_url: 'https://conduit.productionready.io/api'
+  api_taiga_url: 'https://api.taiga.io/api/v1',
+  api_zoho_url: 'https://projectsapi.zoho.com/restapi'
 };

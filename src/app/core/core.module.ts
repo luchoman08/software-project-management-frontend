@@ -5,11 +5,9 @@ import { HttpTokenInterceptor } from './interceptors';
 
 import {
     ApiService,
-    PointsService,
-    ProjectsService,
-    UserStoriesService,
     JwtService,
 } from './services';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   imports: [
@@ -18,11 +16,9 @@ import {
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     ApiService,
-    PointsService,
-    ProjectsService,
-    UserStoriesService,
-    JwtService,
+    JwtService
   ],
-  declarations: []
+  declarations: [CapitalizePipe],
+  exports: [CapitalizePipe]
 })
 export class CoreModule { }

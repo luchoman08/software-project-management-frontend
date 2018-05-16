@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 import 'rxjs/add/operator/filter';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { NavbarComponent } from './page-components/main-components/navbar/navbar.component';
+import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd  } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { LoadingBarService } from '@ngx-loading-bar/core';
 
 declare const $: any;
 
@@ -18,7 +19,10 @@ export class AppComponent implements OnInit {
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
 
-    constructor( public location: Location, private router: Router) {}
+    constructor(
+        public location: Location,
+        private router: Router,
+        public loader: LoadingBarService) {}
 
     ngOnInit() {
         const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
@@ -33,19 +37,21 @@ export class AppComponent implements OnInit {
         const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
         const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 
-        this.location.subscribe((ev:PopStateEvent) => {
+        this.location.subscribe((ev: PopStateEvent) => {
             this.lastPoppedUrl = ev.url;
         });
-         this.router.events.subscribe((event:any) => {
+         this.router.events.subscribe((event: any) => {
             if (event instanceof NavigationStart) {
-               if (event.url != this.lastPoppedUrl)
+               if (event.url !== this.lastPoppedUrl) {
                    this.yScrollStack.push(window.scrollY);
+               }
            } else if (event instanceof NavigationEnd) {
-               if (event.url == this.lastPoppedUrl) {
+               if (event.url === this.lastPoppedUrl) {
                    this.lastPoppedUrl = undefined;
                    window.scrollTo(0, this.yScrollStack.pop());
-               } else
+               } else {
                    window.scrollTo(0, 0);
+               }
            }
         });
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
@@ -57,16 +63,15 @@ export class AppComponent implements OnInit {
             ps = new PerfectScrollbar(elemSidebar);
         }
     }
-    ngAfterViewInit() {
+    AfterViewInit() {
         this.runOnRouteChange();
     }
-    isMaps(path){
-        var titlee = this.location.prepareExternalUrl(this.location.path());
+    isMaps(path) {
+        let titlee = this.location.prepareExternalUrl(this.location.path());
         titlee = titlee.slice( 1 );
-        if(path == titlee){
+        if (path === titlee) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
