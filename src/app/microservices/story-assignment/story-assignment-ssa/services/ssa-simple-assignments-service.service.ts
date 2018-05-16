@@ -6,7 +6,7 @@ import { SSAAsignacionSimpleInput, SSAAsignacionSimpleOutput } from '../models';
 import { map } from 'rxjs/operators/map';
 
 @Injectable()
-export class AsignacionSimpleService {
+export class SSAAsignacionSimpleService {
   constructor (
     private apiService: ApiService
   ) {}

@@ -12,3 +12,8 @@ export function asignacionSimpleInputToSimpleAssingmentInput (
     simpleAssignmentInput.hoursPointRelation = ssaAsignacionSimpleInput.relacion_horas_puntos;
     return simpleAssignmentInput;
 }
+
+export function simpleAssignmentInputToasignacionSimple(
+    simpleAssignmentInput: SimpleAssignmentInput) {
+        const simple
+    }
