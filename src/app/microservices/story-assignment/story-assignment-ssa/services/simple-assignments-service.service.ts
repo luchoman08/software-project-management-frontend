@@ -13,7 +13,7 @@ export class AsignacionSimpleService {
 /*
     Output is given by the form {id_developer: [ids_of_assigned_stories]
 */
-  post(asignacionSimpleInput: SSAAsignacionSimpleInput): Observable<SSAAsignacionSimpleOutput> {
+  generarAsignacionSimple(asignacionSimpleInput: SSAAsignacionSimpleInput): Observable<SSAAsignacionSimpleOutput> {
     return this.apiService.post('/asignacionsimple/', JSON.stringify(asignacionSimpleInput))
       .pipe(map((data: SSAAsignacionSimpleOutput) => data));
   }
