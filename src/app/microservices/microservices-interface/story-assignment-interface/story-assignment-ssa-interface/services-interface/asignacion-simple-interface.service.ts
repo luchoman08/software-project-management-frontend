@@ -9,23 +9,19 @@ import {
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { SSAAsignacionSimpleInput, SSAAsignacionSimpleOutpu } from '../../../../simple-story-assignment-ssa/models/';
-import { TaigaUserStory } from '../../../../../project-managers/taiga/models';
-import { TaigaMembership } from '../../../../../project-managers/taiga/models';
+import { SSAAsignacionSimpleInput, SSAAsignacionSimpleOutput } from '../../../../simple-story-assignment-ssa/models/';
 
 @Injectable()
-export class TaigaMembershipsSimpleServiceInterface {
+export class AsignacionSimpleServiceInterface {
   constructor (
-    private taigaMembershipsService: TaigaMembershipsService
+    private ssaAasignacionSimpleService: SSAAsignacionSimpleService
   ) {}
 
-  get(slug): Observable<SimpleDeveloper> {
-      let simpleDeveloper$: Observable<SimpleDeveloper>;
-      this.taigaMembershipsService.get(slug)
-          .subscribe( (taigaMembership: TaigaMembership) => {
-                    simpleDeveloper$ = Observable.of(taigaMembershipToSimpleDeveloper(taigaMembership));
+  generarAsignacionSimple(simplessignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
+      return  this.ssaAasignacionSimpleService.generarAsignacionSimple(slug)
+           .map( (taigaUserStory: TaigaUserStory) => {
+                    return taigaStoryToSimpleUserStory(taigaUserStory);
             } );
-    return simpleDeveloper$;
 }
 
   getSimpleProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
