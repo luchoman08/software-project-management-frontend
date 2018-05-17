@@ -4,8 +4,10 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { SimpleAssignmentComponent } from './simple-assignment/simple-assignment.component';
+import { SimpleAssignmentDetailReadOnlyComponent } from './simple-assignment/simple-assignment-detail-read-only/simple-assignment-detail-read-only.component';
 const routes: Routes = [
     { path: 'simpleassignment',      component: SimpleAssignmentComponent },
+    { path: 'simpleassignmentro',      component: SimpleAssignmentDetailReadOnlyComponent },
     {
     path: 'userstories',
     loadChildren: './user-story/user-story.module#UserStoryModule'

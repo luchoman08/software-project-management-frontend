@@ -19,6 +19,7 @@ import {
   MatFormFieldModule,
   MatSelectModule,
   MatOption,
+  MatListModule,
   MatFormField
 } from '@angular/material';
 
@@ -54,6 +55,7 @@ import {
 import {
   AssignmentMiroservicesInterfaceService
 } from './microservices/microservices-interface/story-assignment-interface/services/story-assignment-microservices-interface.services';
+import { SimpleAssignmentDetailReadOnlyComponent } from './simple-assignment/simple-assignment-detail-read-only/simple-assignment-detail-read-only.component';
 
 @NgModule({
   imports: [
@@ -77,6 +79,7 @@ import {
     MatProgressBarModule,
     MatRippleModule,
     MatFormFieldModule,
+    MatListModule,
     LoadingBarModule.forRoot(),
     AppRoutingModule,
     CommonComponentsModule,
@@ -90,7 +93,8 @@ import {
   ],
   declarations: [
     AppComponent,
-    SimpleAssignmentComponent
+    SimpleAssignmentComponent,
+    SimpleAssignmentDetailReadOnlyComponent
   ],
   providers: [
     SimpleUserStoriesService,

@@ -83,7 +83,7 @@ export class SimpleAssignmentComponent implements OnInit {
     this.simpleAssignmentService.generateSimpleAssignment(this.simpleAssignmentInput)
     .subscribe(
       (simpleAssignmentOutput: SimpleAssignmentOutput) => {
-        console.log(simpleAssignmentOutput); 
+        console.log(JSON.stringify(simpleAssignmentOutput)); 
       },
       err => {
         this.errors = err;
