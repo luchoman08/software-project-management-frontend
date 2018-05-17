@@ -1,4 +1,4 @@
-import { ProjectInterface } from '../generics';
+import { ProjectInterface } from '../';
 import { SimpleDeveloper, SimpleUserStory, SimpleSprint} from './';
 export class SimpleProject implements ProjectInterface {
     id: string;

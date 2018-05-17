@@ -4,7 +4,8 @@ import { SimpleAssignmentInput, SimpleAssignmentOutput } from '../../../../../co
 
 import {
     asignacionSimpleInputToSimpleAssingmentInput,
-    ssaAsignacionSimpleOutputToSimpleAssignmentOutput
+    ssaAsignacionSimpleOutputToSimpleAssignmentOutput,
+    simpleAssignmentInputToasignacionSimple
  } from '../../../../microservices-interface/story-assignment-interface/story-assignment-ssa-interface/models-interface';
 
 import 'rxjs/add/observable/of';
@@ -18,8 +19,9 @@ export class AsignacionSimpleInterfaceService {
     private ssaAasignacionSimpleService: SSAAsignacionSimpleService 
   ) {}
 
-  generarAsignacionSimple(simplessignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
-    const ssaAsignacionSimpleInput: SSAAsignacionSimpleInput = new SSAAsignacionSimpleInput();
+  generarAsignacionSimple(simpleAssignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
+    var ssaAsignacionSimpleInput: SSAAsignacionSimpleInput = new SSAAsignacionSimpleInput();
+    ssaAsignacionSimpleInput = simpleAssignmentInputToasignacionSimple(simpleAssignmentInput);
       return  this.ssaAasignacionSimpleService.generarAsignacionSimple(ssaAsignacionSimpleInput)
            .map( (ssaAsignacionSimpleOutput: SSAAsignacionSimpleOutput) => {
                     return ssaAsignacionSimpleOutputToSimpleAssignmentOutput(ssaAsignacionSimpleOutput);

@@ -5,7 +5,7 @@ import { SimpleProject, SimpleSprint, SimpleDeveloper, SimpleAssignmentInput, Si
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { SimpleAssignmentService } from '../microservices/microservices-interface/story-assignment-interface/services';
-
+import { Errors } from '../core/models';
 import {
   SimpleProjectsService,
   SimpleDevelopersService,
@@ -25,6 +25,7 @@ export class SimpleAssignmentComponent implements OnInit {
   simpleSprints: SimpleSprint[];
   simpleDevelopers: SimpleDeveloper[];
   step = 0;
+  errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
   firstFormGroup: FormGroup;
@@ -78,10 +79,15 @@ export class SimpleAssignmentComponent implements OnInit {
     this.simpleAssignmentInput.hoursPointRelation = 1;
     this.simpleAssignmentInput.simpleDevelopers = this.simpleDevelopers;
     this.simpleAssignmentInput.simpleUserStories = this.selectedSimpleSprint.user_stories;
+    console.log(JSON.stringify(this.simpleAssignmentInput));
     this.simpleAssignmentService.generateSimpleAssignment(this.simpleAssignmentInput)
     .subscribe(
       (simpleAssignmentOutput: SimpleAssignmentOutput) => {
-        console.log(simpleAssignmentOutput);
+        console.log(simpleAssignmentOutput); 
+      },
+      err => {
+        this.errors = err;
+        console.log(this.errors);
       }
     );
   }
