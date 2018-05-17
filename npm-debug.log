@@ -1,0 +1,1663 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Users\\Multimedia\\Downloads\\NodeJSPortable\\App\\NodeJS\\node.exe',
+1 verbose cli   'C:\\Users\\Multimedia\\Downloads\\NodeJSPortable\\Data\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.5.3
+3 info using node@v5.7.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData @agm/core
+20 silly mapToRegistry name @agm/core
+21 silly mapToRegistry scope (from package name) @agm
+22 verbose mapToRegistry no registry URL found in name for scope @agm
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/@agm%2fcore
+26 silly fetchNamedPackageData @angular/animations
+27 silly mapToRegistry name @angular/animations
+28 silly mapToRegistry scope (from package name) @angular
+29 verbose mapToRegistry no registry URL found in name for scope @angular
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fanimations
+33 silly fetchNamedPackageData @angular/cdk
+34 silly mapToRegistry name @angular/cdk
+35 silly mapToRegistry scope (from package name) @angular
+36 verbose mapToRegistry no registry URL found in name for scope @angular
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcdk
+40 silly fetchNamedPackageData @angular/common
+41 silly mapToRegistry name @angular/common
+42 silly mapToRegistry scope (from package name) @angular
+43 verbose mapToRegistry no registry URL found in name for scope @angular
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcommon
+47 silly fetchNamedPackageData @angular/compiler
+48 silly mapToRegistry name @angular/compiler
+49 silly mapToRegistry scope (from package name) @angular
+50 verbose mapToRegistry no registry URL found in name for scope @angular
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcompiler
+54 silly fetchNamedPackageData @angular/core
+55 silly mapToRegistry name @angular/core
+56 silly mapToRegistry scope (from package name) @angular
+57 verbose mapToRegistry no registry URL found in name for scope @angular
+58 silly mapToRegistry using default registry
+59 silly mapToRegistry registry https://registry.npmjs.org/
+60 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcore
+61 silly fetchNamedPackageData @angular/forms
+62 silly mapToRegistry name @angular/forms
+63 silly mapToRegistry scope (from package name) @angular
+64 verbose mapToRegistry no registry URL found in name for scope @angular
+65 silly mapToRegistry using default registry
+66 silly mapToRegistry registry https://registry.npmjs.org/
+67 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fforms
+68 silly fetchNamedPackageData @angular/http
+69 silly mapToRegistry name @angular/http
+70 silly mapToRegistry scope (from package name) @angular
+71 verbose mapToRegistry no registry URL found in name for scope @angular
+72 silly mapToRegistry using default registry
+73 silly mapToRegistry registry https://registry.npmjs.org/
+74 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fhttp
+75 silly fetchNamedPackageData @angular/material
+76 silly mapToRegistry name @angular/material
+77 silly mapToRegistry scope (from package name) @angular
+78 verbose mapToRegistry no registry URL found in name for scope @angular
+79 silly mapToRegistry using default registry
+80 silly mapToRegistry registry https://registry.npmjs.org/
+81 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fmaterial
+82 silly fetchNamedPackageData @angular/platform-browser
+83 silly mapToRegistry name @angular/platform-browser
+84 silly mapToRegistry scope (from package name) @angular
+85 verbose mapToRegistry no registry URL found in name for scope @angular
+86 silly mapToRegistry using default registry
+87 silly mapToRegistry registry https://registry.npmjs.org/
+88 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser
+89 silly fetchNamedPackageData @angular/platform-browser-dynamic
+90 silly mapToRegistry name @angular/platform-browser-dynamic
+91 silly mapToRegistry scope (from package name) @angular
+92 verbose mapToRegistry no registry URL found in name for scope @angular
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+96 silly fetchNamedPackageData @angular/platform-server
+97 silly mapToRegistry name @angular/platform-server
+98 silly mapToRegistry scope (from package name) @angular
+99 verbose mapToRegistry no registry URL found in name for scope @angular
+100 silly mapToRegistry using default registry
+101 silly mapToRegistry registry https://registry.npmjs.org/
+102 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-server
+103 silly fetchNamedPackageData @angular/router
+104 silly mapToRegistry name @angular/router
+105 silly mapToRegistry scope (from package name) @angular
+106 verbose mapToRegistry no registry URL found in name for scope @angular
+107 silly mapToRegistry using default registry
+108 silly mapToRegistry registry https://registry.npmjs.org/
+109 silly mapToRegistry uri https://registry.npmjs.org/@angular%2frouter
+110 silly fetchNamedPackageData @ngx-loading-bar/core
+111 silly mapToRegistry name @ngx-loading-bar/core
+112 silly mapToRegistry scope (from package name) @ngx-loading-bar
+113 verbose mapToRegistry no registry URL found in name for scope @ngx-loading-bar
+114 silly mapToRegistry using default registry
+115 silly mapToRegistry registry https://registry.npmjs.org/
+116 silly mapToRegistry uri https://registry.npmjs.org/@ngx-loading-bar%2fcore
+117 silly fetchNamedPackageData bootstrap
+118 silly mapToRegistry name bootstrap
+119 silly mapToRegistry using default registry
+120 silly mapToRegistry registry https://registry.npmjs.org/
+121 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+122 silly fetchNamedPackageData bootstrap-material-design
+123 silly mapToRegistry name bootstrap-material-design
+124 silly mapToRegistry using default registry
+125 silly mapToRegistry registry https://registry.npmjs.org/
+126 silly mapToRegistry uri https://registry.npmjs.org/bootstrap-material-design
+127 silly fetchNamedPackageData bootstrap-notify
+128 silly mapToRegistry name bootstrap-notify
+129 silly mapToRegistry using default registry
+130 silly mapToRegistry registry https://registry.npmjs.org/
+131 silly mapToRegistry uri https://registry.npmjs.org/bootstrap-notify
+132 silly fetchNamedPackageData classlist.js
+133 silly mapToRegistry name classlist.js
+134 silly mapToRegistry using default registry
+135 silly mapToRegistry registry https://registry.npmjs.org/
+136 silly mapToRegistry uri https://registry.npmjs.org/classlist.js
+137 silly fetchNamedPackageData core-js
+138 silly mapToRegistry name core-js
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry uri https://registry.npmjs.org/core-js
+142 silly fetchNamedPackageData hammerjs
+143 silly mapToRegistry name hammerjs
+144 silly mapToRegistry using default registry
+145 silly mapToRegistry registry https://registry.npmjs.org/
+146 silly mapToRegistry uri https://registry.npmjs.org/hammerjs
+147 silly fetchNamedPackageData jquery
+148 silly mapToRegistry name jquery
+149 silly mapToRegistry using default registry
+150 silly mapToRegistry registry https://registry.npmjs.org/
+151 silly mapToRegistry uri https://registry.npmjs.org/jquery
+152 silly fetchNamedPackageData perfect-scrollbar
+153 silly mapToRegistry name perfect-scrollbar
+154 silly mapToRegistry using default registry
+155 silly mapToRegistry registry https://registry.npmjs.org/
+156 silly mapToRegistry uri https://registry.npmjs.org/perfect-scrollbar
+157 silly fetchNamedPackageData popper.ng
+158 silly mapToRegistry name popper.ng
+159 silly mapToRegistry using default registry
+160 silly mapToRegistry registry https://registry.npmjs.org/
+161 silly mapToRegistry uri https://registry.npmjs.org/popper.ng
+162 silly fetchNamedPackageData rxjs
+163 silly mapToRegistry name rxjs
+164 silly mapToRegistry using default registry
+165 silly mapToRegistry registry https://registry.npmjs.org/
+166 silly mapToRegistry uri https://registry.npmjs.org/rxjs
+167 silly fetchNamedPackageData web-animations-js
+168 silly mapToRegistry name web-animations-js
+169 silly mapToRegistry using default registry
+170 silly mapToRegistry registry https://registry.npmjs.org/
+171 silly mapToRegistry uri https://registry.npmjs.org/web-animations-js
+172 silly fetchNamedPackageData zone.js
+173 silly mapToRegistry name zone.js
+174 silly mapToRegistry using default registry
+175 silly mapToRegistry registry https://registry.npmjs.org/
+176 silly mapToRegistry uri https://registry.npmjs.org/zone.js
+177 verbose request uri https://registry.npmjs.org/popper.ng
+178 verbose request no auth needed
+179 info attempt registry request try #1 at 12:16:52
+180 verbose request id 49ffc1755dcb36f7
+181 http request GET https://registry.npmjs.org/popper.ng
+182 verbose request uri https://registry.npmjs.org/@agm%2fcore
+183 verbose request no auth needed
+184 info attempt registry request try #1 at 12:16:52
+185 verbose etag W/"59f8b63a-15d4"
+186 verbose lastModified Tue, 31 Oct 2017 17:43:22 GMT
+187 http request GET https://registry.npmjs.org/@agm%2fcore
+188 verbose request uri https://registry.npmjs.org/@angular%2fcdk
+189 verbose request no auth needed
+190 info attempt registry request try #1 at 12:16:52
+191 verbose etag W/"5afa0ff0-1431c"
+192 verbose lastModified Mon, 14 May 2018 22:38:40 GMT
+193 http request GET https://registry.npmjs.org/@angular%2fcdk
+194 verbose request uri https://registry.npmjs.org/@angular%2fanimations
+195 verbose request no auth needed
+196 info attempt registry request try #1 at 12:16:52
+197 verbose etag W/"5afb38f7-28354"
+198 verbose lastModified Tue, 15 May 2018 19:45:59 GMT
+199 http request GET https://registry.npmjs.org/@angular%2fanimations
+200 verbose request uri https://registry.npmjs.org/@angular%2fcommon
+201 verbose request no auth needed
+202 info attempt registry request try #1 at 12:16:52
+203 verbose etag W/"5afb38e9-37132"
+204 verbose lastModified Tue, 15 May 2018 19:45:45 GMT
+205 http request GET https://registry.npmjs.org/@angular%2fcommon
+206 verbose request uri https://registry.npmjs.org/@angular%2fcompiler
+207 verbose request no auth needed
+208 info attempt registry request try #1 at 12:16:52
+209 verbose etag W/"5afb38df-36684"
+210 verbose lastModified Tue, 15 May 2018 19:45:35 GMT
+211 http request GET https://registry.npmjs.org/@angular%2fcompiler
+212 verbose request uri https://registry.npmjs.org/@angular%2fcore
+213 verbose request no auth needed
+214 info attempt registry request try #1 at 12:16:52
+215 verbose etag W/"5afb38cd-35fc1"
+216 verbose lastModified Tue, 15 May 2018 19:45:17 GMT
+217 http request GET https://registry.npmjs.org/@angular%2fcore
+218 verbose request uri https://registry.npmjs.org/@angular%2fforms
+219 verbose request no auth needed
+220 info attempt registry request try #1 at 12:16:52
+221 verbose etag W/"5afb38b8-36ea4"
+222 verbose lastModified Tue, 15 May 2018 19:44:56 GMT
+223 http request GET https://registry.npmjs.org/@angular%2fforms
+224 verbose request uri https://registry.npmjs.org/@angular%2fhttp
+225 verbose request no auth needed
+226 info attempt registry request try #1 at 12:16:52
+227 verbose etag W/"5afb38b2-3755f"
+228 verbose lastModified Tue, 15 May 2018 19:44:50 GMT
+229 http request GET https://registry.npmjs.org/@angular%2fhttp
+230 verbose request uri https://registry.npmjs.org/@angular%2fmaterial
+231 verbose request no auth needed
+232 info attempt registry request try #1 at 12:16:52
+233 verbose etag W/"5afa0ff8-1ddf1"
+234 verbose lastModified Mon, 14 May 2018 22:38:48 GMT
+235 http request GET https://registry.npmjs.org/@angular%2fmaterial
+236 verbose request uri https://registry.npmjs.org/@angular%2fplatform-browser
+237 verbose request no auth needed
+238 info attempt registry request try #1 at 12:16:52
+239 verbose etag W/"5afb389e-3c3ad"
+240 verbose lastModified Tue, 15 May 2018 19:44:30 GMT
+241 http request GET https://registry.npmjs.org/@angular%2fplatform-browser
+242 verbose request uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+243 verbose request no auth needed
+244 info attempt registry request try #1 at 12:16:52
+245 verbose etag W/"5afb3896-4310c"
+246 verbose lastModified Tue, 15 May 2018 19:44:22 GMT
+247 http request GET https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+248 verbose request uri https://registry.npmjs.org/@angular%2fplatform-server
+249 verbose request no auth needed
+250 info attempt registry request try #1 at 12:16:52
+251 verbose etag W/"5afb388f-417a5"
+252 verbose lastModified Tue, 15 May 2018 19:44:15 GMT
+253 http request GET https://registry.npmjs.org/@angular%2fplatform-server
+254 verbose request uri https://registry.npmjs.org/@angular%2frouter
+255 verbose request no auth needed
+256 info attempt registry request try #1 at 12:16:52
+257 verbose etag W/"5afb3878-42d45"
+258 verbose lastModified Tue, 15 May 2018 19:43:52 GMT
+259 http request GET https://registry.npmjs.org/@angular%2frouter
+260 verbose request uri https://registry.npmjs.org/@ngx-loading-bar%2fcore
+261 verbose request no auth needed
+262 info attempt registry request try #1 at 12:16:52
+263 verbose etag W/"5aef34c7-cfd2"
+264 verbose lastModified Sun, 6 May 2018 17:00:55 GMT
+265 http request GET https://registry.npmjs.org/@ngx-loading-bar%2fcore
+266 verbose request uri https://registry.npmjs.org/bootstrap
+267 verbose request no auth needed
+268 info attempt registry request try #1 at 12:16:52
+269 verbose etag "5ae73f3c-1c24a"
+270 verbose lastModified Mon, 30 Apr 2018 16:07:24 GMT
+271 http request GET https://registry.npmjs.org/bootstrap
+272 verbose request uri https://registry.npmjs.org/bootstrap-notify
+273 verbose request no auth needed
+274 info attempt registry request try #1 at 12:16:52
+275 verbose etag "591b32ce-264c"
+276 verbose lastModified Tue, 16 May 2017 17:11:42 GMT
+277 http request GET https://registry.npmjs.org/bootstrap-notify
+278 verbose request uri https://registry.npmjs.org/bootstrap-material-design
+279 verbose request no auth needed
+280 info attempt registry request try #1 at 12:16:52
+281 verbose etag "5aa2fd0d-8e9e"
+282 verbose lastModified Fri, 9 Mar 2018 21:30:53 GMT
+283 http request GET https://registry.npmjs.org/bootstrap-material-design
+284 verbose request uri https://registry.npmjs.org/classlist.js
+285 verbose request no auth needed
+286 info attempt registry request try #1 at 12:16:52
+287 verbose etag "59fda1d6-a7e"
+288 verbose lastModified Sat, 4 Nov 2017 11:17:42 GMT
+289 http request GET https://registry.npmjs.org/classlist.js
+290 verbose request uri https://registry.npmjs.org/hammerjs
+291 verbose request no auth needed
+292 info attempt registry request try #1 at 12:16:52
+293 verbose etag "5a790b4b-8987"
+294 verbose lastModified Tue, 6 Feb 2018 1:56:27 GMT
+295 http request GET https://registry.npmjs.org/hammerjs
+296 verbose request uri https://registry.npmjs.org/core-js
+297 verbose request no auth needed
+298 info attempt registry request try #1 at 12:16:52
+299 verbose etag "5af05b67-405e2"
+300 verbose lastModified Mon, 7 May 2018 13:57:59 GMT
+301 http request GET https://registry.npmjs.org/core-js
+302 verbose request uri https://registry.npmjs.org/jquery
+303 verbose request no auth needed
+304 info attempt registry request try #1 at 12:16:52
+305 verbose etag "5aac9424-17db2"
+306 verbose lastModified Sat, 17 Mar 2018 4:05:56 GMT
+307 http request GET https://registry.npmjs.org/jquery
+308 verbose request uri https://registry.npmjs.org/perfect-scrollbar
+309 verbose request no auth needed
+310 info attempt registry request try #1 at 12:16:52
+311 verbose etag "5a900d91-1073b"
+312 verbose lastModified Fri, 23 Feb 2018 12:48:17 GMT
+313 http request GET https://registry.npmjs.org/perfect-scrollbar
+314 verbose request uri https://registry.npmjs.org/web-animations-js
+315 verbose request no auth needed
+316 info attempt registry request try #1 at 12:16:52
+317 verbose etag "5970679c-5b18"
+318 verbose lastModified Thu, 20 Jul 2017 8:19:40 GMT
+319 http request GET https://registry.npmjs.org/web-animations-js
+320 verbose request uri https://registry.npmjs.org/rxjs
+321 verbose request no auth needed
+322 info attempt registry request try #1 at 12:16:52
+323 verbose etag "5aeb51e1-8779f"
+324 verbose lastModified Thu, 3 May 2018 18:16:01 GMT
+325 http request GET https://registry.npmjs.org/rxjs
+326 verbose request uri https://registry.npmjs.org/zone.js
+327 verbose request no auth needed
+328 info attempt registry request try #1 at 12:16:52
+329 verbose etag "5ac9ae67-35498"
+330 verbose lastModified Sun, 8 Apr 2018 5:53:43 GMT
+331 http request GET https://registry.npmjs.org/zone.js
+332 http 304 https://registry.npmjs.org/bootstrap
+333 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+333 verbose headers   via: '1.1 varnish',
+333 verbose headers   'cache-control': 'max-age=300',
+333 verbose headers   etag: '"5ae73f3c-1c24a"',
+333 verbose headers   age: '13039',
+333 verbose headers   connection: 'keep-alive',
+333 verbose headers   'x-served-by': 'cache-mia17630-MIA',
+333 verbose headers   'x-cache': 'HIT',
+333 verbose headers   'x-cache-hits': '20',
+333 verbose headers   'x-timer': 'S1526491648.919912,VS0,VE0',
+333 verbose headers   vary: 'Accept-Encoding, Accept' }
+334 silly get cb [ 304,
+334 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+334 silly get     via: '1.1 varnish',
+334 silly get     'cache-control': 'max-age=300',
+334 silly get     etag: '"5ae73f3c-1c24a"',
+334 silly get     age: '13039',
+334 silly get     connection: 'keep-alive',
+334 silly get     'x-served-by': 'cache-mia17630-MIA',
+334 silly get     'x-cache': 'HIT',
+334 silly get     'x-cache-hits': '20',
+334 silly get     'x-timer': 'S1526491648.919912,VS0,VE0',
+334 silly get     vary: 'Accept-Encoding, Accept' } ]
+335 verbose etag https://registry.npmjs.org/bootstrap from cache
+336 verbose get saving bootstrap to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\bootstrap\.cache.json
+337 http 304 https://registry.npmjs.org/bootstrap-material-design
+338 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+338 verbose headers   via: '1.1 varnish',
+338 verbose headers   'cache-control': 'max-age=300',
+338 verbose headers   etag: '"5aa2fd0d-8e9e"',
+338 verbose headers   age: '174',
+338 verbose headers   connection: 'keep-alive',
+338 verbose headers   'x-served-by': 'cache-mia17627-MIA',
+338 verbose headers   'x-cache': 'HIT',
+338 verbose headers   'x-cache-hits': '1',
+338 verbose headers   'x-timer': 'S1526491648.917824,VS0,VE0',
+338 verbose headers   vary: 'Accept-Encoding, Accept' }
+339 silly get cb [ 304,
+339 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+339 silly get     via: '1.1 varnish',
+339 silly get     'cache-control': 'max-age=300',
+339 silly get     etag: '"5aa2fd0d-8e9e"',
+339 silly get     age: '174',
+339 silly get     connection: 'keep-alive',
+339 silly get     'x-served-by': 'cache-mia17627-MIA',
+339 silly get     'x-cache': 'HIT',
+339 silly get     'x-cache-hits': '1',
+339 silly get     'x-timer': 'S1526491648.917824,VS0,VE0',
+339 silly get     vary: 'Accept-Encoding, Accept' } ]
+340 verbose etag https://registry.npmjs.org/bootstrap-material-design from cache
+341 verbose get saving bootstrap-material-design to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\bootstrap-material-design\.cache.json
+342 http 304 https://registry.npmjs.org/hammerjs
+343 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+343 verbose headers   via: '1.1 varnish',
+343 verbose headers   'cache-control': 'max-age=300',
+343 verbose headers   etag: '"5a790b4b-8987"',
+343 verbose headers   age: '306',
+343 verbose headers   connection: 'keep-alive',
+343 verbose headers   'x-served-by': 'cache-mia17623-MIA',
+343 verbose headers   'x-cache': 'HIT',
+343 verbose headers   'x-cache-hits': '2',
+343 verbose headers   'x-timer': 'S1526491648.922199,VS0,VE0',
+343 verbose headers   vary: 'Accept-Encoding, Accept' }
+344 silly get cb [ 304,
+344 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+344 silly get     via: '1.1 varnish',
+344 silly get     'cache-control': 'max-age=300',
+344 silly get     etag: '"5a790b4b-8987"',
+344 silly get     age: '306',
+344 silly get     connection: 'keep-alive',
+344 silly get     'x-served-by': 'cache-mia17623-MIA',
+344 silly get     'x-cache': 'HIT',
+344 silly get     'x-cache-hits': '2',
+344 silly get     'x-timer': 'S1526491648.922199,VS0,VE0',
+344 silly get     vary: 'Accept-Encoding, Accept' } ]
+345 verbose etag https://registry.npmjs.org/hammerjs from cache
+346 verbose get saving hammerjs to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\hammerjs\.cache.json
+347 http 304 https://registry.npmjs.org/jquery
+348 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+348 verbose headers   via: '1.1 varnish',
+348 verbose headers   'cache-control': 'max-age=300',
+348 verbose headers   etag: '"5aac9424-17db2"',
+348 verbose headers   age: '3618',
+348 verbose headers   connection: 'keep-alive',
+348 verbose headers   'x-served-by': 'cache-mia17631-MIA',
+348 verbose headers   'x-cache': 'HIT',
+348 verbose headers   'x-cache-hits': '12',
+348 verbose headers   'x-timer': 'S1526491648.927527,VS0,VE0',
+348 verbose headers   vary: 'Accept-Encoding, Accept' }
+349 silly get cb [ 304,
+349 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+349 silly get     via: '1.1 varnish',
+349 silly get     'cache-control': 'max-age=300',
+349 silly get     etag: '"5aac9424-17db2"',
+349 silly get     age: '3618',
+349 silly get     connection: 'keep-alive',
+349 silly get     'x-served-by': 'cache-mia17631-MIA',
+349 silly get     'x-cache': 'HIT',
+349 silly get     'x-cache-hits': '12',
+349 silly get     'x-timer': 'S1526491648.927527,VS0,VE0',
+349 silly get     vary: 'Accept-Encoding, Accept' } ]
+350 verbose etag https://registry.npmjs.org/jquery from cache
+351 verbose get saving jquery to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\jquery\.cache.json
+352 http 304 https://registry.npmjs.org/classlist.js
+353 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+353 verbose headers   via: '1.1 varnish',
+353 verbose headers   'cache-control': 'max-age=300',
+353 verbose headers   etag: '"59fda1d6-a7e"',
+353 verbose headers   age: '13835',
+353 verbose headers   connection: 'keep-alive',
+353 verbose headers   'x-served-by': 'cache-mia17635-MIA',
+353 verbose headers   'x-cache': 'HIT',
+353 verbose headers   'x-cache-hits': '1',
+353 verbose headers   'x-timer': 'S1526491648.930404,VS0,VE0',
+353 verbose headers   vary: 'Accept-Encoding, Accept' }
+354 silly get cb [ 304,
+354 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+354 silly get     via: '1.1 varnish',
+354 silly get     'cache-control': 'max-age=300',
+354 silly get     etag: '"59fda1d6-a7e"',
+354 silly get     age: '13835',
+354 silly get     connection: 'keep-alive',
+354 silly get     'x-served-by': 'cache-mia17635-MIA',
+354 silly get     'x-cache': 'HIT',
+354 silly get     'x-cache-hits': '1',
+354 silly get     'x-timer': 'S1526491648.930404,VS0,VE0',
+354 silly get     vary: 'Accept-Encoding, Accept' } ]
+355 verbose etag https://registry.npmjs.org/classlist.js from cache
+356 verbose get saving classlist.js to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\classlist.js\.cache.json
+357 http 304 https://registry.npmjs.org/bootstrap-notify
+358 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+358 verbose headers   via: '1.1 varnish',
+358 verbose headers   'cache-control': 'max-age=300',
+358 verbose headers   etag: '"591b32ce-264c"',
+358 verbose headers   age: '9586',
+358 verbose headers   connection: 'keep-alive',
+358 verbose headers   'x-served-by': 'cache-mia17621-MIA',
+358 verbose headers   'x-cache': 'HIT',
+358 verbose headers   'x-cache-hits': '1',
+358 verbose headers   'x-timer': 'S1526491648.938030,VS0,VE1',
+358 verbose headers   vary: 'Accept-Encoding, Accept' }
+359 silly get cb [ 304,
+359 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+359 silly get     via: '1.1 varnish',
+359 silly get     'cache-control': 'max-age=300',
+359 silly get     etag: '"591b32ce-264c"',
+359 silly get     age: '9586',
+359 silly get     connection: 'keep-alive',
+359 silly get     'x-served-by': 'cache-mia17621-MIA',
+359 silly get     'x-cache': 'HIT',
+359 silly get     'x-cache-hits': '1',
+359 silly get     'x-timer': 'S1526491648.938030,VS0,VE1',
+359 silly get     vary: 'Accept-Encoding, Accept' } ]
+360 verbose etag https://registry.npmjs.org/bootstrap-notify from cache
+361 verbose get saving bootstrap-notify to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\bootstrap-notify\.cache.json
+362 http 304 https://registry.npmjs.org/web-animations-js
+363 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+363 verbose headers   via: '1.1 varnish',
+363 verbose headers   'cache-control': 'max-age=300',
+363 verbose headers   etag: '"5970679c-5b18"',
+363 verbose headers   age: '5264',
+363 verbose headers   connection: 'keep-alive',
+363 verbose headers   'x-served-by': 'cache-mia17635-MIA',
+363 verbose headers   'x-cache': 'HIT',
+363 verbose headers   'x-cache-hits': '1',
+363 verbose headers   'x-timer': 'S1526491648.934879,VS0,VE1',
+363 verbose headers   vary: 'Accept-Encoding, Accept' }
+364 silly get cb [ 304,
+364 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+364 silly get     via: '1.1 varnish',
+364 silly get     'cache-control': 'max-age=300',
+364 silly get     etag: '"5970679c-5b18"',
+364 silly get     age: '5264',
+364 silly get     connection: 'keep-alive',
+364 silly get     'x-served-by': 'cache-mia17635-MIA',
+364 silly get     'x-cache': 'HIT',
+364 silly get     'x-cache-hits': '1',
+364 silly get     'x-timer': 'S1526491648.934879,VS0,VE1',
+364 silly get     vary: 'Accept-Encoding, Accept' } ]
+365 verbose etag https://registry.npmjs.org/web-animations-js from cache
+366 verbose get saving web-animations-js to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\web-animations-js\.cache.json
+367 http 304 https://registry.npmjs.org/core-js
+368 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+368 verbose headers   via: '1.1 varnish',
+368 verbose headers   'cache-control': 'max-age=300',
+368 verbose headers   etag: '"5af05b67-405e2"',
+368 verbose headers   age: '9230',
+368 verbose headers   connection: 'keep-alive',
+368 verbose headers   'x-served-by': 'cache-mia17623-MIA',
+368 verbose headers   'x-cache': 'HIT',
+368 verbose headers   'x-cache-hits': '47',
+368 verbose headers   'x-timer': 'S1526491648.937794,VS0,VE0',
+368 verbose headers   vary: 'Accept-Encoding, Accept' }
+369 silly get cb [ 304,
+369 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+369 silly get     via: '1.1 varnish',
+369 silly get     'cache-control': 'max-age=300',
+369 silly get     etag: '"5af05b67-405e2"',
+369 silly get     age: '9230',
+369 silly get     connection: 'keep-alive',
+369 silly get     'x-served-by': 'cache-mia17623-MIA',
+369 silly get     'x-cache': 'HIT',
+369 silly get     'x-cache-hits': '47',
+369 silly get     'x-timer': 'S1526491648.937794,VS0,VE0',
+369 silly get     vary: 'Accept-Encoding, Accept' } ]
+370 verbose etag https://registry.npmjs.org/core-js from cache
+371 verbose get saving core-js to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\core-js\.cache.json
+372 http 304 https://registry.npmjs.org/zone.js
+373 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+373 verbose headers   via: '1.1 varnish',
+373 verbose headers   'cache-control': 'max-age=300',
+373 verbose headers   etag: '"5ac9ae67-35498"',
+373 verbose headers   age: '10804',
+373 verbose headers   connection: 'keep-alive',
+373 verbose headers   'x-served-by': 'cache-mia17634-MIA',
+373 verbose headers   'x-cache': 'HIT',
+373 verbose headers   'x-cache-hits': '21',
+373 verbose headers   'x-timer': 'S1526491648.942497,VS0,VE0',
+373 verbose headers   vary: 'Accept-Encoding, Accept' }
+374 silly get cb [ 304,
+374 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+374 silly get     via: '1.1 varnish',
+374 silly get     'cache-control': 'max-age=300',
+374 silly get     etag: '"5ac9ae67-35498"',
+374 silly get     age: '10804',
+374 silly get     connection: 'keep-alive',
+374 silly get     'x-served-by': 'cache-mia17634-MIA',
+374 silly get     'x-cache': 'HIT',
+374 silly get     'x-cache-hits': '21',
+374 silly get     'x-timer': 'S1526491648.942497,VS0,VE0',
+374 silly get     vary: 'Accept-Encoding, Accept' } ]
+375 verbose etag https://registry.npmjs.org/zone.js from cache
+376 verbose get saving zone.js to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\zone.js\.cache.json
+377 http 304 https://registry.npmjs.org/rxjs
+378 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+378 verbose headers   via: '1.1 varnish',
+378 verbose headers   'cache-control': 'max-age=300',
+378 verbose headers   etag: '"5aeb51e1-8779f"',
+378 verbose headers   age: '10807',
+378 verbose headers   connection: 'keep-alive',
+378 verbose headers   'x-served-by': 'cache-mia17627-MIA',
+378 verbose headers   'x-cache': 'HIT',
+378 verbose headers   'x-cache-hits': '37',
+378 verbose headers   'x-timer': 'S1526491648.947563,VS0,VE0',
+378 verbose headers   vary: 'Accept-Encoding, Accept' }
+379 silly get cb [ 304,
+379 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+379 silly get     via: '1.1 varnish',
+379 silly get     'cache-control': 'max-age=300',
+379 silly get     etag: '"5aeb51e1-8779f"',
+379 silly get     age: '10807',
+379 silly get     connection: 'keep-alive',
+379 silly get     'x-served-by': 'cache-mia17627-MIA',
+379 silly get     'x-cache': 'HIT',
+379 silly get     'x-cache-hits': '37',
+379 silly get     'x-timer': 'S1526491648.947563,VS0,VE0',
+379 silly get     vary: 'Accept-Encoding, Accept' } ]
+380 verbose etag https://registry.npmjs.org/rxjs from cache
+381 verbose get saving rxjs to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\rxjs\.cache.json
+382 http 304 https://registry.npmjs.org/perfect-scrollbar
+383 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+383 verbose headers   via: '1.1 varnish',
+383 verbose headers   'cache-control': 'max-age=300',
+383 verbose headers   etag: '"5a900d91-1073b"',
+383 verbose headers   age: '9961',
+383 verbose headers   connection: 'keep-alive',
+383 verbose headers   'x-served-by': 'cache-mia17632-MIA',
+383 verbose headers   'x-cache': 'HIT',
+383 verbose headers   'x-cache-hits': '1',
+383 verbose headers   'x-timer': 'S1526491648.948185,VS0,VE1',
+383 verbose headers   vary: 'Accept-Encoding, Accept' }
+384 silly get cb [ 304,
+384 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+384 silly get     via: '1.1 varnish',
+384 silly get     'cache-control': 'max-age=300',
+384 silly get     etag: '"5a900d91-1073b"',
+384 silly get     age: '9961',
+384 silly get     connection: 'keep-alive',
+384 silly get     'x-served-by': 'cache-mia17632-MIA',
+384 silly get     'x-cache': 'HIT',
+384 silly get     'x-cache-hits': '1',
+384 silly get     'x-timer': 'S1526491648.948185,VS0,VE1',
+384 silly get     vary: 'Accept-Encoding, Accept' } ]
+385 verbose etag https://registry.npmjs.org/perfect-scrollbar from cache
+386 verbose get saving perfect-scrollbar to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\perfect-scrollbar\.cache.json
+387 silly resolveWithNewModule bootstrap@4.1.0 checking installable status
+388 silly cache add args [ 'bootstrap@4.1.0', null ]
+389 verbose cache add spec bootstrap@4.1.0
+390 silly cache add parsed spec Result {
+390 silly cache add   raw: 'bootstrap@4.1.0',
+390 silly cache add   scope: null,
+390 silly cache add   name: 'bootstrap',
+390 silly cache add   rawSpec: '4.1.0',
+390 silly cache add   spec: '4.1.0',
+390 silly cache add   type: 'version' }
+391 silly addNamed bootstrap@4.1.0
+392 verbose addNamed "4.1.0" is a plain semver version for bootstrap
+393 silly mapToRegistry name bootstrap
+394 silly mapToRegistry using default registry
+395 silly mapToRegistry registry https://registry.npmjs.org/
+396 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+397 verbose addNameVersion registry:https://registry.npmjs.org/bootstrap not in flight; fetching
+398 silly resolveWithNewModule bootstrap-material-design@4.1.1 checking installable status
+399 silly cache add args [ 'bootstrap-material-design@4.1.1', null ]
+400 verbose cache add spec bootstrap-material-design@4.1.1
+401 silly cache add parsed spec Result {
+401 silly cache add   raw: 'bootstrap-material-design@4.1.1',
+401 silly cache add   scope: null,
+401 silly cache add   name: 'bootstrap-material-design',
+401 silly cache add   rawSpec: '4.1.1',
+401 silly cache add   spec: '4.1.1',
+401 silly cache add   type: 'version' }
+402 silly addNamed bootstrap-material-design@4.1.1
+403 verbose addNamed "4.1.1" is a plain semver version for bootstrap-material-design
+404 silly mapToRegistry name bootstrap-material-design
+405 silly mapToRegistry using default registry
+406 silly mapToRegistry registry https://registry.npmjs.org/
+407 silly mapToRegistry uri https://registry.npmjs.org/bootstrap-material-design
+408 verbose addNameVersion registry:https://registry.npmjs.org/bootstrap-material-design not in flight; fetching
+409 silly resolveWithNewModule hammerjs@2.0.8 checking installable status
+410 silly cache add args [ 'hammerjs@2.0.8', null ]
+411 verbose cache add spec hammerjs@2.0.8
+412 silly cache add parsed spec Result {
+412 silly cache add   raw: 'hammerjs@2.0.8',
+412 silly cache add   scope: null,
+412 silly cache add   name: 'hammerjs',
+412 silly cache add   rawSpec: '2.0.8',
+412 silly cache add   spec: '2.0.8',
+412 silly cache add   type: 'version' }
+413 silly addNamed hammerjs@2.0.8
+414 verbose addNamed "2.0.8" is a plain semver version for hammerjs
+415 silly mapToRegistry name hammerjs
+416 silly mapToRegistry using default registry
+417 silly mapToRegistry registry https://registry.npmjs.org/
+418 silly mapToRegistry uri https://registry.npmjs.org/hammerjs
+419 verbose addNameVersion registry:https://registry.npmjs.org/hammerjs not in flight; fetching
+420 silly resolveWithNewModule classlist.js@1.1.20150312 checking installable status
+421 silly cache add args [ 'classlist.js@^1.1.20150312', null ]
+422 verbose cache add spec classlist.js@^1.1.20150312
+423 silly cache add parsed spec Result {
+423 silly cache add   raw: 'classlist.js@^1.1.20150312',
+423 silly cache add   scope: null,
+423 silly cache add   name: 'classlist.js',
+423 silly cache add   rawSpec: '^1.1.20150312',
+423 silly cache add   spec: '>=1.1.20150312 <2.0.0',
+423 silly cache add   type: 'range' }
+424 silly addNamed classlist.js@>=1.1.20150312 <2.0.0
+425 verbose addNamed ">=1.1.20150312 <2.0.0" is a valid semver range for classlist.js
+426 silly addNameRange { name: 'classlist.js',
+426 silly addNameRange   range: '>=1.1.20150312 <2.0.0',
+426 silly addNameRange   hasData: false }
+427 silly mapToRegistry name classlist.js
+428 silly mapToRegistry using default registry
+429 silly mapToRegistry registry https://registry.npmjs.org/
+430 silly mapToRegistry uri https://registry.npmjs.org/classlist.js
+431 verbose addNameRange registry:https://registry.npmjs.org/classlist.js not in flight; fetching
+432 silly resolveWithNewModule jquery@3.2.1 checking installable status
+433 silly cache add args [ 'jquery@3.2.1', null ]
+434 verbose cache add spec jquery@3.2.1
+435 silly cache add parsed spec Result {
+435 silly cache add   raw: 'jquery@3.2.1',
+435 silly cache add   scope: null,
+435 silly cache add   name: 'jquery',
+435 silly cache add   rawSpec: '3.2.1',
+435 silly cache add   spec: '3.2.1',
+435 silly cache add   type: 'version' }
+436 silly addNamed jquery@3.2.1
+437 verbose addNamed "3.2.1" is a plain semver version for jquery
+438 silly mapToRegistry name jquery
+439 silly mapToRegistry using default registry
+440 silly mapToRegistry registry https://registry.npmjs.org/
+441 silly mapToRegistry uri https://registry.npmjs.org/jquery
+442 verbose addNameVersion registry:https://registry.npmjs.org/jquery not in flight; fetching
+443 silly resolveWithNewModule web-animations-js@2.3.1 checking installable status
+444 silly cache add args [ 'web-animations-js@2.3.1', null ]
+445 verbose cache add spec web-animations-js@2.3.1
+446 silly cache add parsed spec Result {
+446 silly cache add   raw: 'web-animations-js@2.3.1',
+446 silly cache add   scope: null,
+446 silly cache add   name: 'web-animations-js',
+446 silly cache add   rawSpec: '2.3.1',
+446 silly cache add   spec: '2.3.1',
+446 silly cache add   type: 'version' }
+447 silly addNamed web-animations-js@2.3.1
+448 verbose addNamed "2.3.1" is a plain semver version for web-animations-js
+449 silly mapToRegistry name web-animations-js
+450 silly mapToRegistry using default registry
+451 silly mapToRegistry registry https://registry.npmjs.org/
+452 silly mapToRegistry uri https://registry.npmjs.org/web-animations-js
+453 verbose addNameVersion registry:https://registry.npmjs.org/web-animations-js not in flight; fetching
+454 silly resolveWithNewModule core-js@2.4.1 checking installable status
+455 silly cache add args [ 'core-js@2.4.1', null ]
+456 verbose cache add spec core-js@2.4.1
+457 silly cache add parsed spec Result {
+457 silly cache add   raw: 'core-js@2.4.1',
+457 silly cache add   scope: null,
+457 silly cache add   name: 'core-js',
+457 silly cache add   rawSpec: '2.4.1',
+457 silly cache add   spec: '2.4.1',
+457 silly cache add   type: 'version' }
+458 silly addNamed core-js@2.4.1
+459 verbose addNamed "2.4.1" is a plain semver version for core-js
+460 silly mapToRegistry name core-js
+461 silly mapToRegistry using default registry
+462 silly mapToRegistry registry https://registry.npmjs.org/
+463 silly mapToRegistry uri https://registry.npmjs.org/core-js
+464 verbose addNameVersion registry:https://registry.npmjs.org/core-js not in flight; fetching
+465 silly resolveWithNewModule zone.js@0.8.4 checking installable status
+466 silly cache add args [ 'zone.js@0.8.4', null ]
+467 verbose cache add spec zone.js@0.8.4
+468 silly cache add parsed spec Result {
+468 silly cache add   raw: 'zone.js@0.8.4',
+468 silly cache add   scope: null,
+468 silly cache add   name: 'zone.js',
+468 silly cache add   rawSpec: '0.8.4',
+468 silly cache add   spec: '0.8.4',
+468 silly cache add   type: 'version' }
+469 silly addNamed zone.js@0.8.4
+470 verbose addNamed "0.8.4" is a plain semver version for zone.js
+471 silly mapToRegistry name zone.js
+472 silly mapToRegistry using default registry
+473 silly mapToRegistry registry https://registry.npmjs.org/
+474 silly mapToRegistry uri https://registry.npmjs.org/zone.js
+475 verbose addNameVersion registry:https://registry.npmjs.org/zone.js not in flight; fetching
+476 silly resolveWithNewModule bootstrap-notify@3.1.3 checking installable status
+477 silly cache add args [ 'bootstrap-notify@3.1.3', null ]
+478 verbose cache add spec bootstrap-notify@3.1.3
+479 silly cache add parsed spec Result {
+479 silly cache add   raw: 'bootstrap-notify@3.1.3',
+479 silly cache add   scope: null,
+479 silly cache add   name: 'bootstrap-notify',
+479 silly cache add   rawSpec: '3.1.3',
+479 silly cache add   spec: '3.1.3',
+479 silly cache add   type: 'version' }
+480 silly addNamed bootstrap-notify@3.1.3
+481 verbose addNamed "3.1.3" is a plain semver version for bootstrap-notify
+482 silly mapToRegistry name bootstrap-notify
+483 silly mapToRegistry using default registry
+484 silly mapToRegistry registry https://registry.npmjs.org/
+485 silly mapToRegistry uri https://registry.npmjs.org/bootstrap-notify
+486 verbose addNameVersion registry:https://registry.npmjs.org/bootstrap-notify not in flight; fetching
+487 silly resolveWithNewModule perfect-scrollbar@1.1.0 checking installable status
+488 silly cache add args [ 'perfect-scrollbar@1.1.0', null ]
+489 verbose cache add spec perfect-scrollbar@1.1.0
+490 silly cache add parsed spec Result {
+490 silly cache add   raw: 'perfect-scrollbar@1.1.0',
+490 silly cache add   scope: null,
+490 silly cache add   name: 'perfect-scrollbar',
+490 silly cache add   rawSpec: '1.1.0',
+490 silly cache add   spec: '1.1.0',
+490 silly cache add   type: 'version' }
+491 silly addNamed perfect-scrollbar@1.1.0
+492 verbose addNamed "1.1.0" is a plain semver version for perfect-scrollbar
+493 silly mapToRegistry name perfect-scrollbar
+494 silly mapToRegistry using default registry
+495 silly mapToRegistry registry https://registry.npmjs.org/
+496 silly mapToRegistry uri https://registry.npmjs.org/perfect-scrollbar
+497 verbose addNameVersion registry:https://registry.npmjs.org/perfect-scrollbar not in flight; fetching
+498 silly resolveWithNewModule rxjs@5.5.10 checking installable status
+499 silly cache add args [ 'rxjs@5.5.10', null ]
+500 verbose cache add spec rxjs@5.5.10
+501 silly cache add parsed spec Result {
+501 silly cache add   raw: 'rxjs@5.5.10',
+501 silly cache add   scope: null,
+501 silly cache add   name: 'rxjs',
+501 silly cache add   rawSpec: '5.5.10',
+501 silly cache add   spec: '5.5.10',
+501 silly cache add   type: 'version' }
+502 silly addNamed rxjs@5.5.10
+503 verbose addNamed "5.5.10" is a plain semver version for rxjs
+504 silly mapToRegistry name rxjs
+505 silly mapToRegistry using default registry
+506 silly mapToRegistry registry https://registry.npmjs.org/
+507 silly mapToRegistry uri https://registry.npmjs.org/rxjs
+508 verbose addNameVersion registry:https://registry.npmjs.org/rxjs not in flight; fetching
+509 verbose get https://registry.npmjs.org/bootstrap not expired, no request
+510 verbose get https://registry.npmjs.org/bootstrap-material-design not expired, no request
+511 verbose get https://registry.npmjs.org/hammerjs not expired, no request
+512 verbose get https://registry.npmjs.org/classlist.js not expired, no request
+513 silly addNameRange number 2 { name: 'classlist.js',
+513 silly addNameRange   range: '>=1.1.20150312 <2.0.0',
+513 silly addNameRange   hasData: true }
+514 silly addNameRange versions [ 'classlist.js', [ '1.1.20150312' ] ]
+515 silly addNamed classlist.js@1.1.20150312
+516 verbose addNamed "1.1.20150312" is a plain semver version for classlist.js
+517 verbose get https://registry.npmjs.org/web-animations-js not expired, no request
+518 verbose get https://registry.npmjs.org/jquery not expired, no request
+519 verbose get https://registry.npmjs.org/core-js not expired, no request
+520 verbose get https://registry.npmjs.org/zone.js not expired, no request
+521 verbose get https://registry.npmjs.org/bootstrap-notify not expired, no request
+522 verbose get https://registry.npmjs.org/perfect-scrollbar not expired, no request
+523 verbose get https://registry.npmjs.org/rxjs not expired, no request
+524 silly cache afterAdd bootstrap-material-design@4.1.1
+525 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\bootstrap-material-design\4.1.1\package\package.json not in flight; writing
+526 silly cache afterAdd bootstrap@4.1.0
+527 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\bootstrap\4.1.0\package\package.json not in flight; writing
+528 silly cache afterAdd hammerjs@2.0.8
+529 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\hammerjs\2.0.8\package\package.json not in flight; writing
+530 silly cache afterAdd classlist.js@1.1.20150312
+531 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\classlist.js\1.1.20150312\package\package.json not in flight; writing
+532 silly cache afterAdd web-animations-js@2.3.1
+533 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\web-animations-js\2.3.1\package\package.json not in flight; writing
+534 silly cache afterAdd jquery@3.2.1
+535 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\jquery\3.2.1\package\package.json not in flight; writing
+536 silly cache afterAdd core-js@2.4.1
+537 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\core-js\2.4.1\package\package.json not in flight; writing
+538 silly cache afterAdd zone.js@0.8.4
+539 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\zone.js\0.8.4\package\package.json not in flight; writing
+540 silly cache afterAdd bootstrap-notify@3.1.3
+541 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\bootstrap-notify\3.1.3\package\package.json not in flight; writing
+542 silly cache afterAdd perfect-scrollbar@1.1.0
+543 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\perfect-scrollbar\1.1.0\package\package.json not in flight; writing
+544 silly cache afterAdd rxjs@5.5.10
+545 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\rxjs\5.5.10\package\package.json not in flight; writing
+546 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\bootstrap-material-design\4.1.1\package\package.json written
+547 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\bootstrap\4.1.0\package\package.json written
+548 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\hammerjs\2.0.8\package\package.json written
+549 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\classlist.js\1.1.20150312\package\package.json written
+550 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\jquery\3.2.1\package\package.json written
+551 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\web-animations-js\2.3.1\package\package.json written
+552 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\zone.js\0.8.4\package\package.json written
+553 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\core-js\2.4.1\package\package.json written
+554 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\bootstrap-notify\3.1.3\package\package.json written
+555 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\rxjs\5.5.10\package\package.json written
+556 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\perfect-scrollbar\1.1.0\package\package.json written
+557 http 304 https://registry.npmjs.org/@angular%2fhttp
+558 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+558 verbose headers   via: '1.1 varnish',
+558 verbose headers   'cache-control': 'max-age=0',
+558 verbose headers   etag: 'W/"5afb38b2-3755f"',
+558 verbose headers   age: '0',
+558 verbose headers   connection: 'keep-alive',
+558 verbose headers   'x-served-by': 'cache-mia17633-MIA',
+558 verbose headers   'x-cache': 'MISS',
+558 verbose headers   'x-cache-hits': '0',
+558 verbose headers   'x-timer': 'S1526491648.907132,VS0,VE366',
+558 verbose headers   vary: 'Accept, Accept-Encoding' }
+559 silly get cb [ 304,
+559 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+559 silly get     via: '1.1 varnish',
+559 silly get     'cache-control': 'max-age=0',
+559 silly get     etag: 'W/"5afb38b2-3755f"',
+559 silly get     age: '0',
+559 silly get     connection: 'keep-alive',
+559 silly get     'x-served-by': 'cache-mia17633-MIA',
+559 silly get     'x-cache': 'MISS',
+559 silly get     'x-cache-hits': '0',
+559 silly get     'x-timer': 'S1526491648.907132,VS0,VE366',
+559 silly get     vary: 'Accept, Accept-Encoding' } ]
+560 verbose etag https://registry.npmjs.org/@angular%2fhttp from cache
+561 verbose get saving @angular/http to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fhttp\.cache.json
+562 http 304 https://registry.npmjs.org/@angular%2fanimations
+563 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+563 verbose headers   via: '1.1 varnish',
+563 verbose headers   'cache-control': 'max-age=0',
+563 verbose headers   etag: 'W/"5afb38f7-28354"',
+563 verbose headers   age: '0',
+563 verbose headers   connection: 'keep-alive',
+563 verbose headers   'x-served-by': 'cache-mia17626-MIA',
+563 verbose headers   'x-cache': 'MISS',
+563 verbose headers   'x-cache-hits': '0',
+563 verbose headers   'x-timer': 'S1526491648.899676,VS0,VE376',
+563 verbose headers   vary: 'Accept, Accept-Encoding' }
+564 silly get cb [ 304,
+564 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+564 silly get     via: '1.1 varnish',
+564 silly get     'cache-control': 'max-age=0',
+564 silly get     etag: 'W/"5afb38f7-28354"',
+564 silly get     age: '0',
+564 silly get     connection: 'keep-alive',
+564 silly get     'x-served-by': 'cache-mia17626-MIA',
+564 silly get     'x-cache': 'MISS',
+564 silly get     'x-cache-hits': '0',
+564 silly get     'x-timer': 'S1526491648.899676,VS0,VE376',
+564 silly get     vary: 'Accept, Accept-Encoding' } ]
+565 verbose etag https://registry.npmjs.org/@angular%2fanimations from cache
+566 verbose get saving @angular/animations to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fanimations\.cache.json
+567 http 304 https://registry.npmjs.org/@angular%2fmaterial
+568 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+568 verbose headers   via: '1.1 varnish',
+568 verbose headers   'cache-control': 'max-age=0',
+568 verbose headers   etag: 'W/"5afa0ff8-1ddf1"',
+568 verbose headers   age: '0',
+568 verbose headers   connection: 'keep-alive',
+568 verbose headers   'x-served-by': 'cache-mia17623-MIA',
+568 verbose headers   'x-cache': 'MISS',
+568 verbose headers   'x-cache-hits': '0',
+568 verbose headers   'x-timer': 'S1526491648.906812,VS0,VE367',
+568 verbose headers   vary: 'Accept, Accept-Encoding' }
+569 silly get cb [ 304,
+569 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+569 silly get     via: '1.1 varnish',
+569 silly get     'cache-control': 'max-age=0',
+569 silly get     etag: 'W/"5afa0ff8-1ddf1"',
+569 silly get     age: '0',
+569 silly get     connection: 'keep-alive',
+569 silly get     'x-served-by': 'cache-mia17623-MIA',
+569 silly get     'x-cache': 'MISS',
+569 silly get     'x-cache-hits': '0',
+569 silly get     'x-timer': 'S1526491648.906812,VS0,VE367',
+569 silly get     vary: 'Accept, Accept-Encoding' } ]
+570 verbose etag https://registry.npmjs.org/@angular%2fmaterial from cache
+571 verbose get saving @angular/material to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fmaterial\.cache.json
+572 http 304 https://registry.npmjs.org/@angular%2fcompiler
+573 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+573 verbose headers   via: '1.1 varnish',
+573 verbose headers   'cache-control': 'max-age=0',
+573 verbose headers   etag: 'W/"5afb38df-36684"',
+573 verbose headers   age: '0',
+573 verbose headers   connection: 'keep-alive',
+573 verbose headers   'x-served-by': 'cache-mia17626-MIA',
+573 verbose headers   'x-cache': 'MISS',
+573 verbose headers   'x-cache-hits': '0',
+573 verbose headers   'x-timer': 'S1526491648.902087,VS0,VE379',
+573 verbose headers   vary: 'Accept, Accept-Encoding' }
+574 silly get cb [ 304,
+574 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+574 silly get     via: '1.1 varnish',
+574 silly get     'cache-control': 'max-age=0',
+574 silly get     etag: 'W/"5afb38df-36684"',
+574 silly get     age: '0',
+574 silly get     connection: 'keep-alive',
+574 silly get     'x-served-by': 'cache-mia17626-MIA',
+574 silly get     'x-cache': 'MISS',
+574 silly get     'x-cache-hits': '0',
+574 silly get     'x-timer': 'S1526491648.902087,VS0,VE379',
+574 silly get     vary: 'Accept, Accept-Encoding' } ]
+575 verbose etag https://registry.npmjs.org/@angular%2fcompiler from cache
+576 verbose get saving @angular/compiler to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fcompiler\.cache.json
+577 http 304 https://registry.npmjs.org/@agm%2fcore
+578 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+578 verbose headers   via: '1.1 varnish',
+578 verbose headers   'cache-control': 'max-age=0',
+578 verbose headers   etag: 'W/"59f8b63a-15d4"',
+578 verbose headers   age: '0',
+578 verbose headers   connection: 'keep-alive',
+578 verbose headers   'x-served-by': 'cache-mia17622-MIA',
+578 verbose headers   'x-cache': 'MISS',
+578 verbose headers   'x-cache-hits': '0',
+578 verbose headers   'x-timer': 'S1526491648.904833,VS0,VE375',
+578 verbose headers   vary: 'Accept, Accept-Encoding' }
+579 silly get cb [ 304,
+579 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+579 silly get     via: '1.1 varnish',
+579 silly get     'cache-control': 'max-age=0',
+579 silly get     etag: 'W/"59f8b63a-15d4"',
+579 silly get     age: '0',
+579 silly get     connection: 'keep-alive',
+579 silly get     'x-served-by': 'cache-mia17622-MIA',
+579 silly get     'x-cache': 'MISS',
+579 silly get     'x-cache-hits': '0',
+579 silly get     'x-timer': 'S1526491648.904833,VS0,VE375',
+579 silly get     vary: 'Accept, Accept-Encoding' } ]
+580 verbose etag https://registry.npmjs.org/@agm%2fcore from cache
+581 verbose get saving @agm/core to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40agm_252fcore\.cache.json
+582 http 304 https://registry.npmjs.org/@angular%2fforms
+583 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+583 verbose headers   via: '1.1 varnish',
+583 verbose headers   'cache-control': 'max-age=0',
+583 verbose headers   etag: 'W/"5afb38b8-36ea4"',
+583 verbose headers   age: '0',
+583 verbose headers   connection: 'keep-alive',
+583 verbose headers   'x-served-by': 'cache-mia17634-MIA',
+583 verbose headers   'x-cache': 'MISS',
+583 verbose headers   'x-cache-hits': '0',
+583 verbose headers   'x-timer': 'S1526491648.893237,VS0,VE391',
+583 verbose headers   vary: 'Accept, Accept-Encoding' }
+584 silly get cb [ 304,
+584 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+584 silly get     via: '1.1 varnish',
+584 silly get     'cache-control': 'max-age=0',
+584 silly get     etag: 'W/"5afb38b8-36ea4"',
+584 silly get     age: '0',
+584 silly get     connection: 'keep-alive',
+584 silly get     'x-served-by': 'cache-mia17634-MIA',
+584 silly get     'x-cache': 'MISS',
+584 silly get     'x-cache-hits': '0',
+584 silly get     'x-timer': 'S1526491648.893237,VS0,VE391',
+584 silly get     vary: 'Accept, Accept-Encoding' } ]
+585 verbose etag https://registry.npmjs.org/@angular%2fforms from cache
+586 verbose get saving @angular/forms to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fforms\.cache.json
+587 http 304 https://registry.npmjs.org/@angular%2fcdk
+588 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+588 verbose headers   via: '1.1 varnish',
+588 verbose headers   'cache-control': 'max-age=0',
+588 verbose headers   etag: 'W/"5afa0ff0-1431c"',
+588 verbose headers   age: '0',
+588 verbose headers   connection: 'keep-alive',
+588 verbose headers   'x-served-by': 'cache-mia17625-MIA',
+588 verbose headers   'x-cache': 'MISS',
+588 verbose headers   'x-cache-hits': '0',
+588 verbose headers   'x-timer': 'S1526491648.900792,VS0,VE390',
+588 verbose headers   vary: 'Accept, Accept-Encoding' }
+589 silly get cb [ 304,
+589 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+589 silly get     via: '1.1 varnish',
+589 silly get     'cache-control': 'max-age=0',
+589 silly get     etag: 'W/"5afa0ff0-1431c"',
+589 silly get     age: '0',
+589 silly get     connection: 'keep-alive',
+589 silly get     'x-served-by': 'cache-mia17625-MIA',
+589 silly get     'x-cache': 'MISS',
+589 silly get     'x-cache-hits': '0',
+589 silly get     'x-timer': 'S1526491648.900792,VS0,VE390',
+589 silly get     vary: 'Accept, Accept-Encoding' } ]
+590 verbose etag https://registry.npmjs.org/@angular%2fcdk from cache
+591 verbose get saving @angular/cdk to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fcdk\.cache.json
+592 http 304 https://registry.npmjs.org/@angular%2fcommon
+593 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+593 verbose headers   via: '1.1 varnish',
+593 verbose headers   'cache-control': 'max-age=0',
+593 verbose headers   etag: 'W/"5afb38e9-37132"',
+593 verbose headers   age: '0',
+593 verbose headers   connection: 'keep-alive',
+593 verbose headers   'x-served-by': 'cache-mia17620-MIA',
+593 verbose headers   'x-cache': 'MISS',
+593 verbose headers   'x-cache-hits': '0',
+593 verbose headers   'x-timer': 'S1526491648.901170,VS0,VE396',
+593 verbose headers   vary: 'Accept, Accept-Encoding' }
+594 silly get cb [ 304,
+594 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+594 silly get     via: '1.1 varnish',
+594 silly get     'cache-control': 'max-age=0',
+594 silly get     etag: 'W/"5afb38e9-37132"',
+594 silly get     age: '0',
+594 silly get     connection: 'keep-alive',
+594 silly get     'x-served-by': 'cache-mia17620-MIA',
+594 silly get     'x-cache': 'MISS',
+594 silly get     'x-cache-hits': '0',
+594 silly get     'x-timer': 'S1526491648.901170,VS0,VE396',
+594 silly get     vary: 'Accept, Accept-Encoding' } ]
+595 verbose etag https://registry.npmjs.org/@angular%2fcommon from cache
+596 verbose get saving @angular/common to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fcommon\.cache.json
+597 http 304 https://registry.npmjs.org/@angular%2fcore
+598 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+598 verbose headers   via: '1.1 varnish',
+598 verbose headers   'cache-control': 'max-age=0',
+598 verbose headers   etag: 'W/"5afb38cd-35fc1"',
+598 verbose headers   age: '0',
+598 verbose headers   connection: 'keep-alive',
+598 verbose headers   'x-served-by': 'cache-mia17634-MIA',
+598 verbose headers   'x-cache': 'MISS',
+598 verbose headers   'x-cache-hits': '0',
+598 verbose headers   'x-timer': 'S1526491648.896002,VS0,VE402',
+598 verbose headers   vary: 'Accept, Accept-Encoding' }
+599 silly get cb [ 304,
+599 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+599 silly get     via: '1.1 varnish',
+599 silly get     'cache-control': 'max-age=0',
+599 silly get     etag: 'W/"5afb38cd-35fc1"',
+599 silly get     age: '0',
+599 silly get     connection: 'keep-alive',
+599 silly get     'x-served-by': 'cache-mia17634-MIA',
+599 silly get     'x-cache': 'MISS',
+599 silly get     'x-cache-hits': '0',
+599 silly get     'x-timer': 'S1526491648.896002,VS0,VE402',
+599 silly get     vary: 'Accept, Accept-Encoding' } ]
+600 verbose etag https://registry.npmjs.org/@angular%2fcore from cache
+601 verbose get saving @angular/core to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fcore\.cache.json
+602 http 304 https://registry.npmjs.org/@ngx-loading-bar%2fcore
+603 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+603 verbose headers   via: '1.1 varnish',
+603 verbose headers   'cache-control': 'max-age=0',
+603 verbose headers   etag: 'W/"5aef34c7-cfd2"',
+603 verbose headers   age: '0',
+603 verbose headers   connection: 'keep-alive',
+603 verbose headers   'x-served-by': 'cache-mia17630-MIA',
+603 verbose headers   'x-cache': 'MISS',
+603 verbose headers   'x-cache-hits': '0',
+603 verbose headers   'x-timer': 'S1526491648.932426,VS0,VE378',
+603 verbose headers   vary: 'Accept, Accept-Encoding' }
+604 silly get cb [ 304,
+604 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+604 silly get     via: '1.1 varnish',
+604 silly get     'cache-control': 'max-age=0',
+604 silly get     etag: 'W/"5aef34c7-cfd2"',
+604 silly get     age: '0',
+604 silly get     connection: 'keep-alive',
+604 silly get     'x-served-by': 'cache-mia17630-MIA',
+604 silly get     'x-cache': 'MISS',
+604 silly get     'x-cache-hits': '0',
+604 silly get     'x-timer': 'S1526491648.932426,VS0,VE378',
+604 silly get     vary: 'Accept, Accept-Encoding' } ]
+605 verbose etag https://registry.npmjs.org/@ngx-loading-bar%2fcore from cache
+606 verbose get saving @ngx-loading-bar/core to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40ngx-loading-bar_252fcore\.cache.json
+607 http 304 https://registry.npmjs.org/@angular%2frouter
+608 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+608 verbose headers   via: '1.1 varnish',
+608 verbose headers   'cache-control': 'max-age=0',
+608 verbose headers   etag: 'W/"5afb3878-42d45"',
+608 verbose headers   age: '0',
+608 verbose headers   connection: 'keep-alive',
+608 verbose headers   'x-served-by': 'cache-mia17630-MIA',
+608 verbose headers   'x-cache': 'MISS',
+608 verbose headers   'x-cache-hits': '0',
+608 verbose headers   'x-timer': 'S1526491648.921559,VS0,VE391',
+608 verbose headers   vary: 'Accept, Accept-Encoding' }
+609 silly get cb [ 304,
+609 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+609 silly get     via: '1.1 varnish',
+609 silly get     'cache-control': 'max-age=0',
+609 silly get     etag: 'W/"5afb3878-42d45"',
+609 silly get     age: '0',
+609 silly get     connection: 'keep-alive',
+609 silly get     'x-served-by': 'cache-mia17630-MIA',
+609 silly get     'x-cache': 'MISS',
+609 silly get     'x-cache-hits': '0',
+609 silly get     'x-timer': 'S1526491648.921559,VS0,VE391',
+609 silly get     vary: 'Accept, Accept-Encoding' } ]
+610 verbose etag https://registry.npmjs.org/@angular%2frouter from cache
+611 verbose get saving @angular/router to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252frouter\.cache.json
+612 http 304 https://registry.npmjs.org/@angular%2fplatform-server
+613 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+613 verbose headers   via: '1.1 varnish',
+613 verbose headers   'cache-control': 'max-age=0',
+613 verbose headers   etag: 'W/"5afb388f-417a5"',
+613 verbose headers   age: '0',
+613 verbose headers   connection: 'keep-alive',
+613 verbose headers   'x-served-by': 'cache-mia17635-MIA',
+613 verbose headers   'x-cache': 'MISS',
+613 verbose headers   'x-cache-hits': '0',
+613 verbose headers   'x-timer': 'S1526491648.919808,VS0,VE389',
+613 verbose headers   vary: 'Accept, Accept-Encoding' }
+614 silly get cb [ 304,
+614 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+614 silly get     via: '1.1 varnish',
+614 silly get     'cache-control': 'max-age=0',
+614 silly get     etag: 'W/"5afb388f-417a5"',
+614 silly get     age: '0',
+614 silly get     connection: 'keep-alive',
+614 silly get     'x-served-by': 'cache-mia17635-MIA',
+614 silly get     'x-cache': 'MISS',
+614 silly get     'x-cache-hits': '0',
+614 silly get     'x-timer': 'S1526491648.919808,VS0,VE389',
+614 silly get     vary: 'Accept, Accept-Encoding' } ]
+615 verbose etag https://registry.npmjs.org/@angular%2fplatform-server from cache
+616 verbose get saving @angular/platform-server to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fplatform-server\.cache.json
+617 http 304 https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+618 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+618 verbose headers   via: '1.1 varnish',
+618 verbose headers   'cache-control': 'max-age=0',
+618 verbose headers   etag: 'W/"5afb3896-4310c"',
+618 verbose headers   age: '0',
+618 verbose headers   connection: 'keep-alive',
+618 verbose headers   'x-served-by': 'cache-mia17627-MIA',
+618 verbose headers   'x-cache': 'MISS',
+618 verbose headers   'x-cache-hits': '0',
+618 verbose headers   'x-timer': 'S1526491648.909951,VS0,VE418',
+618 verbose headers   vary: 'Accept, Accept-Encoding' }
+619 silly get cb [ 304,
+619 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+619 silly get     via: '1.1 varnish',
+619 silly get     'cache-control': 'max-age=0',
+619 silly get     etag: 'W/"5afb3896-4310c"',
+619 silly get     age: '0',
+619 silly get     connection: 'keep-alive',
+619 silly get     'x-served-by': 'cache-mia17627-MIA',
+619 silly get     'x-cache': 'MISS',
+619 silly get     'x-cache-hits': '0',
+619 silly get     'x-timer': 'S1526491648.909951,VS0,VE418',
+619 silly get     vary: 'Accept, Accept-Encoding' } ]
+620 verbose etag https://registry.npmjs.org/@angular%2fplatform-browser-dynamic from cache
+621 verbose get saving @angular/platform-browser-dynamic to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fplatform-browser-dynamic\.cache.json
+622 silly resolveWithNewModule @angular/http@5.2.9 checking installable status
+623 silly cache add args [ '@angular/http@5.2.9', null ]
+624 verbose cache add spec @angular/http@5.2.9
+625 silly cache add parsed spec Result {
+625 silly cache add   raw: '@angular/http@5.2.9',
+625 silly cache add   scope: '@angular',
+625 silly cache add   name: '@angular/http',
+625 silly cache add   rawSpec: '5.2.9',
+625 silly cache add   spec: '5.2.9',
+625 silly cache add   type: 'version' }
+626 silly addNamed @angular/http@5.2.9
+627 verbose addNamed "5.2.9" is a plain semver version for @angular/http
+628 silly mapToRegistry name @angular/http
+629 silly mapToRegistry scope (from package name) @angular
+630 verbose mapToRegistry no registry URL found in name for scope @angular
+631 silly mapToRegistry using default registry
+632 silly mapToRegistry registry https://registry.npmjs.org/
+633 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fhttp
+634 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fhttp not in flight; fetching
+635 silly resolveWithNewModule @angular/animations@5.2.9 checking installable status
+636 silly cache add args [ '@angular/animations@5.2.9', null ]
+637 verbose cache add spec @angular/animations@5.2.9
+638 silly cache add parsed spec Result {
+638 silly cache add   raw: '@angular/animations@5.2.9',
+638 silly cache add   scope: '@angular',
+638 silly cache add   name: '@angular/animations',
+638 silly cache add   rawSpec: '5.2.9',
+638 silly cache add   spec: '5.2.9',
+638 silly cache add   type: 'version' }
+639 silly addNamed @angular/animations@5.2.9
+640 verbose addNamed "5.2.9" is a plain semver version for @angular/animations
+641 silly mapToRegistry name @angular/animations
+642 silly mapToRegistry scope (from package name) @angular
+643 verbose mapToRegistry no registry URL found in name for scope @angular
+644 silly mapToRegistry using default registry
+645 silly mapToRegistry registry https://registry.npmjs.org/
+646 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fanimations
+647 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fanimations not in flight; fetching
+648 http 304 https://registry.npmjs.org/@angular%2fplatform-browser
+649 verbose headers { date: 'Wed, 16 May 2018 17:27:27 GMT',
+649 verbose headers   via: '1.1 varnish',
+649 verbose headers   'cache-control': 'max-age=0',
+649 verbose headers   etag: 'W/"5afb389e-3c3ad"',
+649 verbose headers   age: '0',
+649 verbose headers   connection: 'keep-alive',
+649 verbose headers   'x-served-by': 'cache-mia17624-MIA',
+649 verbose headers   'x-cache': 'MISS',
+649 verbose headers   'x-cache-hits': '0',
+649 verbose headers   'x-timer': 'S1526491648.952308,VS0,VE390',
+649 verbose headers   vary: 'Accept, Accept-Encoding' }
+650 silly get cb [ 304,
+650 silly get   { date: 'Wed, 16 May 2018 17:27:27 GMT',
+650 silly get     via: '1.1 varnish',
+650 silly get     'cache-control': 'max-age=0',
+650 silly get     etag: 'W/"5afb389e-3c3ad"',
+650 silly get     age: '0',
+650 silly get     connection: 'keep-alive',
+650 silly get     'x-served-by': 'cache-mia17624-MIA',
+650 silly get     'x-cache': 'MISS',
+650 silly get     'x-cache-hits': '0',
+650 silly get     'x-timer': 'S1526491648.952308,VS0,VE390',
+650 silly get     vary: 'Accept, Accept-Encoding' } ]
+651 verbose etag https://registry.npmjs.org/@angular%2fplatform-browser from cache
+652 verbose get saving @angular/platform-browser to C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\registry.npmjs.org\_40angular_252fplatform-browser\.cache.json
+653 silly resolveWithNewModule @angular/material@5.2.4 checking installable status
+654 silly cache add args [ '@angular/material@5.2.4', null ]
+655 verbose cache add spec @angular/material@5.2.4
+656 silly cache add parsed spec Result {
+656 silly cache add   raw: '@angular/material@5.2.4',
+656 silly cache add   scope: '@angular',
+656 silly cache add   name: '@angular/material',
+656 silly cache add   rawSpec: '5.2.4',
+656 silly cache add   spec: '5.2.4',
+656 silly cache add   type: 'version' }
+657 silly addNamed @angular/material@5.2.4
+658 verbose addNamed "5.2.4" is a plain semver version for @angular/material
+659 silly mapToRegistry name @angular/material
+660 silly mapToRegistry scope (from package name) @angular
+661 verbose mapToRegistry no registry URL found in name for scope @angular
+662 silly mapToRegistry using default registry
+663 silly mapToRegistry registry https://registry.npmjs.org/
+664 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fmaterial
+665 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fmaterial not in flight; fetching
+666 silly resolveWithNewModule @angular/compiler@5.2.9 checking installable status
+667 silly cache add args [ '@angular/compiler@5.2.9', null ]
+668 verbose cache add spec @angular/compiler@5.2.9
+669 silly cache add parsed spec Result {
+669 silly cache add   raw: '@angular/compiler@5.2.9',
+669 silly cache add   scope: '@angular',
+669 silly cache add   name: '@angular/compiler',
+669 silly cache add   rawSpec: '5.2.9',
+669 silly cache add   spec: '5.2.9',
+669 silly cache add   type: 'version' }
+670 silly addNamed @angular/compiler@5.2.9
+671 verbose addNamed "5.2.9" is a plain semver version for @angular/compiler
+672 silly mapToRegistry name @angular/compiler
+673 silly mapToRegistry scope (from package name) @angular
+674 verbose mapToRegistry no registry URL found in name for scope @angular
+675 silly mapToRegistry using default registry
+676 silly mapToRegistry registry https://registry.npmjs.org/
+677 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcompiler
+678 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fcompiler not in flight; fetching
+679 silly resolveWithNewModule @angular/forms@5.2.9 checking installable status
+680 silly cache add args [ '@angular/forms@5.2.9', null ]
+681 verbose cache add spec @angular/forms@5.2.9
+682 silly cache add parsed spec Result {
+682 silly cache add   raw: '@angular/forms@5.2.9',
+682 silly cache add   scope: '@angular',
+682 silly cache add   name: '@angular/forms',
+682 silly cache add   rawSpec: '5.2.9',
+682 silly cache add   spec: '5.2.9',
+682 silly cache add   type: 'version' }
+683 silly addNamed @angular/forms@5.2.9
+684 verbose addNamed "5.2.9" is a plain semver version for @angular/forms
+685 silly mapToRegistry name @angular/forms
+686 silly mapToRegistry scope (from package name) @angular
+687 verbose mapToRegistry no registry URL found in name for scope @angular
+688 silly mapToRegistry using default registry
+689 silly mapToRegistry registry https://registry.npmjs.org/
+690 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fforms
+691 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fforms not in flight; fetching
+692 silly resolveWithNewModule @agm/core@1.0.0-beta.2 checking installable status
+693 silly cache add args [ '@agm/core@1.0.0-beta.2', null ]
+694 verbose cache add spec @agm/core@1.0.0-beta.2
+695 silly cache add parsed spec Result {
+695 silly cache add   raw: '@agm/core@1.0.0-beta.2',
+695 silly cache add   scope: '@agm',
+695 silly cache add   name: '@agm/core',
+695 silly cache add   rawSpec: '1.0.0-beta.2',
+695 silly cache add   spec: '1.0.0-beta.2',
+695 silly cache add   type: 'version' }
+696 silly addNamed @agm/core@1.0.0-beta.2
+697 verbose addNamed "1.0.0-beta.2" is a plain semver version for @agm/core
+698 silly mapToRegistry name @agm/core
+699 silly mapToRegistry scope (from package name) @agm
+700 verbose mapToRegistry no registry URL found in name for scope @agm
+701 silly mapToRegistry using default registry
+702 silly mapToRegistry registry https://registry.npmjs.org/
+703 silly mapToRegistry uri https://registry.npmjs.org/@agm%2fcore
+704 verbose addNameVersion registry:https://registry.npmjs.org/@agm%2fcore not in flight; fetching
+705 silly resolveWithNewModule @angular/cdk@5.2.4 checking installable status
+706 silly cache add args [ '@angular/cdk@5.2.4', null ]
+707 verbose cache add spec @angular/cdk@5.2.4
+708 silly cache add parsed spec Result {
+708 silly cache add   raw: '@angular/cdk@5.2.4',
+708 silly cache add   scope: '@angular',
+708 silly cache add   name: '@angular/cdk',
+708 silly cache add   rawSpec: '5.2.4',
+708 silly cache add   spec: '5.2.4',
+708 silly cache add   type: 'version' }
+709 silly addNamed @angular/cdk@5.2.4
+710 verbose addNamed "5.2.4" is a plain semver version for @angular/cdk
+711 silly mapToRegistry name @angular/cdk
+712 silly mapToRegistry scope (from package name) @angular
+713 verbose mapToRegistry no registry URL found in name for scope @angular
+714 silly mapToRegistry using default registry
+715 silly mapToRegistry registry https://registry.npmjs.org/
+716 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcdk
+717 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fcdk not in flight; fetching
+718 silly resolveWithNewModule @angular/common@5.2.9 checking installable status
+719 silly cache add args [ '@angular/common@5.2.9', null ]
+720 verbose cache add spec @angular/common@5.2.9
+721 silly cache add parsed spec Result {
+721 silly cache add   raw: '@angular/common@5.2.9',
+721 silly cache add   scope: '@angular',
+721 silly cache add   name: '@angular/common',
+721 silly cache add   rawSpec: '5.2.9',
+721 silly cache add   spec: '5.2.9',
+721 silly cache add   type: 'version' }
+722 silly addNamed @angular/common@5.2.9
+723 verbose addNamed "5.2.9" is a plain semver version for @angular/common
+724 silly mapToRegistry name @angular/common
+725 silly mapToRegistry scope (from package name) @angular
+726 verbose mapToRegistry no registry URL found in name for scope @angular
+727 silly mapToRegistry using default registry
+728 silly mapToRegistry registry https://registry.npmjs.org/
+729 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcommon
+730 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fcommon not in flight; fetching
+731 verbose get https://registry.npmjs.org/@angular%2fhttp not expired, no request
+732 silly resolveWithNewModule @angular/core@5.2.9 checking installable status
+733 silly cache add args [ '@angular/core@5.2.9', null ]
+734 verbose cache add spec @angular/core@5.2.9
+735 silly cache add parsed spec Result {
+735 silly cache add   raw: '@angular/core@5.2.9',
+735 silly cache add   scope: '@angular',
+735 silly cache add   name: '@angular/core',
+735 silly cache add   rawSpec: '5.2.9',
+735 silly cache add   spec: '5.2.9',
+735 silly cache add   type: 'version' }
+736 silly addNamed @angular/core@5.2.9
+737 verbose addNamed "5.2.9" is a plain semver version for @angular/core
+738 silly mapToRegistry name @angular/core
+739 silly mapToRegistry scope (from package name) @angular
+740 verbose mapToRegistry no registry URL found in name for scope @angular
+741 silly mapToRegistry using default registry
+742 silly mapToRegistry registry https://registry.npmjs.org/
+743 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcore
+744 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fcore not in flight; fetching
+745 verbose get https://registry.npmjs.org/@angular%2fanimations not expired, no request
+746 silly resolveWithNewModule @ngx-loading-bar/core@1.6.0 checking installable status
+747 silly cache add args [ '@ngx-loading-bar/core@^1.5.0', null ]
+748 verbose cache add spec @ngx-loading-bar/core@^1.5.0
+749 silly cache add parsed spec Result {
+749 silly cache add   raw: '@ngx-loading-bar/core@^1.5.0',
+749 silly cache add   scope: '@ngx-loading-bar',
+749 silly cache add   name: '@ngx-loading-bar/core',
+749 silly cache add   rawSpec: '^1.5.0',
+749 silly cache add   spec: '>=1.5.0 <2.0.0',
+749 silly cache add   type: 'range' }
+750 silly addNamed @ngx-loading-bar/core@>=1.5.0 <2.0.0
+751 verbose addNamed ">=1.5.0 <2.0.0" is a valid semver range for @ngx-loading-bar/core
+752 silly addNameRange { name: '@ngx-loading-bar/core',
+752 silly addNameRange   range: '>=1.5.0 <2.0.0',
+752 silly addNameRange   hasData: false }
+753 silly mapToRegistry name @ngx-loading-bar/core
+754 silly mapToRegistry scope (from package name) @ngx-loading-bar
+755 verbose mapToRegistry no registry URL found in name for scope @ngx-loading-bar
+756 silly mapToRegistry using default registry
+757 silly mapToRegistry registry https://registry.npmjs.org/
+758 silly mapToRegistry uri https://registry.npmjs.org/@ngx-loading-bar%2fcore
+759 verbose addNameRange registry:https://registry.npmjs.org/@ngx-loading-bar%2fcore not in flight; fetching
+760 silly resolveWithNewModule @angular/router@5.2.9 checking installable status
+761 silly cache add args [ '@angular/router@5.2.9', null ]
+762 verbose cache add spec @angular/router@5.2.9
+763 silly cache add parsed spec Result {
+763 silly cache add   raw: '@angular/router@5.2.9',
+763 silly cache add   scope: '@angular',
+763 silly cache add   name: '@angular/router',
+763 silly cache add   rawSpec: '5.2.9',
+763 silly cache add   spec: '5.2.9',
+763 silly cache add   type: 'version' }
+764 silly addNamed @angular/router@5.2.9
+765 verbose addNamed "5.2.9" is a plain semver version for @angular/router
+766 silly mapToRegistry name @angular/router
+767 silly mapToRegistry scope (from package name) @angular
+768 verbose mapToRegistry no registry URL found in name for scope @angular
+769 silly mapToRegistry using default registry
+770 silly mapToRegistry registry https://registry.npmjs.org/
+771 silly mapToRegistry uri https://registry.npmjs.org/@angular%2frouter
+772 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2frouter not in flight; fetching
+773 silly resolveWithNewModule @angular/platform-server@5.2.9 checking installable status
+774 silly cache add args [ '@angular/platform-server@5.2.9', null ]
+775 verbose cache add spec @angular/platform-server@5.2.9
+776 silly cache add parsed spec Result {
+776 silly cache add   raw: '@angular/platform-server@5.2.9',
+776 silly cache add   scope: '@angular',
+776 silly cache add   name: '@angular/platform-server',
+776 silly cache add   rawSpec: '5.2.9',
+776 silly cache add   spec: '5.2.9',
+776 silly cache add   type: 'version' }
+777 silly addNamed @angular/platform-server@5.2.9
+778 verbose addNamed "5.2.9" is a plain semver version for @angular/platform-server
+779 silly mapToRegistry name @angular/platform-server
+780 silly mapToRegistry scope (from package name) @angular
+781 verbose mapToRegistry no registry URL found in name for scope @angular
+782 silly mapToRegistry using default registry
+783 silly mapToRegistry registry https://registry.npmjs.org/
+784 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-server
+785 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fplatform-server not in flight; fetching
+786 verbose get https://registry.npmjs.org/@angular%2fmaterial not expired, no request
+787 verbose get https://registry.npmjs.org/@angular%2fcompiler not expired, no request
+788 silly resolveWithNewModule @angular/platform-browser-dynamic@5.2.9 checking installable status
+789 silly cache add args [ '@angular/platform-browser-dynamic@5.2.9', null ]
+790 verbose cache add spec @angular/platform-browser-dynamic@5.2.9
+791 silly cache add parsed spec Result {
+791 silly cache add   raw: '@angular/platform-browser-dynamic@5.2.9',
+791 silly cache add   scope: '@angular',
+791 silly cache add   name: '@angular/platform-browser-dynamic',
+791 silly cache add   rawSpec: '5.2.9',
+791 silly cache add   spec: '5.2.9',
+791 silly cache add   type: 'version' }
+792 silly addNamed @angular/platform-browser-dynamic@5.2.9
+793 verbose addNamed "5.2.9" is a plain semver version for @angular/platform-browser-dynamic
+794 silly mapToRegistry name @angular/platform-browser-dynamic
+795 silly mapToRegistry scope (from package name) @angular
+796 verbose mapToRegistry no registry URL found in name for scope @angular
+797 silly mapToRegistry using default registry
+798 silly mapToRegistry registry https://registry.npmjs.org/
+799 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+800 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fplatform-browser-dynamic not in flight; fetching
+801 verbose get https://registry.npmjs.org/@angular%2fforms not expired, no request
+802 verbose get https://registry.npmjs.org/@agm%2fcore not expired, no request
+803 verbose get https://registry.npmjs.org/@angular%2fcdk not expired, no request
+804 verbose get https://registry.npmjs.org/@angular%2fcommon not expired, no request
+805 silly resolveWithNewModule @angular/platform-browser@5.2.9 checking installable status
+806 silly cache add args [ '@angular/platform-browser@5.2.9', null ]
+807 verbose cache add spec @angular/platform-browser@5.2.9
+808 silly cache add parsed spec Result {
+808 silly cache add   raw: '@angular/platform-browser@5.2.9',
+808 silly cache add   scope: '@angular',
+808 silly cache add   name: '@angular/platform-browser',
+808 silly cache add   rawSpec: '5.2.9',
+808 silly cache add   spec: '5.2.9',
+808 silly cache add   type: 'version' }
+809 silly addNamed @angular/platform-browser@5.2.9
+810 verbose addNamed "5.2.9" is a plain semver version for @angular/platform-browser
+811 silly mapToRegistry name @angular/platform-browser
+812 silly mapToRegistry scope (from package name) @angular
+813 verbose mapToRegistry no registry URL found in name for scope @angular
+814 silly mapToRegistry using default registry
+815 silly mapToRegistry registry https://registry.npmjs.org/
+816 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser
+817 verbose addNameVersion registry:https://registry.npmjs.org/@angular%2fplatform-browser not in flight; fetching
+818 verbose get https://registry.npmjs.org/@angular%2fcore not expired, no request
+819 verbose get https://registry.npmjs.org/@ngx-loading-bar%2fcore not expired, no request
+820 silly addNameRange number 2 { name: '@ngx-loading-bar/core',
+820 silly addNameRange   range: '>=1.5.0 <2.0.0',
+820 silly addNameRange   hasData: true }
+821 silly addNameRange versions [ '@ngx-loading-bar/core',
+821 silly addNameRange   [ '1.0.0-alpha.0',
+821 silly addNameRange     '1.0.0-alpha.1',
+821 silly addNameRange     '1.0.0-alpha.2',
+821 silly addNameRange     '1.0.0-alpha.3',
+821 silly addNameRange     '1.0.0-alpha.4',
+821 silly addNameRange     '1.0.0-alpha.5',
+821 silly addNameRange     '1.0.0-alpha.6',
+821 silly addNameRange     '1.0.0-alpha.7',
+821 silly addNameRange     '1.0.0-alpha.8',
+821 silly addNameRange     '1.0.0-alpha.9',
+821 silly addNameRange     '1.0.0-alpha.10',
+821 silly addNameRange     '1.0.0-alpha.11',
+821 silly addNameRange     '1.0.0-alpha.12',
+821 silly addNameRange     '1.0.0-alpha.13',
+821 silly addNameRange     '1.0.0-alpha.14',
+821 silly addNameRange     '1.0.0-alpha.15',
+821 silly addNameRange     '1.0.0-alpha.16',
+821 silly addNameRange     '1.0.0-alpha.17',
+821 silly addNameRange     '1.0.0-alpha.18',
+821 silly addNameRange     '1.0.0-rc.0',
+821 silly addNameRange     '1.0.0-rc.1',
+821 silly addNameRange     '1.0.0-rc.2',
+821 silly addNameRange     '1.0.0-rc.3',
+821 silly addNameRange     '1.0.0',
+821 silly addNameRange     '1.0.1',
+821 silly addNameRange     '1.1.0',
+821 silly addNameRange     '1.1.1',
+821 silly addNameRange     '1.1.2',
+821 silly addNameRange     '1.2.0',
+821 silly addNameRange     '1.3.0',
+821 silly addNameRange     '1.3.1',
+821 silly addNameRange     '1.4.0',
+821 silly addNameRange     '1.5.0',
+821 silly addNameRange     '2.0.0-alpha.0',
+821 silly addNameRange     '2.0.0-alpha.1',
+821 silly addNameRange     '1.5.1',
+821 silly addNameRange     '1.6.0',
+821 silly addNameRange     '2.0.0' ] ]
+822 silly addNamed @ngx-loading-bar/core@1.6.0
+823 verbose addNamed "1.6.0" is a plain semver version for @ngx-loading-bar/core
+824 silly cache afterAdd @angular/http@5.2.9
+825 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\http\5.2.9\package\package.json not in flight; writing
+826 silly cache afterAdd @angular/animations@5.2.9
+827 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\animations\5.2.9\package\package.json not in flight; writing
+828 verbose get https://registry.npmjs.org/@angular%2frouter not expired, no request
+829 verbose get https://registry.npmjs.org/@angular%2fplatform-server not expired, no request
+830 silly cache afterAdd @angular/material@5.2.4
+831 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\material\5.2.4\package\package.json not in flight; writing
+832 verbose get https://registry.npmjs.org/@angular%2fplatform-browser-dynamic not expired, no request
+833 silly cache afterAdd @angular/compiler@5.2.9
+834 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\compiler\5.2.9\package\package.json not in flight; writing
+835 verbose get https://registry.npmjs.org/@angular%2fplatform-browser not expired, no request
+836 silly cache afterAdd @angular/forms@5.2.9
+837 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\forms\5.2.9\package\package.json not in flight; writing
+838 silly cache afterAdd @agm/core@1.0.0-beta.2
+839 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@agm\core\1.0.0-beta.2\package\package.json not in flight; writing
+840 silly cache afterAdd @angular/cdk@5.2.4
+841 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\cdk\5.2.4\package\package.json not in flight; writing
+842 silly cache afterAdd @angular/common@5.2.9
+843 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\common\5.2.9\package\package.json not in flight; writing
+844 silly cache afterAdd @angular/core@5.2.9
+845 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\core\5.2.9\package\package.json not in flight; writing
+846 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\http\5.2.9\package\package.json written
+847 silly cache afterAdd @ngx-loading-bar/core@1.6.0
+848 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@ngx-loading-bar\core\1.6.0\package\package.json not in flight; writing
+849 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\animations\5.2.9\package\package.json written
+850 silly cache afterAdd @angular/router@5.2.9
+851 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\router\5.2.9\package\package.json not in flight; writing
+852 silly cache afterAdd @angular/platform-server@5.2.9
+853 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\platform-server\5.2.9\package\package.json not in flight; writing
+854 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\material\5.2.4\package\package.json written
+855 silly cache afterAdd @angular/platform-browser-dynamic@5.2.9
+856 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\platform-browser-dynamic\5.2.9\package\package.json not in flight; writing
+857 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\compiler\5.2.9\package\package.json written
+858 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\forms\5.2.9\package\package.json written
+859 silly cache afterAdd @angular/platform-browser@5.2.9
+860 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\platform-browser\5.2.9\package\package.json not in flight; writing
+861 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@agm\core\1.0.0-beta.2\package\package.json written
+862 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\cdk\5.2.4\package\package.json written
+863 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\core\5.2.9\package\package.json written
+864 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\common\5.2.9\package\package.json written
+865 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@ngx-loading-bar\core\1.6.0\package\package.json written
+866 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\router\5.2.9\package\package.json written
+867 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\platform-server\5.2.9\package\package.json written
+868 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\platform-browser-dynamic\5.2.9\package\package.json written
+869 verbose afterAdd C:\Users\Multimedia\Downloads\NodeJSPortable\Data\npm_cache\@angular\platform-browser\5.2.9\package\package.json written
+870 http 404 https://registry.npmjs.org/popper.ng
+871 verbose headers { 'content-type': 'application/json',
+871 verbose headers   'cache-control': 'max-age=0',
+871 verbose headers   'content-length': '2',
+871 verbose headers   'accept-ranges': 'bytes',
+871 verbose headers   date: 'Wed, 16 May 2018 17:27:28 GMT',
+871 verbose headers   via: '1.1 varnish',
+871 verbose headers   connection: 'keep-alive',
+871 verbose headers   'x-served-by': 'cache-mia17632-MIA',
+871 verbose headers   'x-cache': 'MISS',
+871 verbose headers   'x-cache-hits': '0',
+871 verbose headers   'x-timer': 'S1526491648.888333,VS0,VE815',
+871 verbose headers   vary: 'Accept-Encoding' }
+872 silly get cb [ 404,
+872 silly get   { 'content-type': 'application/json',
+872 silly get     'cache-control': 'max-age=0',
+872 silly get     'content-length': '2',
+872 silly get     'accept-ranges': 'bytes',
+872 silly get     date: 'Wed, 16 May 2018 17:27:28 GMT',
+872 silly get     via: '1.1 varnish',
+872 silly get     connection: 'keep-alive',
+872 silly get     'x-served-by': 'cache-mia17632-MIA',
+872 silly get     'x-cache': 'MISS',
+872 silly get     'x-cache-hits': '0',
+872 silly get     'x-timer': 'S1526491648.888333,VS0,VE815',
+872 silly get     vary: 'Accept-Encoding' } ]
+873 silly fetchPackageMetaData Error: Registry returned 404 for GET on https://registry.npmjs.org/popper.ng
+873 silly fetchPackageMetaData     at makeError (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+873 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\npm-registry-client\lib\request.js:242:14)
+873 silly fetchPackageMetaData     at Request._callback (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+873 silly fetchPackageMetaData     at Request.self.callback (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\request\request.js:198:22)
+873 silly fetchPackageMetaData     at emitTwo (events.js:100:13)
+873 silly fetchPackageMetaData     at Request.emit (events.js:185:7)
+873 silly fetchPackageMetaData     at Request.<anonymous> (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\request\request.js:1035:10)
+873 silly fetchPackageMetaData     at emitOne (events.js:95:20)
+873 silly fetchPackageMetaData     at Request.emit (events.js:182:7)
+873 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\request\request.js:962:12)
+873 silly fetchPackageMetaData  error for popper.ng @1.14.3 { [Error: Registry returned 404 for GET on https://registry.npmjs.org/popper.ng] pkgid: 'popper.ng', statusCode: 404, code: 'E404' }
+874 silly rollbackFailedOptional Starting
+875 silly rollbackFailedOptional Finishing
+876 silly runTopLevelLifecycles Starting
+877 silly runTopLevelLifecycles Finishing
+878 silly install printInstalled
+879 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/popper.ng
+879 verbose stack     at makeError (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+879 verbose stack     at CachingRegistryClient.<anonymous> (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\npm-registry-client\lib\request.js:242:14)
+879 verbose stack     at Request._callback (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+879 verbose stack     at Request.self.callback (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\request\request.js:198:22)
+879 verbose stack     at emitTwo (events.js:100:13)
+879 verbose stack     at Request.emit (events.js:185:7)
+879 verbose stack     at Request.<anonymous> (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\request\request.js:1035:10)
+879 verbose stack     at emitOne (events.js:95:20)
+879 verbose stack     at Request.emit (events.js:182:7)
+879 verbose stack     at IncomingMessage.<anonymous> (C:\Users\Multimedia\Downloads\NodeJSPortable\Data\node_modules\npm\node_modules\request\request.js:962:12)
+880 verbose statusCode 404
+881 verbose pkgid popper.ng
+882 verbose cwd C:\Users\Multimedia\Downloads\asignacion_frontend-master
+883 error Windows_NT 6.1.7601
+884 error argv "C:\\Users\\Multimedia\\Downloads\\NodeJSPortable\\App\\NodeJS\\node.exe" "C:\\Users\\Multimedia\\Downloads\\NodeJSPortable\\Data\\node_modules\\npm\\bin\\npm-cli.js" "install"
+885 error node v5.7.0
+886 error npm  v3.5.3
+887 error code E404
+888 error 404 Registry returned 404 for GET on https://registry.npmjs.org/popper.ng
+889 error 404
+890 error 404 'popper.ng' is not in the npm registry.
+891 error 404 You should bug the author to publish it (or use the name yourself!)
+892 error 404 It was specified as a dependency of 'story-asssignment'
+893 error 404 Note that you can also install from a
+894 error 404 tarball, folder, http url, or git url.
+895 verbose exit [ 1, true ]
