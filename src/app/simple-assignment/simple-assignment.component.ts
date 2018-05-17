@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { SimpleProject, SimpleSprint, SimpleDeveloper } from '../core/models';
+import { SimpleProject, SimpleSprint, SimpleDeveloper, SimpleAssignmentInput } from '../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import {
@@ -27,7 +27,7 @@ export class SimpleAssignmentComponent implements OnInit {
   formSelectSprint: FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  
+  simpleAssignmentInput: SimpleAssignmentInput;
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private media: MediaMatcher,
@@ -35,6 +35,7 @@ export class SimpleAssignmentComponent implements OnInit {
     private simpleProjectService: SimpleProjectsService,
     private simpleSprintService: SimpleSprintsService,
     private simpleDeveloperService: SimpleDevelopersService,
+    
     private loadingBar: LoadingBarService) { 
       this.mobileQuery = media.matchMedia('(max-width: 600px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -57,6 +58,11 @@ export class SimpleAssignmentComponent implements OnInit {
       this.simpleDevelopers = simpleDevelopers;
       this.loadingBar.complete();
     })
+  }
+  getSimpleAssignment(){
+    this.simpleAssignmentInput.hoursPointRelation = 1;
+    this.simpleAssignmentInput.simpleDevelopers = this.simpleDevelopers;
+    this.simpleAssignmentInput.simpleUserStories = this.selectedSimpleSprint.user_stories;
   }
   ngOnInit() {
     this.loadingBar.start();
