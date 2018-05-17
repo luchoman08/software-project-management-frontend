@@ -1,8 +1,10 @@
 import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { SimpleProject, SimpleSprint, SimpleDeveloper, SimpleAssignmentInput } from '../core/models';
+import { SimpleProject, SimpleSprint, SimpleDeveloper, SimpleAssignmentInput, SimpleAssignmentOutput } from '../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
+
+import { SimpleAssignmentService } from '../microservices/microservices-interface/story-assignment-interface/services';
 
 import {
   SimpleProjectsService,
@@ -22,7 +24,7 @@ export class SimpleAssignmentComponent implements OnInit {
   simpleProjects: SimpleProject[];
   simpleSprints: SimpleSprint[];
   simpleDevelopers: SimpleDeveloper[];
-  
+  step = 0;
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
   firstFormGroup: FormGroup;
@@ -35,20 +37,33 @@ export class SimpleAssignmentComponent implements OnInit {
     private simpleProjectService: SimpleProjectsService,
     private simpleSprintService: SimpleSprintsService,
     private simpleDeveloperService: SimpleDevelopersService,
-    
-    private loadingBar: LoadingBarService) { 
+    private simpleAssignmentService: SimpleAssignmentService,
+    private loadingBar: LoadingBarService) {
+      this.simpleAssignmentInput = new SimpleAssignmentInput();
       this.mobileQuery = media.matchMedia('(max-width: 600px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
       this.mobileQuery.addListener(this._mobileQueryListener);
     }
 
+    setStep(index: number) {
+      this.step = index;
+    }
+
+    nextStep() {
+      this.step++;
+    }
+
+    prevStep() {
+      this.step--;
+    }
   initSimpleSprints(project_id) {
     this.loadingBar.start();
     this.simpleSprintService.getSimpleProjectSprints(project_id)
     .subscribe((simpleSprints: SimpleSprint[]) => {
       this.simpleSprints = simpleSprints;
-      //this.formSelectSprint.controls['sprintCntrl'].enable();
+      // this.formSelectSprint.controls['sprintCntrl'].enable();
       this.loadingBar.complete();
+      this.nextStep();
     })
   }
   initSimpleDevelopers(project_id) {
@@ -59,11 +74,18 @@ export class SimpleAssignmentComponent implements OnInit {
       this.loadingBar.complete();
     })
   }
-  getSimpleAssignment(){
+  getSimpleAssignment(): void {
     this.simpleAssignmentInput.hoursPointRelation = 1;
     this.simpleAssignmentInput.simpleDevelopers = this.simpleDevelopers;
     this.simpleAssignmentInput.simpleUserStories = this.selectedSimpleSprint.user_stories;
+    this.simpleAssignmentService.generateSimpleAssignment(this.simpleAssignmentInput)
+    .subscribe(
+      (simpleAssignmentOutput: SimpleAssignmentOutput) => {
+        console.log(simpleAssignmentOutput);
+      }
+    );
   }
+
   ngOnInit() {
     this.loadingBar.start();
     this.simpleProjectService.getSimpleProjectsByMemberId('303456')

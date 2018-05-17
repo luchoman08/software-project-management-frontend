@@ -1,6 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { ProjectManagersInterfaceService } from './services';
+import { TaigaApiService } from '../taiga/services/taiga-api.service';
 
 import {
   TaigaUserStoriesSimpleInterfaceService,
@@ -27,6 +28,7 @@ import {
     TaigaUserStoriesService,
     TaigaProjectsService,
     TaigaMilestonesService,
+    TaigaApiService,
     TaigaMembershipsService,
     ProjectManagersInterfaceService
   ]

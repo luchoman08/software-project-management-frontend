@@ -9,16 +9,16 @@ import { map } from 'rxjs/operators/map';
 import { StoryAssignmentMiroservicesEnum } from '../../enums';
 
 @Injectable()
-export class SimpleUserStoriesService {
+export class SimpleAssignmentService {
 
   constructor (
     private asignacionSimpleInterfaceService: AsignacionSimpleInterfaceService,
-    private assignmentMicroservicesInterfae: AssignmentMiroservicesInterfaceService
+    private assignmentMicroservicesInterface: AssignmentMiroservicesInterfaceService
   ) {
   }
 
   generateSimpleAssignment(simpleAssignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
-    switch (this.assignmentMicroservicesInterfae.choosenAssignmentMicroservicee) {
+    switch (this.assignmentMicroservicesInterface.choosenAssignmentMicroservicee) {
       case StoryAssignmentMiroservicesEnum.SIMPLE_SISTEM_ASSIGNMENT: {
         return this.asignacionSimpleInterfaceService.generarAsignacionSimple(simpleAssignmentInput);
       }

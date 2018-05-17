@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { ApiService } from '../../../core/services';
 import { TaigaUserStory } from '../models';
 import { map } from 'rxjs/operators/map';
 import 'rxjs/add/operator/map'
+import { TaigaApiService } from './taiga-api.service';
 
 @Injectable()
 export class TaigaUserStoriesService {
   constructor (
-    private apiService: ApiService
+    private apiService: TaigaApiService
   ) {}
 
   get(slug): Observable<TaigaUserStory> {
