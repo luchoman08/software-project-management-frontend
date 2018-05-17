@@ -1,6 +1,6 @@
 import { SSADesarrolladorSimple, SSAHistoriaUsuarioSimple } from './';
 
-export interface SSAAsignacionSimpleInput {
+export class SSAAsignacionSimpleInput {
     desarrolladores: SSADesarrolladorSimple[];
     historias: SSAHistoriaUsuarioSimple[];
     relacion_horas_puntos: number;

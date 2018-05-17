@@ -1,12 +1,14 @@
-import { SSAAsignacionSimpleOutput } from '../../../../story-assignment-ssa/models/simple-assignment/ssa-asignacion-simple-output.model';
-import { SimpleAssignmentOutput } from '../../../../../../core/models/simple-assignment/simple-assignment-output.model';
+import { SSAAsignacionSimpleOutput, SSAAsignacionSimpleInput } from '../../../../../story-assignment/story-assignment-ssa/models';
+import { SimpleAssignmentOutput,
+ } from '../../../../../../core/models/simple-assignment/simple-assignment-output.model';
 
+ import { ssaTareasDesarrolladoresSimpleToSimpleDeveloperUserStoriesAssigned } from './historias-desarrollador-interface';
 
-function ssaAsignacionSimpleOutputToSimpleAssignmentOutput(
+export function ssaAsignacionSimpleOutputToSimpleAssignmentOutput(
     ssaAsignacionSimpleOutput: SSAAsignacionSimpleOutput
 ): SimpleAssignmentOutput {
     const simpleAssignmentOutput: SimpleAssignmentOutput = new SimpleAssignmentOutput();
     simpleAssignmentOutput.assignmentErrors = ssaAsignacionSimpleOutput.errores;
-    // to do simpleAssignmentOutput.asignaciones
+    simpleAssignmentOutput.simpleDeveloperUserStoriesAssigned = ssaTareasDesarrolladoresSimpleToSimpleDeveloperUserStoriesAssigned(ssaAsignacionSimpleOutput.asignaciones);
     return simpleAssignmentOutput;
 }

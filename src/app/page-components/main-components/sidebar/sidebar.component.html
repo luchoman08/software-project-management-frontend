@@ -13,7 +13,7 @@
         <div class="input-group no-border">
           <input type="text" value="" class="form-control" placeholder="Search...">
           <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
-            <i class="material-icons">search</i>
+            <mat-icon svgIcon="search"></mat-icon>
             <div class="ripple-container"></div>
           </button>
         </div>
@@ -22,7 +22,7 @@
     <ul class="nav navbar-nav nav-mobile-menu">
         <li class="nav-item">
             <a class="nav-link" href="#pablo">
-                <i class="material-icons">dashboard</i>
+                <mat-icon svgIcon="dashboard"> </mat-icon>
                 <p>
                     <span class="d-lg-none d-md-block">Stats</span>
                 </p>
@@ -30,7 +30,7 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">notifications</i>
+                <mat-icon svgIcon="notifications"></mat-icon>
                 <span class="notification">5</span>
                 <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
@@ -46,7 +46,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#pablo">
-                <i class="material-icons">person</i>
+                <mat-icon svgIcon="person"></mat-icon>
                 <p>
                     <span class="d-lg-none d-md-block">Account</span>
                 </p>
@@ -57,8 +57,8 @@
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
-                <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
+               
+                <p> <mat-icon inline="true">unarchive</mat-icon> {{menuItem.title}}</p>
             </a>
         </li>
     </ul>

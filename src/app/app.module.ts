@@ -9,10 +9,12 @@ import {
   MatButtonToggleModule,
   MatStepperModule,
   MatInputModule,
+  MatExpansionModule,
   MatRippleModule,
   MatTooltipModule,
   MatDialogModule,
   MatDialog,
+  MatIconModule,
   MatProgressBarModule,
   MatFormFieldModule,
   MatSelectModule,
@@ -44,6 +46,15 @@ import { SimpleSprintsService } from './project-managers/project-managers-interf
 import { SimpleUserStoryModule } from './user-story/simple-userstory/simple-userstory.module';
 import { SimpleDeveloperModule } from './developer/simple-developer/simple-developer.module';
 
+import { SimpleAssignmentService } from './microservices/microservices-interface/story-assignment-interface/services';
+import {
+  StoryAssignmentInterfaceModule
+} from './microservices/microservices-interface/story-assignment-interface/story-assignment-interface.module';
+
+import {
+  AssignmentMiroservicesInterfaceService
+} from './microservices/microservices-interface/story-assignment-interface/services/story-assignment-microservices-interface.services';
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -52,8 +63,10 @@ import { SimpleDeveloperModule } from './developer/simple-developer/simple-devel
     ReactiveFormsModule,
     HttpModule,
     MainPageComponentsModule,
+    MatExpansionModule,
     RouterModule,
     CoreModule,
+    MatIconModule,
     MatInputModule,
     MatTooltipModule,
     MatDialogModule,
@@ -72,7 +85,8 @@ import { SimpleDeveloperModule } from './developer/simple-developer/simple-devel
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
-    ProjectManagersInterfaceModule
+    ProjectManagersInterfaceModule,
+    StoryAssignmentInterfaceModule
   ],
   declarations: [
     AppComponent,
@@ -82,7 +96,9 @@ import { SimpleDeveloperModule } from './developer/simple-developer/simple-devel
     SimpleUserStoriesService,
     SimpleProjectsService,
     SimpleSprintsService,
-    SimpleDevelopersService
+    SimpleDevelopersService,
+    SimpleAssignmentService,
+    AssignmentMiroservicesInterfaceService
   ],
   bootstrap: [AppComponent]
 })

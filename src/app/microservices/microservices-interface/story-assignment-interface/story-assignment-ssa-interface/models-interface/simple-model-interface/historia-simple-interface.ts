@@ -1,4 +1,4 @@
-import { SSAHistoriaUsuarioSimple } from '../../../../story-assignment-ssa/models/simple-assignment/ssa-historia-usuario-simple.model';
+import { SSAHistoriaUsuarioSimple } from '../../../../../story-assignment/story-assignment-ssa/models';
 import { SimpleUserStory } from '../../../../../../core/models/simple-assignment/simple-user-story.model';
 
 
@@ -16,4 +16,20 @@ export function ssaHistoriasToSimpleStories (
     historiasUsuarioSimples: SSAHistoriaUsuarioSimple[]):
     SimpleUserStory[] {
         return historiasUsuarioSimples.map(ssaHistoriaToSimpleStory);
+}
+
+
+export function simpleStoryToHistoriaSimple(
+    simpleUserStory: SimpleUserStory):
+    SSAHistoriaUsuarioSimple {
+        const historiaUsuarioSimple: SSAHistoriaUsuarioSimple = new SSAHistoriaUsuarioSimple();
+        historiaUsuarioSimple.id_externo = simpleUserStory.id;
+        historiaUsuarioSimple.puntuacionGeneral = simpleUserStory.points;
+        historiaUsuarioSimple.descripcion = simpleUserStory.subject;
+        return historiaUsuarioSimple;
+}
+export function simpleStoriesToHistoriasSimples (
+    simpleUserStories: SimpleUserStory []
+): SSAHistoriaUsuarioSimple [] {
+    return simpleUserStories.map (simpleStoryToHistoriaSimple);
 }

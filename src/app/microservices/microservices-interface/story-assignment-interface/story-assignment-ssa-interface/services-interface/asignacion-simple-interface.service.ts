@@ -5,30 +5,24 @@ import { SimpleAssignmentInput, SimpleAssignmentOutput } from '../../../../../co
 import {
     asignacionSimpleInputToSimpleAssingmentInput,
     ssaAsignacionSimpleOutputToSimpleAssignmentOutput
- } from '../../models-interface';
+ } from '../../../../microservices-interface/story-assignment-interface/story-assignment-ssa-interface/models-interface';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { SSAAsignacionSimpleInput, SSAAsignacionSimpleOutput } from '../../../../simple-story-assignment-ssa/models/';
+import { SSAAsignacionSimpleInput, SSAAsignacionSimpleOutput } from '../../../../story-assignment/story-assignment-ssa/models';
+import { SSAAsignacionSimpleService } from '../../../../story-assignment/story-assignment-ssa/services';
 
 @Injectable()
-export class AsignacionSimpleServiceInterface {
+export class AsignacionSimpleInterfaceService {
   constructor (
-    private ssaAasignacionSimpleService: SSAAsignacionSimpleService
+    private ssaAasignacionSimpleService: SSAAsignacionSimpleService 
   ) {}
 
   generarAsignacionSimple(simplessignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
-      return  this.ssaAasignacionSimpleService.generarAsignacionSimple(slug)
-           .map( (taigaUserStory: TaigaUserStory) => {
-                    return taigaStoryToSimpleUserStory(taigaUserStory);
+    const ssaAsignacionSimpleInput: SSAAsignacionSimpleInput = new SSAAsignacionSimpleInput();
+      return  this.ssaAasignacionSimpleService.generarAsignacionSimple(ssaAsignacionSimpleInput)
+           .map( (ssaAsignacionSimpleOutput: SSAAsignacionSimpleOutput) => {
+                    return ssaAsignacionSimpleOutputToSimpleAssignmentOutput(ssaAsignacionSimpleOutput);
             } );
 }
-
-  getSimpleProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
-    return this.taigaMembershipsService.getProjectMembership(project_id)
-    .map( (taigaMemberships: TaigaMembership[]) => {
-              return taigaMembershipsToSimpleDevelopers(taigaMemberships);
-      } );
-  }
-
 }

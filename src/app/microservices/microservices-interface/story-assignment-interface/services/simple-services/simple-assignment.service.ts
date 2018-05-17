@@ -3,33 +3,25 @@ import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../../../../core/services';
 import { SimpleAssignmentOutput, SimpleAssignmentInput } from '../../../../../core/models';
-import { TaigaUserStoriesSimpleInterfaceService } from '../../story-assignment-ssa-interface/services-interface';
-import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
+import { AsignacionSimpleInterfaceService } from '../../story-assignment-ssa-interface/services-interface';
+import { AssignmentMiroservicesInterfaceService } from '../story-assignment-microservices-interface.services';
 import { map } from 'rxjs/operators/map';
-import { ProjectManagersEnum } from '../../enums';
+import { StoryAssignmentMiroservicesEnum } from '../../enums';
 
 @Injectable()
-export class SimpleUserStoriesService {
+export class SimpleAssignmentService {
 
   constructor (
-    private taigaUserStoriesServiceInterface: TaigaUserStoriesSimpleInterfaceService,
-    private projectManagersInterfaceService: ProjectManagersInterfaceService
+    private asignacionSimpleInterfaceService: AsignacionSimpleInterfaceService,
+    private assignmentMicroservicesInterface: AssignmentMiroservicesInterfaceService
   ) {
   }
 
-  get(slug): Observable<SimpleUserStory> {
-    switch (this.projectManagersInterfaceService.chosenProjectManager) {
-      case ProjectManagersEnum.TAIGA: {
-        return this.taigaUserStoriesServiceInterface.get(slug);
+  generateSimpleAssignment(simpleAssignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
+    switch (this.assignmentMicroservicesInterface.choosenAssignmentMicroservicee) {
+      case StoryAssignmentMiroservicesEnum.SIMPLE_SISTEM_ASSIGNMENT: {
+        return this.asignacionSimpleInterfaceService.generarAsignacionSimple(simpleAssignmentInput);
       }
     }
   }
-  getSimpleProjectStories(project_id): Observable<SimpleUserStory[]> {
-    switch (this.projectManagersInterfaceService.chosenProjectManager) {
-      case ProjectManagersEnum.TAIGA: {
-        return this.taigaUserStoriesServiceInterface.getSimpleProjectStories(project_id);
-      }
-    }
-  }
-
 }

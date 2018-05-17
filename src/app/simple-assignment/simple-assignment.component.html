@@ -1,6 +1,6 @@
 <div  class="main-content">
 
-<mat-horizontal-stepper  *ngIf="simpleProjects"  linear="true" #stepper>
+<mat-vertical-stepper  *ngIf="simpleProjects"  linear="true" #stepper>
   <mat-step [stepControl]="formSelectProject">
     <form  [formGroup]="formSelectProject">
       <ng-template matStepLabel>Seleccione el proyecto</ng-template>
@@ -43,7 +43,7 @@
   </mat-step>
 
   <mat-step>
-    <ng-template matStepLabel>Completar info. historias</ng-template>
+    <ng-template matStepLabel>Completar o modificar historias</ng-template>
     <app-simple-user-story-list-one-line *ngIf="selectedSimpleSprint" [simpleUserStories] = "selectedSimpleSprint.user_stories"> 
     </app-simple-user-story-list-one-line>
       <div>
@@ -53,7 +53,7 @@
       </div>
   </mat-step>
   <mat-step>
-  <ng-template matStepLabel>Completar info. desarrolladores</ng-template>
+  <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
        <app-simple-developer-list-one-line *ngIf="simpleDevelopers" [simpleDevelopers] = "simpleDevelopers">
        </app-simple-developer-list-one-line> 
       <div>
@@ -65,13 +65,13 @@
     <ng-template matStepLabel>Terminado</ng-template>
     Todos los datos han sido completados.
     <div>
-      <button mat-button matStepperPrevious>Generar asignación?</button>
+      <button mat-button (click)="getSimpleAssignment()" >Generar asignación?</button>
       <button mat-button (click)="stepper.reset()">Reiniciar</button>
     </div>
   </mat-step>
 
 
-</mat-horizontal-stepper>
+</mat-vertical-stepper>
 
 
 </div>

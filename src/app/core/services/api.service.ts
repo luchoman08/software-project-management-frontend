@@ -8,7 +8,7 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError } from 'rxjs/operators/catchError';
 @Injectable()
 export class ApiService {
-  private api_url = environment.api_taiga_url;
+  public api_url = environment.api_simple_assignment_sistem;
   constructor(
     private http: HttpClient,
     private jwtService: JwtService
