@@ -16,3 +16,19 @@ export function ssaDesarrolladoresToSimpleDevelopers (
 ): SimpleDeveloper [] {
     return ssaDesarrolladoresSimples.map(ssaDesarrolladorToSimpleDeveloper);
 }
+
+export function simpleDeveloperTossaDesarrollador(
+    simpleDeveloper: SimpleDeveloper
+): SSADesarrolladorSimple {
+    const ssaDesarrolladorSimple: SSADesarrolladorSimple = new SSADesarrolladorSimple();
+    ssaDesarrolladorSimple.horasDisponiblesSemana = simpleDeveloper.available_hours_per_week;
+    ssaDesarrolladorSimple.id_externo =  simpleDeveloper.id;
+    ssaDesarrolladorSimple.nombre = simpleDeveloper.full_name;
+    return ssaDesarrolladorSimple;
+}
+
+export function simpleDevelopersTossaDesarrolladores (
+    simpleDevelopers: SimpleDeveloper[]
+): SSADesarrolladorSimple[] {
+    return simpleDevelopers.map(simpleDeveloperTossaDesarrollador);
+}

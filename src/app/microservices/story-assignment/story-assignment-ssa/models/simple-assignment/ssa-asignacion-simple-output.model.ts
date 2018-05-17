@@ -1,6 +1,6 @@
 import { SSAHistoriasDesarrolladorSimple } from '.';
 
-export interface SSAAsignacionSimpleOutput {
+export class SSAAsignacionSimpleOutput {
     asignaciones: SSAHistoriasDesarrolladorSimple[];
     errores: string[];
 }

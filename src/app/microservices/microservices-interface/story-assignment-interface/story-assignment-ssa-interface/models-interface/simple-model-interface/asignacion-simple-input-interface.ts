@@ -1,7 +1,7 @@
 import { SSAAsignacionSimpleInput } from '../../../../../story-assignment/story-assignment-ssa/models';
 import { SimpleAssignmentInput } from '../../../../../../core/models/simple-assignment/simple-assignment-input.model';
-import { ssaDesarrolladoresToSimpleDevelopers } from './desarrollador-simple-interface';
-import { ssaHistoriasToSimpleStories } from './historia-simple-interface';
+import { ssaDesarrolladoresToSimpleDevelopers, simpleDevelopersTossaDesarrolladores } from './desarrollador-simple-interface';
+import { ssaHistoriasToSimpleStories, simpleStoryToHistoriaSimple, simpleStoriesToHistoriasSimples } from './historia-simple-interface';
 
 export function asignacionSimpleInputToSimpleAssingmentInput (
     ssaAsignacionSimpleInput: SSAAsignacionSimpleInput
@@ -14,6 +14,10 @@ export function asignacionSimpleInputToSimpleAssingmentInput (
 }
 
 export function simpleAssignmentInputToasignacionSimple(
-    simpleAssignmentInput: SimpleAssignmentInput) {
-        const simple
+    simpleAssignmentInput: SimpleAssignmentInput): SSAAsignacionSimpleInput {
+        const ssaAsignacionSimpleInput: SSAAsignacionSimpleInput = new SSAAsignacionSimpleInput();
+        ssaAsignacionSimpleInput.historias = simpleStoriesToHistoriasSimples(simpleAssignmentInput.simpleUserStories);
+        ssaAsignacionSimpleInput.desarrolladores = simpleDevelopersTossaDesarrolladores(simpleAssignmentInput.simpleDevelopers);
+        ssaAsignacionSimpleInput.relacion_horas_puntos = simpleAssignmentInput.hoursPointRelation;
+        return ssaAsignacionSimpleInput;
     }

@@ -13,3 +13,8 @@ export function ssaTareasDesarrolladorSimpleToSimpleDeveloperUserStoriesAssigned
     ssaHistoriasToSimpleStories(ssaHistoriasDesarrolladorSimple.historias);
     return simpleDeveloperUserStoriesAssigned;
 }
+export function ssaTareasDesarrolladoresSimpleToSimpleDeveloperUserStoriesAssigned (
+    ssaHistoriasDesarrolladoresSimple: SSAHistoriasDesarrolladorSimple []
+): SimpleDeveloperUserStoriesAssigned[] {
+    return ssaHistoriasDesarrolladoresSimple.map(ssaTareasDesarrolladorSimpleToSimpleDeveloperUserStoriesAssigned);
+}
