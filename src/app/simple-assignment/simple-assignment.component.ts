@@ -6,6 +6,7 @@ import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { SimpleAssignmentService } from '../microservices/microservices-interface/story-assignment-interface/services';
 import { Errors } from '../core/models';
+import { ProjectsService } from '../core/services/projects.service';
 import {
   SimpleProjectsService,
   SimpleDevelopersService,
@@ -22,6 +23,7 @@ export class SimpleAssignmentComponent implements OnInit {
   selectedSimpleProject: SimpleProject;
   selectedSimpleSprint: SimpleSprint;
   simpleProjects: SimpleProject[];
+  projectErrors: {};
   simpleSprints: SimpleSprint[];
   simpleDevelopers: SimpleDeveloper[];
   step = 0;
@@ -35,7 +37,7 @@ export class SimpleAssignmentComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef,
     private media: MediaMatcher,
     private _formBuilder: FormBuilder,
-    private simpleProjectService: SimpleProjectsService,
+    private simpleProjectService: ProjectsService,
     private simpleSprintService: SimpleSprintsService,
     private simpleDeveloperService: SimpleDevelopersService,
     private simpleAssignmentService: SimpleAssignmentService,
@@ -83,7 +85,7 @@ export class SimpleAssignmentComponent implements OnInit {
     this.simpleAssignmentService.generateSimpleAssignment(this.simpleAssignmentInput)
     .subscribe(
       (simpleAssignmentOutput: SimpleAssignmentOutput) => {
-        console.log(JSON.stringify(simpleAssignmentOutput)); 
+        console.log(JSON.stringify(simpleAssignmentOutput));
       },
       err => {
         this.errors = err;
@@ -94,11 +96,19 @@ export class SimpleAssignmentComponent implements OnInit {
 
   ngOnInit() {
     this.loadingBar.start();
-    this.simpleProjectService.getSimpleProjectsByMemberId('303456')
-    .subscribe ((simpleProjects: SimpleProject[]) => {
-      this.simpleProjects = simpleProjects;
-      this.loadingBar.complete();
-    });
+    this.simpleProjectService.getByMemberId('303456')
+    .subscribe (
+      (simpleProjects: SimpleProject[]) => {
+        this.simpleProjects = simpleProjects;
+        console.log(this.simpleProjects);
+        this.loadingBar.complete();
+      },
+      errors => {
+        this.projectErrors  = errors;
+        console.log(this.projectErrors);
+      }
+
+    );
     this.formSelectProject = this._formBuilder.group({
       projectContrl: ['', Validators.required]
     });
