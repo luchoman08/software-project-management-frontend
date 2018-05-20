@@ -1,0 +1,54 @@
+
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">Lista de historias de usuario</h4>
+        <p class="card-category" *ngIf="userStories.length === 0; else categoryForStories"  >No hay historias que mostrar</p>
+        <ng-template #categoryForStories> 
+            <p  class="card-category">Debe configurar todos los puntos de historia antes de avanzar</p>
+        </ng-template>
+    </div>
+    <div class="card-body">
+
+            <div  *ngIf ="userStories.length > 0" class="table-responsive">
+                <table class="table table-stories">
+                    <thead class=" text-primary">
+                        <th>
+                            Título
+                        </th>
+                        <th>
+                            Puntos
+                        </th>
+                    </thead>
+    
+                        <tr  *ngFor="let userStory of userStories; let i=index">
+                            <td>
+                                <p class="sotry-title">
+                                    
+                                {{userStory.subject}}
+                                </p>
+                            </td>
+                            <td>
+                        <!--     <p *ngIf = "userStory.points; else noPointsBlock"> {{userStory.points}}                                
+                                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                    <i *ngIf = "userStory.points" (click)="openEditPointsDialog(userStory)"  class="material-icons small ">edit</i>
+                                </button> 
+                                </p>
+                                <ng-template #noPointsBlock>
+                                <button (click)="openEditPointsDialog(userStory)" type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                <i class="material-icons">add_circle</i>
+                                    </button>
+                                
+                                </ng-template>  
+                            -->
+                            <mat-form-field>
+                                <input matInput  #Name="ngModel" type="number" [(ngModel)]="userStory.points">
+                            </mat-form-field>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+</div>

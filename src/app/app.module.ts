@@ -4,31 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
-import {
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatStepperModule,
-  MatInputModule,
-  MatExpansionModule,
-  MatRippleModule,
-  MatTooltipModule,
-  MatDialogModule,
-  MatDialog,
-  MatIconModule,
-  MatProgressBarModule,
-  MatFormFieldModule,
-  MatSelectModule,
-  MatOption,
-  MatListModule,
-  MatFormField
-} from '@angular/material';
+
 
 import { AppRoutingModule } from './app.routing';
 import { MainPageComponentsModule } from './page-components/main-components/main-components.module';
 
 import { AppComponent } from './app.component';
-
 import { CoreModule } from './core/core.module';
+
 import { HttpClientModule } from '@angular/common/http'
 
 
@@ -37,25 +20,17 @@ import {
 } from '@agm/core';
 import { SingleDataDialogEditOrAddComponent } from './page-components/common-components';
 import { CommonComponentsModule } from './page-components/common-components/common-components.module';
-import { SimpleAssignmentComponent } from './simple-assignment/simple-assignment.component';
-import { SimpleUserStoryModule } from './user-story/simple-userstory/simple-userstory.module';
-import { SimpleDeveloperModule } from './developer/simple-developer/simple-developer.module';
-
-import { SimpleAssignmentService } from './microservices/microservices-interface/story-assignment-interface/services';
-import {
-  StoryAssignmentInterfaceModule
-} from './microservices/microservices-interface/story-assignment-interface/story-assignment-interface.module';
 
 import {
-  AssignmentMiroservicesInterfaceService
-} from './microservices/microservices-interface/story-assignment-interface/services/story-assignment-microservices-interface.services';
-import {
-  SimpleAssignmentDetailReadOnlyComponent
-} from './simple-assignment/simple-assignment-detail-read-only/simple-assignment-detail-read-only.component';
+  AssignmentDetailReadOnlyComponent
+} from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
 import { ProjectsService } from './core/services/projects.service';
 import { SprintsService } from './core/services/sprints.service';
 import { UserStoriesService } from './core/services';
 import { DevelopersService } from './core/services/developers-service';
+import { UserStoryModule } from './user-story/user-story.module';
+import { DeveloperModule } from './developer/developer.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   imports: [
@@ -64,44 +39,25 @@ import { DevelopersService } from './core/services/developers-service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    MaterialModule,
     MainPageComponentsModule,
-    MatExpansionModule,
     RouterModule,
     CoreModule,
-    MatIconModule,
-    MatInputModule,
-    MatTooltipModule,
-    MatDialogModule,
-    MatStepperModule,
-    MatSelectModule,
-    MatButtonToggleModule,
-    MatButtonModule,
-    MatProgressBarModule,
-    MatRippleModule,
-    MatFormFieldModule,
-    MatListModule,
     LoadingBarModule.forRoot(),
     AppRoutingModule,
     CommonComponentsModule,
-    SimpleUserStoryModule,
-    SimpleDeveloperModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
-    StoryAssignmentInterfaceModule
   ],
   declarations: [
-    AppComponent,
-    SimpleAssignmentComponent,
-    SimpleAssignmentDetailReadOnlyComponent
+    AppComponent
   ],
   providers: [
     UserStoriesService,
     ProjectsService,
     SprintsService,
-    DevelopersService,
-    SimpleAssignmentService,
-    AssignmentMiroservicesInterfaceService
+    DevelopersService
   ],
   bootstrap: [AppComponent]
 })
