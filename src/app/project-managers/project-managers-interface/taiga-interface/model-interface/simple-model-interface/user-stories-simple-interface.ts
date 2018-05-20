@@ -1,9 +1,9 @@
 import { TaigaUserStory } from '../../../../../project-managers/taiga/models';
-import { SimpleUserStory } from '../../../../../core/models/';
+import { UserStory } from '../../../../../core/models/';
 
 export function taigaStoryToSimpleUserStory(
-    taigaUserStory: TaigaUserStory): SimpleUserStory {
-    const simpleUserStory: SimpleUserStory = new SimpleUserStory();
+    taigaUserStory: TaigaUserStory): UserStory {
+    const simpleUserStory: UserStory = new UserStory();
     simpleUserStory.id = taigaUserStory.id;
     simpleUserStory.subject = taigaUserStory.subject;
     return simpleUserStory;
@@ -11,6 +11,6 @@ export function taigaStoryToSimpleUserStory(
 }
 
 export function taigaStoriesToSimpleUserStories(
-    taigaUserStories: TaigaUserStory[]): SimpleUserStory[] {
+    taigaUserStories: TaigaUserStory[]): UserStory[] {
         return taigaUserStories.map(taigaStoryToSimpleUserStory);
     }

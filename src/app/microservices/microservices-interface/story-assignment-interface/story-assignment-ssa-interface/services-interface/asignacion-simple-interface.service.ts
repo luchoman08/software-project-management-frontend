@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleAssignmentInput, SimpleAssignmentOutput } from '../../../../../core/models';
+import { AssignmentInput, SimpleAssignmentOutput } from '../../../../../core/models';
 
 import {
     asignacionSimpleInputToSimpleAssingmentInput,
@@ -19,7 +19,7 @@ export class AsignacionSimpleInterfaceService {
     private ssaAasignacionSimpleService: SSAAsignacionSimpleService 
   ) {}
 
-  generarAsignacionSimple(simpleAssignmentInput: SimpleAssignmentInput): Observable<SimpleAssignmentOutput> {
+  generarAsignacionSimple(simpleAssignmentInput: AssignmentInput): Observable<SimpleAssignmentOutput> {
     var ssaAsignacionSimpleInput: SSAAsignacionSimpleInput = new SSAAsignacionSimpleInput();
     ssaAsignacionSimpleInput = simpleAssignmentInputToasignacionSimple(simpleAssignmentInput);
       return  this.ssaAasignacionSimpleService.generarAsignacionSimple(ssaAsignacionSimpleInput)

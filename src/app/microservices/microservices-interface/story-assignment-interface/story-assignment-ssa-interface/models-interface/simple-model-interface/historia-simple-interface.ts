@@ -1,11 +1,11 @@
 import { SSAHistoriaUsuarioSimple } from '../../../../../story-assignment/story-assignment-ssa/models';
-import { SimpleUserStory } from '../../../../../../core/models/simple-assignment/simple-user-story.model';
+import { UserStory } from '../../../../../../core/models/user-story.model';
 
 
 export function ssaHistoriaToSimpleStory(
     historiaUsuarioSimple: SSAHistoriaUsuarioSimple):
-    SimpleUserStory {
-        const simpleUserStory: SimpleUserStory = new SimpleUserStory();
+    UserStory {
+        const simpleUserStory: UserStory = new UserStory();
         simpleUserStory.id = historiaUsuarioSimple.id_externo;
         simpleUserStory.points = historiaUsuarioSimple.puntuacionGeneral;
         simpleUserStory.subject = historiaUsuarioSimple.descripcion;
@@ -14,13 +14,13 @@ export function ssaHistoriaToSimpleStory(
 
 export function ssaHistoriasToSimpleStories (
     historiasUsuarioSimples: SSAHistoriaUsuarioSimple[]):
-    SimpleUserStory[] {
+    UserStory[] {
         return historiasUsuarioSimples.map(ssaHistoriaToSimpleStory);
 }
 
 
 export function simpleStoryToHistoriaSimple(
-    simpleUserStory: SimpleUserStory):
+    simpleUserStory: UserStory):
     SSAHistoriaUsuarioSimple {
         const historiaUsuarioSimple: SSAHistoriaUsuarioSimple = new SSAHistoriaUsuarioSimple();
         historiaUsuarioSimple.id_externo = simpleUserStory.id;
@@ -29,7 +29,7 @@ export function simpleStoryToHistoriaSimple(
         return historiaUsuarioSimple;
 }
 export function simpleStoriesToHistoriasSimples (
-    simpleUserStories: SimpleUserStory []
+    userStories: UserStory []
 ): SSAHistoriaUsuarioSimple [] {
-    return simpleUserStories.map (simpleStoryToHistoriaSimple);
+    return userStories.map (simpleStoryToHistoriaSimple);
 }

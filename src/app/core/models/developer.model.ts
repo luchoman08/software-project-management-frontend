@@ -1,4 +1,4 @@
-export class SimpleDeveloper {
+export class Developer {
     id: string;
     full_name: string;
     role_name: string;

@@ -2,14 +2,14 @@
 <div class="card">
     <div class="card-header card-header-primary">
         <h4 class="card-title ">Lista de historias de usuario</h4>
-        <p class="card-category" *ngIf="simpleUserStories.length === 0; else categoryForStories"  >No hay historias que mostrar</p>
+        <p class="card-category" *ngIf="userStories.length === 0; else categoryForStories"  >No hay historias que mostrar</p>
         <ng-template #categoryForStories> 
             <p  class="card-category">Debe configurar todos los puntos de historia antes de avanzar</p>
         </ng-template>
     </div>
     <div class="card-body">
 
-            <div  *ngIf ="simpleUserStories.length > 0" class="table-responsive">
+            <div  *ngIf ="userStories.length > 0" class="table-responsive">
                 <table class="table table-stories">
                     <thead class=" text-primary">
                         <th>
@@ -20,7 +20,7 @@
                         </th>
                     </thead>
     
-                        <tr  *ngFor="let simpleUserStory of simpleUserStories; let i=index">
+                        <tr  *ngFor="let simpleUserStory of userStories; let i=index">
                             <td>
                                 <p class="sotry-title">
                                     

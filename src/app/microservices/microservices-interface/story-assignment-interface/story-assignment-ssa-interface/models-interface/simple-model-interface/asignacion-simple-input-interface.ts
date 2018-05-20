@@ -1,23 +1,23 @@
 import { SSAAsignacionSimpleInput } from '../../../../../story-assignment/story-assignment-ssa/models';
-import { SimpleAssignmentInput } from '../../../../../../core/models/simple-assignment/simple-assignment-input.model';
+import { AssignmentInput } from '../../../../../../core/models/assignment-input.model';
 import { ssaDesarrolladoresToSimpleDevelopers, simpleDevelopersTossaDesarrolladores } from './desarrollador-simple-interface';
 import { ssaHistoriasToSimpleStories, simpleStoryToHistoriaSimple, simpleStoriesToHistoriasSimples } from './historia-simple-interface';
 
 export function asignacionSimpleInputToSimpleAssingmentInput (
     ssaAsignacionSimpleInput: SSAAsignacionSimpleInput
-): SimpleAssignmentInput {
-    const simpleAssignmentInput: SimpleAssignmentInput = new SimpleAssignmentInput();
-    simpleAssignmentInput.simpleDevelopers = ssaDesarrolladoresToSimpleDevelopers(ssaAsignacionSimpleInput.desarrolladores);
-    simpleAssignmentInput.simpleUserStories = ssaHistoriasToSimpleStories(ssaAsignacionSimpleInput.historias);
+): AssignmentInput {
+    const simpleAssignmentInput: AssignmentInput = new AssignmentInput();
+    simpleAssignmentInput.developers = ssaDesarrolladoresToSimpleDevelopers(ssaAsignacionSimpleInput.desarrolladores);
+    simpleAssignmentInput.userStories = ssaHistoriasToSimpleStories(ssaAsignacionSimpleInput.historias);
     simpleAssignmentInput.hoursPointRelation = ssaAsignacionSimpleInput.relacion_horas_puntos;
     return simpleAssignmentInput;
 }
 
 export function simpleAssignmentInputToasignacionSimple(
-    simpleAssignmentInput: SimpleAssignmentInput): SSAAsignacionSimpleInput {
+    simpleAssignmentInput: AssignmentInput): SSAAsignacionSimpleInput {
         const ssaAsignacionSimpleInput: SSAAsignacionSimpleInput = new SSAAsignacionSimpleInput();
-        ssaAsignacionSimpleInput.historias = simpleStoriesToHistoriasSimples(simpleAssignmentInput.simpleUserStories);
-        ssaAsignacionSimpleInput.desarrolladores = simpleDevelopersTossaDesarrolladores(simpleAssignmentInput.simpleDevelopers);
+        ssaAsignacionSimpleInput.historias = simpleStoriesToHistoriasSimples(simpleAssignmentInput.userStories);
+        ssaAsignacionSimpleInput.desarrolladores = simpleDevelopersTossaDesarrolladores(simpleAssignmentInput.developers);
         ssaAsignacionSimpleInput.relacion_horas_puntos = simpleAssignmentInput.hoursPointRelation;
         return ssaAsignacionSimpleInput;
     }

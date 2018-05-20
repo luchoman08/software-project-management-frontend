@@ -29,7 +29,7 @@
     placeholder="Sprint"
        [formControl]="formSelectSprint.controls['sprintCntrl']" required >
 
-      <mat-option   *ngFor="let simpleSprint of simpleSprints" [value]="simpleSprint">
+      <mat-option   *ngFor="let simpleSprint of sprints" [value]="simpleSprint">
         {{ simpleSprint.name }}
       </mat-option>
     </mat-select>  
@@ -44,7 +44,7 @@
 
   <mat-step>
     <ng-template matStepLabel>Completar o modificar historias</ng-template>
-    <app-simple-user-story-list-one-line *ngIf="selectedSimpleSprint" [simpleUserStories] = "selectedSimpleSprint.user_stories"> 
+    <app-simple-user-story-list-one-line *ngIf="selectedSimpleSprint" [userStories] = "selectedSimpleSprint.user_stories"> 
     </app-simple-user-story-list-one-line>
       <div>
          <button mat-button matStepperPrevious>Atrás</button>
@@ -54,7 +54,7 @@
   </mat-step>
   <mat-step>
   <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
-       <app-simple-developer-list-one-line *ngIf="simpleDevelopers" [simpleDevelopers] = "simpleDevelopers">
+       <app-simple-developer-list-one-line *ngIf="developers" [developers] = "developers">
        </app-simple-developer-list-one-line> 
       <div>
           <button mat-button matStepperPrevious>Atrás</button>

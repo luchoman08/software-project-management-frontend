@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SimpleUserStory } from '../../../core/models/simple-assignment/simple-user-story.model';
+import { UserStory } from '../../../core/models/user-story.model';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
@@ -11,7 +11,7 @@ import {
 })
 export class SimpleUserStoryListOneLineComponent implements OnInit {
 
-  @Input() public simpleUserStories: SimpleUserStory[];
+  @Input() public userStories: UserStory[];
 
   constructor(
     public dialog: MatDialog
@@ -19,7 +19,7 @@ export class SimpleUserStoryListOneLineComponent implements OnInit {
 
   ngOnInit() {
   }
-  openEditPointsDialog(simpleUserStory: SimpleUserStory): void {
+  openEditPointsDialog(simpleUserStory: UserStory): void {
     const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {
       width: '320px',
       data: {

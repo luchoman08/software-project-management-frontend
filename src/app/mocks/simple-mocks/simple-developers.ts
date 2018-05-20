@@ -1,5 +1,5 @@
-import { SimpleDeveloper } from '../../core/models/simple-assignment/simple-developer.model';
-export const SIMPLEDEVELS: SimpleDeveloper[] = [
+import { Developer } from '../../core/models/developer.model';
+export const SIMPLEDEVELS: Developer[] = [
     { id: '100', full_name: 'Luis Gerardo Manrique',
      color:  '#2196F3',  available_hours_per_week:  null,
      role_name : 'Developer'},

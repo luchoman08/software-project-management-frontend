@@ -4,7 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
 } from '../../../page-components/common-components/';
-import { SimpleUserStory } from '../../../core/models/';
+import { UserStory } from '../../../core/models/';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { SimpleUserStory } from '../../../core/models/';
 })
 export class SimpleUserStoryDetailComponent implements OnInit {
 
-  @Input() public simpleUserStory: SimpleUserStory;
+  @Input() public simpleUserStory: UserStory;
   constructor(
     public dialog: MatDialog,
     ) { }

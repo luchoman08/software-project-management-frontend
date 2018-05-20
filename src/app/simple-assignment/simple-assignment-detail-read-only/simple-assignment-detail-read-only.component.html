@@ -3,16 +3,16 @@
     <mat-expansion-panel *ngFor = "let simpleDeveloperUserStoriesAssigned of simpleAssignment.simpleDeveloperUserStoriesAssigned">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{simpleDeveloperUserStoriesAssigned.simpleDeveloper.full_name}}
+          {{simpleDeveloperUserStoriesAssigned.developer.full_name}}
         </mat-panel-title>
         <mat-panel-description>
-          Historias asignadas a  {{simpleDeveloperUserStoriesAssigned.simpleDeveloper.full_name | firstWord}}
+          Historias asignadas a  {{simpleDeveloperUserStoriesAssigned.developer.full_name | firstWord}}
         </mat-panel-description>
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let simpleUserStories of simpleDeveloperUserStoriesAssigned.simpleUserStories">
-           {{simpleUserStories.subject}} 
+        <mat-list-item *ngFor="let userStories of simpleDeveloperUserStoriesAssigned.userStories">
+           {{userStories.subject}} 
           </mat-list-item>
        </mat-list>
     </mat-expansion-panel>

@@ -1,6 +1,6 @@
 import { SSAAsignacionSimpleOutput, SSAAsignacionSimpleInput } from '../../../../../story-assignment/story-assignment-ssa/models';
 import { SimpleAssignmentOutput,
- } from '../../../../../../core/models/simple-assignment/simple-assignment-output.model';
+ } from '../../../../../../core/models/assignment-output.model';
 
  import { ssaTareasDesarrolladoresSimpleToSimpleDeveloperUserStoriesAssigned } from './historias-desarrollador-interface';
 

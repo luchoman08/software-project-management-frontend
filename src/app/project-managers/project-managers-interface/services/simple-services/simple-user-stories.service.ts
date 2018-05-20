@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../../../core/services';
-import { SimpleUserStory } from '../../../../core/models';
+import { UserStory } from '../../../../core/models';
 import { TaigaUserStoriesSimpleInterfaceService } from '../../taiga-interface/service-interface';
 import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
@@ -17,14 +17,14 @@ export class SimpleUserStoriesService {
   ) {
   }
 
-  get(slug): Observable<SimpleUserStory> {
+  get(slug): Observable<UserStory> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaUserStoriesServiceInterface.get(slug);
       }
     }
   }
-  getSimpleProjectStories(project_id): Observable<SimpleUserStory[]> {
+  getSimpleProjectStories(project_id): Observable<UserStory[]> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaUserStoriesServiceInterface.getSimpleProjectStories(project_id);

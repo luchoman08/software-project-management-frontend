@@ -1,5 +1,5 @@
-import { SimpleUserStory } from '../../core/models/';
-export const SIMPLEUSERSTORIES: SimpleUserStory[] = [
+import { UserStory } from '../../core/models/';
+export const SIMPLEUSERSTORIES: UserStory[] = [
     { id: '100', points: null,
      subject:  'Crear usuarios '},
 

@@ -1,34 +1,34 @@
 import { SSADesarrolladorSimple } from '../../../../../story-assignment/story-assignment-ssa/models';
-import { SimpleDeveloper } from '../../../../../../core/models';
+import { Developer } from '../../../../../../core/models';
 
 export function ssaDesarrolladorToSimpleDeveloper (
     ssaDesarrolladorSimple: SSADesarrolladorSimple
-): SimpleDeveloper {
-    const simpleDeveloper: SimpleDeveloper = new SimpleDeveloper();
-    simpleDeveloper.id = ssaDesarrolladorSimple.id_externo;
-    simpleDeveloper.available_hours_per_week = ssaDesarrolladorSimple.horasDisponiblesSemana;
-    simpleDeveloper.full_name = ssaDesarrolladorSimple.nombre;
-    return simpleDeveloper;
+): Developer {
+    const developer: Developer = new Developer();
+    developer.id = ssaDesarrolladorSimple.id_externo;
+    developer.available_hours_per_week = ssaDesarrolladorSimple.horasDisponiblesSemana;
+    developer.full_name = ssaDesarrolladorSimple.nombre;
+    return developer;
 }
 
 export function ssaDesarrolladoresToSimpleDevelopers (
     ssaDesarrolladoresSimples: SSADesarrolladorSimple []
-): SimpleDeveloper [] {
+): Developer [] {
     return ssaDesarrolladoresSimples.map(ssaDesarrolladorToSimpleDeveloper);
 }
 
 export function simpleDeveloperTossaDesarrollador(
-    simpleDeveloper: SimpleDeveloper
+    developer: Developer
 ): SSADesarrolladorSimple {
     const ssaDesarrolladorSimple: SSADesarrolladorSimple = new SSADesarrolladorSimple();
-    ssaDesarrolladorSimple.horasDisponiblesSemana = simpleDeveloper.available_hours_per_week;
-    ssaDesarrolladorSimple.id_externo =  simpleDeveloper.id;
-    ssaDesarrolladorSimple.nombre = simpleDeveloper.full_name;
+    ssaDesarrolladorSimple.horasDisponiblesSemana = developer.available_hours_per_week;
+    ssaDesarrolladorSimple.id_externo =  developer.id;
+    ssaDesarrolladorSimple.nombre = developer.full_name;
     return ssaDesarrolladorSimple;
 }
 
 export function simpleDevelopersTossaDesarrolladores (
-    simpleDevelopers: SimpleDeveloper[]
+    developers: Developer[]
 ): SSADesarrolladorSimple[] {
-    return simpleDevelopers.map(simpleDeveloperTossaDesarrollador);
+    return developers.map(simpleDeveloperTossaDesarrollador);
 }

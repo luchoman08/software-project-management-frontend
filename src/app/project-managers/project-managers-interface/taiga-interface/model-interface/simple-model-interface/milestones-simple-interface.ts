@@ -1,10 +1,10 @@
 import { TaigaMilestone } from '../../../../../project-managers/taiga/models';
-import { SimpleSprint } from '../../../../../core/models';
+import { Sprint } from '../../../../../core/models';
 import { taigaStoriesToSimpleUserStories } from './user-stories-simple-interface';
 
 export function taigaMilestoneToSimpleSprint(
-    taigaMilestone: TaigaMilestone): SimpleSprint {
-        const sprint: SimpleSprint = new SimpleSprint();
+    taigaMilestone: TaigaMilestone): Sprint {
+        const sprint: Sprint = new Sprint();
         sprint.id = taigaMilestone.id;
         sprint.name = taigaMilestone.name;
         sprint.user_stories = taigaStoriesToSimpleUserStories(taigaMilestone.user_stories);
@@ -14,6 +14,6 @@ export function taigaMilestoneToSimpleSprint(
     }
 
 export function taigaMilestonesToSimpleSprints(
-    taigaMilestones: TaigaMilestone[]): SimpleSprint[] {
+    taigaMilestones: TaigaMilestone[]): Sprint[] {
         return taigaMilestones.map(taigaMilestoneToSimpleSprint);
     }

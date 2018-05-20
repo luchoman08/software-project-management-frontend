@@ -33,7 +33,6 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { ProjectManagersInterfaceModule } from './project-managers/project-managers-interface/project-managers-interface.module';
 import {
-  SimpleUserStoriesService,
   SimpleDevelopersService
 } from './project-managers/project-managers-interface/services/' ;
 import {
@@ -58,6 +57,9 @@ import {
   SimpleAssignmentDetailReadOnlyComponent
 } from './simple-assignment/simple-assignment-detail-read-only/simple-assignment-detail-read-only.component';
 import { ProjectsService } from './core/services/projects.service';
+import { SprintsService } from './core/services/sprints.service';
+import { UserStoriesService } from './core/services';
+import { DevelopersService } from './core/services/developers-service';
 
 @NgModule({
   imports: [
@@ -99,10 +101,10 @@ import { ProjectsService } from './core/services/projects.service';
     SimpleAssignmentDetailReadOnlyComponent
   ],
   providers: [
-    SimpleUserStoriesService,
+    UserStoriesService,
     ProjectsService,
-    SimpleSprintsService,
-    SimpleDevelopersService,
+    SprintsService,
+    DevelopersService,
     SimpleAssignmentService,
     AssignmentMiroservicesInterfaceService
   ],

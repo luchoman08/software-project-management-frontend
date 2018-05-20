@@ -18,19 +18,19 @@
                     </th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let simpleDeveloper of simpleDevelopers">
+                    <tr *ngFor="let developer of developers">
                         <td>
-                            {{simpleDeveloper.full_name}}
+                            {{developer.full_name}}
                         </td>
                         <td >
-                                <p *ngIf = "simpleDeveloper.available_hours_per_week; else noAvailableHoursBlock"> {{simpleDeveloper.available_hours_per_week}}                                
+                                <p *ngIf = "developer.available_hours_per_week; else noAvailableHoursBlock"> {{developer.available_hours_per_week}}                                
                                     <button mat-raised-button type="button" matTooltip="Editar horas disponibles" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                        <i *ngIf = "simpleDeveloper.available_hours_per_week" (click)="openEditAvailableHoursPerWeekDialog(simpleDeveloper)"  class="material-icons small ">edit</i>
+                                        <i *ngIf = "developer.available_hours_per_week" (click)="openEditAvailableHoursPerWeekDialog(developer)"  class="material-icons small ">edit</i>
                                     </button>
                                 </p>
                                 <ng-template #noAvailableHoursBlock>
                                     <button mat-raised-button type="button" matTooltip="Adicionar horas disponibles" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                        <i (click)="openEditAvailableHoursPerWeekDialog(simpleDeveloper)" class="material-icons">add_circle</i>
+                                        <i (click)="openEditAvailableHoursPerWeekDialog(developer)" class="material-icons">add_circle</i>
                                     </button>
                                 </ng-template>
                                 </td>

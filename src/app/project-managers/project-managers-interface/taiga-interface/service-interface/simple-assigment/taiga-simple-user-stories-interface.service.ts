@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleUserStory } from '../../../../../core/models';
+import { UserStory } from '../../../../../core/models';
 
 import {
     taigaStoryToSimpleUserStory,
@@ -18,14 +18,14 @@ export class TaigaUserStoriesSimpleInterfaceService {
     private taigaUserStoriesService: TaigaUserStoriesService
   ) {}
 
-  get(slug): Observable<SimpleUserStory> {
+  get(slug): Observable<UserStory> {
       return this.taigaUserStoriesService.get(slug)
           .map( (taigaUserStory: TaigaUserStory) => {
                     return taigaStoryToSimpleUserStory(taigaUserStory);
             } );
 }
 
-  getSimpleProjectStories(project_id): Observable<SimpleUserStory[]> {
+  getSimpleProjectStories(project_id): Observable<UserStory[]> {
     return this.taigaUserStoriesService.getProjectStories(project_id)
     .map( (taigaUserStories: TaigaUserStory[]) => {
               return taigaStoriesToSimpleUserStories(taigaUserStories);

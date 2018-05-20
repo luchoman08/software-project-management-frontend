@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SimpleDeveloper } from '../../../core/models/';
+import { Developer } from '../../../core/models/';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { SIMPLEDEVELS } from '../../../mocks/';
 import { SingleDataDialogEditOrAddComponent } from '../../../page-components/common-components';
@@ -10,7 +10,7 @@ import { SingleDataDialogEditOrAddComponent } from '../../../page-components/com
 })
 export class SimpleDeveloperDetailComponent implements OnInit {
   color = '#ff8d15';
-  simpleDeveloper: SimpleDeveloper = SIMPLEDEVELS[0] ;
+  developer: Developer = SIMPLEDEVELS[0] ;
   constructor(
     public dialog: MatDialog,
   ) { }
@@ -19,12 +19,12 @@ export class SimpleDeveloperDetailComponent implements OnInit {
     const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {
       width: '320px',
       data: {
-        value: this.simpleDeveloper.available_hours_per_week,
+        value: this.developer.available_hours_per_week,
         valueName: 'horas disponibles a la semana',
         type: 'number'}
     });
     dialogRef.afterClosed().subscribe(value => {
-      this.simpleDeveloper.available_hours_per_week = value;
+      this.developer.available_hours_per_week = value;
     });
   }
   ngOnInit() {

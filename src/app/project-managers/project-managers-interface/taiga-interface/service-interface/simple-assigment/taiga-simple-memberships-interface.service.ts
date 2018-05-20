@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleDeveloper } from '../../../../../core/models';
+import { Developer } from '../../../../../core/models';
 
 import {
     taigaMembershipToSimpleDeveloper,
@@ -19,16 +19,16 @@ export class TaigaMembershipsSimpleServiceInterface {
     private taigaMembershipsService: TaigaMembershipsService
   ) {}
 
-  get(slug): Observable<SimpleDeveloper> {
-      let simpleDeveloper$: Observable<SimpleDeveloper>;
+  get(slug): Observable<Developer> {
+      let developer$: Observable<Developer>;
       this.taigaMembershipsService.get(slug)
           .subscribe( (taigaMembership: TaigaMembership) => {
-                    simpleDeveloper$ = Observable.of(taigaMembershipToSimpleDeveloper(taigaMembership));
+                    developer$ = Observable.of(taigaMembershipToSimpleDeveloper(taigaMembership));
             } );
-    return simpleDeveloper$;
+    return developer$;
 }
 
-  getSimpleProjectDevelopers(project_id): Observable<SimpleDeveloper[]> {
+  getSimpleProjectDevelopers(project_id): Observable<Developer[]> {
     return this.taigaMembershipsService.getProjectMembership(project_id)
     .map( (taigaMemberships: TaigaMembership[]) => {
               return taigaMembershipsToSimpleDevelopers(taigaMemberships);

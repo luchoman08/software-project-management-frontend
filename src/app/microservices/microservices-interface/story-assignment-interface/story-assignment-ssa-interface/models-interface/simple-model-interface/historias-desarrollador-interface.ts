@@ -1,20 +1,20 @@
 import { SSAHistoriasDesarrolladorSimple } from '../../../../../story-assignment/story-assignment-ssa/models';
-import { SimpleDeveloperUserStoriesAssigned } from '../../../../../../core/models';
+import { DeveloperUserStoriesAssigned } from '../../../../../../core/models';
 import { ssaDesarrolladoresToSimpleDevelopers, ssaDesarrolladorToSimpleDeveloper } from './desarrollador-simple-interface';
 import { ssaHistoriasToSimpleStories } from './historia-simple-interface';
 
 export function ssaTareasDesarrolladorSimpleToSimpleDeveloperUserStoriesAssigned (
     ssaHistoriasDesarrolladorSimple: SSAHistoriasDesarrolladorSimple
-): SimpleDeveloperUserStoriesAssigned {
-    const simpleDeveloperUserStoriesAssigned: SimpleDeveloperUserStoriesAssigned =  new SimpleDeveloperUserStoriesAssigned;
-    simpleDeveloperUserStoriesAssigned.simpleDeveloper =
+): DeveloperUserStoriesAssigned {
+    const simpleDeveloperUserStoriesAssigned: DeveloperUserStoriesAssigned =  new DeveloperUserStoriesAssigned;
+    simpleDeveloperUserStoriesAssigned.developer =
     ssaDesarrolladorToSimpleDeveloper(ssaHistoriasDesarrolladorSimple.desarrollador);
-    simpleDeveloperUserStoriesAssigned.simpleUserStories =
+    simpleDeveloperUserStoriesAssigned.userStories =
     ssaHistoriasToSimpleStories(ssaHistoriasDesarrolladorSimple.historias);
     return simpleDeveloperUserStoriesAssigned;
 }
 export function ssaTareasDesarrolladoresSimpleToSimpleDeveloperUserStoriesAssigned (
     ssaHistoriasDesarrolladoresSimple: SSAHistoriasDesarrolladorSimple []
-): SimpleDeveloperUserStoriesAssigned[] {
+): DeveloperUserStoriesAssigned[] {
     return ssaHistoriasDesarrolladoresSimple.map(ssaTareasDesarrolladorSimpleToSimpleDeveloperUserStoriesAssigned);
 }

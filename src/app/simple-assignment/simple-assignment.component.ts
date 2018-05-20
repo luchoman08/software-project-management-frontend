@@ -1,16 +1,13 @@
 import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { SimpleProject, SimpleSprint, SimpleDeveloper, SimpleAssignmentInput, SimpleAssignmentOutput } from '../core/models';
+import { Project, Sprint, Developer, AssignmentInput, SimpleAssignmentOutput } from '../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { SimpleAssignmentService } from '../microservices/microservices-interface/story-assignment-interface/services';
 import { Errors } from '../core/models';
-import { ProjectsService } from '../core/services/projects.service';
-import {
-  SimpleProjectsService,
-  SimpleDevelopersService,
-  SimpleSprintsService } from '../project-managers/project-managers-interface/services';
+import { ProjectsService, SprintsService, DevelopersService } from '../core/services/';
+
 @Component({
   selector: 'app-simple-assignment',
   templateUrl: './simple-assignment.component.html',
@@ -20,29 +17,29 @@ export class SimpleAssignmentComponent implements OnInit {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
-  selectedSimpleProject: SimpleProject;
-  selectedSimpleSprint: SimpleSprint;
-  simpleProjects: SimpleProject[];
+  selectedSimpleProject: Project;
+  selectedSimpleSprint: Sprint;
+  simpleProjects: Project[];
   projectErrors: {};
-  simpleSprints: SimpleSprint[];
-  simpleDevelopers: SimpleDeveloper[];
+  sprints: Sprint[];
+  developers: Developer[];
   step = 0;
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  simpleAssignmentInput: SimpleAssignmentInput;
+  simpleAssignmentInput: AssignmentInput;
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private media: MediaMatcher,
     private _formBuilder: FormBuilder,
     private simpleProjectService: ProjectsService,
-    private simpleSprintService: SimpleSprintsService,
-    private simpleDeveloperService: SimpleDevelopersService,
+    private sprintsService: SprintsService,
+    private simpleDeveloperService: DevelopersService,
     private simpleAssignmentService: SimpleAssignmentService,
     private loadingBar: LoadingBarService) {
-      this.simpleAssignmentInput = new SimpleAssignmentInput();
+      this.simpleAssignmentInput = new AssignmentInput();
       this.mobileQuery = media.matchMedia('(max-width: 600px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
       this.mobileQuery.addListener(this._mobileQueryListener);
@@ -61,9 +58,9 @@ export class SimpleAssignmentComponent implements OnInit {
     }
   initSimpleSprints(project_id) {
     this.loadingBar.start();
-    this.simpleSprintService.getSimpleProjectSprints(project_id)
-    .subscribe((simpleSprints: SimpleSprint[]) => {
-      this.simpleSprints = simpleSprints;
+    this.sprintsService.getProjectSprints(project_id)
+    .subscribe((sprints: Sprint[]) => {
+      this.sprints = sprints;
       // this.formSelectSprint.controls['sprintCntrl'].enable();
       this.loadingBar.complete();
       this.nextStep();
@@ -71,16 +68,16 @@ export class SimpleAssignmentComponent implements OnInit {
   }
   initSimpleDevelopers(project_id) {
     this.loadingBar.start();
-    this.simpleDeveloperService.getSimpleProjectDevelopers(project_id)
-    .subscribe((simpleDevelopers: SimpleDeveloper[]) => {
-      this.simpleDevelopers = simpleDevelopers;
+    this.simpleDeveloperService.getProjectDevelopers(project_id)
+    .subscribe((developers: Developer[]) => {
+      this.developers = developers;
       this.loadingBar.complete();
     })
   }
   getSimpleAssignment(): void {
     this.simpleAssignmentInput.hoursPointRelation = 1;
-    this.simpleAssignmentInput.simpleDevelopers = this.simpleDevelopers;
-    this.simpleAssignmentInput.simpleUserStories = this.selectedSimpleSprint.user_stories;
+    this.simpleAssignmentInput.developers = this.developers;
+    this.simpleAssignmentInput.userStories = this.selectedSimpleSprint.user_stories;
     console.log(JSON.stringify(this.simpleAssignmentInput));
     this.simpleAssignmentService.generateSimpleAssignment(this.simpleAssignmentInput)
     .subscribe(
@@ -98,7 +95,7 @@ export class SimpleAssignmentComponent implements OnInit {
     this.loadingBar.start();
     this.simpleProjectService.getByMemberId('303456')
     .subscribe (
-      (simpleProjects: SimpleProject[]) => {
+      (simpleProjects: Project[]) => {
         this.simpleProjects = simpleProjects;
         console.log(this.simpleProjects);
         this.loadingBar.complete();
@@ -113,7 +110,7 @@ export class SimpleAssignmentComponent implements OnInit {
       projectContrl: ['', Validators.required]
     });
     this.formSelectSprint = this._formBuilder.group({
-      sprintCntrl: [{value: '', disabled: this.simpleSprints}]
+      sprintCntrl: [{value: '', disabled: this.sprints}]
     });
   }
 }

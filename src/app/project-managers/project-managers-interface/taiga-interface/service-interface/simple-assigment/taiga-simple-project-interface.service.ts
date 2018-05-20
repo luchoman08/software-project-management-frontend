@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { SimpleProject } from '../../../../../core/models';
+import { Project } from '../../../../../core/models';
 
 import {
     taigaProjectToSimpleProject,
@@ -18,7 +18,7 @@ export class TaigaProjectsSimpleInterfaceService {
     private taigaProjectsService: TaigaProjectsService
   ) {}
 
-  get(slug): Observable<SimpleProject> {
+  get(slug): Observable<Project> {
       return this.taigaProjectsService.get(slug)
           .map( (taigaProject: TaigaProject) => {
                     return taigaProjectToSimpleProject(taigaProject);
@@ -27,7 +27,7 @@ export class TaigaProjectsSimpleInterfaceService {
   /**
    * Get all projects where a given member is part of them
   */
-  getSimpleProjectsByMemberId(member_id): Observable <SimpleProject[]> {
+  getSimpleProjectsByMemberId(member_id): Observable <Project[]> {
     return this.taigaProjectsService.getByMember(member_id)
     .map ((taigaProjects: TaigaProject[]) => {
       return taigaProjectsToSimpleProjects(taigaProjects);
@@ -35,7 +35,7 @@ export class TaigaProjectsSimpleInterfaceService {
   );
   }
 
-  getSimpleProjectBySlug(slug): Observable<SimpleProject> {
+  getSimpleProjectBySlug(slug): Observable<Project> {
     return this.taigaProjectsService.getBySlug(slug)
     .map( (taigaProject: TaigaProject) => {
               return taigaProjectToSimpleProject(taigaProject);

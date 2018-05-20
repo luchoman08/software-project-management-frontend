@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SimpleDeveloper } from '../../../core/models';
+import { Developer } from '../../../core/models';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent 
@@ -13,22 +13,22 @@ import { CapitalizePipe } from '../../../core/pipes/capitalize.pipe';
 
 })
 export class SimpleDeveloperListOneLineComponent implements OnInit {
-  @Input() simpleDevelopers: SimpleDeveloper[];
+  @Input() developers: Developer[];
   constructor(
     public dialog: MatDialog,
   ) { }
   ngOnInit() {
   }
-  openEditAvailableHoursPerWeekDialog(simpleDeveloper: SimpleDeveloper): void {
+  openEditAvailableHoursPerWeekDialog(developer: Developer): void {
     const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {
       width: '320px',
       data: {
-        value: simpleDeveloper.available_hours_per_week,
+        value: developer.available_hours_per_week,
         valueName: 'horas disponibles a la semana',
         type: 'number'}
     });
     dialogRef.afterClosed().subscribe(value => {
-      simpleDeveloper.available_hours_per_week = value;
+      developer.available_hours_per_week = value;
     });
   }
 

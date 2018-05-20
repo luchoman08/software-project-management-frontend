@@ -1,9 +1,9 @@
 import { TaigaProject } from '../../../../../project-managers/taiga/models';
-import { SimpleProject } from '../../../../../core/models';
+import { Project } from '../../../../../core/models';
 
 export function taigaProjectToSimpleProject(
-    taigaProject: TaigaProject): SimpleProject {
-        const simpleProject: SimpleProject = new SimpleProject();
+    taigaProject: TaigaProject): Project {
+        const simpleProject: Project = new Project();
         simpleProject.id = taigaProject.id;
         simpleProject.description = taigaProject.description;
         simpleProject.name = taigaProject.name;
@@ -12,6 +12,6 @@ export function taigaProjectToSimpleProject(
     }
 
 export function taigaProjectsToSimpleProjects(
-    taigaMilestones: TaigaProject[]): SimpleProject[] {
+    taigaMilestones: TaigaProject[]): Project[] {
         return taigaMilestones.map(taigaProjectToSimpleProject);
     }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ApiService } from '../../../../core/services';
-import { SimpleProject } from '../../../../core/models';
+import { Project } from '../../../../core/models';
 import { TaigaProjectsSimpleInterfaceService } from '../../taiga-interface/service-interface';
 import { ProjectManagersInterfaceService } from '../project-managers-interface.service';
 import { map } from 'rxjs/operators/map';
@@ -17,14 +17,14 @@ export class SimpleProjectsService {
   ) {
   }
 
-  get(slug): Observable<SimpleProject> {
+  get(slug): Observable<Project> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaProjectsSimpleInterfaceService.get(slug);
       }
     }
   }
-  getSimpleProjectBySlug(slug): Observable<SimpleProject> {
+  getSimpleProjectBySlug(slug): Observable<Project> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaProjectsSimpleInterfaceService.getSimpleProjectBySlug(slug);
@@ -34,7 +34,7 @@ export class SimpleProjectsService {
   /**
    * Get all projects where a given member is part of them
   */
-  getSimpleProjectsByMemberId(member_id): Observable<SimpleProject[]> {
+  getSimpleProjectsByMemberId(member_id): Observable<Project[]> {
     switch (this.projectManagersInterfaceService.chosenProjectManager) {
       case ProjectManagersEnum.TAIGA: {
         return this.taigaProjectsSimpleInterfaceService.getSimpleProjectsByMemberId(member_id);
