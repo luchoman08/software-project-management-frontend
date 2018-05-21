@@ -1,5 +1,5 @@
 <div  class="main-content">
-  <mat-accordion>
+  <mat-accordion class="example-headers-align">
     <mat-expansion-panel *ngFor = "let simpleDeveloperUserStoriesAssigned of simpleAssignment.simpleDeveloperUserStoriesAssigned">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -7,13 +7,18 @@
         </mat-panel-title>
         <mat-panel-description>
           Historias asignadas a  {{simpleDeveloperUserStoriesAssigned.developer.full_name | firstWord}}
+                 
         </mat-panel-description>
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let userStories of simpleDeveloperUserStoriesAssigned.userStories">
-           {{userStories.subject}} 
+        <mat-list-item *ngFor="let userStory of simpleDeveloperUserStoriesAssigned.userStories">
+          
+           <p class = "user_story_reference" *ngIf= "userStory.reference"> #{{userStory.reference}} </p> <p>{{userStory.subject}} </p>
+           <mat-icon matTooltip="Reasignar" matTooltipPosition="above" class= "left-icon" >settings_backup_restore</mat-icon>
+           
           </mat-list-item>
+          
        </mat-list>
     </mat-expansion-panel>
 

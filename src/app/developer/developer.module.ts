@@ -12,6 +12,7 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import { SimpleDeveloperListOneLineComponent } from './developer-list-one-line/developer-list-one-line.component';
+import { DeveloperSelectDialogComponent } from './developer-select-dialog/developer-select-dialog.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SimpleDeveloperListOneLineComponent } from './developer-list-one-line/d
   declarations: [
     DeveloperListComponent,
     DeveloperDetailComponent,
-    SimpleDeveloperListOneLineComponent
+    SimpleDeveloperListOneLineComponent,
+    DeveloperSelectDialogComponent
   ],
   exports: [
     SimpleDeveloperListOneLineComponent

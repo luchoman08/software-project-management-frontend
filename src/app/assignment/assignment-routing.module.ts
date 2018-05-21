@@ -5,11 +5,11 @@ import { AssignmentDetailReadOnlyComponent } from './assignment-detail-read-only
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'readonly',
     component: AssignmentComponent
   },
   {
-    path: 'readonly',
+    path: '',
     component: AssignmentDetailReadOnlyComponent
   }
 ];
