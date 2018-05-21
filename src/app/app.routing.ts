@@ -3,9 +3,13 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { SimpleAssignmentComponent } from './simple-assignment/simple-assignment.component';
+import {
+  AssignmentDetailReadOnlyComponent
+} from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
 const routes: Routes = [
-    { path: 'simpleassignment',      component: SimpleAssignmentComponent },
+    { path: 'simpleassignment',
+    loadChildren: './assignment/assignment.module#AssignmentModule'
+    },
     {
     path: 'userstories',
     loadChildren: './user-story/user-story.module#UserStoryModule'

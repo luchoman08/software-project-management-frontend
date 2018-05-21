@@ -1,1 +1,0 @@
-export * from './ssa-simple-assignments-service.service';

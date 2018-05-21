@@ -1,0 +1,21 @@
+<div  class="main-content">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor = "let simpleDeveloperUserStoriesAssigned of simpleAssignment.simpleDeveloperUserStoriesAssigned">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{simpleDeveloperUserStoriesAssigned.developer.full_name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Historias asignadas a  {{simpleDeveloperUserStoriesAssigned.developer.full_name | firstWord}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let userStories of simpleDeveloperUserStoriesAssigned.userStories">
+           {{userStories.subject}} 
+          </mat-list-item>
+       </mat-list>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

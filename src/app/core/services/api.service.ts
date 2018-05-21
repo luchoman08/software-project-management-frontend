@@ -8,7 +8,7 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError } from 'rxjs/operators/catchError';
 @Injectable()
 export class ApiService {
-  public api_url = environment.api_simple_assignment_sistem;
+  public api_url = environment.api_project_management;
   constructor(
     private http: HttpClient,
     private jwtService: JwtService
