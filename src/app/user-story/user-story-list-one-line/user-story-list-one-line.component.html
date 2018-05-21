@@ -28,9 +28,9 @@
                                 </p>
                             </td>
                             <td>
-                        <!--     <p *ngIf = "userStory.points; else noPointsBlock"> {{userStory.points}}                                
+                        <!--     <p *ngIf = "userStory.total_points; else noPointsBlock"> {{userStory.total_points}}                                
                                 <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                    <i *ngIf = "userStory.points" (click)="openEditPointsDialog(userStory)"  class="material-icons small ">edit</i>
+                                    <i *ngIf = "userStory.total_points" (click)="openEditPointsDialog(userStory)"  class="material-icons small ">edit</i>
                                 </button> 
                                 </p>
                                 <ng-template #noPointsBlock>
@@ -41,7 +41,7 @@
                                 </ng-template>  
                             -->
                             <mat-form-field>
-                                <input matInput  #Name="ngModel" type="number" [(ngModel)]="userStory.points">
+                                <input matInput [disabled]="userStory.total_points"  #Name="ngModel" type="number" [(ngModel)]="userStory.total_points">
                             </mat-form-field>
                             </td>
                         </tr>

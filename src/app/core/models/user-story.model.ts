@@ -1,5 +1,5 @@
 export class UserStory {
     id: string;
-    points: number;
+    total_points: number;
     subject: string;
 }

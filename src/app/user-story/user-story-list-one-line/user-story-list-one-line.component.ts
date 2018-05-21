@@ -23,13 +23,13 @@ export class UserStoryListOneLineComponent implements OnInit {
     const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {
       width: '320px',
       data: {
-        value: userStory.points,
+        value: userStory.total_points,
         valueName: 'puntos de historia',
         type: 'number'}
     });
 
     dialogRef.afterClosed().subscribe(value => {
-      userStory.points = value;
+      userStory.total_points = value;
     });
 
 }
