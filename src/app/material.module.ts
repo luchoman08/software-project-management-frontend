@@ -9,49 +9,49 @@ import {
   MatRippleModule,
   MatTooltipModule,
   MatDialogModule,
-  MatDialog,
   MatIconModule,
   MatProgressBarModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatOption,
+  MatOptionModule,
   MatListModule,
-  MatFormField
 } from '@angular/material';
 
 
 @NgModule({
   imports: [
 
-    MatExpansionModule,
-    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatStepperModule,
     MatInputModule,
+    MatExpansionModule,
+    MatRippleModule,
     MatTooltipModule,
     MatDialogModule,
-    MatStepperModule,
-    MatSelectModule,
-    MatButtonToggleModule,
-    MatButtonModule,
+    MatOptionModule,
+    MatIconModule,
     MatProgressBarModule,
-    MatRippleModule,
     MatFormFieldModule,
-    MatListModule,
+    MatSelectModule,
+    MatListModule
 
   ],
   exports: [
 
-    MatExpansionModule,
-    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatStepperModule,
     MatInputModule,
+    MatExpansionModule,
+    MatRippleModule,
     MatTooltipModule,
     MatDialogModule,
-    MatStepperModule,
-    MatSelectModule,
-    MatButtonToggleModule,
-    MatButtonModule,
+    MatIconModule,
+    MatOptionModule,
     MatProgressBarModule,
-    MatRippleModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatListModule,
 
   ],

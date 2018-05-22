@@ -5,23 +5,21 @@ import { DeveloperRoutingModule } from './developer-routing.module';
 
 import { DeveloperListComponent } from './developer-list/developer-list.component';
 import { DeveloperDetailComponent } from './developer-detail/developer-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatTooltipModule
-} from '@angular/material';
 import { SimpleDeveloperListOneLineComponent } from './developer-list-one-line/developer-list-one-line.component';
 import { DeveloperSelectDialogComponent } from './developer-select-dialog/developer-select-dialog.component';
+import { MaterialModule } from '../material.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     DeveloperRoutingModule,
-    MatTooltipModule,
-    MatButtonToggleModule,
-    MatButtonModule
+    MaterialModule,
+
   ],
   declarations: [
     DeveloperListComponent,
@@ -30,7 +28,11 @@ import { DeveloperSelectDialogComponent } from './developer-select-dialog/develo
     DeveloperSelectDialogComponent
   ],
   exports: [
-    SimpleDeveloperListOneLineComponent
+    SimpleDeveloperListOneLineComponent,
+    DeveloperSelectDialogComponent,
   ],
+  entryComponents: [
+    DeveloperSelectDialogComponent
+  ]
 })
 export class DeveloperModule { }

@@ -11,11 +11,7 @@ import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 
-import {
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatTooltipModule
-} from '@angular/material';
+
 
 
 @NgModule({
@@ -31,7 +27,7 @@ import {
   ],
   declarations: [
     AssignmentComponent,
-    AssignmentDetailReadOnlyComponent,
+    AssignmentDetailReadOnlyComponent
 
   ],
   exports: [

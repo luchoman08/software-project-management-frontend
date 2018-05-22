@@ -12,10 +12,11 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let userStory of simpleDeveloperUserStoriesAssigned.userStories">
+        <mat-list-item  *ngFor="let userStory of simpleDeveloperUserStoriesAssigned.userStories" 
+        (click)="changeSelectedUserStory(userStory)">
           
            <p class = "user_story_reference" *ngIf= "userStory.reference"> #{{userStory.reference}} </p> <p>{{userStory.subject}} </p>
-           <mat-icon matTooltip="Reasignar" matTooltipPosition="above" class= "left-icon" >settings_backup_restore</mat-icon>
+           <mat-icon (click) = "openSelectDevelopers(developers)" matTooltip="Reasignar" matTooltipPosition="above" class= "left-icon" >settings_backup_restore</mat-icon>
            
           </mat-list-item>
           
