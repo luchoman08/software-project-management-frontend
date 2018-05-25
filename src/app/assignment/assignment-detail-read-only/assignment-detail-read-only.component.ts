@@ -24,7 +24,8 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
     this.developers = new Array<Developer>();
     this.userStories = new Array<UserStory>();
   }
-  openSelectDevelopers(developers: Developer[]): void {
+  openSelectDevelopers(userStory: UserStory, developers: Developer[]): void {
+    this.selectedUserStory = userStory;
     const dialogRef = this.dialog.open(DeveloperSelectDialogComponent, {
       width: '320px',
       data: {
