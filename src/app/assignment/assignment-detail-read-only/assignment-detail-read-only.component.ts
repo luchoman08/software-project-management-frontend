@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SimpleAssignmentOutput, UserStory, DeveloperUserStoriesAssigned, UserStory } from '../../core/models';
+import { SimpleAssignmentOutput, UserStory, DeveloperUserStoriesAssigned } from '../../core/models';
 import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { DeveloperSelectDialogComponent } from '../../developer/developer-select-dialog/developer-select-dialog.component';
 import { Developer } from '../../core/models';
 @Component({
