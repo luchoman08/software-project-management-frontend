@@ -12,15 +12,13 @@ import { Developer } from '../../core/models';
 export class AssignmentDetailReadOnlyComponent implements OnInit {
   simpleAssignment: SimpleAssignmentOutput;
   selectedUserStory: UserStory;
+  selectedDeveloper: Developer;
   developers: Developer[];
   userStories: UserStory[];
   constructor(
     public dialog: MatDialog,
   ) {
-    this.simpleAssignment = JSON.parse('{"assignmentErrors":[],"simpleDeveloperUserStoriesAssigned":[{"developer":{"id":788273,"available_hours_per_week":45,"full_name":"Luis Gerardo Manrique Cardona"},"userStories":[{"id":2239865,"total_points":12,"subject":"Permitir el logueo en el sistema basado en los usuarios de el Campus Virtual, haciendo uso de sus nombres de usuario, contraseña y rol asignado en el Campus"},{"id":2252677,"total_points":12,"subject":"Permitir asignaciones basadas en un conjunto de historias resueltas"}]}]}')
-    this.simpleAssignment.simpleDeveloperUserStoriesAssigned[0].userStories = SIMPLEUSERSTORIES;
-    console.log(SIMPLEUSERSTORIES);
-    this.simpleAssignment.simpleDeveloperUserStoriesAssigned.push(this.simpleAssignment.simpleDeveloperUserStoriesAssigned[0]);
+    this.simpleAssignment = JSON.parse('{"assignmentErrors":[],"simpleDeveloperUserStoriesAssigned":[{"developer":{"id":788273,"available_hours_per_week":45,"full_name":"Luis Gerardo Manrique Cardona"},"userStories":[{"id":2239865,"total_points":12,"reference":1,"subject":"Permitir el logueo en el sistema basado en los usuarios de el Campus Virtual, haciendo uso de sus nombres de usuario, contraseña y rol asignado en el Campus"},{"id":2252677,"total_points":12,"reference":2,"subject":"Permitir asignaciones basadas en un conjunto de historias resueltas"}]},{"developer":{"id":8,"available_hours_per_week":45,"full_name":"Arnaldo ramirez"},"userStories":[{"id":5,"total_points":12,"reference":4,"subject":"Permitir reasignar historias de usuario"},{"id":18,"total_points":12,"reference":5,"subject":"Permitir reasignacion en tiempo  real"}]}]}');
     this.developers = new Array<Developer>();
     this.userStories = new Array<UserStory>();
   }
@@ -34,6 +32,24 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe((selectedDeveloper: Developer) => {
+      console.log(this.selectedDeveloper);
+      console.log(selectedDeveloper);
+      console.log(this.selectedUserStory);
+      let developersAssginmentToDisassign: DeveloperUserStoriesAssigned = this.simpleAssignment.simpleDeveloperUserStoriesAssigned.filter( 
+        (assignment: DeveloperUserStoriesAssigned) =>  {
+          return assignment.developer.id === this.selectedDeveloper.id;
+        }
+      )[0];
+      console.log(developersAssginmentToDisassign);
+      let developersAssginmentToAssign: DeveloperUserStoriesAssigned = this.simpleAssignment.simpleDeveloperUserStoriesAssigned.filter( 
+        (assignment: DeveloperUserStoriesAssigned) =>  {
+          return assignment.developer.id === selectedDeveloper.id;
+        }
+      )[0];
+      let indexUserStoryChanged: number = developersAssginmentToDisassign.userStories.indexOf(this.selectedUserStory);
+      const userStoryToReasign: UserStory = developersAssginmentToDisassign.userStories[indexUserStoryChanged];
+      developersAssginmentToAssign.userStories.push(userStoryToReasign);
+      developersAssginmentToDisassign.userStories.splice(indexUserStoryChanged, 1);
       this.selectedUserStory.assignedUser = selectedDeveloper;
     });
   }

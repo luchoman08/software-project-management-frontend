@@ -1,6 +1,6 @@
 <div  class="main-content">
   <mat-accordion class="example-headers-align">
-    <mat-expansion-panel *ngFor = "let simpleDeveloperUserStoriesAssigned of simpleAssignment.simpleDeveloperUserStoriesAssigned">
+    <mat-expansion-panel *ngFor = "let simpleDeveloperUserStoriesAssigned of simpleAssignment.simpleDeveloperUserStoriesAssigned" (click)="selectedDeveloper = simpleDeveloperUserStoriesAssigned.developer" >
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{simpleDeveloperUserStoriesAssigned.developer.full_name}}
@@ -13,7 +13,7 @@
 
       <mat-list>
         <mat-list-item  *ngFor="let userStory of simpleDeveloperUserStoriesAssigned.userStories" 
-        (click)="changeSelectedUserStory(userStory)">
+        (click)="selecteduserStory = userStory">
           
            <p class = "user_story_reference" *ngIf= "userStory.reference"> #{{userStory.reference}} </p> <p>{{userStory.subject}} </p>
            <mat-icon (click) = "openSelectDevelopers(userStory, developers)" matTooltip="Reasignar" matTooltipPosition="above" class= "left-icon" >settings_backup_restore</mat-icon>
