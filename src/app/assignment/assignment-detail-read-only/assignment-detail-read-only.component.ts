@@ -27,7 +27,7 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
     const dialogRef = this.dialog.open(DeveloperSelectDialogComponent, {
       width: '320px',
       data: {
-        developers: developers,
+        developers: developers.filter((developer: Developer) => developer.id !== this.selectedDeveloper.id),
         title: 'Seleccione el desarrollador'
       }
     });
