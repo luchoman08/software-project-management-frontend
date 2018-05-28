@@ -3,7 +3,7 @@
     <mat-expansion-panel *ngFor = "let simpleDeveloperUserStoriesAssigned of simpleAssignment.simpleDeveloperUserStoriesAssigned" (click)="selectedDeveloper = simpleDeveloperUserStoriesAssigned.developer" >
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{simpleDeveloperUserStoriesAssigned.developer.full_name}}
+          {{simpleDeveloperUserStoriesAssigned.developer.full_name}} <mat-progress-spinner [diameter]="20" [strokeWidth] = "3" [mode]="'determinate'" [value]="developerPercentageOcupation(simpleDeveloperUserStoriesAssigned)" ></mat-progress-spinner>
         </mat-panel-title>
         <mat-panel-description>
           Historias asignadas a  {{simpleDeveloperUserStoriesAssigned.developer.full_name | firstWord}}
