@@ -10,7 +10,7 @@ import { SingleDataDialogEditOrAddComponent } from '../../page-components/common
 })
 export class DeveloperDetailComponent implements OnInit {
   color = '#ff8d15';
-  developer: Developer = SIMPLEDEVELS[0] ;
+  developer: Developer = <Developer> SIMPLEDEVELS[0] ;
   constructor(
     public dialog: MatDialog,
   ) { }
