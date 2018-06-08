@@ -1,12 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
-import {MediaMatcher} from '@angular/cdk/layout';
-import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { Project, Sprint, Developer, AssignmentInput, SimpleAssignmentOutput } from '../../core/models';
+import { Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Project, Sprint, Developer, AssignmentInput } from '../../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
-import {  } from '../../microservices/microservices-interface/story-assignment-interface/services';
 import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
+import { AssignmentService } from '../../core/services/assginment.service';
 
 @Component({
   selector: 'app-assignment',
@@ -14,8 +13,6 @@ import { ProjectsService, SprintsService, DevelopersService } from '../../core/s
   styleUrls: ['./assignment.component.scss']
 })
 export class AssignmentComponent implements OnInit {
-  mobileQuery: MediaQueryList;
-  private _mobileQueryListener: () => void;
 
   selectedSimpleProject: Project;
   selectedSimpleSprint: Sprint;
@@ -24,6 +21,7 @@ export class AssignmentComponent implements OnInit {
   sprints: Sprint[];
   developers: Developer[];
   step = 0;
+  assignmentOutput: AssignmentInput;
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
@@ -31,17 +29,14 @@ export class AssignmentComponent implements OnInit {
   secondFormGroup: FormGroup;
   simpleAssignmentInput: AssignmentInput;
   constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-    private media: MediaMatcher,
     private _formBuilder: FormBuilder,
     private simpleProjectService: ProjectsService,
     private sprintsService: SprintsService,
+    private assignmentService: AssignmentService,
     private simpleDeveloperService: DevelopersService,
     private loadingBar: LoadingBarService) {
+      this.assignmentOutput = null;
       this.simpleAssignmentInput = new AssignmentInput();
-      this.mobileQuery = media.matchMedia('(max-width: 600px)');
-      this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-      this.mobileQuery.addListener(this._mobileQueryListener);
     }
 
     setStep(index: number) {
@@ -74,10 +69,18 @@ export class AssignmentComponent implements OnInit {
     })
   }
   getSimpleAssignment(): void {
-    this.simpleAssignmentInput.hoursPointRelation = 1;
+    this.simpleAssignmentInput.relationHoursPoints = 1;
+    this.simpleAssignmentInput.startDate = new Date(this.selectedSimpleSprint.estimated_start);
+    this.simpleAssignmentInput.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
     this.simpleAssignmentInput.developers = this.developers;
     this.simpleAssignmentInput.userStories = this.selectedSimpleSprint.user_stories;
     console.log(JSON.stringify(this.simpleAssignmentInput));
+    this.assignmentService.generarAsignacionSimple(this.simpleAssignmentInput)
+    .subscribe( (assignment: AssignmentInput) => {
+      this.assignmentOutput = assignment;
+      console.log(assignment);
+    }
+  );
 
   }
 

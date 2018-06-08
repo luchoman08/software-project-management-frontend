@@ -4,7 +4,7 @@ export class UserStory {
     id: string;
     total_points: number;
     subject: string;
-    assignedUser?: Developer;
-    reference: number; // number assigned to the history into a sprint 
-    
+    assigned_to?: string;
+    reference: number; // number assigned to the history into a sprint
+
 }

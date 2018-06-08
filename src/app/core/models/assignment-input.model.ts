@@ -3,5 +3,7 @@ import { UserStory } from './';
 export class AssignmentInput {
     developers: Developer[];
     userStories: UserStory[];
-    hoursPointRelation: number; // how match hours of work are necesary for one point
+    relationHoursPoints: number; // how match hours of work are necesary for one point
+    startDate: Date;
+    endDate: Date;
 }

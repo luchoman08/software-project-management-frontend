@@ -1,7 +1,7 @@
 <h1 mat-dialog-title> {{ title }}</h1>
 <div mat-dialog-content>
     <mat-form-field>
-  <mat-select  [(ngModel)]="selectedDeveloper" 
+  <mat-select  [(ngModel)]="dataOutput.selectedDeveloper" 
   placeholder="Desarrollador"
       required >
 
@@ -11,7 +11,7 @@
   </mat-select> 
 </mat-form-field>
     <div mat-dialog-actions>
-      <button mat-button [mat-dialog-close]="selectedDeveloper">Cancelar</button>
-      <button mat-button [mat-dialog-close]="selectedDeveloper" cdkFocusInitial>Ok</button>
+      <button mat-button [mat-dialog-close]="null">Cancelar</button>
+      <button mat-button [mat-dialog-close]="dataOutput" cdkFocusInitial>Ok</button>
     </div>
   </div>

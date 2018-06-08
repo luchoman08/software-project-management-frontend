@@ -11,6 +11,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FirstWordPipe } from './pipes/firstWord.pipe';
 import { HttpProjectManagerInterceptor } from './interceptors/project-manager.interceptor';
 import { ProjectManagersService } from './services/project-interface.service';
+import { AssignedToPipe } from './pipes/assignedTo.pipe';
 
 @NgModule({
   imports: [
@@ -21,9 +22,10 @@ import { ProjectManagersService } from './services/project-interface.service';
     { provide: HTTP_INTERCEPTORS, useClass: HttpProjectManagerInterceptor, multi: true},
     ApiService,
     JwtService,
-    ProjectManagersService
+    ProjectManagersService,
+    AssignedToPipe
   ],
-  declarations: [CapitalizePipe, FirstWordPipe],
-  exports: [CapitalizePipe, FirstWordPipe]
+  declarations: [CapitalizePipe, FirstWordPipe, AssignedToPipe],
+  exports: [CapitalizePipe, FirstWordPipe, AssignedToPipe]
 })
 export class CoreModule { }

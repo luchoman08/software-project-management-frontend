@@ -31,6 +31,7 @@ import { DevelopersService } from './core/services/developers-service';
 import { UserStoryModule } from './user-story/user-story.module';
 import { DeveloperModule } from './developer/developer.module';
 import { MaterialModule } from './material.module';
+import { AssignmentService } from './core/services/assginment.service';
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { MaterialModule } from './material.module';
     UserStoriesService,
     ProjectsService,
     SprintsService,
+    AssignmentService,
     DevelopersService
   ],
   bootstrap: [AppComponent]

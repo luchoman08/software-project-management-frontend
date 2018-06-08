@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { SimpleAssignmentOutput, UserStory, DeveloperUserStoriesAssigned } from '../../core/models';
-import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
+import { UserStory, AssignmentInput } from '../../core/models';
 import { MatDialog } from '@angular/material';
 import { DeveloperSelectDialogComponent } from '../../developer/developer-select-dialog/developer-select-dialog.component';
 import { Developer } from '../../core/models';
 import { ChangeDetectionStrategy } from '@angular/core';
+import { developerPercentageOcupation } from '../../core/lib';
+import { AssignedToPipe } from '../../core/pipes/assignedTo.pipe';
+import { getBusinessDatesCount } from '../../core/lib/calendar.lib';
 @Component({
   selector: 'app-assignment-detail-read-only',
   templateUrl: './assignment-detail-read-only.component.html',
@@ -12,66 +14,56 @@ import { ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AssignmentDetailReadOnlyComponent implements OnInit {
-  simpleAssignment: SimpleAssignmentOutput;
   selectedUserStory: UserStory;
   selectedDeveloper: Developer;
-  developers: Developer[];
-  userStories: UserStory[];
+  daysOfWork: number;
+  @Input() public assignment: AssignmentInput;
   constructor(
     public dialog: MatDialog,
+    private asignedToPipe: AssignedToPipe,
     private cd: ChangeDetectorRef
   ) {
-    this.simpleAssignment = new SimpleAssignmentOutput();
-    this.simpleAssignment.fromJSON(JSON.parse('{"assignmentErrors":[],"simpleDeveloperUserStoriesAssigned":[{"developer":{"id":788273,"available_hours_per_week":45,"full_name":"Luis Gerardo Manrique Cardona"},"userStories":[{"id":2239865,"total_points":12,"reference":1,"subject":"Permitir el logueo en el sistema basado en los usuarios de el Campus Virtual, haciendo uso de sus nombres de usuario, contraseña y rol asignado en el Campus"},{"id":2252677,"total_points":12,"reference":2,"subject":"Permitir asignaciones basadas en un conjunto de historias resueltas"}]},{"developer":{"id":8,"available_hours_per_week":45,"full_name":"Arnaldo ramirez"},"userStories":[{"id":5,"total_points":12,"reference":4,"subject":"Permitir reasignar historias de usuario"},{"id":18,"total_points":12,"reference":5,"subject":"Permitir reasignacion en tiempo  real"}]}]}'));
-    this.simpleAssignment.init();
-    console.log(this.simpleAssignment.simpleDeveloperUserStoriesAssigned);
 
-    this.developers = new Array<Developer>();
-    this.userStories = new Array<UserStory>();
   }
-  openSelectDevelopers(userStory: UserStory, developers: Developer[]): void {
+
+  initPercentageOcuped () {
+    for ( const developer of this.assignment.developers) {
+      developer.percentage_time_used =
+      developerPercentageOcupation(
+          developer,
+          this.assignment.relationHoursPoints,
+          this.asignedToPipe.transform(this.assignment.userStories, developer.id),
+          this.daysOfWork);
+      console.log(developer.percentage_time_used, 'porcentaje de tiempo usado' );
+    }
+  }
+
+  openSelectDevelopers(userStory: UserStory): void {
     this.selectedUserStory = userStory;
     const dialogRef = this.dialog.open(DeveloperSelectDialogComponent, {
       width: '320px',
       data: {
-        developers: developers.filter((developer: Developer) => developer.id !== this.selectedDeveloper.id),
+        developers: this.assignment.developers.filter((developer: Developer) => developer.id !== this.selectedDeveloper.id),
+        oldDeveloper: this.selectedDeveloper,
         title: 'Seleccione el desarrollador'
       }
     });
-    dialogRef.afterClosed().subscribe((selectedDeveloper: Developer) => {
-      console.log(this.selectedDeveloper);
-      console.log(selectedDeveloper);
-      console.log(this.selectedUserStory);
-      let developersAssginmentToDisassign: DeveloperUserStoriesAssigned = this.simpleAssignment.simpleDeveloperUserStoriesAssigned.filter( 
-        (assignment: DeveloperUserStoriesAssigned) =>  {
-          return assignment.developer.id === this.selectedDeveloper.id;
-        }
-      )[0];
-      console.log(developersAssginmentToDisassign);
-      let developersAssginmentToAssign: DeveloperUserStoriesAssigned = this.simpleAssignment.simpleDeveloperUserStoriesAssigned.filter( 
-        (assignment: DeveloperUserStoriesAssigned) =>  {
-          return assignment.developer.id === selectedDeveloper.id;
-        }
-      )[0];
-      let indexUserStoryChanged: number = developersAssginmentToDisassign.userStories.indexOf(this.selectedUserStory);
-      developersAssginmentToAssign.userStories.push(this.selectedUserStory);
-      developersAssginmentToDisassign.userStories.splice(indexUserStoryChanged, 1);
-      this.selectedUserStory.assignedUser = selectedDeveloper;
-      this.simpleAssignment.init();
+    dialogRef.afterClosed().subscribe((dataOutput: {selectedDeveloper: Developer, oldDeveloper: Developer} ) => {
+      this.selectedUserStory.assigned_to = String(dataOutput.selectedDeveloper.id);
+      this.initPercentageOcuped();
       this.cd.markForCheck();
     });
+  }
+  changeSelectedDeveloper(developer: Developer): void {
+    this.selectedDeveloper = developer;
   }
   changeSelectedUserStory(userStory: UserStory): void {
     this.selectedUserStory = userStory;
   }
   ngOnInit() {
-      this.simpleAssignment.simpleDeveloperUserStoriesAssigned.map(
-      (simpleDeveloperUserStoriesAssigned: DeveloperUserStoriesAssigned)  => {
-      this.developers.push(simpleDeveloperUserStoriesAssigned.developer);
-      this.userStories.concat(simpleDeveloperUserStoriesAssigned.userStories);
-      }
-    );
-    
+    this.daysOfWork = getBusinessDatesCount(this.assignment.startDate, this.assignment.endDate);
+    console.log(this.daysOfWork, 'dias de trabajo');
+    this.initPercentageOcuped();
   }
 
 }

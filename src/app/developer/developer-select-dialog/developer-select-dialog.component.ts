@@ -10,19 +10,20 @@ export class DeveloperSelectDialogComponent implements OnInit {
 
   developers: Developer[];
   title: string;
-  selectedDeveloper: Developer;
-
+  dataOutput: {selectedDeveloper: Developer, oldDeveloper: Developer} = <{selectedDeveloper: Developer, oldDeveloper: Developer}>{};
   constructor(
     public dialogRef: MatDialogRef<DeveloperSelectDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { 
+    @Inject(MAT_DIALOG_DATA) public data: {title: string, developers: Developer[], oldDeveloper: Developer}) {
       this.developers = new Array<Developer>();
+      console.log(this.dataOutput);
+      this.dataOutput.oldDeveloper = data.oldDeveloper;
       this.developers = data.developers;
-      data.title? this.title = data.title: '';
-      this.selectedDeveloper = new Developer;
+      if (this.developers.length > 0) {
+        this.dataOutput.selectedDeveloper = this.developers[0];
+        }
+      this.title = data.title ? data.title : '';
     }
     ngOnInit() {
-      if (this.developers.length > 0) {
-      this.selectedDeveloper = this.developers[0];
-      }
+
     }
 }
