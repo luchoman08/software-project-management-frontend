@@ -4,13 +4,13 @@
       <form [formGroup]="formSelectProject">
         <ng-template matStepLabel>Seleccione el proyecto</ng-template>
         <mat-form-field>
-          <mat-select 
-          [(ngModel)]="selectedSimpleProject" 
-          placeholder="Proyecto" 
+          <mat-select
+          [(ngModel)]="selectedSimpleProject"
+          placeholder="Proyecto"
           [formControl]="formSelectProject.controls['projectContrl']"
             required>
-            <mat-option 
-            *ngFor="let simpleProject of simpleProjects" 
+            <mat-option
+            *ngFor="let simpleProject of simpleProjects"
             [value]="simpleProject">
               {{ simpleProject.name }}
             </mat-option>
@@ -27,14 +27,14 @@
       <form [formGroup]="formSelectSprint">
         <ng-template matStepLabel>Seleccione el sprint</ng-template>
         <mat-form-field>
-          <mat-select 
-          [(ngModel)]="selectedSimpleSprint" 
-          placeholder="Sprint" 
+          <mat-select
+          [(ngModel)]="selectedSimpleSprint"
+          [placeholder]="sprints.length > 0 ? 'Sprint' : 'No hay sprints'"
           [formControl]="formSelectSprint.controls['sprintCntrl']"
           required>
 
             <mat-option *ngFor="let simpleSprint of sprints" [value]="simpleSprint">
-              {{ simpleSprint.name }}
+              {{ simpleSprint.name + ' Desde ' + (simpleSprint.estimated_start | date) + ' hasta ' + (simpleSprint.estimated_finish | date) }}
             </mat-option>
           </mat-select>
           <mat-error *ngIf="formSelectSprint.controls['sprintCntrl'].hasError('required')">

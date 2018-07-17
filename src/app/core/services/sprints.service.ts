@@ -11,12 +11,10 @@ export class SprintsService {
   constructor ( private apiService: ApiService) {  }
 
   get(slug): Observable<Sprint> {
-    return this.apiService.get('/sprints/' + slug)
-    .pipe(map(data => data));
+    return this.apiService.get('/sprints/' + slug);
   }
   getProjectSprints(project_id): Observable<Sprint[]> {
     const params = new HttpParams().set('project', String(project_id));
-    return this.apiService.get('/sprints', params)
-    .pipe(map(data => data));
+    return this.apiService.get('/sprints', params);
       }
     }

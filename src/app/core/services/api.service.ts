@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators/map';
+import { tap } from 'rxjs/operators/tap';
 import { JwtService } from './jwt.service';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError } from 'rxjs/operators/catchError';
@@ -15,6 +15,7 @@ export class ApiService {
   ) {}
 
   private formatErrors(error: any) {
+      console.log(error);
     return new ErrorObservable(error.error);
   }
 
@@ -29,7 +30,12 @@ export class ApiService {
       JSON.stringify(body)
     ).pipe(catchError(this.formatErrors));
   }
-
+  patch(path: string, body: Object = {}): Observable<any> {
+    return this.http.patch(
+      `${this.api_url}${path}`,
+      JSON.stringify(body)
+    ).pipe(tap(response => console.log(response)), catchError(this.formatErrors));
+  }
   post(path: string, body: Object = {}): Observable<any> {
     return this.http.post(
       `${this.api_url}${path}`,

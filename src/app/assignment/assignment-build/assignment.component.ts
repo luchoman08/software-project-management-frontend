@@ -35,6 +35,7 @@ export class AssignmentComponent implements OnInit {
     private assignmentService: AssignmentService,
     private simpleDeveloperService: DevelopersService,
     private loadingBar: LoadingBarService) {
+        this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
       this.simpleAssignmentInput = new AssignmentInput();
     }
@@ -55,6 +56,11 @@ export class AssignmentComponent implements OnInit {
     this.sprintsService.getProjectSprints(project_id)
     .subscribe((sprints: Sprint[]) => {
       this.sprints = sprints;
+      if ( this.sprints.length === 0) {
+        this.formSelectSprint.controls['sprintCntrl'].disable();
+      } else {
+        this.formSelectSprint.controls['sprintCntrl'].enable();
+      }
       // this.formSelectSprint.controls['sprintCntrl'].enable();
       this.loadingBar.complete();
       this.nextStep();
@@ -103,7 +109,7 @@ export class AssignmentComponent implements OnInit {
       projectContrl: ['', Validators.required]
     });
     this.formSelectSprint = this._formBuilder.group({
-      sprintCntrl: [{value: '', disabled: this.sprints}]
+      sprintCntrl: [{value: '', disabled: true}]
     });
   }
 }

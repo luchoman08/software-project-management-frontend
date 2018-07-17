@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy } from '@angular/core';
 import { developerPercentageOcupation } from '../../core/lib';
 import { AssignedToPipe } from '../../core/pipes/assignedTo.pipe';
 import { getBusinessDatesCount } from '../../core/lib/calendar.lib';
+import { UserStoriesService } from '../../core/services/user-stories.service';
 @Component({
   selector: 'app-assignment-detail-read-only',
   templateUrl: './assignment-detail-read-only.component.html',
@@ -21,6 +22,7 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private asignedToPipe: AssignedToPipe,
+    private userStoryService: UserStoriesService,
     private cd: ChangeDetectorRef
   ) {
 
@@ -38,6 +40,9 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
     }
   }
 
+  saveUserStories() {
+      this.userStoryService.setMultiple(this.assignment.userStories).subscribe( data => console.log(data));
+  }
   openSelectDevelopers(userStory: UserStory): void {
     this.selectedUserStory = userStory;
     const dialogRef = this.dialog.open(DeveloperSelectDialogComponent, {

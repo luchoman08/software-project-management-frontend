@@ -3,35 +3,35 @@
     <mat-expansion-panel *ngFor = "let developer of assignment.developers" (click)="changeSelectedDeveloper(developer)" >
       <mat-expansion-panel-header matTooltip="{{'Tiempo Disponible:' + developer.available_hours_per_week}}">
         <mat-panel-title>
-          {{developer.full_name}} 
-          <mat-progress-spinner 
-          [diameter]="20" 
-          [strokeWidth] = "3" 
-          [mode]="'determinate'" 
+          {{developer.full_name}}
+          <mat-progress-spinner
+          [diameter]="20"
+          [strokeWidth] = "3"
+          [mode]="'determinate'"
           [color]="
-          developer.percentage_time_used > 70? 
-          (developer.percentage_time_used > 85? 'warn': 'accent') 
-          : 'default'" 
+          developer.percentage_time_used > 70?
+          (developer.percentage_time_used > 85? 'warn': 'accent')
+          : 'default'"
           [value]="developer.percentage_time_used" >
         </mat-progress-spinner>
         </mat-panel-title>
         <mat-panel-description>
           Historias asignadas a  {{developer.full_name | firstWord}}
-                 
+
         </mat-panel-description>
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item  *ngFor="let userStory of assignment.userStories | assignedTo : developer.id" 
+        <mat-list-item  *ngFor="let userStory of assignment.userStories | assignedTo : developer.id"
         (click)="selecteduserStory = userStory">
-          
+
            <p class = "user_story_reference" *ngIf= "userStory.reference"> #{{userStory.reference}} </p> <p matTooltip="{{'Puntos:' + userStory.total_points}}">{{userStory.subject}} </p>
            <mat-icon (click) = "openSelectDevelopers(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class= "left-icon" >settings_backup_restore</mat-icon>
-           
+
           </mat-list-item>
-          
+
        </mat-list>
     </mat-expansion-panel>
-
+    <button mat-button (click)="saveUserStories()" > Guardar asignación</button>
   </mat-accordion>
 </div>

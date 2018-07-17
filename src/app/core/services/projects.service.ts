@@ -14,8 +14,7 @@ export class ProjectsService {
   ) {}
 
   get(id): Observable<Project> {
-    return this.apiService.get('/projects/' + id)
-      .pipe(map(data => data));
+    return this.apiService.get('/projects/' + id);
   }
 
   /*
@@ -23,13 +22,11 @@ export class ProjectsService {
   */
   getByMemberId(member_id): Observable<Project[]> {
     const params = new HttpParams().set('member', String(member_id));
-    return this.apiService.get('/projects', params)
-    .pipe(map(data => data));
+    return this.apiService.get('/projects', params);
   }
   getBySlug(slug): Observable<Project> {
     const params = new HttpParams().set('slug', String(slug));
-    return this.apiService.get('/projects', params)
-    .pipe(map(data => data));
+    return this.apiService.get('/projects', params);
   }
 }
 
