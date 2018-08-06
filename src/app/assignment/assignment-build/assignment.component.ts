@@ -53,7 +53,7 @@ export class AssignmentComponent implements OnInit {
     }
   initSimpleSprints(project_id) {
     this.loadingBar.start();
-    this.sprintsService.getProjectSprints(project_id)
+    this.sprintsService.getProjectSprints(project_id, true)
     .subscribe((sprints: Sprint[]) => {
       this.sprints = sprints;
       if ( this.sprints.length === 0) {

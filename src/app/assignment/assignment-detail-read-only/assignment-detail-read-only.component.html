@@ -16,8 +16,8 @@
         </mat-progress-spinner>
         </mat-panel-title>
         <mat-panel-description>
-          Historias asignadas a  {{developer.full_name | firstWord}}
-
+          <p *ngIf="(assignment.userStories | assignedTo : developer.id).length > 0 ; else no_stories_assigned"> Historias asignadas a  {{developer.full_name | firstWord}}</p>
+          <ng-template #no_stories_assigned> <p>No se han asignado historias</p></ng-template>
         </mat-panel-description>
       </mat-expansion-panel-header>
 

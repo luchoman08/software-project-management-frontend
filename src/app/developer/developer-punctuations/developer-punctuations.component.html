@@ -1,0 +1,13 @@
+<div >
+  <mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle 
+    matTooltip="Click en la puntuacion para editar"
+    *ngFor="let punctuation of developer.punctuations"
+    (click)="openEditPunctuationDialog(punctuation)">
+      <div  class="text-center" fxLayout="column" fxLayoutAlign="start center">
+        <p>{{punctuation.name}}</p>
+        <p>{{punctuation.value? punctuation.value: '?'}}</p>
+      </div>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

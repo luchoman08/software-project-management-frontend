@@ -1,9 +1,8 @@
-
 <div class="card">
     <div class="card-header card-header-primary">
         <h4 class="card-title ">Lista de desarrolladores</h4>
         <p class="card-category">
-          Debe asignar las horas disponibles de todos y cada uno de los desarrolladores
+            Debe asignar las horas disponibles de todos y cada uno de los desarrolladores
         </p>
     </div>
     <div class="card-body">
@@ -22,10 +21,12 @@
                         <td>
                             {{developer.full_name}}
                         </td>
-                        <td >
-                                <p *ngIf = "developer.available_hours_per_week; else noAvailableHoursBlock"> {{developer.available_hours_per_week}}                                
+                        <td>
+                            <app-developer-punctuations  *ngIf="developer_punctuations; else available_hours" [developer]="developer"></app-developer-punctuations>
+                            <ng-template #available_hours>
+                                <p *ngIf="developer.available_hours_per_week; else noAvailableHoursBlock"> {{developer.available_hours_per_week}}
                                     <button mat-raised-button type="button" matTooltip="Editar horas disponibles" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                        <i *ngIf = "developer.available_hours_per_week" (click)="openEditAvailableHoursPerWeekDialog(developer)"  class="material-icons small ">edit</i>
+                                        <i *ngIf="developer.available_hours_per_week" (click)="openEditAvailableHoursPerWeekDialog(developer)" class="material-icons small ">edit</i>
                                     </button>
                                 </p>
                                 <ng-template #noAvailableHoursBlock>
@@ -33,9 +34,10 @@
                                         <i (click)="openEditAvailableHoursPerWeekDialog(developer)" class="material-icons">add_circle</i>
                                     </button>
                                 </ng-template>
-                                </td>
+                            </ng-template>
+                        </td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </div>

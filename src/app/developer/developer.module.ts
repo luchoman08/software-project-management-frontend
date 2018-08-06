@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SimpleDeveloperListOneLineComponent } from './developer-list-one-line/developer-list-one-line.component';
 import { DeveloperSelectDialogComponent } from './developer-select-dialog/developer-select-dialog.component';
 import { MaterialModule } from '../material.module';
+import { DeveloperPunctuationsComponent } from './developer-punctuations/developer-punctuations.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MaterialModule } from '../material.module';
     DeveloperListComponent,
     DeveloperDetailComponent,
     SimpleDeveloperListOneLineComponent,
-    DeveloperSelectDialogComponent
+    DeveloperSelectDialogComponent,
+    DeveloperPunctuationsComponent
   ],
   exports: [
     SimpleDeveloperListOneLineComponent,

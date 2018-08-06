@@ -1,29 +1,37 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import {
   AssignmentDetailReadOnlyComponent
 } from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
+import { UserStoryListOneLineComponent } from './user-story/user-story-list-one-line/user-story-list-one-line.component';
 const routes: Routes = [
-    { path: 'simpleassignment',
+  /** Dev route for test componentes 
+  {
+    path: 'dev-component',
+    component: UserStoryListOneLineComponent
+  },
+   End of dev route */
+  {
+    path: 'simpleassignment',
     loadChildren: './assignment/assignment.module#AssignmentModule'
-    },
-    {
+  },
+  {
     path: 'userstories',
     loadChildren: './user-story/user-story.module#UserStoryModule'
-    },
-    {
-      path: 'developers',
-      loadChildren: './developer/developer.module#DeveloperModule'
-    },
-    { path: '',               redirectTo: 'simpleassignment', pathMatch: 'full' }
+  },
+  {
+    path: 'developers',
+    loadChildren: './developer/developer.module#DeveloperModule'
+  },
+  { path: '', redirectTo: 'simpleassignment', pathMatch: 'full' }
 ];
 
 @NgModule({
 
-    imports: [RouterModule.forRoot(routes, {
+  imports: [RouterModule.forRoot(routes, {
     // preload all modules; optionally we could
     // implement a custom preloading strategy for just some
     // of the modules (PRs welcome 😉)
@@ -31,14 +39,14 @@ const routes: Routes = [
   })],
   exports: [RouterModule]
 
-/*
-  imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-  ],*/
+  /*
+    imports: [
+      CommonModule,
+      BrowserModule,
+      RouterModule.forRoot(routes)
+    ],
+    exports: [
+    ],*/
 })
 
 

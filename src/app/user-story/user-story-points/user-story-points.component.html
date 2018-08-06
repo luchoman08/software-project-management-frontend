@@ -1,0 +1,10 @@
+<div >
+  <mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle (click)="consolelog(punctuation)" *ngFor="let punctuation of userStory.punctuations" value="left">
+      <div  class="text-center" fxLayout="column" fxLayoutAlign="start center">
+        <p>{{punctuation.name}}</p>
+        <p>{{punctuation.value? punctuation.value: '?'}}</p>
+      </div>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>

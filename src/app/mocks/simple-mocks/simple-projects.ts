@@ -6,7 +6,7 @@ export const SIMPLEPROJECTS: Project[] = [
      description:  ' Sistema de intercomunicación entre el Campus Virtual (moodle) y el sistema de Registro Académico de la Universidad del Valle', 
      developers:  null,
      sprints: null,
-     userStories: null,
+     points: null,
      name: 'Interfaz Registro A Campus'
     }
   ];

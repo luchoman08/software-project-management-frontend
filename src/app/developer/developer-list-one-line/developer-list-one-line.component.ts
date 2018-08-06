@@ -14,6 +14,7 @@ import { CapitalizePipe } from '../../core/pipes/capitalize.pipe';
 })
 export class SimpleDeveloperListOneLineComponent implements OnInit {
   @Input() developers: Developer[];
+  @Input() developer_punctuations: boolean = false;
   constructor(
     public dialog: MatDialog,
   ) { }

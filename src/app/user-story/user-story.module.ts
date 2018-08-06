@@ -9,13 +9,13 @@ import { UserStoryListComponent } from './userstory-list/userstory-list.componen
 import { UserStoryListOneLineComponent } from './user-story-list-one-line/user-story-list-one-line.component';
 import {
   MatFormFieldModule,
-  MatFormField,
   MatInputModule,
   MatTooltipModule,
   MatDialogModule,
   MatButtonModule,
   MatButtonToggleModule
 } from '@angular/material';
+import { UserStoryPointsComponent } from './user-story-points/user-story-points.component';
 @NgModule({
       imports: [
         UserStoryRoutingModule,
@@ -31,7 +31,8 @@ import {
     declarations: [
       UserStoryDetailComponent,
       UserStoryListComponent,
-      UserStoryListOneLineComponent,
+      UserStoryListOneLineComponent, 
+      UserStoryPointsComponent,
     ],
     exports: [
       UserStoryListOneLineComponent

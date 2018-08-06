@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { ApiService } from './api.service';
 import { Developer } from '../models';
 import { map } from 'rxjs/operators/map';
+import { IDeveloper } from '../models/developer.interface';
 
 @Injectable()
 export class DevelopersService {
@@ -17,6 +18,6 @@ export class DevelopersService {
   getProjectDevelopers(project_id): Observable<Developer[]> {
     const params = new HttpParams().set('project', String(project_id));
     return this.apiService.get('/developers', params)
-    .pipe(map(data => data));
+    .pipe(map((developers: IDeveloper[]) => developers.map(Developer.fromJSON)));
       }
     }

@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserStory } from '../../core/models/user-story.model';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
 } from '../../page-components/common-components';
+//import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
 @Component({
   selector: 'app-user-story-list-one-line',
   templateUrl: './user-story-list-one-line.component.html',
@@ -12,10 +13,14 @@ import {
 export class UserStoryListOneLineComponent implements OnInit {
 
   @Input() public userStories: UserStory[];
-
+  @Input() public includePunctuations: boolean; //include global number of points or punctuations of story, are mutually exclusive
   constructor(
     public dialog: MatDialog
-  ) { }
+  ) { 
+    /** Mock */
+    //this.userStories = SIMPLEUSERSTORIES;
+    this.includePunctuations = true;
+  }
 
   ngOnInit() {
   }
@@ -25,12 +30,13 @@ export class UserStoryListOneLineComponent implements OnInit {
       data: {
         value: userStory.total_points,
         valueName: 'puntos de historia',
-        type: 'number'}
+        type: 'number'
+      }
     });
 
     dialogRef.afterClosed().subscribe(value => {
       userStory.total_points = value;
     });
 
-}
+  }
 }

@@ -50,7 +50,7 @@
 
     <mat-step>
       <ng-template matStepLabel>Completar o modificar historias</ng-template>
-      <app-user-story-list-one-line *ngIf="selectedSimpleSprint" [userStories]="selectedSimpleSprint.user_stories">
+      <app-user-story-list-one-line *ngIf="selectedSimpleSprint" [includePunctuations]="true"  [userStories]="selectedSimpleSprint.user_stories">
       </app-user-story-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
