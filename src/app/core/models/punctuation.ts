@@ -5,12 +5,14 @@ export class Punctuation {
     name: string;
     value: number;
 
-    constructor (name: string, value: number) {
-        this.name = name;
-        this.value = value;
+    constructor () {
+
     }
     public static fromJSON(ipunctuation: PunctuationInterface): Punctuation {
-        let punctuation = new Punctuation(ipunctuation.name, ipunctuation.value);
+        let punctuation = new Punctuation();
+        punctuation.id = ipunctuation.id;
+        punctuation.name = ipunctuation.name;
+        punctuation.value = ipunctuation.value? ipunctuation.value: 0;
         return punctuation;
     }
 }

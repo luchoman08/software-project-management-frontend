@@ -18,7 +18,7 @@ export class Developer implements IDeveloper {
         developer.full_name = json.full_name;
         developer.color = json.color;
         developer.role_name = json.color;
-        developer.punctuations = json.punctuations? json.punctuations: new Array<Punctuation>();
+        developer.punctuations = json.punctuations? json.punctuations.map(Punctuation.fromJSON): new Array<Punctuation>();
         developer.available_hours_per_week = json.available_hours_per_week;
         developer.percentage_time_used = json.percentage_time_used ? json.percentage_time_used : 0;
         return developer;

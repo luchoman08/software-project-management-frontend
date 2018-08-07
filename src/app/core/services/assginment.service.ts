@@ -19,7 +19,6 @@ export class AssignmentService {
         return assignmentByPunctuations;
       })
     }
-  )
   generarAsignacionSimple(
     assignmentUniqueCost: AssignmentInput
   ): Observable<AssignmentInput> {

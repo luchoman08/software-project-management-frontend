@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Project, Sprint, Developer, AssignmentInput } from '../../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
@@ -6,6 +6,7 @@ import { LoadingBarService } from '@ngx-loading-bar/core';
 import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
+import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
 
 @Component({
   selector: 'app-assignment',
@@ -25,6 +26,9 @@ export class AssignmentComponent implements OnInit {
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
+
+  @Input() assignmentByPunctuation: boolean = true;
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   simpleAssignmentInput: AssignmentInput;
@@ -74,6 +78,25 @@ export class AssignmentComponent implements OnInit {
       this.loadingBar.complete();
     })
   }
+  getAssignmentByPunctuation(): void {
+    let assignmentByPunctuation = new AssignmentByPunctuation();
+    assignmentByPunctuation.assign_same_quantity_of_tasks = true;
+    assignmentByPunctuation.developers = this.developers;
+    assignmentByPunctuation.userStories = this.selectedSimpleSprint.user_stories;
+    console.log(JSON.stringify(assignmentByPunctuation), 'assignment by punctuation string');
+    this.assignmentService.generateAssignmentByPunctuations(assignmentByPunctuation)
+    .subscribe(
+      (response: AssignmentByPunctuation) => {
+        console.log(JSON.stringify(response), 'response after assignment by punctuation');
+        this.assignmentOutput = new AssignmentInput();
+        this.assignmentOutput.userStories = response.userStories;
+        this.assignmentOutput.developers = response.developers;
+      },
+      (error: any) => {
+        console.log(error, 'error at get assignment by punctutation')
+      }
+    );
+  }
   getSimpleAssignment(): void {
     this.simpleAssignmentInput.relationHoursPoints = 1;
     this.simpleAssignmentInput.startDate = new Date(this.selectedSimpleSprint.estimated_start);
@@ -88,6 +111,14 @@ export class AssignmentComponent implements OnInit {
     }
   );
 
+  }
+
+  getAssignment(): void {
+    if ( this.assignmentByPunctuation ) {
+      this.getAssignmentByPunctuation();
+    } else {
+      this.getSimpleAssignment();
+    }
   }
 
   ngOnInit() {
