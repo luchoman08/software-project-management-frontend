@@ -1,6 +1,7 @@
 import { PunctuationInterface } from "./generics";
 
 export class Punctuation {
+    id: number;
     name: string;
     value: number;
 
