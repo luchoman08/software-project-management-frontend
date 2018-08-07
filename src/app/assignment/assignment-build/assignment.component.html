@@ -60,7 +60,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
-      <app-developer-list-one-line *ngIf="developers" [developers]="developers">
+      <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="true" [developers]="developers">
       </app-developer-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
