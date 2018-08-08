@@ -17,6 +17,7 @@ import { UserStoriesService } from '../../core/services/user-stories.service';
 export class AssignmentDetailReadOnlyComponent implements OnInit {
   selectedUserStory: UserStory;
   selectedDeveloper: Developer;
+  @Input() assignmentByPunctuation: boolean = false;
   daysOfWork: number;
   @Input() public assignment: AssignmentInput;
   constructor(

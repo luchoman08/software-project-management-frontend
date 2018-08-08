@@ -1,2 +1,1 @@
-<mat-progress-bar mode="determinate" [color]="value>warn_value? 'primary': value>err_both_value? 'accent': 'warn'" [value]="value"></mat-progress-bar>
-
+<mat-progress-bar mode="determinate" [matTooltip]="(value | number: '1.0-0') + '%'" [color]="value>warn_value? 'primary': value>err_both_value? 'accent': 'warn'" [value]="value"></mat-progress-bar>

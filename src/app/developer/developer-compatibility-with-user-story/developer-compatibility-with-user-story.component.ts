@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Developer, UserStory } from '../../core/models';
 import { Punctuation } from '../../core/models/punctuation';
+import { SIMPLEDEVELS } from '../../mocks';
+import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
 
 @Component({
   selector: 'app-developer-compatibility-with-user-story',
@@ -8,7 +10,7 @@ import { Punctuation } from '../../core/models/punctuation';
   styleUrls: ['./developer-compatibility-with-user-story.component.scss']
 })
 export class DeveloperCompatibilityWithUserStoryComponent implements OnInit {
-  @Input() developer: Developer;
+  @Input() developer: Developer ;
   @Input() userStory: UserStory;
   punctuationsCompatibility = new  Array<{
     punctuation: Punctuation, 
