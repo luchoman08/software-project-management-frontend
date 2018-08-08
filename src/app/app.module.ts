@@ -30,9 +30,6 @@ import { UserStoriesService } from './core/services';
 import { DevelopersService } from './core/services/developers-service';
 import { MaterialModule } from './material.module';
 import { AssignmentService } from './core/services/assginment.service';
-import { UserStoryListOneLineComponent } from './user-story/user-story-list-one-line/user-story-list-one-line.component';
-import { UserStoryPointsComponent } from './user-story/user-story-points/user-story-points.component';
-
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -56,8 +53,7 @@ import { UserStoryPointsComponent } from './user-story/user-story-points/user-st
     /**
      * Dev component
      */
-    //UserStoryListOneLineComponent,
-    //UserStoryPointsComponent,
+    //DeveloperCompatibilityWithUserStoryComponent,
      /** End of dev component */
     AppComponent
   ],

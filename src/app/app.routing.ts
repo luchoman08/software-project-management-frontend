@@ -6,12 +6,11 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import {
   AssignmentDetailReadOnlyComponent
 } from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
-import { UserStoryListOneLineComponent } from './user-story/user-story-list-one-line/user-story-list-one-line.component';
 const routes: Routes = [
   /** Dev route for test componentes 
   {
     path: 'dev-component',
-    component: UserStoryListOneLineComponent
+    component: DeveloperCompatibilityWithUserStoryComponent
   },
    End of dev route */
   {
