@@ -36,6 +36,7 @@ import { CommonComponentsModule } from '../page-components/common-components/com
   exports: [
     SimpleDeveloperListOneLineComponent,
     DeveloperSelectDialogComponent,
+    DeveloperCompatibilityWithUserStoryComponent
   ],
   entryComponents: [
     DeveloperSelectDialogComponent
