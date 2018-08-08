@@ -4,6 +4,7 @@ import { SingleDataDialogEditOrAddComponent } from './';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../../core/core.module';
 import { MaterialModule } from '../../material.module';
+import { PercentageProgressBarComponent } from './percentage-progress-bar/percentage-progress-bar.component';
 @NgModule({
   imports: [
     CoreModule,
@@ -12,7 +13,11 @@ import { MaterialModule } from '../../material.module';
     MaterialModule
   ],
   declarations: [
-    SingleDataDialogEditOrAddComponent
+    SingleDataDialogEditOrAddComponent,
+    PercentageProgressBarComponent
+  ],
+  exports: [
+    PercentageProgressBarComponent
   ],
   entryComponents: [
     SingleDataDialogEditOrAddComponent
