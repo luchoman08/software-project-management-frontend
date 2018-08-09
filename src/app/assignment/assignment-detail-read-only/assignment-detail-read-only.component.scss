@@ -4,10 +4,12 @@
 .mat-list-item-content {
     width: 100% !important; 
 }
-.mat-icon {
-    position: absolute;
-    right: 1px;
-}
 .mat-progress-spinner {
     margin-left: 10px;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.user-story-assignment {
+    margin-top: 20px;
 }
