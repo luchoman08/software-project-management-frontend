@@ -7,6 +7,7 @@ import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
 import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
+import { ASSIGNMENTBYPUNCTUATIONRESPONSE } from '../../mocks/simple-mocks/assignment-by-attributes.mock';
 
 @Component({
   selector: 'app-assignment',
@@ -22,7 +23,7 @@ export class AssignmentComponent implements OnInit {
   sprints: Sprint[];
   developers: Developer[];
   step = 0;
-  assignmentOutput: AssignmentInput;
+  assignmentOutput: AssignmentInput ;
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
@@ -87,10 +88,11 @@ export class AssignmentComponent implements OnInit {
     this.assignmentService.generateAssignmentByPunctuations(assignmentByPunctuation)
     .subscribe(
       (response: AssignmentByPunctuation) => {
-        console.log(JSON.stringify(response), 'response after assignment by punctuation');
+        //console.log(JSON.stringify(response), 'response after assignment by punctuation');
         this.assignmentOutput = new AssignmentInput();
         this.assignmentOutput.userStories = response.userStories;
         this.assignmentOutput.developers = response.developers;
+        console.log(JSON.stringify(this.assignmentOutput), 'assignment output');
       },
       (error: any) => {
         console.log(error, 'error at get assignment by punctutation')
