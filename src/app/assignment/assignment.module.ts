@@ -11,8 +11,6 @@ import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AssignmentDetailByPunctuationsComponent } from './assignment-detail-by-punctuations/assignment-detail-by-punctuations.component';
-
 
 
 
