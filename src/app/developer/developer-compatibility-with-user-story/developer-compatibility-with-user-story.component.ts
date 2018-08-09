@@ -1,8 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Developer, UserStory } from '../../core/models';
 import { Punctuation } from '../../core/models/punctuation';
 import { SIMPLEDEVELS } from '../../mocks';
 import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
+
+class PunctuationCompatibility {
+    punctuation: Punctuation;
+    disabled: boolean;
+    compatibility: Number; //percentage of compatibility where 100 is fully compatible
+}
 
 @Component({
   selector: 'app-developer-compatibility-with-user-story',
@@ -12,10 +18,7 @@ import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories'
 export class DeveloperCompatibilityWithUserStoryComponent implements OnInit {
   @Input() developer: Developer ;
   @Input() userStory: UserStory;
-  punctuationsCompatibility = new  Array<{
-    punctuation: Punctuation, 
-    compatibility: Number //percentage of compatibility where 100 is fully compatible
-  }>();
+  punctuationsCompatibility = new  Array<PunctuationCompatibility>();
   constructor() { 
 
   }
@@ -31,7 +34,7 @@ export class DeveloperCompatibilityWithUserStoryComponent implements OnInit {
     for (let develPunctuation of this.developer.punctuations) {
       const userStoryPunctuation = this.userStory.punctuations.find(_punctuation => _punctuation.id === develPunctuation.id );
       const compatibility = this.calculateCompatibility ( userStoryPunctuation, develPunctuation);
-      this.punctuationsCompatibility.push({punctuation: develPunctuation, compatibility});
+      this.punctuationsCompatibility.push({disabled: userStoryPunctuation.value? true: false, punctuation: develPunctuation, compatibility});
     }
   }
   ngOnInit() {

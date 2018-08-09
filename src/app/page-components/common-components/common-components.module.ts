@@ -5,19 +5,22 @@ import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../../core/core.module';
 import { MaterialModule } from '../../material.module';
 import { PercentageProgressBarComponent } from './percentage-progress-bar/percentage-progress-bar.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   imports: [
     CoreModule,
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   declarations: [
     SingleDataDialogEditOrAddComponent,
     PercentageProgressBarComponent
   ],
   exports: [
-    PercentageProgressBarComponent
+    PercentageProgressBarComponent,
+    FlexLayoutModule
   ],
   entryComponents: [
     SingleDataDialogEditOrAddComponent

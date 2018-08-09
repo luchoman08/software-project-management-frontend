@@ -1,4 +1,6 @@
 <div class="main-content">
+  <div fxLayout="column">
+  </div>
   <mat-accordion class="example-headers-align">
     <mat-expansion-panel *ngFor="let developer of assignment.developers" (click)="changeSelectedDeveloper(developer)">
       <mat-expansion-panel-header matTooltip="{{'Tiempo Disponible:' + developer.available_hours_per_week}}">
@@ -17,17 +19,19 @@
           </ng-template>
         </mat-panel-description>
       </mat-expansion-panel-header>
-
-      <mat-list>
-        <mat-list-item *ngFor="let userStory of assignment.userStories | assignedTo : developer.id" (click)="selecteduserStory = userStory">
-
-          <p class="user_story_reference" *ngIf="userStory.reference"> #{{userStory.reference}} </p>
-          <p matTooltip="{{'Puntos:' + userStory.total_points}}">{{userStory.subject}} </p>
-          <mat-icon (click)="openSelectDevelopers(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class="left-icon">settings_backup_restore</mat-icon>
-          <app-developer-compatibility-with-user-story *ngIf="assignmentByPunctuation" [developer]="developer" [userStory]="userStory"></app-developer-compatibility-with-user-story>
-        </mat-list-item>
-
-      </mat-list>
+          <div class="user-story-assignment"  *ngFor="let userStory of assignment.userStories | assignedTo : developer.id" (click)="selecteduserStory = userStory" fxLayout="column">
+            <div fxLayout="row">
+              <p class="user_story_reference" *ngIf="userStory.reference"> #{{userStory.reference}} </p>
+              <p matTooltip="{{'Puntos:' + userStory.total_points}}">{{userStory.subject}} </p>
+              <span class="spacer"></span>
+              <mat-icon (click)="openSelectDevelopers(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class="left-icon">settings_backup_restore</mat-icon>
+            </div>
+            <div fxLayout="row">
+              <app-developer-compatibility-with-user-story  *ngIf="assignmentByPunctuation" [developer]="developer" [userStory]="userStory">
+              </app-developer-compatibility-with-user-story>
+            </div>
+            <mat-divider></mat-divider>
+          </div>
     </mat-expansion-panel>
     <button mat-button (click)="saveUserStories()"> Guardar asignación</button>
   </mat-accordion>
