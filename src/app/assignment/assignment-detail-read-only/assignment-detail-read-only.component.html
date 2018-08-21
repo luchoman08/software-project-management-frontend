@@ -3,7 +3,7 @@
   </div>
   <mat-accordion class="example-headers-align">
     <mat-expansion-panel *ngFor="let developer of assignment.developers" (click)="changeSelectedDeveloper(developer)">
-      <mat-expansion-panel-header matTooltip="{{'Tiempo Disponible:' + developer.available_hours_per_week}}">
+      <mat-expansion-panel-header [matTooltip]="assignmentByPunctuation? '': 'Tiempo Disponible:' + developer.available_hours_per_week">
         <mat-panel-title>
           {{developer.full_name}}
           <mat-progress-spinner [diameter]="20" [strokeWidth]="3" [mode]="'determinate'" [color]="
@@ -22,7 +22,7 @@
           <div class="user-story-assignment"  *ngFor="let userStory of assignment.userStories | assignedTo : developer.id" (click)="selecteduserStory = userStory" fxLayout="column">
             <div fxLayout="row">
               <p class="user_story_reference" *ngIf="userStory.reference"> #{{userStory.reference}} </p>
-              <p matTooltip="{{'Puntos:' + userStory.total_points}}">{{userStory.subject}} </p>
+              <p [matTooltip]="assignmentByPunctuation? '': 'Puntos:' + userStory.total_points">{{userStory.subject}} </p>
               <span class="spacer"></span>
               <mat-icon (click)="openSelectDevelopers(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class="left-icon">settings_backup_restore</mat-icon>
             </div>
@@ -30,7 +30,7 @@
               <app-developer-compatibility-with-user-story  *ngIf="assignmentByPunctuation" [developer]="developer" [userStory]="userStory">
               </app-developer-compatibility-with-user-story>
             </div>
-            <mat-divider></mat-divider>
+            <mat-divider class="margin-top-20"></mat-divider>
           </div>
     </mat-expansion-panel>
     <button mat-button (click)="saveUserStories()"> Guardar asignación</button>

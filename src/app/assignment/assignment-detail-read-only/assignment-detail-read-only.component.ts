@@ -1,13 +1,14 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy,  Input, ChangeDetectorRef } from '@angular/core';
+
 import { UserStory, AssignmentInput } from '../../core/models';
 import { MatDialog } from '@angular/material';
 import { DeveloperSelectDialogComponent } from '../../developer/developer-select-dialog/developer-select-dialog.component';
 import { Developer } from '../../core/models';
-import { ChangeDetectionStrategy } from '@angular/core';
 import { developerPercentageOcupation } from '../../core/lib';
 import { AssignedToPipe } from '../../core/pipes/assignedTo.pipe';
 import { getBusinessDatesCount } from '../../core/lib/calendar.lib';
 import { UserStoriesService } from '../../core/services/user-stories.service';
+
 @Component({
   selector: 'app-assignment-detail-read-only',
   templateUrl: './assignment-detail-read-only.component.html',

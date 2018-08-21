@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { AssignmentType } from '../../../core/enums';
 
 declare const $: any;
-declare interface RouteInfo {
+export declare interface RouteInfo {
     path: string;
     title: string;
+    params: Object;
     icon: string;
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: 'simpleassignment', title: 'Simple Assignment',  icon: 'unarchive', class: '' },
-    { path: 'userstories/list', title: 'List Simple User Stories',  icon: 'unarchive', class: '' },
-    { path: 'userstories/listoneline', title: 'One Line User Sotries',  icon: 'unarchive', class: '' },
-    { path: 'developers', title: 'Detail Simple Developer',  icon: 'unarchive', class: '' },
+    { path: 'assignment/uniquecost', params: {assign_type: AssignmentType.UNIQUE_COST},  title: 'Simple Assignment',  icon: 'unarchive', class: '' },
+    { path: 'assignment/bypunctuation', params: {assign_type: AssignmentType.BY_PUNCTUATIONS},  title: 'Assignment by Punctuation',  icon: 'unarchive', class: '' },
+    { path: 'userstories/list', params: {}, title: 'List Simple User Stories',  icon: 'unarchive', class: '' },
+    { path: 'userstories/listoneline', params: {}, title: 'One Line User Sotries',  icon: 'unarchive', class: '' },
+    { path: 'developers',  params: {}, title: 'Detail Simple Developer',  icon: 'unarchive', class: '' },
 ];
 
 

@@ -14,7 +14,7 @@ const routes: Routes = [
   },
    End of dev route */
   {
-    path: 'simpleassignment',
+    path: 'assignment',
     loadChildren: './assignment/assignment.module#AssignmentModule'
   },
   {

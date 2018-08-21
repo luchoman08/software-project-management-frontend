@@ -27,5 +27,10 @@
   </app-root>
 </body>
 
-
+<script type = "text/javascript" >
+  history.pushState(null, null, 'pagename');
+  window.addEventListener('popstate', function(event) {
+  history.pushState(null, null, 'pagename');
+  });
+  </script>
 </html>

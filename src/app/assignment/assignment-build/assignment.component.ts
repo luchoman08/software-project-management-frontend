@@ -8,6 +8,8 @@ import { ProjectsService, SprintsService, DevelopersService } from '../../core/s
 import { AssignmentService } from '../../core/services/assginment.service';
 import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
 import { ASSIGNMENTBYPUNCTUATIONRESPONSE } from '../../mocks/simple-mocks/assignment-by-attributes.mock';
+import { ActivatedRoute } from '@angular/router';
+import { AssignmentType } from '../../core/enums';
 
 @Component({
   selector: 'app-assignment',
@@ -28,21 +30,28 @@ export class AssignmentComponent implements OnInit {
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
 
-  @Input() assignmentByPunctuation: boolean = true;
+  assignmentByPunctuation: boolean = true;
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   simpleAssignmentInput: AssignmentInput;
   constructor(
+    private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
     private simpleProjectService: ProjectsService,
     private sprintsService: SprintsService,
     private assignmentService: AssignmentService,
     private simpleDeveloperService: DevelopersService,
     private loadingBar: LoadingBarService) {
-        this.sprints = new Array<Sprint>();
+      this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
       this.simpleAssignmentInput = new AssignmentInput();
+      this.formSelectProject = this._formBuilder.group({
+        projectContrl: ['', Validators.required]
+      });
+      this.formSelectSprint = this._formBuilder.group({
+        sprintCntrl: [{value: '', disabled: true}]
+      });
     }
 
     setStep(index: number) {
@@ -136,14 +145,16 @@ export class AssignmentComponent implements OnInit {
         this.projectErrors  = errors;
         console.log(this.projectErrors);
       }
-
     );
-    this.formSelectProject = this._formBuilder.group({
-      projectContrl: ['', Validators.required]
-    });
-    this.formSelectSprint = this._formBuilder.group({
-      sprintCntrl: [{value: '', disabled: true}]
-    });
-  }
+    this.route.params.subscribe(params => {
+      console.log(params, 'params at assignmnet component');
+      const assignmentType: AssignmentType = Number(params['assign_type']);
+      console.log (assignmentType, AssignmentType.BY_PUNCTUATIONS, assignmentType === AssignmentType.BY_PUNCTUATIONS, 'assignment type igual al coso enum');
+      this.assignmentByPunctuation = assignmentType === AssignmentType.BY_PUNCTUATIONS? true: false;
+
+   });
+ }
+
+  
 }
 

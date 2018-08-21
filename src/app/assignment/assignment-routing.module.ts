@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AssignmentComponent } from './assignment-build/assignment.component';
-import { AssignmentDetailReadOnlyComponent } from './assignment-detail-read-only/assignment-detail-read-only.component';
 
 const routes: Routes = [
   {
-    path: 'readonly',
+    path: 'uniquecost',
     component: AssignmentComponent
   },
   {
-    path: '',
-    component: AssignmentDetailReadOnlyComponent
+    path: 'bypunctuation',
+    component: AssignmentComponent
   }
 ];
 

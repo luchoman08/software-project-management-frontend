@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 import 'rxjs/add/operator/filter';
 import { NavbarComponent } from './page-components/main-components/navbar/navbar.component';
-import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd  } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd, CanDeactivate  } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { LoadingBarService } from '@ngx-loading-bar/core';
@@ -20,9 +20,13 @@ export class AppComponent implements OnInit {
     private yScrollStack: number[] = [];
 
     constructor(
-        public location: Location,
-        private router: Router,
-        public loader: LoadingBarService) {}
+        private location: Location,
+        private _location: LocationStrategy,
+        private router: Router, 
+        public loader: LoadingBarService) {
+    // check if back or forward button is pressed.
+
+        }
 
     ngOnInit() {
         const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
