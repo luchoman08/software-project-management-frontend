@@ -16,6 +16,8 @@ import {
   MatButtonToggleModule
 } from '@angular/material';
 import { UserStoryPointsComponent } from './user-story-points/user-story-points.component';
+import { UserStoryGroupComponent } from './user-story-group/user-story-group.component';
+import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.component';
 @NgModule({
       imports: [
         UserStoryRoutingModule,
@@ -32,7 +34,7 @@ import { UserStoryPointsComponent } from './user-story-points/user-story-points.
       UserStoryDetailComponent,
       UserStoryListComponent,
       UserStoryListOneLineComponent, 
-      UserStoryPointsComponent,
+      UserStoryPointsComponent, UserStoryGroupComponent, UserStoryGroupsComponent,
     ],
     exports: [
       UserStoryListOneLineComponent
