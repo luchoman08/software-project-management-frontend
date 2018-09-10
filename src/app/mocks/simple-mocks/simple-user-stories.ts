@@ -1,4 +1,4 @@
-import { UserStory } from '../../core/models/';
+import { UserStory } from '../../core/models';
 import { punctuations_mock } from './punctuations';
 export const SIMPLEUSERSTORIES: UserStory[] = [
   {

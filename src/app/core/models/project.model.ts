@@ -1,4 +1,4 @@
-import { ProjectInterface } from './';
+import { ProjectInterface } from '.';
 import { Developer} from './developer.model';
 import { UserStory } from './user-story.model';
 import { Sprint} from './sprint.model';

@@ -15,6 +15,9 @@ import {
   MatButtonModule,
   MatButtonToggleModule
 } from '@angular/material';
+
+import { NgDragDropModule } from 'ng-drag-drop';
+
 import { UserStoryPointsComponent } from './user-story-points/user-story-points.component';
 import { UserStoryGroupComponent } from './user-story-group/user-story-group.component';
 import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.component';
@@ -25,6 +28,7 @@ import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.
         FormsModule,
         MatFormFieldModule,
         MatTooltipModule,
+        NgDragDropModule.forRoot(),
         MatDialogModule,
         MatInputModule,
         MatButtonModule,

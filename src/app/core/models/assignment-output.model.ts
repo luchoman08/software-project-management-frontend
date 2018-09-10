@@ -1,4 +1,4 @@
-import { DeveloperUserStoriesAssigned } from './';
+import { DeveloperUserStoriesAssigned } from '.';
 import { UserStory } from './user-story.model';
 import { Developer } from './developer.model';
 export class SimpleAssignmentOutput {

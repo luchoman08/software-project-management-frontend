@@ -1,36 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import {Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Component } from '@angular/core';
+import { UserStory } from '../../core/models/user-story.model';
+import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
+import { UserStoryGroup } from '../../core/models';
 @Component({
   selector: 'app-user-story-group',
   templateUrl: './user-story-group.component.html',
   styleUrls: ['./user-story-group.component.scss']
 })
-export class UserStoryGroupComponent implements OnInit {
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
+export class UserStoryGroupComponent {
+  droppedItems = [];
+  userStories: UserStory[] = SIMPLEUSERSTORIES;
+  groups: UserStoryGroup[];
+  constructor() {
+    console.log(this.userStories.length)
+    this.groups.push({id: "0", name:"Grupo 1", user_stories:[this.userStories[0]] });
+   }
+  items = [
+    { name: "Apple", type: "fruit" },
+    { name: "Carrot", type: "vegetable" },
+    { name: "Orange", type: "fruit" }];
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
+  onItemDrop(e: any) {
+    // Get the dropped data here
+    this.droppedItems.push(e.dragData);
+    var index = this.items.indexOf(e.dragData);
+    if (index > -1) {
+      this.items.splice(index, 1);
     }
   }
+  onItem2Drop(e: any) {
+    console.log("e", e);
+    // Get the dropped data here
+    this.items.push(e.dragData);
+    var index = this.droppedItems.indexOf(e.dragData);
+    if (index > -1) {
+      this.droppedItems.splice(index, 1);
+    }
+  }
+
+
 
 }

@@ -1,5 +1,5 @@
-import { Developer } from './';
-import { UserStory } from './';
+import { Developer } from '.';
+import { UserStory } from '.';
 export class AssignmentInput {
     developers: Developer[];
     userStories: UserStory[];
