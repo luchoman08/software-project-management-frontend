@@ -6,13 +6,14 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import {
   AssignmentDetailReadOnlyComponent
 } from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
+import { PunctuationsSelectorComponent } from './punctuations/punctuations-selector/punctuations-selector.component';
 const routes: Routes = [
-  /** Dev route for test componentes 
+ 
   {
-    path: 'dev-component',
-    component: DeveloperCompatibilityWithUserStoryComponent
+    path: 'punctuations',
+    component: PunctuationsSelectorComponent
   },
-   End of dev route */
+ /*  End of dev route */
   {
     path: 'assignment',
     loadChildren: './assignment/assignment.module#AssignmentModule'

@@ -3,14 +3,13 @@
         <div class="card-icon">
             <i class="material-icons">bookmark</i>
         </div>
-        <p class="card-category">Puntos de historia</p>
-        <h3 class="card-title">
+        <p class="card-category">Puntos</p>
+        <h6 class="card-title">
         <p *ngIf = "userStory.total_points; else noPointsBlock"> {{userStory.total_points}} </p>
         <ng-template #noPointsBlock><i (click)="openEditPointsDialog()" class="material-icons">add_circle</i></ng-template>
-        </h3>
+        </h6>
     </div>
    <div class="card-body">
-            <h3>Titulo</h3>
            <p> {{userStory.subject}}</p>
     </div>
     <div *ngIf = "userStory.total_points" class="card-footer">

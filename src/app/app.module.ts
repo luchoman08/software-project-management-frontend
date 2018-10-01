@@ -30,6 +30,7 @@ import { UserStoriesService } from './core/services';
 import { DevelopersService } from './core/services/developers-service';
 import { MaterialModule } from './material.module';
 import { AssignmentService } from './core/services/assginment.service';
+import { PunctuationsModule } from './punctuations/punctuations.module';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { AssignmentService } from './core/services/assginment.service';
     MainPageComponentsModule,
     RouterModule,
     CoreModule,
+    PunctuationsModule,
     FlexLayoutModule,
     LoadingBarModule.forRoot(),
     AppRoutingModule,

@@ -21,27 +21,12 @@ export class UserStoryGroupComponent {
    }
    setSourceGroup(group: UserStoryGroup) {
      this.sourceGroup = group;
-     console.log( "source group ", this.sourceGroup.name);
-
    }
    setObjectiveGroup(group: UserStoryGroup) {
      this.objectiveGroup = group;
-     console.log("objective group ", this.objectiveGroup.name);
-
    }
-   /*
-     onItemDrop(e: any) {
-    // Get the dropped data here
-    this.groups[0].user_stories.push(e.dragData);
-    var index = this.groups[1].user_stories.indexOf(e.dragData);
-    if (index > -1) {
-      this.groups[1].user_stories.splice(index, 1);
-    }
-  }
-   */
   onItemDrop(e: any) {
     // Get the dropped data here
-    console.log("objective group ", this.objectiveGroup.name, "source group ", this.sourceGroup.name);
     this.objectiveGroup.user_stories.push(e.dragData);
     var index = this.sourceGroup.user_stories.indexOf(e.dragData);
     if (index > -1) {
@@ -49,8 +34,6 @@ export class UserStoryGroupComponent {
     }
   }
   onItem2Drop(e: any) {
-    console.log("source ", this.sourceGroup.name, "objective ", this.objectiveGroup.name);
-    console.log("e", e);
     // Get the dropped data here
     this.groups[1].user_stories.push(e.dragData);
     var index = this.groups[0].user_stories.indexOf(e.dragData);
