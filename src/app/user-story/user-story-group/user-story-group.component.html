@@ -1,19 +1,16 @@
 <div class="main-content">
-  <h3>Transfer Data via Drag Drop</h3>
-  <div class="row">
-      <div class="col-sm-3">
-          <ul droppable (onDrop)="onItem2Drop($event)" class="list-group">
-              <li draggable *ngFor="let item of items" [dragData]="item" class="list-group-item">{{item.name}}</li>
-          </ul>
-      </div>
-      
-      <div class="col-sm-3">
-      <div class="panel panel-default" droppable (onDrop)="onItemDrop($event)">
-          <div class="panel-heading">Drop Items here</div>
-              <div class="panel-body">
-                  <app-user-story-list-one-line [userStories]="userStories" draggable *ngFor="let item of droppedItems" [dragData]="item" class="list-group-item">{{item.name}}</app-user-story-list-one-line>
-              </div>
-          </div>
-      </div>
-  </div>
+    <h3>Transfer Data via Drag Drop</h3>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let group of groups">
+            <div class="panel panel-default" (onDragLeave)="setObjectiveGroup(group)" (mouseover)="setSourceGroup(group)" droppable
+                (onDrop)="onItemDrop($event)">
+                <div class="panel-heading">{{group.name}}</div>
+                <div class="panel-body">
+                    <app-userstory-detail *ngFor="let userstory of group.user_stories" [userStory]="userstory" draggable [dragData]="userstory"
+                        class="list-group-item"></app-userstory-detail>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
