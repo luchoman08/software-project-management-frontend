@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Punctuation } from '../../core/models/punctuation';
 import { punctuations_mock } from '../../mocks/simple-mocks/punctuations';
-import { MatSliderComponent } from '@angular/material';
+import { MatSliderChange } from '@angular/material/slider';
 @Component({
   selector: 'app-punctuations-selector',
   templateUrl: './punctuations-selector.component.html',
   styleUrls: ['./punctuations-selector.component.scss']
 })
 export class PunctuationsSelectorComponent implements OnInit {
-  punctuations : Array<Punctuation> = punctuations_mock;
-  @ViewChildren(MatSliderComponent) sliders : QueryList<MatSliderComponent>;
+  @Input() punctuations : Array<Punctuation> = punctuations_mock;
+  @Output() change: EventEmitter<MatSliderChange>;
   max = 100;
   min = 0;
   step = 1;
@@ -17,8 +17,11 @@ export class PunctuationsSelectorComponent implements OnInit {
   constructor() {
 
    }
-
+   onSliderChange(change: MatSliderChange) {
+    this.change.emit(change);
+   }
   ngOnInit() {
+
   }
 
 }

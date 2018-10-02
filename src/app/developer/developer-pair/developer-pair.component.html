@@ -1,0 +1,25 @@
+<div class="main-content col-3">
+
+    <div  *ngIf="pair" class="card card-stats">
+        <div class="card-header card-header-warning card-header-icon">
+            <div class="card-icon">
+                <i class="material-icons">looks_two</i>
+            </div>
+            <p class="card-category">Compatibilidad <br>  <small> de 0 a 100 </small></p>
+            
+            <h6 class="card-title">
+            <p > {{pair.compatibility}} </p>
+            </h6>
+        </div>
+       <div class="card-body">
+               <p *ngIf="pair.nombre"> {{pair.nombre}}</p>
+               <p *ngIf="!pair.nombre"> Pareja {{" " + pair.id}}</p>
+               <span>{{pair.developer1.full_name}}</span>
+               <mat-divider></mat-divider>
+               <span>{{pair.developer2.full_name}}</span>
+        </div>
+    
+    </div>
+
+
+</div>

@@ -31,6 +31,7 @@ import { DevelopersService } from './core/services/developers-service';
 import { MaterialModule } from './material.module';
 import { AssignmentService } from './core/services/assginment.service';
 import { PunctuationsModule } from './punctuations/punctuations.module';
+import { DeveloperModule } from './developer/developer.module';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { PunctuationsModule } from './punctuations/punctuations.module';
     RouterModule,
     CoreModule,
     PunctuationsModule,
+    DeveloperModule,
     FlexLayoutModule,
     LoadingBarModule.forRoot(),
     AppRoutingModule,

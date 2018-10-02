@@ -7,11 +7,16 @@ import {
   AssignmentDetailReadOnlyComponent
 } from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
 import { PunctuationsSelectorComponent } from './punctuations/punctuations-selector/punctuations-selector.component';
+import { DeveloperPairComponent } from './developer/developer-pair/developer-pair.component';
 const routes: Routes = [
  
   {
     path: 'punctuations',
     component: PunctuationsSelectorComponent
+  },
+  {
+    path: 'pairs',
+    component: DeveloperPairComponent
   },
  /*  End of dev route */
   {

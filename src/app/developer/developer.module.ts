@@ -13,6 +13,7 @@ import { MaterialModule } from '../material.module';
 import { DeveloperPunctuationsComponent } from './developer-punctuations/developer-punctuations.component';
 import { DeveloperCompatibilityWithUserStoryComponent } from './developer-compatibility-with-user-story/developer-compatibility-with-user-story.component';
 import { CommonComponentsModule } from '../page-components/common-components/common-components.module';
+import { DeveloperPairComponent } from './developer-pair/developer-pair.component';
 
 
 @NgModule({
@@ -31,12 +32,14 @@ import { CommonComponentsModule } from '../page-components/common-components/com
     SimpleDeveloperListOneLineComponent,
     DeveloperSelectDialogComponent,
     DeveloperPunctuationsComponent,
-    DeveloperCompatibilityWithUserStoryComponent
+    DeveloperCompatibilityWithUserStoryComponent,
+    DeveloperPairComponent
   ],
   exports: [
     SimpleDeveloperListOneLineComponent,
     DeveloperSelectDialogComponent,
-    DeveloperCompatibilityWithUserStoryComponent
+    DeveloperCompatibilityWithUserStoryComponent,
+    DeveloperPairComponent
   ],
   entryComponents: [
     DeveloperSelectDialogComponent

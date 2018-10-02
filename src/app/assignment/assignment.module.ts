@@ -11,6 +11,7 @@ import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PairAssignmentComponent } from './pair-assignment/pair-assignment.component';
 
 
 
@@ -28,7 +29,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   declarations: [
     AssignmentComponent,
-    AssignmentDetailReadOnlyComponent
+    AssignmentDetailReadOnlyComponent,
+    PairAssignmentComponent
 
   ],
   exports: [
