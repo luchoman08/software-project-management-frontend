@@ -1,25 +1,36 @@
-<div class="main-content col-3">
+<div class="main-content ">
+    <div class="row" fxLayout="row" fxLayoutGap="20px">
+        <div *ngFor="let pair of pairs" class=" card card-stats col-lg-3 col-md-4 col-sm-2">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">looks_two</i>
+                </div>
+                <p class="card-category">Compatibilidad <br> <small> de 0 a 100 </small></p>
 
-    <div  *ngIf="pair" class="card card-stats">
-        <div class="card-header card-header-warning card-header-icon">
-            <div class="card-icon">
-                <i class="material-icons">looks_two</i>
+                <h6 class="card-title">
+                    <p> {{pair.compatibility}} </p>
+                </h6>
             </div>
-            <p class="card-category">Compatibilidad <br>  <small> de 0 a 100 </small></p>
-            
-            <h6 class="card-title">
-            <p > {{pair.compatibility}} </p>
-            </h6>
+            <div class="card-body" >
+                <p *ngIf="pair.nombre"> {{pair.nombre}}</p>
+                <p *ngIf="!pair.nombre"> Pareja {{" " + pair.id}}</p>
+                <span 
+                    draggable [dragData]="pair.developer1"  
+                    (onDragOver)="setObjectiveDeveloper(pair.developer1)" 
+                    (onDragLeave)="setSourceDeveloper(pair.developer1)" 
+                    droppable
+                    (onDrop)="onItemDrop($event)">
+                {{pair.developer1.full_name}}</span>
+                <mat-divider></mat-divider>
+                <span 
+                    draggable [dragData]="pair.developer2"  
+                    (onDragOver)="setObjectiveDeveloper(pair.developer2)" 
+                    (onDragLeave)="setSourceDeveloper(pair.developer2)" 
+                    droppable
+                    (onDrop)="onItemDrop($event)">
+                {{pair.developer2.full_name}}
+                </span>    
+            </div>
         </div>
-       <div class="card-body">
-               <p *ngIf="pair.nombre"> {{pair.nombre}}</p>
-               <p *ngIf="!pair.nombre"> Pareja {{" " + pair.id}}</p>
-               <span>{{pair.developer1.full_name}}</span>
-               <mat-divider></mat-divider>
-               <span>{{pair.developer2.full_name}}</span>
-        </div>
-    
     </div>
-
-
 </div>

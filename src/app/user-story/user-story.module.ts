@@ -13,7 +13,8 @@ import {
   MatTooltipModule,
   MatDialogModule,
   MatButtonModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatIconModule
 } from '@angular/material';
 
 import { NgDragDropModule } from 'ng-drag-drop';
@@ -32,6 +33,7 @@ import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.
         MatDialogModule,
         MatInputModule,
         MatButtonModule,
+        MatIconModule,
         MatButtonToggleModule,
     ],
     declarations: [

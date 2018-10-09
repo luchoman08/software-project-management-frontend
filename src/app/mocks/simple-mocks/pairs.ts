@@ -1,7 +1,7 @@
 import { DeveloperPair } from "../../core/models/developer-pair.model";
 import { SIMPLEDEVELS } from "./simple-developers";
 
-export const PAIRS: DeveloperPair[] = [
+export var PAIRS: DeveloperPair[] = [
     {
         developer1 : SIMPLEDEVELS[0],
         developer2 :SIMPLEDEVELS[1],
@@ -11,7 +11,7 @@ export const PAIRS: DeveloperPair[] = [
     },
     {
         developer1 : SIMPLEDEVELS[1],
-        developer2 :SIMPLEDEVELS[0],
+        developer2 :SIMPLEDEVELS[2],
         id : 1,
         nombre: "Pareja 2",
         compatibility: 80

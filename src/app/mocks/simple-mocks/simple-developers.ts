@@ -9,5 +9,9 @@ export const SIMPLEDEVELS: IDeveloper[] = [
      { id: '101', full_name: 'Jefferson Meneses',
      color:  'rgb(255, 87, 0)',  available_hours_per_week:  30,
      punctuations: punctuations_mock_inverse,
+     role_name : 'Developer'},
+     { id: '102', full_name: 'Jeison cardona',
+     color:  'rgb(255, 87, 0)',  available_hours_per_week:  10,
+     punctuations: punctuations_mock_inverse,
      role_name : 'Developer'}
   ];

@@ -35,6 +35,6 @@ export class UserStoryDetailComponent implements OnInit {
       this.userStory.total_points = value;
     });
   }
-  // getRolePoints(id_punctuation): Obserbable <Role
+  
 
 }

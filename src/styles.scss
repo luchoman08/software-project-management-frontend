@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.spacer {
+    flex: 1 1 auto;
+}
+
+
+.generic-principal-button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #db4437;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px #666;
+}

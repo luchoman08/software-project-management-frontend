@@ -2,14 +2,17 @@
     <h3>Puedes arrastrar y soltar historias de usuario para cambiar de grupo</h3>
     <div class="row">
         <div class="col-sm-3" *ngFor="let group of groups">
-            <div class="panel panel-default" (onDragLeave)="setObjectiveGroup(group)" (mouseover)="setSourceGroup(group)" droppable
+            <div class="panel panel-default" (onDragOver)="setObjectiveGroup(group)" (onDragLeave)="setSourceGroup(group)" droppable
                 (onDrop)="onItemDrop($event)">
                 <div class="panel-heading">{{group.name}}</div>
                 <div class="panel-body">
-                    <app-userstory-detail *ngFor="let userstory of group.user_stories" [userStory]="userstory" draggable [dragData]="userstory"
-                        class="list-group-item"></app-userstory-detail>
+                    <p *ngIf="group.user_stories.length == 0">Puede adicionar historias de usuario arrastrandolas</p>
+                    <p *ngFor="let userstory of group.user_stories" draggable [dragData]="userstory"
+                        class="list-group-item">{{userstory.subject}}</p>
                 </div>
             </div>
         </div>
+
+        <button (click)="openAddGroup()" mat-fab color="primary" class="generic-principal-button"><mat-icon>add</mat-icon></button>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div mat-dialog-content>
   <p>{{data.valueName | capitalize}} </p>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.value" type="{{data.type}}">
+    <input matInput [(ngModel)]="data.value" type="{{data.type}}" (placeholder)="data.placeholder? data.placeholder: ''">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

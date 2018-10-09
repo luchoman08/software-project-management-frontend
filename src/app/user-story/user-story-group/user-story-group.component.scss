@@ -1,3 +1,5 @@
+
+
 .container {
     width: 400px;
     max-width: 100%;
@@ -51,3 +53,16 @@
   .list.cdk-drop-dragging .box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
+
+  
+.generic-principal-button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #db4437;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px #666;
+}
