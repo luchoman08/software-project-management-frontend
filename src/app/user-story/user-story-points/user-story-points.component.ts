@@ -12,11 +12,9 @@ export class UserStoryPointsComponent implements OnInit {
   constructor() {
    }
    consolelog(punctuation: Punctuation) {
-     console.log(punctuation.name);
    }
   
   ngOnInit() {
-    console.log(this.userStory, 'hola ')
   }
 
 }

@@ -10,6 +10,7 @@ import {
   templateUrl: './user-story-list-one-line.component.html',
   styleUrls: ['./user-story-list-one-line.component.scss']
 })
+
 export class UserStoryListOneLineComponent implements OnInit {
 
   @Input() public userStories: UserStory[];
@@ -17,12 +18,11 @@ export class UserStoryListOneLineComponent implements OnInit {
   constructor(
     public dialog: MatDialog
   ) { 
-    /** Mock */
-    //this.userStories = SIMPLEUSERSTORIES;
     this.includePunctuations = true;
   }
 
   ngOnInit() {
+    console.log(this.includePunctuations);
   }
   openEditPointsDialog(userStory: UserStory): void {
     const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {

@@ -24,7 +24,7 @@ export class UserStoriesService {
     return  forkJoin( userStories.map(
         userStory => {
             return this.set( userStory.id, userStory);
-        })).pipe(tap(data => console.log(data, "melo")));
+        }));
   }
 
   getProjectUserStories(project_id): Observable<UserStory[]> {

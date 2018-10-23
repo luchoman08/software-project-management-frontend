@@ -19,7 +19,6 @@ export class UserStoryGroupComponent {
   constructor(
     public dialog: MatDialog
   ) {
-    console.log(this.userStories.length)
     this.groups.push({id: "-1", name:"Historias sin agrupar", user_stories:[this.userStories[0], this.userStories[3]] });
     this.groups.push({id: "0", name:"Grupo 1", user_stories:[this.userStories[0], this.userStories[3]] });
     this.groups.push({id: "1", name:"Grupo 2", user_stories:[this.userStories[1], this.userStories[2]] });
@@ -35,7 +34,6 @@ export class UserStoryGroupComponent {
      this.objectiveGroup = group;
    }
    openAddGroup() {
-      console.log("click")
       const dialogRef = this.dialog.open(SingleDataDialogEditOrAddComponent, {
         width: '320px',
         data:  {

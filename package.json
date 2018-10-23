@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "start-c9": "ng serve --host $IP --port $PORT --public $C9_HOSTNAME",
     "build": "ng build",
     "build_prod": "ng build  --base-href /asignacion_frontend/ --prod ",

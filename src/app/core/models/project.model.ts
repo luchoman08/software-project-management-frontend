@@ -17,8 +17,8 @@ export class Project implements ProjectInterface {
         project.created_date = iproject.created_date;
         project.description = iproject.description;
         //project.sprints = iproject.sprints.map(Sprint.fromJSON) ;
-        project.points = iproject.points.map(Point.fromJSON);
-        project.developers = iproject.developers.map(Developer.fromJSON);
+        project.points = iproject.points? iproject.points.map(Point.fromJSON): new Array<Point>();
+        project.developers = iproject.developers? iproject.developers.map(Developer.fromJSON): new Array<Developer>();
         project.name = iproject.name; 
         return project;
     }

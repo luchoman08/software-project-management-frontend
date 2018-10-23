@@ -31,12 +31,6 @@ export class UserStoryListComponent implements OnInit {
   ngOnInit() {
    let tree = new kdTree(this.points, this.distance, ["x", "y"]);
    var nearest = tree.nearest({ x: 5, y: 5 }, 2);
-
-   console.log(nearest);
-   /* this.userStoryService.getProjectUserStories(267733).
-    subscribe(userStories => {
-      this.userStories = userStories;
-    });*/
   }
 
 }

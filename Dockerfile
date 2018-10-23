@@ -14,12 +14,12 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-RUN npm install -g 
+COPY package.json /usr/src/app
 RUN npm install
-RUN npm install -g @angular/cli@1.5.4
-RUN chmod -R 755 node_modules
-# add app
 COPY . /usr/src/app
+
+EXPOSE 4200 49153
+
+# add app
 
 

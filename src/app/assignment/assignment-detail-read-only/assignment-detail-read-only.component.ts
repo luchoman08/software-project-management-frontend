@@ -38,12 +38,11 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
           this.assignment.relationHoursPoints,
           this.asignedToPipe.transform(this.assignment.userStories, developer.id),
           this.daysOfWork);
-      console.log(developer.percentage_time_used, 'porcentaje de tiempo usado' );
     }
   }
 
   saveUserStories() {
-      this.userStoryService.setMultiple(this.assignment.userStories).subscribe( data => console.log(data));
+      this.userStoryService.setMultiple(this.assignment.userStories).subscribe( );
   }
   openSelectDevelopers(userStory: UserStory): void {
     this.selectedUserStory = userStory;
@@ -69,7 +68,6 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
   }
   ngOnInit() {
     this.daysOfWork = getBusinessDatesCount(this.assignment.startDate, this.assignment.endDate);
-    console.log(this.daysOfWork, 'dias de trabajo');
     this.initPercentageOcuped();
   }
 

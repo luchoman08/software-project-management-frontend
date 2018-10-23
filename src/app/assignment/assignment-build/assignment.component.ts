@@ -114,11 +114,9 @@ export class AssignmentComponent implements OnInit {
     this.simpleAssignmentInput.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
     this.simpleAssignmentInput.developers = this.developers;
     this.simpleAssignmentInput.userStories = this.selectedSimpleSprint.user_stories;
-    console.log(JSON.stringify(this.simpleAssignmentInput));
     this.assignmentService.generarAsignacionSimple(this.simpleAssignmentInput)
     .subscribe( (assignment: AssignmentInput) => {
       this.assignmentOutput = assignment;
-      console.log(assignment);
     }
   );
 
@@ -138,18 +136,14 @@ export class AssignmentComponent implements OnInit {
     .subscribe (
       (simpleProjects: Project[]) => {
         this.simpleProjects = simpleProjects;
-        console.log(this.simpleProjects);
         this.loadingBar.complete();
       },
       errors => {
         this.projectErrors  = errors;
-        console.log(this.projectErrors);
       }
     );
     this.route.params.subscribe(params => {
-      console.log(params, 'params at assignmnet component');
       const assignmentType: AssignmentType = Number(params['assign_type']);
-      console.log (assignmentType, AssignmentType.BY_PUNCTUATIONS, assignmentType === AssignmentType.BY_PUNCTUATIONS, 'assignment type igual al coso enum');
       this.assignmentByPunctuation = assignmentType === AssignmentType.BY_PUNCTUATIONS? true: false;
 
    });
