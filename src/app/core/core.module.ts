@@ -6,6 +6,7 @@ import { HttpTokenInterceptor } from './interceptors';
 import {
     ApiService,
     JwtService,
+    PageComponentsService,
 } from './services';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { FirstWordPipe } from './pipes/firstWord.pipe';
@@ -23,7 +24,8 @@ import { AssignedToPipe } from './pipes/assignedTo.pipe';
     ApiService,
     JwtService,
     ProjectManagersService,
-    AssignedToPipe
+    AssignedToPipe,
+    PageComponentsService,
   ],
   declarations: [CapitalizePipe, FirstWordPipe, AssignedToPipe],
   exports: [CapitalizePipe, FirstWordPipe, AssignedToPipe]

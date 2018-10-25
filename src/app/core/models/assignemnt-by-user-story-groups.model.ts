@@ -1,6 +1,6 @@
-import { UserStoryGroup } from "./usre-story-group.model";
-import { UserStory } from "./user-story.model";
-import { Developer } from "./developer.model";
+import { UserStoryGroup } from './usre-story-group.model';
+import { UserStory } from './user-story.model';
+import { Developer } from './developer.model';
 
 export class AssignmentByUserStoryGroups {
 

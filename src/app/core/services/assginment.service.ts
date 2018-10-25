@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { ApiService } from './api.service';
 import { AssignmentInput } from '../models/assignment-input.model';
 import { AssignmentByPunctuation } from '../models/assignment-by-punctuations.model';
+import { AssignmentByPairs } from '../models/assignment-by-pairs.model';
 
 @Injectable()
 export class AssignmentService {
@@ -15,8 +16,8 @@ export class AssignmentService {
     assignmentByPunctuations: AssignmentByPunctuation): Observable<AssignmentByPunctuation> {
       return this.apiService
       .post('/attributeassign/', assignmentByPunctuations)
-      .map((assignmentByPunctuations: AssignmentByPunctuation) => {
-        return assignmentByPunctuations;
+      .map((_assignmentByPunctuations: AssignmentByPunctuation) => {
+        return _assignmentByPunctuations;
       })
     }
   generarAsignacionSimple(
@@ -24,8 +25,17 @@ export class AssignmentService {
   ): Observable<AssignmentInput> {
     return this.apiService
       .post('/uniquecostassign/', assignmentUniqueCost)
-      .map((assignmentUniqueCost: AssignmentInput) => {
-        return assignmentUniqueCost;
+      .map((_assignmentUniqueCost: AssignmentInput) => {
+        return _assignmentUniqueCost;
+      });
+  }
+  generateAssignmentByPairs(
+    assignmentUniqueCost: AssignmentByPairs
+  ): Observable<AssignmentByPairs> {
+    return this.apiService
+      .post('/pairassign/', assignmentUniqueCost)
+      .map((_assignmentUniqueCost: AssignmentByPairs) => {
+        return _assignmentUniqueCost;
       });
   }
 }

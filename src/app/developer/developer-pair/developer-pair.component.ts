@@ -9,7 +9,7 @@ import { Developer } from '../../core/models';
   styleUrls: ['./developer-pair.component.scss']
 })
 export class DeveloperPairComponent implements OnInit {
-  pairs: Array<DeveloperPair> = PAIRS;
+  pairs: Array<DeveloperPair> = <DeveloperPair[]>PAIRS;
   indexSourceDeveloper: number;
   indexObjectiveDeveloper: number;
   indexSourcePair: number;

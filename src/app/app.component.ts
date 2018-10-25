@@ -6,6 +6,8 @@ import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConf
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { LoadingBarService } from '@ngx-loading-bar/core';
+import { Observable } from 'rxjs/Observable';
+import { PageComponentsService } from './core/services';
 
 declare const $: any;
 
@@ -18,14 +20,21 @@ export class AppComponent implements OnInit {
     private _router: Subscription;
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
-
+    public full_page_component: boolean;
     constructor(
         private location: Location,
         private _location: LocationStrategy,
-        private router: Router, 
+        private router: Router,
+        private pageComponentService: PageComponentsService,
         public loader: LoadingBarService) {
-    // check if back or forward button is pressed.
-
+            this.full_page_component = false;
+            this.pageComponentService
+            .get_full_page_component_obs()
+            .subscribe(
+                nextVal => {
+                    this.full_page_component = nextVal;
+                }
+            );
         }
 
     ngOnInit() {
@@ -38,8 +47,8 @@ export class AppComponent implements OnInit {
         } else {
             document.getElementsByTagName('body')[0].classList.remove('perfect-scrollbar-off');
         }
-        const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
-        const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
+        const elemMainPanel: HTMLElement | undefined = <HTMLElement>document.querySelector('.main-panel');
+        const elemSidebar: HTMLElement | undefined = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 
         this.location.subscribe((ev: PopStateEvent) => {
             this.lastPoppedUrl = ev.url;
@@ -59,8 +68,12 @@ export class AppComponent implements OnInit {
            }
         });
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
-             elemMainPanel.scrollTop = 0;
+             if ( elemMainPanel ) {
+                elemMainPanel.scrollTop = 0;
+             }
+             if ( elemSidebar ) {
              elemSidebar.scrollTop = 0;
+             }
         });
         if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
             let ps = new PerfectScrollbar(elemMainPanel);

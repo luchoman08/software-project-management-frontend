@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
 } from '../../page-components/common-components';
-//import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
+// import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
 @Component({
   selector: 'app-user-story-list-one-line',
   templateUrl: './user-story-list-one-line.component.html',
@@ -14,10 +14,10 @@ import {
 export class UserStoryListOneLineComponent implements OnInit {
 
   @Input() public userStories: UserStory[];
-  @Input() public includePunctuations: boolean; //include global number of points or punctuations of story, are mutually exclusive
+  @Input() public includePunctuations: boolean; // include global number of points or punctuations of story, are mutually exclusive
   constructor(
     public dialog: MatDialog
-  ) { 
+  ) {
     this.includePunctuations = true;
   }
 

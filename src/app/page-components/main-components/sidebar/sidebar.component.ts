@@ -10,8 +10,28 @@ export declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: 'assignment/uniquecost', params: {assign_type: AssignmentType.UNIQUE_COST},  title: 'Simple Assignment',  icon: 'unarchive', class: '' },
-    { path: 'assignment/bypunctuation', params: {assign_type: AssignmentType.BY_PUNCTUATIONS},  title: 'Assignment by Punctuation',  icon: 'unarchive', class: '' },
+    {
+        path: 'assignment/uniquecost',
+        params: {assign_type: AssignmentType.UNIQUE_COST},
+        title: 'Simple Assignment',
+        icon: 'unarchive',
+        class: ''
+    },
+    {
+        path: 'assignment/bypunctuation',
+        params: {assign_type: AssignmentType.BY_PUNCTUATIONS},
+        title: 'Assignment by Punctuation',
+        icon: 'unarchive',
+        class: ''
+    },
+    {
+        path: 'assignment/bypairs',
+        title: 'Assignment by pairs',
+        params: {},
+        icon: 'unarchive',
+        class: ''
+    },
+
     { path: 'userstories/list', params: {}, title: 'List Simple User Stories',  icon: 'unarchive', class: '' },
     { path: 'userstories/listoneline', params: {}, title: 'One Line User Sotries',  icon: 'unarchive', class: '' },
     { path: 'developers',  params: {}, title: 'Detail Simple Developer',  icon: 'unarchive', class: '' },

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AssignmentComponent } from './assignment-build/assignment.component';
+import { AssignmentBuildPairsComponent } from './assignment-build-pairs/assignment-build-pairs.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'bypunctuation',
     component: AssignmentComponent
+  },
+  {
+    path: 'bypairs',
+    component: AssignmentBuildPairsComponent
   }
 ];
 

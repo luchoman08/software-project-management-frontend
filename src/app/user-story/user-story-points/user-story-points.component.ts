@@ -13,8 +13,8 @@ export class UserStoryPointsComponent implements OnInit {
    }
    consolelog(punctuation: Punctuation) {
    }
-  
   ngOnInit() {
+    console.log(this.userStory);
   }
 
 }

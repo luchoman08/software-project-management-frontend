@@ -10,10 +10,9 @@ export class Developer implements IDeveloper {
     color: string;
     percentage_time_used?: number;
 
-    constructor() {
-    }
+
     public static fromJSON(json: IDeveloper): Developer {
-        let developer: Developer = new Developer();
+        const developer: Developer = new Developer();
         developer.id = json.id;
         developer.full_name = json.full_name;
         developer.color = json.color;
@@ -25,5 +24,7 @@ export class Developer implements IDeveloper {
     }
     public static fromJSONMultiple(idevelopers: IDeveloper[]): Developer[] {
         return idevelopers.map(this.fromJSON);
+    }
+    constructor() {
     }
 }

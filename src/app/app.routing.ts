@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import {
-  AssignmentDetailReadOnlyComponent
-} from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
 import { PunctuationsSelectorComponent } from './punctuations/punctuations-selector/punctuations-selector.component';
 import { DeveloperPairComponent } from './developer/developer-pair/developer-pair.component';
 const routes: Routes = [
- 
   {
     path: 'punctuations',
     component: PunctuationsSelectorComponent
@@ -18,7 +14,7 @@ const routes: Routes = [
     path: 'pairs',
     component: DeveloperPairComponent
   },
- /*  End of dev route */
+  /*  End of dev route */
   {
     path: 'assignment',
     loadChildren: './assignment/assignment.module#AssignmentModule'
@@ -31,17 +27,21 @@ const routes: Routes = [
     path: 'developers',
     loadChildren: './developer/developer.module#DeveloperModule'
   },
-  { path: '', redirectTo: 'simpleassignment', pathMatch: 'full' }
+  {
+    path: '',
+    loadChildren: './pages/pages.module#PagesModule'
+  }
 ];
 
 @NgModule({
-
-  imports: [RouterModule.forRoot(routes, {
-    // preload all modules; optionally we could
-    // implement a custom preloading strategy for just some
-    // of the modules (PRs welcome 😉)
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      // preload all modules; optionally we could
+      // implement a custom preloading strategy for just some
+      // of the modules (PRs welcome 😉)
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 
   /*
@@ -53,8 +53,4 @@ const routes: Routes = [
     exports: [
     ],*/
 })
-
-
-
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PairAssignmentComponent } from './pair-assignment/pair-assignment.component';
+import { AssignmentBuildPairsComponent } from './assignment-build-pairs/assignment-build-pairs.component';
 
 
 
@@ -30,7 +31,8 @@ import { PairAssignmentComponent } from './pair-assignment/pair-assignment.compo
   declarations: [
     AssignmentComponent,
     AssignmentDetailReadOnlyComponent,
-    PairAssignmentComponent
+    PairAssignmentComponent,
+    AssignmentBuildPairsComponent
 
   ],
   exports: [

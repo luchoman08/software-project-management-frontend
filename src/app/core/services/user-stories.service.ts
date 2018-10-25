@@ -12,7 +12,7 @@ export class UserStoriesService {
   constructor ( private apiService: ApiService) {  }
 
   get(slug, append_punctuations?: boolean): Observable<UserStory> {
-    const params = append_punctuations? new HttpParams().set('append_punctuations', '1'): new HttpParams(); 
+    const params = append_punctuations ? new HttpParams().set('append_punctuations', '1') : new HttpParams();
     return this.apiService.get('/userstories/' + slug, params)
     .pipe(map(data => data));
   }

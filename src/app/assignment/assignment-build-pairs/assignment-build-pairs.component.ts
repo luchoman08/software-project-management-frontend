@@ -1,22 +1,20 @@
-import { Component, OnInit, Input} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Project, Sprint, Developer, AssignmentInput } from '../../core/models';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Project, Sprint, Developer } from '../../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
-import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
-import { ASSIGNMENTBYPUNCTUATIONRESPONSE } from '../../mocks/simple-mocks/assignment-by-attributes.mock';
 import { ActivatedRoute } from '@angular/router';
-import { AssignmentType } from '../../core/enums';
+import { AssignmentByPairs } from '../../core/models/assignment-by-pairs.model';
 
 @Component({
-  selector: 'app-assignment',
-  templateUrl: './assignment.component.html',
-  styleUrls: ['./assignment.component.scss']
+  selector: 'app-assignment-build-pairs',
+  templateUrl: './assignment-build-pairs.component.html',
+  styleUrls: ['./assignment-build-pairs.component.scss']
 })
-export class AssignmentComponent implements OnInit {
+export class AssignmentBuildPairsComponent implements OnInit {
 
   selectedSimpleProject: Project;
   selectedSimpleSprint: Sprint;
@@ -25,16 +23,15 @@ export class AssignmentComponent implements OnInit {
   sprints: Sprint[];
   developers: Developer[];
   step = 0;
-  assignmentOutput: AssignmentInput ;
+  assignmentOutput: AssignmentByPairs ;
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
-
-  assignmentByPunctuation = true;
-
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  simpleAssignmentInput: AssignmentInput;
+  assignment_type_form: FormGroup;
+  assignmentByPairs: AssignmentByPairs;
+
   constructor(
     private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
@@ -45,12 +42,15 @@ export class AssignmentComponent implements OnInit {
     private loadingBar: LoadingBarService) {
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
-      this.simpleAssignmentInput = new AssignmentInput();
+      this.assignmentByPairs = new AssignmentByPairs();
       this.formSelectProject = this._formBuilder.group({
         projectContrl: ['', Validators.required]
       });
       this.formSelectSprint = this._formBuilder.group({
         sprintCntrl: [{value: '', disabled: true}]
+      });
+      this.assignment_type_form = this._formBuilder.group({
+        assign_type_cntrl: [{value: false, disabled: false}]
       });
     }
 
@@ -88,19 +88,20 @@ export class AssignmentComponent implements OnInit {
       this.loadingBar.complete();
     })
   }
-  getAssignmentByPunctuation(): void {
-    const assignmentByPunctuation = new AssignmentByPunctuation();
-    assignmentByPunctuation.assign_same_quantity_of_tasks = true;
-    assignmentByPunctuation.developers = this.developers;
-    assignmentByPunctuation.userStories = this.selectedSimpleSprint.user_stories;
-    console.log(JSON.stringify(assignmentByPunctuation), 'assignment by punctuation string');
-    this.assignmentService.generateAssignmentByPunctuations(assignmentByPunctuation)
+  getAssignmentByPairs(): void {
+    const assignmentByPairs = new AssignmentByPairs();
+    assignmentByPairs.reverse = this.assignment_type_form.get('assign_type_cntrl').value;
+    assignmentByPairs.developers = this.developers;
+    assignmentByPairs.userStories = this.selectedSimpleSprint.user_stories;
+    this.assignmentService.generateAssignmentByPairs(assignmentByPairs)
     .subscribe(
-      (response: AssignmentByPunctuation) => {
+      (response: AssignmentByPairs) => {
         // console.log(JSON.stringify(response), 'response after assignment by punctuation');
-        this.assignmentOutput = new AssignmentInput();
+        this.assignmentOutput = new AssignmentByPairs();
         this.assignmentOutput.userStories = response.userStories;
         this.assignmentOutput.developers = response.developers;
+        this.assignmentOutput.pairs = response.pairs;
+        this.assignmentOutput.reverse = response.reverse;
         console.log(JSON.stringify(this.assignmentOutput), 'assignment output');
       },
       (error: any) => {
@@ -108,26 +109,9 @@ export class AssignmentComponent implements OnInit {
       }
     );
   }
-  getSimpleAssignment(): void {
-    this.simpleAssignmentInput.relationHoursPoints = 1;
-    this.simpleAssignmentInput.startDate = new Date(this.selectedSimpleSprint.estimated_start);
-    this.simpleAssignmentInput.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
-    this.simpleAssignmentInput.developers = this.developers;
-    this.simpleAssignmentInput.userStories = this.selectedSimpleSprint.user_stories;
-    this.assignmentService.generarAsignacionSimple(this.simpleAssignmentInput)
-    .subscribe( (assignment: AssignmentInput) => {
-      this.assignmentOutput = assignment;
-    }
-  );
-
-  }
 
   getAssignment(): void {
-    if ( this.assignmentByPunctuation ) {
-      this.getAssignmentByPunctuation();
-    } else {
-      this.getSimpleAssignment();
-    }
+      this.getAssignmentByPairs();
   }
 
   ngOnInit() {
@@ -142,11 +126,6 @@ export class AssignmentComponent implements OnInit {
         this.projectErrors  = errors;
       }
     );
-    this.route.params.subscribe(params => {
-      const assignmentType: AssignmentType = Number(params['assign_type']);
-      this.assignmentByPunctuation = assignmentType === AssignmentType.BY_PUNCTUATIONS;
-
-   });
  }
 }
 

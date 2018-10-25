@@ -14,7 +14,7 @@ export class SprintsService {
     return this.apiService.get('/sprints/' + slug);
   }
   getProjectSprints(project_id, append_sotry_points = false): Observable<Sprint[]> {
-    const params = new HttpParams().set('project', String(project_id)).set('append_points', `${append_sotry_points? '1': '0'}`);
+    const params = new HttpParams().set('project', String(project_id)).set('append_points', `${append_sotry_points ? '1' : '0'}`);
     return this.apiService.get('/sprints', params);
       }
     }

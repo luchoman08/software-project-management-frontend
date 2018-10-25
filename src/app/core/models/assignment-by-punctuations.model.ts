@@ -1,5 +1,5 @@
-import { Developer } from "./developer.model";
-import { UserStory } from "./user-story.model";
+import { Developer } from './developer.model';
+import { UserStory } from './user-story.model';
 
 export class AssignmentByPunctuation  {
     developers: Developer[];

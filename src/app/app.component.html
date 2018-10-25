@@ -1,11 +1,11 @@
 <div class="wrapper">
    <mat-progress-bar mode="determinate" [value]="loader.progress$|async"></mat-progress-bar>
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sidebar-1.jpg">
+    <div  [hidden]="full_page_component" class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sidebar-1.jpg">
         <app-sidebar></app-sidebar>
         <div class="sidebar-background"></div>
     </div>
-    <div class="main-panel">
-        <app-navbar></app-navbar>
+    <div [ngClass]="{'main-panel': true}">
+        <!--app-navbar></app-navbar-->
         <router-outlet></router-outlet>
         <div *ngIf="isMaps('maps')">
             <app-footer></app-footer>
