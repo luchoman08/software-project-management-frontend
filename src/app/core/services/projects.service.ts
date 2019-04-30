@@ -25,12 +25,12 @@ export class ProjectsService {
     return this.apiService.get('/projects', params)
     .pipe(
       map (
-        (project: ProjectInterface[]) => project.map(Project.fromJSON)));
+        (project: ProjectInterface[]) => {console.log('kha'); return project.map(Project.fromJSON); }));
   }
   getBySlug(slug): Observable<Project> {
     const params = new HttpParams().set('slug', String(slug));
     return this.apiService.get('/projects', params)
-    .pipe( 
+    .pipe(
       map ((project: ProjectInterface) =>  Project.fromJSON(project))
     );
   }

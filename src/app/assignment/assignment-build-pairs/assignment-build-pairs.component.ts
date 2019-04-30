@@ -8,6 +8,7 @@ import { ProjectsService, SprintsService, DevelopersService } from '../../core/s
 import { AssignmentService } from '../../core/services/assginment.service';
 import { ActivatedRoute } from '@angular/router';
 import { AssignmentByPairs } from '../../core/models/assignment-by-pairs.model';
+import { DeveloperPair } from '../../core/models/developer-pair.model';
 
 @Component({
   selector: 'app-assignment-build-pairs',
@@ -22,6 +23,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
   projectErrors: {};
   sprints: Sprint[];
   developers: Developer[];
+  developerPairs: DeveloperPair[];
   step = 0;
   assignmentOutput: AssignmentByPairs ;
   errors: Errors = {errors: {}};
@@ -80,6 +82,15 @@ export class AssignmentBuildPairsComponent implements OnInit {
       this.nextStep();
     })
   }
+  getPairs() {
+    this.assignmentService.generatePairs({reverse: false, developers: this.developers})
+    .subscribe(developerPairs => {
+      this.developerPairs = developerPairs;
+      console.log(typeof developerPairs, 'type of developer pairs from get pairs')
+    }
+    );
+  }
+
   initSimpleDevelopers(project_id) {
     this.loadingBar.start();
     this.simpleDeveloperService.getProjectDevelopers(project_id)
@@ -116,13 +127,16 @@ export class AssignmentBuildPairsComponent implements OnInit {
 
   ngOnInit() {
     this.loadingBar.start();
+    
     this.simpleProjectService.getByMemberId('303456')
     .subscribe (
       (simpleProjects: Project[]) => {
+        console.log('simple projects', simpleProjects);
         this.simpleProjects = simpleProjects;
         this.loadingBar.complete();
       },
       errors => {
+        console.log(errors, 'errors at build pairs get projects');
         this.projectErrors  = errors;
       }
     );

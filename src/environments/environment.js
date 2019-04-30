@@ -6,6 +6,6 @@
 exports.environment = {
     production: false,
     api_taiga_url: 'https://api.taiga.io/api/v1',
-    api_simple_assignment_sistem: 'https://tesis-backend-python-luchoman.c9users.io/api/v1'
+    api_simple_assignment_sistem: 'http://localhost:8000'
 
 };

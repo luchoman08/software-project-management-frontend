@@ -6,6 +6,10 @@
           <mat-checkbox  formControlName="assign_type_cntrl" required>
             Parejas incompatibles?
           </mat-checkbox>
+          <br />
+          <small>
+            * Asignar parejas de desarrolladores cuyas habilidades son lo más distintas posibles, de tal forma que se compementan
+          </small>
       </form>
       <button mat-button matStepperNext>Siguiente</button>
     </mat-step>
@@ -67,6 +71,17 @@
       <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
       <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="true" [developers]="developers">
       </app-developer-list-one-line>
+      <div>
+        <button mat-button matStepperPrevious>Atrás</button>
+        <button mat-button matStepperNext (click)="getPairs()"> Siguiente</button>
+      </div>
+    </mat-step>   
+    <mat-step>
+      <ng-template matStepLabel>Editar parejas</ng-template>
+      <app-developer-pair *ngIf="developerPairs; else gettingPairs"  [pairs]="developerPairs"></app-developer-pair>
+      <ng-template #gettingPairs>
+        <p>Cargando parejas generadas...</p>
+      </ng-template>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button matStepperNext>Siguiente</button>

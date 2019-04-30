@@ -10,8 +10,8 @@ export const PAIRS: IDeveloperPair[] = [
         compatibility: 50
     },
     {
-        developer1 : SIMPLEDEVELS[1],
-        developer2 : SIMPLEDEVELS[2],
+        developer1 : SIMPLEDEVELS[2],
+        developer2 : SIMPLEDEVELS[3],
         id : 1,
         nombre: 'Pareja 2',
         compatibility: 80

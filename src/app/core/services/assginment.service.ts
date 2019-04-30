@@ -7,6 +7,8 @@ import { ApiService } from './api.service';
 import { AssignmentInput } from '../models/assignment-input.model';
 import { AssignmentByPunctuation } from '../models/assignment-by-punctuations.model';
 import { AssignmentByPairs } from '../models/assignment-by-pairs.model';
+import { DeveloperPair } from '../models/developer-pair.model';
+import { Developer } from '../models/developer.model';
 
 @Injectable()
 export class AssignmentService {
@@ -20,6 +22,18 @@ export class AssignmentService {
         return _assignmentByPunctuations;
       })
     }
+
+  generatePairs(
+    pairsInput: {reverse: boolean, developers: Developer[]}
+  ): Observable<DeveloperPair[]> {
+    return this.apiService
+    .post('/makepairs/', pairsInput)
+    .map((pairs: DeveloperPair[]) => {
+      console.log(pairs, 'pairs response');
+      return pairs;
+    });
+  }
+
   generarAsignacionSimple(
     assignmentUniqueCost: AssignmentInput
   ): Observable<AssignmentInput> {

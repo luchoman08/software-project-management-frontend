@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DeveloperPair } from '../../core/models/developer-pair.model';
 import { PAIRS } from '../../mocks/simple-mocks/pairs';
 import { Developer } from '../../core/models';
@@ -9,7 +9,7 @@ import { Developer } from '../../core/models';
   styleUrls: ['./developer-pair.component.scss']
 })
 export class DeveloperPairComponent implements OnInit {
-  pairs: Array<DeveloperPair> = <DeveloperPair[]>PAIRS;
+  @Input() pairs: Array<DeveloperPair>;
   indexSourceDeveloper: number;
   indexObjectiveDeveloper: number;
   indexSourcePair: number;
