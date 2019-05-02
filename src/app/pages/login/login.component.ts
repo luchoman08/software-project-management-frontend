@@ -9,6 +9,7 @@ import { PageComponentsService } from 'app/core/services';
 export class LoginComponent implements OnInit, OnDestroy {
   username: string;
   password: string;
+  showSpinner: boolean;
   constructor(
     private pageComponentService: PageComponentsService
   ) { }
@@ -17,6 +18,9 @@ export class LoginComponent implements OnInit, OnDestroy {
    }
   ngOnInit() {
     this.pageComponentService.enter_in_page_component();
+  }
+  login() {
+    // TODO
   }
 
 }
