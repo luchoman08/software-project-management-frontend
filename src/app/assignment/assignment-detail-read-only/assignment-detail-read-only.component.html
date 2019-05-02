@@ -2,7 +2,7 @@
   <div fxLayout="column">
   </div>
   <mat-accordion class="example-headers-align">
-    <mat-expansion-panel *ngFor="let developer of assignment.developers" (click)="changeSelectedDeveloper(developer)">
+    <mat-expansion-panel *ngFor="let developer of assignment.developers" (click)="selectedDeveloper = developer">
       <mat-expansion-panel-header [matTooltip]="assignmentByPunctuation? '': 'Tiempo Disponible:' + developer.available_hours_per_week">
         <mat-panel-title>
           {{developer.full_name}}

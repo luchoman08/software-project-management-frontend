@@ -60,12 +60,6 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
       this.cd.markForCheck();
     });
   }
-  changeSelectedDeveloper(developer: Developer): void {
-    this.selectedDeveloper = developer;
-  }
-  changeSelectedUserStory(userStory: UserStory): void {
-    this.selectedUserStory = userStory;
-  }
   ngOnInit() {
     this.daysOfWork = getBusinessDatesCount(this.assignment.startDate, this.assignment.endDate);
     this.initPercentageOcuped();

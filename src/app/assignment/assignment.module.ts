@@ -38,7 +38,8 @@ import { AssignmentDetailPairComponent } from './assignment-detail-pair/assignme
 
   ],
   exports: [
-    AssignmentComponent
+    AssignmentComponent,
+    AssignmentDetailPairComponent
   ],
 })
 export class AssignmentModule { }
