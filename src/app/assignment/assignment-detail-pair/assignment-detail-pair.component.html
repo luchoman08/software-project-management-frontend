@@ -2,19 +2,19 @@
   <div fxLayout="column">
   </div>
   <mat-accordion class="example-headers-align">
-    <mat-expansion-panel *ngFor="let pair of assignmentByPairs.pairs" (click)="selectedPair = pair">
+    <mat-expansion-panel *ngFor="let pair of assignment.pairs" (click)="selectedPair = pair">
       <mat-expansion-panel-header >
         <mat-panel-title>
           {{pair.joinedName}}
         </mat-panel-title>
         <mat-panel-description>
-          <p *ngIf="(assignmentByPairs.userStories | assignedToPair : pair).length > 0 ; else no_stories_assigned"> Historias asignadas a  {{pair.joinedName}}</p>
+          <p *ngIf="(assignment.userStories | assignedToPair : pair).length > 0 ; else no_stories_assigned"> Historias asignadas a  {{pair.joinedName}}</p>
           <ng-template #no_stories_assigned>
             <p>No se han asignado historias</p>
           </ng-template>
         </mat-panel-description>
       </mat-expansion-panel-header>
-          <div class="user-story-assignment"  *ngFor="let userStory of assignmentByPairs.userStories | assignedToPair : pair" (click)="selecteduserStory = userStory" fxLayout="column">
+          <div class="user-story-assignment"  *ngFor="let userStory of assignment.userStories | assignedToPair : pair" (click)="selecteduserStory = userStory" fxLayout="column">
             <div fxLayout="row">
               <p class="user_story_reference" *ngIf="userStory.reference"> #{{userStory.reference}} </p>
               <p [matTooltip]="assignmentByPunctuation? '': 'Puntos:' + userStory.total_points">{{userStory.subject}} </p>

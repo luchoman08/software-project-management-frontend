@@ -1,11 +1,9 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { AssignmentByPairs } from '../../core/models/assignment-by-pairs.model';
 import { DeveloperPair } from '../../core/models/developer-pair.model';
-import { UserStory, Developer } from '../../core/models';
+import { UserStory } from '../../core/models';
 import { ASSIGNMENT_TO_PAIRS } from '../../mocks/simple-mocks/assignment-to-pairs.mock';
 import { MatDialog } from '@angular/material';
-import { AssignedToPairPipe } from '../../core/pipes/assigned-to-pair.pipe';
-import { UserStoriesService } from '../../core/services';
 import { DeveloperSelectPairDialogComponent, dataOutput } from '../../developer/developer-select-pair-dialog/developer-select-pair-dialog.component';
 
 @Component({
@@ -14,7 +12,7 @@ import { DeveloperSelectPairDialogComponent, dataOutput } from '../../developer/
   styleUrls: ['./assignment-detail-pair.component.scss']
 })
 export class AssignmentDetailPairComponent implements OnInit {
-  @Input() assignmentByPairs: AssignmentByPairs;
+  @Input() assignment: AssignmentByPairs;
   selectedPair: DeveloperPair;
   selectedUserStory: UserStory;
   constructor(
@@ -24,11 +22,11 @@ export class AssignmentDetailPairComponent implements OnInit {
   openSelectPair(userStory: UserStory) {
     this.selectedUserStory = userStory;
     console.log(userStory, 'userStory, selected devel and pair in at open select pair')
-    console.log(this.assignmentByPairs.pairs, 'userStory, selected devel and pair in at open select pair')
+    console.log(this.assignment.pairs, 'userStory, selected devel and pair in at open select pair')
     const dialogRef = this.dialog.open(DeveloperSelectPairDialogComponent, {
       width: '620px',
       data: {
-        pairs: this.assignmentByPairs.pairs.filter((pair: DeveloperPair) => { 
+        pairs: this.assignment.pairs.filter((pair: DeveloperPair) => { 
           return !userStory.assignedTo( pair.developer1 ) &&
           !userStory.assignedTo( pair.developer2 ) 
         }),
@@ -43,8 +41,8 @@ export class AssignmentDetailPairComponent implements OnInit {
     });
   }
   ngOnInit() {
-    if (this.assignmentByPairs === undefined) {
-      this.assignmentByPairs = AssignmentByPairs.makeFromJson(ASSIGNMENT_TO_PAIRS);
+    if (this.assignment === undefined) {
+      this.assignment = AssignmentByPairs.makeFromJson(ASSIGNMENT_TO_PAIRS);
     }
   }
 
