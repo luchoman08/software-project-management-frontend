@@ -19,6 +19,7 @@ import {
 import { CommonComponentsModule } from '../page-components/common-components/common-components.module';
 import { DeveloperPairComponent } from './developer-pair/developer-pair.component';
 import { NgDragDropModule } from 'ng-drag-drop';
+import { DeveloperSelectPairDialogComponent } from './developer-select-pair-dialog/developer-select-pair-dialog.component';
 
 
 @NgModule({
@@ -39,16 +40,19 @@ import { NgDragDropModule } from 'ng-drag-drop';
     DeveloperSelectDialogComponent,
     DeveloperPunctuationsComponent,
     DeveloperCompatibilityWithUserStoryComponent,
-    DeveloperPairComponent
+    DeveloperPairComponent,
+    DeveloperSelectPairDialogComponent
   ],
   exports: [
     SimpleDeveloperListOneLineComponent,
     DeveloperSelectDialogComponent,
     DeveloperCompatibilityWithUserStoryComponent,
-    DeveloperPairComponent
+    DeveloperPairComponent,
+    DeveloperSelectPairDialogComponent
   ],
   entryComponents: [
-    DeveloperSelectDialogComponent
+    DeveloperSelectDialogComponent,
+    DeveloperSelectPairDialogComponent
   ]
 })
 export class DeveloperModule { }

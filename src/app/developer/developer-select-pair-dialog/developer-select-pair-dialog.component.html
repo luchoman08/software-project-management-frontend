@@ -1,0 +1,17 @@
+<h1 mat-dialog-title> {{ title }}</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+  <mat-select  [(ngModel)]="dataOutput.selectedPair" 
+  placeholder="Par de desarrolladores"
+      required >
+
+    <mat-option   *ngFor="let pair of developerPairs" [value]="pair">
+      {{ pair.joinedName }}
+    </mat-option>
+  </mat-select> 
+</mat-form-field>
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="null">Cancelar</button>
+      <button mat-button [mat-dialog-close]="dataOutput" cdkFocusInitial>Ok</button>
+    </div>
+  </div>
