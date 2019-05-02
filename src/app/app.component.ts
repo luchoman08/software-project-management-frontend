@@ -1,15 +1,17 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
-import 'rxjs/add/operator/filter';
-import { NavbarComponent } from './page-components/main-components/navbar/navbar.component';
-import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd, CanDeactivate  } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
-import PerfectScrollbar from 'perfect-scrollbar';
-import { LoadingBarService } from '@ngx-loading-bar/core';
-import { Observable } from 'rxjs/Observable';
-import { PageComponentsService } from './core/services';
 
-declare const $: any;
+import {
+    Router,
+    NavigationEnd,
+    NavigationStart
+    } from '@angular/router';
+
+import { Subscription ,  Observable } from 'rxjs';
+import { LoadingBarService } from '@ngx-loading-bar/core';
+import { PageComponentsService } from './core/services';
+import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-root',
@@ -67,7 +69,7 @@ export class AppComponent implements OnInit {
                }
            }
         });
-        this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
+        this._router = this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
              if ( elemMainPanel ) {
                 elemMainPanel.scrollTop = 0;
              }
@@ -75,14 +77,9 @@ export class AppComponent implements OnInit {
              elemSidebar.scrollTop = 0;
              }
         });
-        if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
-            let ps = new PerfectScrollbar(elemMainPanel);
-            ps = new PerfectScrollbar(elemSidebar);
-        }
+
     }
-    AfterViewInit() {
-        this.runOnRouteChange();
-    }
+
     isMaps(path) {
         let titlee = this.location.prepareExternalUrl(this.location.path());
         titlee = titlee.slice( 1 );
@@ -92,13 +89,7 @@ export class AppComponent implements OnInit {
             return true;
         }
     }
-    runOnRouteChange(): void {
-      if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
-        const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
-        const ps = new PerfectScrollbar(elemMainPanel);
-        ps.update();
-      }
-    }
+
     isMac(): boolean {
         let bool = false;
         if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {

@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable ,  forkJoin } from 'rxjs';
 import { ApiService } from './api.service';
 import { UserStory } from '../models';
-import { map } from 'rxjs/operators/map';
-import { tap } from 'rxjs/operators/tap';
-import { forkJoin } from 'rxjs/observable/forkJoin';
+import { map ,  tap } from 'rxjs/operators';
 @Injectable()
 export class UserStoriesService {
 

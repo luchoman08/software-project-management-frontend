@@ -1,7 +1,7 @@
 <div class="main-content" fxLayout="column">
   <div fxLayout="column" class="col-4" *ngFor="let punctuation of punctuations">
       <h4 >{{punctuation.name}}</h4>
-      <mat-slider #slider  [(ngModel)]="punctuation.value" (change) = "onSliderChange($event)" [thumb-label]="true"></mat-slider>
+      <mat-slider #slider  [(ngModel)]="punctuation.value" (change) = "onSliderChange($event)" thumbLabel></mat-slider>
   </div>
   
 </div>

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
+
 import { ApiService } from './api.service';
 import { AssignmentInput } from '../models/assignment-input.model';
 import { AssignmentByPunctuation } from '../models/assignment-by-punctuations.model';
@@ -18,9 +18,9 @@ export class AssignmentService {
     assignmentByPunctuations: AssignmentByPunctuation): Observable<AssignmentByPunctuation> {
       return this.apiService
       .post('/attributeassign/', assignmentByPunctuations)
-      .map((_assignmentByPunctuations: AssignmentByPunctuation) => {
+      .pipe(map((_assignmentByPunctuations: AssignmentByPunctuation) => {
         return _assignmentByPunctuations;
-      })
+      }));
     }
 
   generatePairs(
@@ -28,10 +28,10 @@ export class AssignmentService {
   ): Observable<DeveloperPair[]> {
     return this.apiService
     .post('/makepairs/', pairsInput)
-    .map((pairs: DeveloperPair[]) => {
+    .pipe(map((pairs: DeveloperPair[]) => {
       console.log(pairs, 'pairs response');
       return pairs;
-    });
+    }));
   }
 
   generarAsignacionSimple(
@@ -39,17 +39,17 @@ export class AssignmentService {
   ): Observable<AssignmentInput> {
     return this.apiService
       .post('/uniquecostassign/', assignmentUniqueCost)
-      .map((_assignmentUniqueCost: AssignmentInput) => {
+      .pipe(map((_assignmentUniqueCost: AssignmentInput) => {
         return _assignmentUniqueCost;
-      });
+      }));
   }
   generateAssignmentByPairs(
     assignmentUniqueCost: AssignmentByPairs
   ): Observable<AssignmentByPairs> {
     return this.apiService
       .post('/pairassign/', assignmentUniqueCost)
-      .map((_assignmentUniqueCost: AssignmentByPairs) => {
+      .pipe(map((_assignmentUniqueCost: AssignmentByPairs) => {
         return _assignmentUniqueCost;
-      });
+      }));
   }
 }

@@ -15,15 +15,8 @@ import { CoreModule } from './core/core.module';
 
 import { HttpClientModule } from '@angular/common/http'
 
-
-import {
-  AgmCoreModule
-} from '@agm/core';
 import { CommonComponentsModule } from './page-components/common-components/common-components.module';
 
-import {
-  AssignmentDetailReadOnlyComponent
-} from './assignment/assignment-detail-read-only/assignment-detail-read-only.component';
 import { ProjectsService } from './core/services/projects.service';
 import { SprintsService } from './core/services/sprints.service';
 import { UserStoriesService } from './core/services';
@@ -47,12 +40,9 @@ import { DeveloperModule } from './developer/developer.module';
     PunctuationsModule,
     DeveloperModule,
     FlexLayoutModule,
-    LoadingBarModule.forRoot(),
+    LoadingBarModule,
     AppRoutingModule,
     CommonComponentsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    }),
   ],
   declarations: [
     /**
