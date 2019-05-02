@@ -25,6 +25,7 @@ import { MaterialModule } from './material.module';
 import { AssignmentService } from './core/services/assginment.service';
 import { PunctuationsModule } from './punctuations/punctuations.module';
 import { DeveloperModule } from './developer/developer.module';
+import { AssignmentModule } from './assignment/assignment.module';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { DeveloperModule } from './developer/developer.module';
     CoreModule,
     PunctuationsModule,
     DeveloperModule,
+    AssignmentModule,
     FlexLayoutModule,
     LoadingBarModule,
     AppRoutingModule,

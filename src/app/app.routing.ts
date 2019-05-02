@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { PunctuationsSelectorComponent } from './punctuations/punctuations-selector/punctuations-selector.component';
-import { DeveloperPairComponent } from './developer/developer-pair/developer-pair.component';
+import { AssignmentDetailPairComponent } from './assignment/assignment-detail-pair/assignment-detail-pair.component';
 const routes: Routes = [
   {
     path: 'punctuations',
@@ -12,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'pairs',
-    component: DeveloperPairComponent
+    component: AssignmentDetailPairComponent
   },
   /*  End of dev route */
   {
