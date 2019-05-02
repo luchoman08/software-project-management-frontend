@@ -13,6 +13,7 @@ import { FirstWordPipe } from './pipes/firstWord.pipe';
 import { HttpProjectManagerInterceptor } from './interceptors/project-manager.interceptor';
 import { ProjectManagersService } from './services/project-interface.service';
 import { AssignedToPipe } from './pipes/assignedTo.pipe';
+import { AssignedToPairPipe } from './pipes/assigned-to-pair.pipe';
 
 @NgModule({
   imports: [
@@ -25,9 +26,10 @@ import { AssignedToPipe } from './pipes/assignedTo.pipe';
     JwtService,
     ProjectManagersService,
     AssignedToPipe,
+    AssignedToPairPipe,
     PageComponentsService,
   ],
-  declarations: [CapitalizePipe, FirstWordPipe, AssignedToPipe],
-  exports: [CapitalizePipe, FirstWordPipe, AssignedToPipe]
+  declarations: [CapitalizePipe, FirstWordPipe, AssignedToPipe, AssignedToPairPipe],
+  exports: [CapitalizePipe, FirstWordPipe, AssignedToPipe, AssignedToPairPipe]
 })
 export class CoreModule { }
