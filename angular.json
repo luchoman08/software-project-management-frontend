@@ -25,6 +25,7 @@
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
               "src/assets/css/demo.css",
+              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/ng-drag-drop/style.css"
             ],
             "scripts": [
@@ -91,6 +92,7 @@
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
               "src/assets/css/demo.css",
+              "node_modules/font-awesome/css/font-awesome.css",
               "node_modules/ng-drag-drop/style.css"
             ],
             "assets": [
