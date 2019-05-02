@@ -19,7 +19,7 @@ export class UserStoryListComponent implements OnInit {
   ];
 
 
-  userStories: UserStory[] = SIMPLEUSERSTORIES;
+  userStories = <UserStory[]>SIMPLEUSERSTORIES;
 
   distance = function(a, b) {
     return Math.pow(a.x - b.x, 2) +  Math.pow(a.y - b.y, 2);

@@ -14,7 +14,7 @@ export class UserStoryGroupComponent {
   sourceGroup: UserStoryGroup;
   moving: boolean; // if is moving a user story at this moment
   objectiveGroup: UserStoryGroup;
-  userStories: UserStory[] = SIMPLEUSERSTORIES;
+  userStories: UserStory[] = <UserStory[]>SIMPLEUSERSTORIES;
   groups: UserStoryGroup[] = new Array<UserStoryGroup>();
   constructor(
     public dialog: MatDialog
