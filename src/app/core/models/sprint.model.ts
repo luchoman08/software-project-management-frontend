@@ -9,7 +9,7 @@ export class Sprint implements SprintInterface {
     user_stories: UserStory[];
 
     public static fromJSON(isprint: SprintInterface): Sprint {
-        let sprint = new Sprint();
+        const sprint = new Sprint();
         sprint.id = isprint.id;
         sprint.name = isprint.name;
         sprint.estimated_start = isprint.estimated_start;

@@ -127,7 +127,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
 
   ngOnInit() {
     this.loadingBar.start();
-    
+
     this.simpleProjectService.getByMemberId('303456')
     .subscribe (
       (simpleProjects: Project[]) => {

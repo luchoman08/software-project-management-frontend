@@ -32,24 +32,24 @@ export class DeveloperPairComponent implements OnInit {
     if (!this.moving) {
       this.indexSourcePair = index;
     }
-  
+
     this.moving = true;
   }
   setIndexObjectivePair(index: number) {
     this.indexObjectivePair = index;
   }
   swapDevelopers() {
-    let sufixObjectiveDeveloper = this.indexObjectiveDeveloper + 1;
-    let sufixSourceDeveloper = this.indexSourceDeveloper + 1;
-    let sufix = 'developer';
-    let sourcePropertyName = sufix +  sufixSourceDeveloper;
-    let objectivePropertyName = sufix +  sufixObjectiveDeveloper;
+    const sufixObjectiveDeveloper = this.indexObjectiveDeveloper + 1;
+    const sufixSourceDeveloper = this.indexSourceDeveloper + 1;
+    const sufix = 'developer';
+    const sourcePropertyName = sufix +  sufixSourceDeveloper;
+    const objectivePropertyName = sufix +  sufixObjectiveDeveloper;
     /* Check if pair have the property names used in this method */
-    if( ! ('developer1' in this.pairs[this.indexSourcePair])  &&  ('developer2' in this.pairs[this.indexSourcePair]) ) {
+    if ( ! ('developer1' in this.pairs[this.indexSourcePair])  &&  ('developer2' in this.pairs[this.indexSourcePair]) ) {
       console.error('Los desarrolladores deben tener las propiedades developer1 y developer2');
       return;
-    } 
-    let tempDevel = this.pairs[this.indexObjectivePair][objectivePropertyName];
+    }
+    const tempDevel = this.pairs[this.indexObjectivePair][objectivePropertyName];
     this.pairs[this.indexObjectivePair][objectivePropertyName] = this.pairs[this.indexSourcePair][sourcePropertyName];
     this.pairs[this.indexSourcePair][sourcePropertyName] = tempDevel;
   }

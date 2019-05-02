@@ -11,7 +11,11 @@ import { SimpleDeveloperListOneLineComponent } from './developer-list-one-line/d
 import { DeveloperSelectDialogComponent } from './developer-select-dialog/developer-select-dialog.component';
 import { MaterialModule } from '../material.module';
 import { DeveloperPunctuationsComponent } from './developer-punctuations/developer-punctuations.component';
-import { DeveloperCompatibilityWithUserStoryComponent } from './developer-compatibility-with-user-story/developer-compatibility-with-user-story.component';
+
+import {
+  DeveloperCompatibilityWithUserStoryComponent
+} from './developer-compatibility-with-user-story/developer-compatibility-with-user-story.component';
+
 import { CommonComponentsModule } from '../page-components/common-components/common-components.module';
 import { DeveloperPairComponent } from './developer-pair/developer-pair.component';
 import { NgDragDropModule } from 'ng-drag-drop';

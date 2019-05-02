@@ -1,4 +1,4 @@
-import { UserStory } from "../user-story.model";
+import { UserStory } from '../user-story.model';
 
 export interface SprintInterface {
     id: string;

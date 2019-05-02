@@ -1,5 +1,5 @@
 export interface PunctuationInterface {
-    id : number;
+    id: number;
     name: string;
     value: number;
 }

@@ -11,10 +11,10 @@ export class PercentageProgressBarComponent implements OnInit {
   @Input() err_both_value: Number = 20// 1 < err_both_value < warn_value < 98
 
   constructor() {
-    
+
    }
 
-  
+
   ngOnInit() {
   }
 

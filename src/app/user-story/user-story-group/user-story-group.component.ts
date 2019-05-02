@@ -19,10 +19,10 @@ export class UserStoryGroupComponent {
   constructor(
     public dialog: MatDialog
   ) {
-    this.groups.push({id: "-1", name:"Historias sin agrupar", user_stories:[this.userStories[0], this.userStories[3]] });
-    this.groups.push({id: "0", name:"Grupo 1", user_stories:[this.userStories[0], this.userStories[3]] });
-    this.groups.push({id: "1", name:"Grupo 2", user_stories:[this.userStories[1], this.userStories[2]] });
-    this.groups.push({id: "2", name:"Grupo 3", user_stories:[this.userStories[5], this.userStories[4]] });
+    this.groups.push({id: '-1', name: 'Historias sin agrupar', user_stories: [this.userStories[0], this.userStories[3]] });
+    this.groups.push({id: '0', name: 'Grupo 1', user_stories: [this.userStories[0], this.userStories[3]] });
+    this.groups.push({id: '1', name: 'Grupo 2', user_stories: [this.userStories[1], this.userStories[2]] });
+    this.groups.push({id: '2', name: 'Grupo 3', user_stories: [this.userStories[5], this.userStories[4]] });
    }
    setSourceGroup(group: UserStoryGroup) {
      if (!this.moving) {
@@ -42,9 +42,9 @@ export class UserStoryGroupComponent {
           placeholder: 'Nombre de el grupo',
           type: 'text'}
       });
-  
+
       dialogRef.afterClosed().subscribe(value => {
-        if(value && value != '') {
+        if (value && value !== '') {
           this.groups.push(UserStoryGroup.make({name: value}));
         }
       });
@@ -52,7 +52,7 @@ export class UserStoryGroupComponent {
   onItemDrop(e: any) {
     // Get the dropped data here
     this.objectiveGroup.user_stories.push(e.dragData);
-    var index = this.sourceGroup.user_stories.indexOf(e.dragData);
+    const index = this.sourceGroup.user_stories.indexOf(e.dragData);
     if (index > -1) {
       this.sourceGroup.user_stories.splice(index, 1);
     }
@@ -61,7 +61,7 @@ export class UserStoryGroupComponent {
   onItem2Drop(e: any) {
     // Get the dropped data here
     this.groups[1].user_stories.push(e.dragData);
-    var index = this.groups[0].user_stories.indexOf(e.dragData);
+    const index = this.groups[0].user_stories.indexOf(e.dragData);
     if (index > -1) {
       this.groups[0].user_stories.splice(index, 1);
     }

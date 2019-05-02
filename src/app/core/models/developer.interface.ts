@@ -1,4 +1,4 @@
-import { Punctuation } from "./punctuation";
+import { Punctuation } from './punctuation';
 
 export interface IDeveloper {
     id: string;

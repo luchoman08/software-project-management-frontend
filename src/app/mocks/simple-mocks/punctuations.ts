@@ -1,7 +1,7 @@
-import { Punctuation } from "../../core/models/punctuation";
+import { Punctuation } from '../../core/models/punctuation';
 
 export const punctuations_mock = new Array<Punctuation>();
-export var punctuations_mock_inverse = new Array<Punctuation>();
+export let punctuations_mock_inverse = new Array<Punctuation>();
 
 punctuations_mock.push({id: 0, name: 'UX', value: 12});
 punctuations_mock.push({id: 1, name: 'Front', value: 1});

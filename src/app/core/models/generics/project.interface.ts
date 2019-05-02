@@ -1,7 +1,7 @@
-import { Sprint } from "../sprint.model";
-import { Developer } from "../developer.model";
-import { UserStory } from "../user-story.model";
-import { Point } from "../point.model";
+import { Sprint } from '../sprint.model';
+import { Developer } from '../developer.model';
+import { UserStory } from '../user-story.model';
+import { Point } from '../point.model';
 
 export interface ProjectInterface {
     id: string;

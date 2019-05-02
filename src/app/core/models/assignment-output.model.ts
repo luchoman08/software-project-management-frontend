@@ -4,7 +4,7 @@ import { Developer } from './developer.model';
 export class SimpleAssignmentOutput {
     simpleDeveloperUserStoriesAssigned: DeveloperUserStoriesAssigned[];
     assignmentErrors: string [];
-    public fromJSON(json: {assignmentErrors: string [],simpleDeveloperUserStoriesAssigned:  DeveloperUserStoriesAssigned[]}){
+    public fromJSON(json: {assignmentErrors: string [], simpleDeveloperUserStoriesAssigned:  DeveloperUserStoriesAssigned[]}) {
         this.simpleDeveloperUserStoriesAssigned = json.simpleDeveloperUserStoriesAssigned;
         this.assignmentErrors = json.assignmentErrors;
     }

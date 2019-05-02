@@ -17,20 +17,20 @@ export class UserStoryListComponent implements OnInit {
     {x: 5, y: 6},
     {x: 7, y: 8}
   ];
-  
-  distance = function(a, b){
+
+
+  userStories: UserStory[] = SIMPLEUSERSTORIES;
+
+  distance = function(a, b) {
     return Math.pow(a.x - b.x, 2) +  Math.pow(a.y - b.y, 2);
   }
-  
-  
-  userStories: UserStory[] = SIMPLEUSERSTORIES;
   constructor(
     private userStoryService: UserStoriesService
     ) { }
 
   ngOnInit() {
-   let tree = new kdTree(this.points, this.distance, ["x", "y"]);
-   var nearest = tree.nearest({ x: 5, y: 5 }, 2);
+   const tree = new kdTree(this.points, this.distance, ['x', 'y']);
+   const nearest = tree.nearest({ x: 5, y: 5 }, 2);
   }
 
 }

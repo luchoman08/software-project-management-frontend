@@ -48,7 +48,7 @@ import { DeveloperModule } from './developer/developer.module';
     /**
      * Dev component
      */
-    //DeveloperCompatibilityWithUserStoryComponent,
+    // DeveloperCompatibilityWithUserStoryComponent,
      /** End of dev component */
     AppComponent
   ],

@@ -7,7 +7,7 @@ import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories'
 class PunctuationCompatibility {
     punctuation: Punctuation;
     disabled: boolean;
-    compatibility: Number; //percentage of compatibility where 100 is fully compatible
+    compatibility: Number; // percentage of compatibility where 100 is fully compatible
 }
 
 @Component({
@@ -19,7 +19,7 @@ export class DeveloperCompatibilityWithUserStoryComponent implements OnInit {
   @Input() developer: Developer ;
   @Input() userStory: UserStory;
   punctuationsCompatibility = new  Array<PunctuationCompatibility>();
-  constructor() { 
+  constructor() {
 
   }
   private calculateCompatibility(userStoryPunctuation: Punctuation, developerPunctuation: Punctuation): Number {
@@ -31,10 +31,14 @@ export class DeveloperCompatibilityWithUserStoryComponent implements OnInit {
     }
   }
   private initCompatibilities(): void {
-    for (let develPunctuation of this.developer.punctuations) {
+    for (const develPunctuation of this.developer.punctuations) {
       const userStoryPunctuation = this.userStory.punctuations.find(_punctuation => _punctuation.id === develPunctuation.id );
       const compatibility = this.calculateCompatibility ( userStoryPunctuation, develPunctuation);
-      this.punctuationsCompatibility.push({disabled: userStoryPunctuation.value? true: false, punctuation: develPunctuation, compatibility});
+      this.punctuationsCompatibility
+      .push({
+        disabled: userStoryPunctuation.value ? true : false,
+        punctuation: develPunctuation, compatibility
+      });
     }
   }
   ngOnInit() {

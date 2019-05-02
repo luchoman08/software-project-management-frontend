@@ -8,12 +8,12 @@ import { MatSliderChange } from '@angular/material/slider';
   styleUrls: ['./punctuations-selector.component.scss']
 })
 export class PunctuationsSelectorComponent implements OnInit {
-  @Input() punctuations : Array<Punctuation> = punctuations_mock;
+  @Input() punctuations: Array<Punctuation> = punctuations_mock;
   @Output() change: EventEmitter<MatSliderChange>;
   max = 100;
   min = 0;
   step = 1;
-  
+
   constructor() {
 
    }

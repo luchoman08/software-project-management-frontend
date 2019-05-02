@@ -39,7 +39,7 @@ import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.
     declarations: [
       UserStoryDetailComponent,
       UserStoryListComponent,
-      UserStoryListOneLineComponent, 
+      UserStoryListOneLineComponent,
       UserStoryPointsComponent, UserStoryGroupComponent, UserStoryGroupsComponent,
     ],
     exports: [

@@ -12,14 +12,14 @@ export class Project implements ProjectInterface {
     developers: Developer[];
     name: string;
     public static fromJSON(iproject: ProjectInterface): Project {
-        let project = new Project();
+        const project = new Project();
         project.id = iproject.id;
         project.created_date = iproject.created_date;
         project.description = iproject.description;
-        //project.sprints = iproject.sprints.map(Sprint.fromJSON) ;
-        project.points = iproject.points? iproject.points.map(Point.fromJSON): new Array<Point>();
-        project.developers = iproject.developers? iproject.developers.map(Developer.fromJSON): new Array<Developer>();
-        project.name = iproject.name; 
+        // project.sprints = iproject.sprints.map(Sprint.fromJSON) ;
+        project.points = iproject.points ? iproject.points.map(Point.fromJSON) : new Array<Point>();
+        project.developers = iproject.developers ? iproject.developers.map(Developer.fromJSON) : new Array<Developer>();
+        project.name = iproject.name;
         return project;
     }
 }

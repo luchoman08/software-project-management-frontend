@@ -1,7 +1,7 @@
-import { Punctuation } from "./punctuation";
-import { UserStoryInterface } from "./generics/user-story.interface";
+import { Punctuation } from './punctuation';
+import { UserStoryInterface } from './generics/user-story.interface';
 
-export class UserStory{
+export class UserStory {
     id: string;
     total_points: number;
     subject: string;
@@ -10,7 +10,7 @@ export class UserStory{
     reference: number; // number assigned to the history into a sprint
 
     public static fromJSON(iUserStory: UserStoryInterface): UserStory {
-        let userStory = new UserStory();
+        const userStory = new UserStory();
         userStory.id = iUserStory.id;
         userStory.total_points = iUserStory.total_points;
         userStory.subject = iUserStory.subject;
