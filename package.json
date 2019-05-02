@@ -10,6 +10,7 @@
     "build_prod": "ng build  --base-href /asignacion_frontend/ --prod ",
     "test": "ng test",
     "lint": "ng lint",
+    "bundle-report": "webpack-bundle-analyzer dist/stats.json",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -64,6 +65,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }
