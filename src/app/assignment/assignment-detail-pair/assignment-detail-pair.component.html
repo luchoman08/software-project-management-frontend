@@ -5,21 +5,21 @@
     <mat-expansion-panel *ngFor="let pair of assignmentByPairs.pairs" (click)="selectedPair = pair">
       <mat-expansion-panel-header >
         <mat-panel-title>
-          {{pair.developer1.full_name}} y {{pair.developer2.full_name}}
+          {{pair.joinedName}}
         </mat-panel-title>
         <mat-panel-description>
-          <p *ngIf="(assignmentByPairs.userStories | assignedToPairs : pair).length > 0 ; else no_stories_assigned"> Historias asignadas a  {{pair.developer1.full_name}} y {{pair.developer2.full_name}}</p>
+          <p *ngIf="(assignmentByPairs.userStories | assignedToPair : pair).length > 0 ; else no_stories_assigned"> Historias asignadas a  {{pair.joinedName}}</p>
           <ng-template #no_stories_assigned>
             <p>No se han asignado historias</p>
           </ng-template>
         </mat-panel-description>
       </mat-expansion-panel-header>
-          <div class="user-story-assignment"  *ngFor="let userStory of assignmentByPairs.userStories | assignedToPairs : pair" (click)="selecteduserStory = userStory" fxLayout="column">
+          <div class="user-story-assignment"  *ngFor="let userStory of assignmentByPairs.userStories | assignedToPair : pair" (click)="selecteduserStory = userStory" fxLayout="column">
             <div fxLayout="row">
               <p class="user_story_reference" *ngIf="userStory.reference"> #{{userStory.reference}} </p>
               <p [matTooltip]="assignmentByPunctuation? '': 'Puntos:' + userStory.total_points">{{userStory.subject}} </p>
               <span class="spacer"></span>
-              <mat-icon (click)="openSelectDevelopers(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class="left-icon">settings_backup_restore</mat-icon>
+              <mat-icon (click)="openSelectPair(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class="left-icon">settings_backup_restore</mat-icon>
             </div>
             <div fxLayout="row">
               <!----app-developer-compatibility-with-user-story  *ngIf="assignmentByPunctuation" [developer]="developer" [userStory]="userStory">
