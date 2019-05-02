@@ -43,12 +43,12 @@ export class AssignmentService {
       }));
   }
   generateAssignmentByPairs(
-    assignmentUniqueCost: AssignmentByPairs
+    assignmentByPairs: AssignmentByPairs
   ): Observable<AssignmentByPairs> {
     return this.apiService
-      .post('/pairassign/', assignmentUniqueCost)
-      .pipe(map((_assignmentUniqueCost: AssignmentByPairs) => {
-        return _assignmentUniqueCost;
+      .post('/pairassign/', assignmentByPairs)
+      .pipe(map((_assignmentByPairs) => {
+        return AssignmentByPairs.makeFromJson(_assignmentByPairs);
       }));
   }
 }

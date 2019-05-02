@@ -13,10 +13,10 @@ export class Developer implements IDeveloper {
 
     public static fromJSON(json: IDeveloper): Developer {
         const developer: Developer = new Developer();
-        developer.id = json.id;
+        developer.id = String(json.id);
         developer.full_name = json.full_name;
         developer.color = json.color;
-        developer.role_name = json.color;
+        developer.role_name = json.role_name;
         developer.punctuations = json.punctuations ? json.punctuations.map(Punctuation.fromJSON) : new Array<Punctuation>();
         developer.available_hours_per_week = json.available_hours_per_week;
         developer.percentage_time_used = json.percentage_time_used ? json.percentage_time_used : 0;

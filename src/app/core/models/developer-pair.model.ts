@@ -11,15 +11,22 @@ export class DeveloperPair implements IDeveloperPair {
     public static mockDeveloperID = '4444';
     id: number;
     nombre?: string;
-    developer1: Developer; 
+    developer1: Developer;
     developer2: Developer;
     compatibility: number; // from 0 to 100
-    public static makeFromJson(json: DeveloperPair): DeveloperPair{
+    get developerIds(): Array<string> {
+        return [this.developer1.id, this.developer2.id]
+    }
+    get joinedName(): string {
+        return this.developer1.full_name + ' y ' + this.developer2.full_name;
+    }
+
+    public static makeFromJson(json: DeveloperPair): DeveloperPair {
         const developerPair = new DeveloperPair();
         developerPair.id = json.id;
         developerPair.nombre = json.nombre;
-        developerPair.developer1 = json.developer1;
-        developerPair.developer2 = json.developer2;
+        developerPair.developer1 = Developer.fromJSON(json.developer1);
+        developerPair.developer2 = Developer.fromJSON(json.developer2);
         developerPair.compatibility = json.compatibility;
         return developerPair;
     }
