@@ -1,6 +1,6 @@
-import { UserStory } from '../../core/models';
+import { UserStory, UserStoryInterface } from '../../core/models';
 import { punctuations_mock } from './punctuations';
-export const SIMPLEUSERSTORIES: UserStory[] = [
+export const SIMPLEUSERSTORIES: UserStoryInterface[] = [
   {
     id: '100',
     total_points: null,
