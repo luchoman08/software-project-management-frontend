@@ -29,8 +29,7 @@ export class AssignmentService {
     return this.apiService
     .post('/makepairs/', pairsInput)
     .pipe(map((pairs: DeveloperPair[]) => {
-      console.log(pairs, 'pairs response');
-      return pairs;
+      return DeveloperPair.makeFromJsonArray(pairs);
     }));
   }
 

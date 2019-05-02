@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DeveloperPair } from '../../core/models/developer-pair.model';
-import { PAIRS } from '../../mocks/simple-mocks/pairs';
-import { Developer } from '../../core/models';
 
 @Component({
   selector: 'app-developer-pair',
@@ -52,6 +50,8 @@ export class DeveloperPairComponent implements OnInit {
     const tempDevel = this.pairs[this.indexObjectivePair][objectivePropertyName];
     this.pairs[this.indexObjectivePair][objectivePropertyName] = this.pairs[this.indexSourcePair][sourcePropertyName];
     this.pairs[this.indexSourcePair][sourcePropertyName] = tempDevel;
+    this.pairs[this.indexObjectivePair].calculate_compatibility();
+    this.pairs[this.indexSourcePair].calculate_compatibility();
   }
   onItemDrop(e: any) {
     // Get the dropped data here

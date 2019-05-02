@@ -86,7 +86,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
     this.assignmentService.generatePairs({reverse: false, developers: this.developers})
     .subscribe(developerPairs => {
       this.developerPairs = developerPairs;
-      console.log(typeof developerPairs, 'type of developer pairs from get pairs')
+      console.log(developerPairs, 'developer pairs from get pairs')
     }
     );
   }

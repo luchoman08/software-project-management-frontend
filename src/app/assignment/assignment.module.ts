@@ -13,6 +13,7 @@ import { CoreModule } from '../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PairAssignmentComponent } from './pair-assignment/pair-assignment.component';
 import { AssignmentBuildPairsComponent } from './assignment-build-pairs/assignment-build-pairs.component';
+import { AssignmentDetailPairComponent } from './assignment-detail-pair/assignment-detail-pair.component';
 
 
 
@@ -32,7 +33,8 @@ import { AssignmentBuildPairsComponent } from './assignment-build-pairs/assignme
     AssignmentComponent,
     AssignmentDetailReadOnlyComponent,
     PairAssignmentComponent,
-    AssignmentBuildPairsComponent
+    AssignmentBuildPairsComponent,
+    AssignmentDetailPairComponent
 
   ],
   exports: [
