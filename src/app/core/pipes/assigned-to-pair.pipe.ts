@@ -9,7 +9,7 @@ import { UserStory } from '../models';
 export class AssignedToPairPipe implements PipeTransform {
 
   transform(userStories: UserStory[], pair: DeveloperPair): UserStory[] {
-    return userStories.filter((userStory: UserStory) => 
+    return userStories.filter((userStory: UserStory) =>
       userStory.assignedTo(pair.developer1) || userStory.assignedTo(pair.developer2)
   )
   }

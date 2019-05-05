@@ -3,8 +3,15 @@ import { Developer } from '../../core/models';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DeveloperPair } from '../../core/models/developer-pair.model';
 
-export type dataOutput = {selectedPair: DeveloperPair, oldPair: DeveloperPair};
-type dataInput = {title: string, pairs: DeveloperPair[], oldPair: DeveloperPair};
+export interface DataOutput {
+  selectedPair: DeveloperPair;
+  oldPair: DeveloperPair;
+}
+interface DataInput {
+   title: string;
+   pairs: DeveloperPair[];
+   oldPair: DeveloperPair
+}
 @Component({
   selector: 'app-developer-select-pair-dialog',
   templateUrl: './developer-select-pair-dialog.component.html',
@@ -14,10 +21,10 @@ export class DeveloperSelectPairDialogComponent implements OnInit {
 
   developerPairs: DeveloperPair[];
   title: string;
-  dataOutput =  <dataOutput>{};
+  dataOutput =  <DataOutput>{};
   constructor(
     public dialogRef: MatDialogRef<DeveloperSelectPairDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: dataInput) {
+    @Inject(MAT_DIALOG_DATA) public data: DataInput) {
       this.dataOutput.oldPair = data.oldPair;
       this.developerPairs = data.pairs;
       if (this.developerPairs.length > 0) {
