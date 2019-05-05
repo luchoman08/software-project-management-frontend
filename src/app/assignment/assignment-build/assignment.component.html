@@ -6,9 +6,8 @@
         <ng-template matStepLabel>Seleccione el proyecto</ng-template>
         <mat-form-field>
           <mat-select
-          [(ngModel)]="selectedSimpleProject"
           placeholder="Proyecto"
-          [formControl]="formSelectProject.controls['projectContrl']"
+          [formControl]="formSelectProject.controls['project']"
             required>
             <mat-option
             *ngFor="let simpleProject of simpleProjects"
@@ -16,7 +15,7 @@
               {{ simpleProject.name }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="formSelectProject.controls['projectContrl'].hasError('required')">Por favor, seleccione un proyecto</mat-error>
+          <mat-error *ngIf="formSelectProject.get('project').hasError('required')">Por favor, seleccione un proyecto</mat-error>
         </mat-form-field>
         <div>
           <button (click)="selectedSimpleProject? initSimpleSprints(selectedSimpleProject.id) : null" mat-button matStepperNext>Siguiente</button>
@@ -29,16 +28,15 @@
         <ng-template matStepLabel>Seleccione el sprint</ng-template>
         <mat-form-field>
           <mat-select
-          [(ngModel)]="selectedSimpleSprint"
           [placeholder]="sprints.length > 0 ? 'Sprint' : 'No hay sprints'"
-          [formControl]="formSelectSprint.controls['sprintCntrl']"
+          [formControl]="formSelectSprint.get('sprint')"
           required>
 
             <mat-option *ngFor="let simpleSprint of sprints" [value]="simpleSprint">
               {{ simpleSprint.name + ' Desde ' + (simpleSprint.estimated_start | date) + ' hasta ' + (simpleSprint.estimated_finish | date) }}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="formSelectSprint.controls['sprintCntrl'].hasError('required')">
+          <mat-error *ngIf="formSelectSprint.get('sprint').hasError('required')">
             Por favor, seleccione un sprint
           </mat-error>
         </mat-form-field>

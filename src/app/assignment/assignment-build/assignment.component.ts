@@ -17,9 +17,6 @@ import { AssignmentType } from '../../core/enums';
   styleUrls: ['./assignment.component.scss']
 })
 export class AssignmentComponent implements OnInit {
-
-  selectedSimpleProject: Project;
-  selectedSimpleSprint: Sprint;
   simpleProjects: Project[];
   projectErrors: {};
   sprints: Sprint[];
@@ -47,10 +44,10 @@ export class AssignmentComponent implements OnInit {
       this.assignmentOutput = null;
       this.simpleAssignmentInput = new AssignmentInput();
       this.formSelectProject = this._formBuilder.group({
-        projectContrl: ['', Validators.required]
+        project: ['', Validators.required]
       });
       this.formSelectSprint = this._formBuilder.group({
-        sprintCntrl: [{value: '', disabled: true}]
+        sprint: [{value: '', disabled: true}]
       });
     }
 
@@ -61,7 +58,12 @@ export class AssignmentComponent implements OnInit {
     nextStep() {
       this.step++;
     }
-
+    get selectedSimpleSprint(): Sprint {
+      return this.formSelectSprint.get('sprint').value;
+    }
+    get selectedSimpleProject(): Project {
+      return this.formSelectProject.get('project').value;
+    }
     prevStep() {
       this.step--;
     }
@@ -71,11 +73,10 @@ export class AssignmentComponent implements OnInit {
     .subscribe((sprints: Sprint[]) => {
       this.sprints = sprints;
       if ( this.sprints.length === 0) {
-        this.formSelectSprint.controls['sprintCntrl'].disable();
+        this.formSelectSprint.controls['sprint'].disable();
       } else {
-        this.formSelectSprint.controls['sprintCntrl'].enable();
+        this.formSelectSprint.controls['sprint'].enable();
       }
-      // this.formSelectSprint.controls['sprintCntrl'].enable();
       this.loadingBar.complete();
       this.nextStep();
     })

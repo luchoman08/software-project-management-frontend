@@ -17,9 +17,7 @@ import { DeveloperPair } from '../../core/models/developer-pair.model';
 })
 export class AssignmentBuildPairsComponent implements OnInit {
 
-  selectedSimpleProject: Project;
-  selectedSimpleSprint: Sprint;
-  simpleProjects: Project[];
+  projects: Project[];
   projectErrors: {};
   sprints: Sprint[];
   developers: Developer[];
@@ -37,19 +35,19 @@ export class AssignmentBuildPairsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
-    private simpleProjectService: ProjectsService,
+    private projectsService: ProjectsService,
     private sprintsService: SprintsService,
     private assignmentService: AssignmentService,
-    private simpleDeveloperService: DevelopersService,
+    private developerService: DevelopersService,
     private loadingBar: LoadingBarService) {
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
       this.assignmentByPairs = new AssignmentByPairs();
       this.formSelectProject = this._formBuilder.group({
-        projectContrl: ['', Validators.required]
+        project: ['', Validators.required]
       });
       this.formSelectSprint = this._formBuilder.group({
-        sprintCntrl: [{value: '', disabled: true}]
+        sprint: [{value: '', disabled: true}]
       });
       this.assignment_type_form = this._formBuilder.group({
         assign_type_cntrl: [{value: false, disabled: false}]
@@ -67,20 +65,25 @@ export class AssignmentBuildPairsComponent implements OnInit {
     prevStep() {
       this.step--;
     }
-  initSimpleSprints(project_id) {
+  initSprints(project_id) {
     this.loadingBar.start();
     this.sprintsService.getProjectSprints(project_id, true)
     .subscribe((sprints: Sprint[]) => {
       this.sprints = sprints;
       if ( this.sprints.length === 0) {
-        this.formSelectSprint.controls['sprintCntrl'].disable();
+        this.formSelectSprint.controls['sprint'].disable();
       } else {
-        this.formSelectSprint.controls['sprintCntrl'].enable();
+        this.formSelectSprint.controls['sprint'].enable();
       }
-      // this.formSelectSprint.controls['sprintCntrl'].enable();
       this.loadingBar.complete();
       this.nextStep();
     })
+  }
+  get project(): Project {
+    return this.formSelectProject.get('project').value;
+  }
+  get sprint(): Sprint {
+    return this.formSelectSprint.get('sprint').value;
   }
   getPairs() {
     this.assignmentService.generatePairs({reverse: false, developers: this.developers})
@@ -91,9 +94,9 @@ export class AssignmentBuildPairsComponent implements OnInit {
     );
   }
 
-  initSimpleDevelopers(project_id) {
+  initDevelopers(project_id) {
     this.loadingBar.start();
-    this.simpleDeveloperService.getProjectDevelopers(project_id)
+    this.developerService.getProjectDevelopers(project_id)
     .subscribe((developers: Developer[]) => {
       this.developers = developers;
       this.loadingBar.complete();
@@ -103,7 +106,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
     const assignmentByPairs = new AssignmentByPairs();
     assignmentByPairs.reverse = this.assignment_type_form.get('assign_type_cntrl').value;
     assignmentByPairs.developers = this.developers;
-    assignmentByPairs.userStories = this.selectedSimpleSprint.user_stories;
+    assignmentByPairs.userStories = this.sprint.user_stories;
     this.assignmentService.generateAssignmentByPairs(assignmentByPairs)
     .subscribe(
       (response: AssignmentByPairs) => {
@@ -128,11 +131,11 @@ export class AssignmentBuildPairsComponent implements OnInit {
   ngOnInit() {
     this.loadingBar.start();
 
-    this.simpleProjectService.getByMemberId('303456')
+    this.projectsService.getByMemberId('303456')
     .subscribe (
-      (simpleProjects: Project[]) => {
-        console.log('simple projects', simpleProjects);
-        this.simpleProjects = simpleProjects;
+      (projects: Project[]) => {
+        console.log('projects', projects);
+        this.projects = projects;
         this.loadingBar.complete();
       },
       errors => {
