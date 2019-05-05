@@ -15,19 +15,19 @@ const routes: Routes = [
   /*  End of dev route */
   {
     path: 'assignment',
-    loadChildren: './assignment/assignment.module#AssignmentModule'
+    loadChildren: () => import('./assignment/assignment.module').then(m => m.AssignmentModule)
   },
   {
     path: 'userstories',
-    loadChildren: './user-story/user-story.module#UserStoryModule'
+    loadChildren: () => import('./user-story/user-story.module').then(m => m.UserStoryModule)
   },
   {
     path: 'developers',
-    loadChildren: './developer/developer.module#DeveloperModule'
+    loadChildren: () => import('./developer/developer.module').then(m => m.DeveloperModule)
   },
   {
     path: '',
-    loadChildren: './pages/pages.module#PagesModule'
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   }
 ];
 
