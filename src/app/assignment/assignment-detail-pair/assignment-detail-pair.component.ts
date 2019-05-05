@@ -4,7 +4,10 @@ import { DeveloperPair } from '../../core/models/developer-pair.model';
 import { UserStory } from '../../core/models';
 import { ASSIGNMENT_TO_PAIRS } from '../../mocks/simple-mocks/assignment-to-pairs.mock';
 import { MatDialog } from '@angular/material';
-import { DeveloperSelectPairDialogComponent, dataOutput } from '../../developer/developer-select-pair-dialog/developer-select-pair-dialog.component';
+import {
+  DeveloperSelectPairDialogComponent,
+  DataOutput
+} from '../../developer/developer-select-pair-dialog/developer-select-pair-dialog.component';
 
 @Component({
   selector: 'app-assignment-detail-pair',
@@ -26,19 +29,22 @@ export class AssignmentDetailPairComponent implements OnInit {
     const dialogRef = this.dialog.open(DeveloperSelectPairDialogComponent, {
       width: '620px',
       data: {
-        pairs: this.assignment.pairs.filter((pair: DeveloperPair) => { 
+        pairs: this.assignment.pairs.filter((pair: DeveloperPair) => {
           return !userStory.assignedTo( pair.developer1 ) &&
-          !userStory.assignedTo( pair.developer2 ) 
+          !userStory.assignedTo( pair.developer2 )
         }),
         oldPair: this.selectedPair,
         title: 'Seleccione la pareja de desarrolladores'
       }
     });
-    dialogRef.afterClosed().subscribe((dataOutput: dataOutput ) => {
-      console.log( dataOutput.selectedPair.developerIds, 'developer ids for new assign'); 
+    dialogRef.afterClosed().subscribe((dataOutput: DataOutput ) => {
+      console.log( dataOutput.selectedPair.developerIds, 'developer ids for new assign');
       this.selectedUserStory.assigned_to = dataOutput.selectedPair.developerIds;
       this.cd.markForCheck();
     });
+  }
+  saveUserStories() {
+    // TO DO
   }
   ngOnInit() {
     if (this.assignment === undefined) {
