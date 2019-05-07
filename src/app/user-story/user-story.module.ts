@@ -1,8 +1,7 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { UserStoryRoutingModule } from './user-story-routing.module';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, } from '@angular/forms';
 
 import { UserStoryDetailComponent } from './userstory-detail/userstory-detail.component';
 import { UserStoryListComponent } from './userstory-list/userstory-list.component';
@@ -17,7 +16,7 @@ import {
   MatIconModule
 } from '@angular/material';
 
-import { NgDragDropModule } from 'ng-drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { UserStoryPointsComponent } from './user-story-points/user-story-points.component';
 import { UserStoryGroupComponent } from './user-story-group/user-story-group.component';
@@ -29,7 +28,7 @@ import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.
         FormsModule,
         MatFormFieldModule,
         MatTooltipModule,
-        NgDragDropModule.forRoot(),
+        DragDropModule,
         MatDialogModule,
         MatInputModule,
         MatButtonModule,

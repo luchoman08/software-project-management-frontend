@@ -1,18 +1,24 @@
 <div class="main-content">
     <h3>Puedes arrastrar y soltar historias de usuario para cambiar de grupo</h3>
     <div class="row">
-        <div class="col-sm-3" *ngFor="let group of groups">
-            <div class="panel panel-default" (onDragOver)="setObjectiveGroup(group)" (onDragLeave)="setSourceGroup(group)" droppable
-                (onDrop)="onItemDrop($event)">
-                <div class="panel-heading">{{group.name}}</div>
-                <div class="panel-body">
-                    <p *ngIf="group.user_stories.length == 0">Puede adicionar historias de usuario arrastrandolas</p>
-                    <p *ngFor="let userstory of group.user_stories" draggable [dragData]="userstory"
-                        class="list-group-item">{{userstory.subject}}</p>
+        <div cdkDropListGroup>
+            <div *ngFor="let group of groups; let i = index" class="example-container">
+                <div contenteditable="true" [textContent]="group.name" (input)="group.name=$event.target.textContent">
+                </div>
+                <div cdkDropList #groupList="cdkDropList" class="example-list" [cdkDropListData]="group.user_stories"
+                    class="example-list" (cdkDropListDropped)="drop($event)">
+                    
+                    <ng-container *ngIf="group.user_stories.length > 0; else emptyGroup">
+                        <div class="example-box" *ngFor="let userstory of group.user_stories" cdkDrag
+                            class="list-group-item">
+                            {{userstory.subject}}</div>
+                    </ng-container>
+                    <ng-template  #emptyGroup><div> Agrega historias arrastrando y soltando </div></ng-template> 
                 </div>
             </div>
         </div>
-
-        <button (click)="openAddGroup()" mat-fab color="primary" class="generic-principal-button"><mat-icon>add</mat-icon></button>
     </div>
+    <button (click)="openAddGroup()" mat-fab color="primary" class="generic-principal-button">
+        <mat-icon>add</mat-icon>
+    </button>
 </div>
