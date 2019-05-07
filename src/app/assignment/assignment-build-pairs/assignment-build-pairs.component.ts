@@ -6,7 +6,6 @@ import { LoadingBarService } from '@ngx-loading-bar/core';
 import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
-import { ActivatedRoute } from '@angular/router';
 import { AssignmentByPairs } from '../../core/models/assignment-by-pairs.model';
 import { DeveloperPair } from '../../core/models/developer-pair.model';
 
@@ -33,7 +32,6 @@ export class AssignmentBuildPairsComponent implements OnInit {
   assignmentByPairs: AssignmentByPairs;
 
   constructor(
-    private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
     private projectsService: ProjectsService,
     private sprintsService: SprintsService,
