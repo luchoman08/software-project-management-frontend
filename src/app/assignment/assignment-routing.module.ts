@@ -13,6 +13,10 @@ const routes: Routes = [
     component: AssignmentComponent
   },
   {
+    path: 'bygroups',
+    component: AssignmentComponent
+  },
+  {
     path: 'bypairs',
     component: AssignmentBuildPairsComponent
   }

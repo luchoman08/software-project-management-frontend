@@ -25,6 +25,13 @@ export const ROUTES: RouteInfo[] = [
         class: ''
     },
     {
+        path: 'assignment/bygroups',
+        params: {assign_type: AssignmentType.HISTORTY_GROUPS},
+        title: 'Assignment by groups',
+        icon: 'unarchive',
+        class: ''
+    },
+    {
         path: 'assignment/bypairs',
         title: 'Assignment by pairs',
         params: {},
