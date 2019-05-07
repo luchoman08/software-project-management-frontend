@@ -42,7 +42,8 @@ import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.
       UserStoryPointsComponent, UserStoryGroupComponent, UserStoryGroupsComponent,
     ],
     exports: [
-      UserStoryListOneLineComponent
+      UserStoryListOneLineComponent,
+      UserStoryGroupComponent
     ],
     providers: [
     ]

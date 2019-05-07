@@ -4,7 +4,9 @@ import { v4 as uuid } from 'uuid';
 import { UserStoryGroup } from '../../core/models';
 import { MatDialog } from '@angular/material';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { SingleDataDialogEditOrAddComponent } from 'app/page-components/common-components';
+import {
+  SingleDataDialogEditOrAddComponent
+} from '../../page-components/common-components/single-data-dialog-edit-or-add/single-data-dialog-edit-or-add.component';
 @Component({
   selector: 'app-user-story-group',
   templateUrl: './user-story-group.component.html',

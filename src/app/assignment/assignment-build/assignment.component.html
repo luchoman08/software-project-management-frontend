@@ -1,6 +1,6 @@
 
 <div class="main-content">
-  <mat-vertical-stepper  *ngIf="simpleProjects && !assignmentOutput" linear="true" #stepper>
+  <mat-vertical-stepper  *ngIf="projects && !assignmentOutput" linear="true" #stepper>
     <mat-step [stepControl]="formSelectProject">
       <form [formGroup]="formSelectProject">
         <ng-template matStepLabel>Seleccione el proyecto</ng-template>
@@ -10,7 +10,7 @@
           [formControl]="formSelectProject.controls['project']"
             required>
             <mat-option
-            *ngFor="let simpleProject of simpleProjects"
+            *ngFor="let simpleProject of projects"
             [value]="simpleProject">
               {{ simpleProject.name }}
             </mat-option>
@@ -49,7 +49,7 @@
 
     <mat-step>
       <ng-template matStepLabel>Completar o modificar historias</ng-template>
-      <app-user-story-list-one-line *ngIf="selectedSimpleSprint" [includePunctuations]="assignmentByPunctuation"  [userStories]="selectedSimpleSprint.user_stories">
+      <app-user-story-list-one-line *ngIf="selectedSimpleSprint" [includePunctuations]="assignType === assignTypeByPunctuations"  [userStories]="selectedSimpleSprint.user_stories">
       </app-user-story-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
@@ -59,13 +59,21 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
-      <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="assignmentByPunctuation" [developers]="developers">
+      <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="assignType === assignTypeByPunctuations" [developers]="developers">
       </app-developer-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button matStepperNext>Siguiente</button>
       </div>
     </mat-step>
+    <mat-step *ngIf="assignType === assignTypeByGroups">
+        <ng-template matStepLabel>Generar agrupaciones</ng-template>
+        <app-user-story-group [userStories]="selectedSimpleSprint.user_stories"></app-user-story-group>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </mat-step>
     <mat-step>
       <ng-template matStepLabel>Terminado</ng-template>
       Todos los datos han sido completados.
@@ -77,7 +85,7 @@
 
 
   </mat-vertical-stepper>
-  <app-assignment-detail-read-only *ngIf = "assignmentOutput" [assignmentByPunctuation]="assignmentByPunctuation" [assignment]="assignmentOutput"></app-assignment-detail-read-only>
+  <app-assignment-detail-read-only *ngIf = "assignmentOutput" [assignmentByPunctuation]="assignType === assignTypeByPunctuations" [assignment]="assignmentOutput"></app-assignment-detail-read-only>
 
 
 </div>

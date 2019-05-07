@@ -18,7 +18,7 @@ import { AssignmentType } from '../../core/enums';
   styleUrls: ['./assignment.component.scss']
 })
 export class AssignmentComponent implements OnInit {
-  simpleProjects: Project[];
+  projects: Project[];
   projectErrors: {};
   sprints: Sprint[];
   developers: Developer[];
@@ -28,18 +28,21 @@ export class AssignmentComponent implements OnInit {
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
   assignType: AssignmentType;
-  simpleAssignmentByUniqueCost: AssignmentByUniqueCost;
+  assignTypeUniqueCost = AssignmentType.UNIQUE_COST;
+  assignTypeByGroups = AssignmentType.HISTORTY_GROUPS;
+  assignTypeByPunctuations = AssignmentType.BY_PUNCTUATIONS
+  assignmentByUniqueCost: AssignmentByUniqueCost;
   constructor(
     private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
-    private simpleProjectService: ProjectsService,
+    private projectService: ProjectsService,
     private sprintsService: SprintsService,
     private assignmentService: AssignmentService,
-    private simpleDeveloperService: DevelopersService,
+    private developerService: DevelopersService,
     private loadingBar: LoadingBarService) {
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
-      this.simpleAssignmentByUniqueCost = new AssignmentByUniqueCost();
+      this.assignmentByUniqueCost = new AssignmentByUniqueCost();
       this.formSelectProject = this._formBuilder.group({
         project: ['', Validators.required]
       });
@@ -80,7 +83,7 @@ export class AssignmentComponent implements OnInit {
   }
   initSimpleDevelopers(project_id) {
     this.loadingBar.start();
-    this.simpleDeveloperService.getProjectDevelopers(project_id)
+    this.developerService.getProjectDevelopers(project_id)
     .subscribe((developers: Developer[]) => {
       this.developers = developers;
       this.loadingBar.complete();
@@ -107,12 +110,12 @@ export class AssignmentComponent implements OnInit {
     );
   }
   getSimpleAssignment(): void {
-    this.simpleAssignmentByUniqueCost.relationHoursPoints = 1;
-    this.simpleAssignmentByUniqueCost.startDate = new Date(this.selectedSimpleSprint.estimated_start);
-    this.simpleAssignmentByUniqueCost.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
-    this.simpleAssignmentByUniqueCost.developers = this.developers;
-    this.simpleAssignmentByUniqueCost.userStories = this.selectedSimpleSprint.user_stories;
-    this.assignmentService.generarAsignacionSimple(this.simpleAssignmentByUniqueCost)
+    this.assignmentByUniqueCost.relationHoursPoints = 1;
+    this.assignmentByUniqueCost.startDate = new Date(this.selectedSimpleSprint.estimated_start);
+    this.assignmentByUniqueCost.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
+    this.assignmentByUniqueCost.developers = this.developers;
+    this.assignmentByUniqueCost.userStories = this.selectedSimpleSprint.user_stories;
+    this.assignmentService.generarAsignacionSimple(this.assignmentByUniqueCost)
     .subscribe( (assignment: AssignmentByUniqueCost) => {
       this.assignmentOutput = assignment;
     }
@@ -134,10 +137,10 @@ export class AssignmentComponent implements OnInit {
 
   ngOnInit() {
     this.loadingBar.start();
-    this.simpleProjectService.getByMemberId('303456')
+    this.projectService.getByMemberId('303456')
     .subscribe (
-      (simpleProjects: Project[]) => {
-        this.simpleProjects = simpleProjects;
+      (projects: Project[]) => {
+        this.projects = projects;
         this.loadingBar.complete();
       },
       errors => {
@@ -151,4 +154,5 @@ export class AssignmentComponent implements OnInit {
    });
  }
 }
+
 
