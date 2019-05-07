@@ -7,9 +7,10 @@ import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
 import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
-import { ASSIGNMENTBYPUNCTUATIONRESPONSE } from '../../mocks/simple-mocks/assignment-by-attributes.mock';
 import { ActivatedRoute } from '@angular/router';
 import { AssignmentType } from '../../core/enums';
+
+
 
 @Component({
   selector: 'app-assignment',
@@ -26,11 +27,7 @@ export class AssignmentComponent implements OnInit {
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
-
-  assignmentByPunctuation = true;
-
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  assignType: AssignmentType;
   simpleAssignmentInput: AssignmentInput;
   constructor(
     private route: ActivatedRoute,
@@ -97,11 +94,11 @@ export class AssignmentComponent implements OnInit {
     console.log(JSON.stringify(assignmentByPunctuation), 'assignment by punctuation string');
     this.assignmentService.generateAssignmentByPunctuations(assignmentByPunctuation)
     .subscribe(
-      (response: AssignmentByPunctuation) => {
+      (assignment: AssignmentByPunctuation) => {
         // console.log(JSON.stringify(response), 'response after assignment by punctuation');
         this.assignmentOutput = new AssignmentInput();
-        this.assignmentOutput.userStories = response.userStories;
-        this.assignmentOutput.developers = response.developers;
+        this.assignmentOutput.userStories = assignment.userStories;
+        this.assignmentOutput.developers = assignment.developers;
         console.log(JSON.stringify(this.assignmentOutput), 'assignment output');
       },
       (error: any) => {
@@ -122,12 +119,16 @@ export class AssignmentComponent implements OnInit {
   );
 
   }
-
+  getAssigmentByGroupedHistories() {
+    // TO DO
+  }
   getAssignment(): void {
-    if ( this.assignmentByPunctuation ) {
+    if ( this.assignType === AssignmentType.BY_PUNCTUATIONS ) {
       this.getAssignmentByPunctuation();
-    } else {
+    } else if( this.assignType === AssignmentType.UNIQUE_COST ) {
       this.getSimpleAssignment();
+    } else if ( this.assignType === AssignmentType.HISTORTY_GROUPS ) {
+      this.getAssigmentByGroupedHistories();
     }
   }
 
@@ -145,7 +146,7 @@ export class AssignmentComponent implements OnInit {
     );
     this.route.params.subscribe(params => {
       const assignmentType: AssignmentType = Number(params['assign_type']);
-      this.assignmentByPunctuation = assignmentType === AssignmentType.BY_PUNCTUATIONS;
+      this.assignType = assignmentType;
 
    });
  }
