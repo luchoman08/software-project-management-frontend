@@ -1,5 +1,4 @@
 export * from './assignment-input.model';
-export * from './assignment-output.model';
 export * from './assignemnt-by-user-story-groups.model';
 export * from './developer-user-stories-assigned.model';
 export * from './developer.model';
