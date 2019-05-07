@@ -19,7 +19,7 @@ export class AssignmentService {
       return this.apiService
       .post('/attributeassign/', assignmentByPunctuations)
       .pipe(map((_assignmentByPunctuations: AssignmentByPunctuation) => {
-        return _assignmentByPunctuations;
+        return AssignmentByPunctuation.fromJSON(_assignmentByPunctuations);
       }));
     }
 
@@ -39,7 +39,7 @@ export class AssignmentService {
     return this.apiService
       .post('/uniquecostassign/', assignmentUniqueCost)
       .pipe(map((_assignmentUniqueCost: AssignmentInput) => {
-        return _assignmentUniqueCost;
+        return AssignmentInput.fromJSON(_assignmentUniqueCost);
       }));
   }
   generateAssignmentByPairs(

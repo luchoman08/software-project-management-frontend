@@ -109,17 +109,8 @@ export class AssignmentBuildPairsComponent implements OnInit {
     assignmentByPairs.userStories = this.sprint.user_stories;
     this.assignmentService.generateAssignmentByPairs(assignmentByPairs)
     .subscribe(
-      (response: AssignmentByPairs) => {
-        // console.log(JSON.stringify(response), 'response after assignment by punctuation');
-        this.assignmentOutput = new AssignmentByPairs();
-        this.assignmentOutput.userStories = response.userStories;
-        this.assignmentOutput.developers = response.developers;
-        this.assignmentOutput.pairs = response.pairs;
-        this.assignmentOutput.reverse = response.reverse;
-        console.log(JSON.stringify(this.assignmentOutput), 'assignment output');
-      },
-      (error: any) => {
-        console.log(error, 'error at get assignment by punctutation')
+      (assignment: AssignmentByPairs) => {
+        this.assignmentOutput = assignment;
       }
     );
   }
