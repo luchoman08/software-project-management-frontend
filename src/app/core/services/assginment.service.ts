@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 
 
 import { ApiService } from './api.service';
-import { AssignmentInput } from '../models/assignment-input.model';
+import { AssignmentByUniqueCost } from '../models/assignment-by-unique-cost.model';
 import { AssignmentByPunctuation } from '../models/assignment-by-punctuations.model';
 import { AssignmentByPairs } from '../models/assignment-by-pairs.model';
 import { DeveloperPair } from '../models/developer-pair.model';
@@ -34,12 +34,12 @@ export class AssignmentService {
   }
 
   generarAsignacionSimple(
-    assignmentUniqueCost: AssignmentInput
-  ): Observable<AssignmentInput> {
+    AssignmentByUniqueCost: AssignmentByUniqueCost
+  ): Observable<AssignmentByUniqueCost> {
     return this.apiService
-      .post('/uniquecostassign/', assignmentUniqueCost)
-      .pipe(map((_assignmentUniqueCost: AssignmentInput) => {
-        return AssignmentInput.fromJSON(_assignmentUniqueCost);
+      .post('/uniquecostassign/', AssignmentByUniqueCost)
+      .pipe(map((_AssignmentByUniqueCost: AssignmentByUniqueCost) => {
+        return AssignmentByUniqueCost.fromJSON(_AssignmentByUniqueCost);
       }));
   }
   generateAssignmentByPairs(

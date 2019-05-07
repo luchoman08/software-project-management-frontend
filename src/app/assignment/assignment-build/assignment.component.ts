@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Project, Sprint, Developer, AssignmentInput } from '../../core/models';
+import { Project, Sprint, Developer, AssignmentByUniqueCost } from '../../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { Errors } from '../../core/models';
@@ -23,12 +23,12 @@ export class AssignmentComponent implements OnInit {
   sprints: Sprint[];
   developers: Developer[];
   step = 0;
-  assignmentOutput: AssignmentInput ;
+  assignmentOutput: AssignmentByUniqueCost ;
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
   assignType: AssignmentType;
-  simpleAssignmentInput: AssignmentInput;
+  simpleAssignmentByUniqueCost: AssignmentByUniqueCost;
   constructor(
     private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
@@ -39,7 +39,7 @@ export class AssignmentComponent implements OnInit {
     private loadingBar: LoadingBarService) {
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
-      this.simpleAssignmentInput = new AssignmentInput();
+      this.simpleAssignmentByUniqueCost = new AssignmentByUniqueCost();
       this.formSelectProject = this._formBuilder.group({
         project: ['', Validators.required]
       });
@@ -96,7 +96,7 @@ export class AssignmentComponent implements OnInit {
     .subscribe(
       (assignment: AssignmentByPunctuation) => {
         // console.log(JSON.stringify(response), 'response after assignment by punctuation');
-        this.assignmentOutput = new AssignmentInput();
+        this.assignmentOutput = new AssignmentByUniqueCost();
         this.assignmentOutput.userStories = assignment.userStories;
         this.assignmentOutput.developers = assignment.developers;
         console.log(JSON.stringify(this.assignmentOutput), 'assignment output');
@@ -107,13 +107,13 @@ export class AssignmentComponent implements OnInit {
     );
   }
   getSimpleAssignment(): void {
-    this.simpleAssignmentInput.relationHoursPoints = 1;
-    this.simpleAssignmentInput.startDate = new Date(this.selectedSimpleSprint.estimated_start);
-    this.simpleAssignmentInput.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
-    this.simpleAssignmentInput.developers = this.developers;
-    this.simpleAssignmentInput.userStories = this.selectedSimpleSprint.user_stories;
-    this.assignmentService.generarAsignacionSimple(this.simpleAssignmentInput)
-    .subscribe( (assignment: AssignmentInput) => {
+    this.simpleAssignmentByUniqueCost.relationHoursPoints = 1;
+    this.simpleAssignmentByUniqueCost.startDate = new Date(this.selectedSimpleSprint.estimated_start);
+    this.simpleAssignmentByUniqueCost.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
+    this.simpleAssignmentByUniqueCost.developers = this.developers;
+    this.simpleAssignmentByUniqueCost.userStories = this.selectedSimpleSprint.user_stories;
+    this.assignmentService.generarAsignacionSimple(this.simpleAssignmentByUniqueCost)
+    .subscribe( (assignment: AssignmentByUniqueCost) => {
       this.assignmentOutput = assignment;
     }
   );

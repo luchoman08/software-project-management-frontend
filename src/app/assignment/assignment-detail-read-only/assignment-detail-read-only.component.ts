@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy,  Input, ChangeDetectorRef } from '@angular/core';
 
-import { UserStory, AssignmentInput } from '../../core/models';
+import { UserStory, AssignmentByUniqueCost } from '../../core/models';
 import { MatDialog } from '@angular/material';
 import { DeveloperSelectDialogComponent } from '../../developer/developer-select-dialog/developer-select-dialog.component';
 import { Developer } from '../../core/models';
@@ -20,7 +20,7 @@ export class AssignmentDetailReadOnlyComponent implements OnInit {
   selectedDeveloper: Developer;
   @Input() assignmentByPunctuation = false;
   daysOfWork: number;
-  @Input() public assignment: AssignmentInput;
+  @Input() public assignment: AssignmentByUniqueCost;
   constructor(
     public dialog: MatDialog,
     private asignedToPipe: AssignedToPipe,

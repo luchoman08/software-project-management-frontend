@@ -1,4 +1,4 @@
-export * from './assignment-input.model';
+export * from './assignment-by-unique-cost.model';
 export * from './assignemnt-by-user-story-groups.model';
 export * from './developer-user-stories-assigned.model';
 export * from './developer.model';
