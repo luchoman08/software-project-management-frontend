@@ -1,6 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Project, Sprint, Developer, AssignmentByUniqueCost } from '../../core/models';
+import { Project, Sprint, Developer, AssignmentByUniqueCost, UserStoryGroup } from '../../core/models';
 import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { Errors } from '../../core/models';
@@ -23,7 +23,8 @@ export class AssignmentComponent implements OnInit {
   sprints: Sprint[];
   developers: Developer[];
   step = 0;
-  assignmentOutput: AssignmentByUniqueCost ;
+  assignmentOutput: AssignmentByUniqueCost;
+  userStoryGroups: Array<UserStoryGroup>; // only for group assign
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
@@ -31,7 +32,6 @@ export class AssignmentComponent implements OnInit {
   assignTypeUniqueCost = AssignmentType.UNIQUE_COST;
   assignTypeByGroups = AssignmentType.HISTORTY_GROUPS;
   assignTypeByPunctuations = AssignmentType.BY_PUNCTUATIONS
-  assignmentByUniqueCost: AssignmentByUniqueCost;
   constructor(
     private route: ActivatedRoute,
     private _formBuilder: FormBuilder,
@@ -40,9 +40,9 @@ export class AssignmentComponent implements OnInit {
     private assignmentService: AssignmentService,
     private developerService: DevelopersService,
     private loadingBar: LoadingBarService) {
+      this.userStoryGroups = new Array<UserStoryGroup>();
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
-      this.assignmentByUniqueCost = new AssignmentByUniqueCost();
       this.formSelectProject = this._formBuilder.group({
         project: ['', Validators.required]
       });
@@ -58,7 +58,7 @@ export class AssignmentComponent implements OnInit {
     nextStep() {
       this.step++;
     }
-    get selectedSimpleSprint(): Sprint {
+    get selectedSprint(): Sprint {
       return this.formSelectSprint.get('sprint').value;
     }
     get selectedSimpleProject(): Project {
@@ -93,8 +93,7 @@ export class AssignmentComponent implements OnInit {
     const assignmentByPunctuation = new AssignmentByPunctuation();
     assignmentByPunctuation.assign_same_quantity_of_tasks = true;
     assignmentByPunctuation.developers = this.developers;
-    assignmentByPunctuation.userStories = this.selectedSimpleSprint.user_stories;
-    console.log(JSON.stringify(assignmentByPunctuation), 'assignment by punctuation string');
+    assignmentByPunctuation.userStories = this.selectedSprint.user_stories;
     this.assignmentService.generateAssignmentByPunctuations(assignmentByPunctuation)
     .subscribe(
       (assignment: AssignmentByPunctuation) => {
@@ -102,20 +101,17 @@ export class AssignmentComponent implements OnInit {
         this.assignmentOutput = new AssignmentByUniqueCost();
         this.assignmentOutput.userStories = assignment.userStories;
         this.assignmentOutput.developers = assignment.developers;
-        console.log(JSON.stringify(this.assignmentOutput), 'assignment output');
-      },
-      (error: any) => {
-        console.log(error, 'error at get assignment by punctutation')
       }
     );
   }
   getSimpleAssignment(): void {
-    this.assignmentByUniqueCost.relationHoursPoints = 1;
-    this.assignmentByUniqueCost.startDate = new Date(this.selectedSimpleSprint.estimated_start);
-    this.assignmentByUniqueCost.endDate = new Date(this.selectedSimpleSprint.estimated_finish);
-    this.assignmentByUniqueCost.developers = this.developers;
-    this.assignmentByUniqueCost.userStories = this.selectedSimpleSprint.user_stories;
-    this.assignmentService.generarAsignacionSimple(this.assignmentByUniqueCost)
+    const assignmentByUniqueCost = new AssignmentByUniqueCost();
+    assignmentByUniqueCost.relationHoursPoints = 1;
+    assignmentByUniqueCost.startDate = new Date(this.selectedSprint.estimated_start);
+    assignmentByUniqueCost.endDate = new Date(this.selectedSprint.estimated_finish);
+    assignmentByUniqueCost.developers = this.developers;
+    assignmentByUniqueCost.userStories = this.selectedSprint.user_stories;
+    this.assignmentService.generarAsignacionSimple(assignmentByUniqueCost)
     .subscribe( (assignment: AssignmentByUniqueCost) => {
       this.assignmentOutput = assignment;
     }

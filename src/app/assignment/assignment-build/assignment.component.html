@@ -49,7 +49,7 @@
 
     <mat-step>
       <ng-template matStepLabel>Completar o modificar historias</ng-template>
-      <app-user-story-list-one-line *ngIf="selectedSimpleSprint" [includePunctuations]="assignType === assignTypeByPunctuations"  [userStories]="selectedSimpleSprint.user_stories">
+      <app-user-story-list-one-line *ngIf="selectedSprint" [includePunctuations]="assignType === assignTypeByPunctuations || assignType === assignTypeByGroups"  [userStories]="selectedSprint.user_stories">
       </app-user-story-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
@@ -59,7 +59,7 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
-      <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="assignType === assignTypeByPunctuations" [developers]="developers">
+      <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="assignType === assignTypeByPunctuations || assignType === assignTypeByGroups" [developers]="developers">
       </app-developer-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
@@ -67,8 +67,8 @@
       </div>
     </mat-step>
     <mat-step *ngIf="assignType === assignTypeByGroups">
-        <ng-template matStepLabel>Generar agrupaciones</ng-template>
-        <app-user-story-group [userStories]="selectedSimpleSprint.user_stories"></app-user-story-group>
+        <ng-template matStepLabel>Generar agrupaciones de historias</ng-template>
+        <app-user-story-group *ngIf="selectedSprint.user_stories" [userStories]="selectedSprint.user_stories"></app-user-story-group>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
           <button mat-button matStepperNext>Siguiente</button>

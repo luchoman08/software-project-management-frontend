@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { UserStory } from '../../core/models/user-story.model';
 import { v4 as uuid } from 'uuid';
 import { UserStoryGroup } from '../../core/models';
@@ -12,18 +12,28 @@ import {
   templateUrl: './user-story-group.component.html',
   styleUrls: ['./user-story-group.component.scss']
 })
-export class UserStoryGroupComponent {
+export class UserStoryGroupComponent implements OnInit{
   @Input() userStories: UserStory[];
+  defaultGroupId: String = "";
   groups: Array<UserStoryGroup> = new Array<UserStoryGroup>();
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private cd: ChangeDetectorRef
   ) {
     this.addDefaultGroup();
    }
    private addDefaultGroup() {
-    this.groups.push({id: uuid(), name: 'Historias sin agrupar', user_stories: new Array<UserStory>()});
+     const defaultGroup = UserStoryGroup.make({name: 'Historias sin agrupar'});
+     this.defaultGroupId = defaultGroup.id;
+     this.groups.push(defaultGroup);
    }
-
+   ngOnInit() {
+     this.getDefaultGroup().user_stories = this.userStories;
+     this.cd.markForCheck();
+   }
+   getDefaultGroup(): UserStoryGroup {
+     return this.groups.find(group => group.id === this.defaultGroupId);
+   }
    drop(event: CdkDragDrop<UserStory[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
