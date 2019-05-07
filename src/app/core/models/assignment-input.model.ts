@@ -1,5 +1,5 @@
-import { Developer } from '.';
-import { UserStory } from '.';
+import { Developer } from './developer.model';
+import { UserStory } from './user-story.model';
 export class AssignmentInput {
     developers: Developer[];
     userStories: UserStory[];
