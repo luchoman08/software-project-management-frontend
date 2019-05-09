@@ -15,6 +15,7 @@ import {
 export class SimpleDeveloperListOneLineComponent implements OnInit {
   @Input() developers: Developer[];
   @Input() developer_punctuations = false;
+  displayedColumns = ['name', 'punctuations'];
   constructor(
     public dialog: MatDialog,
   ) { }

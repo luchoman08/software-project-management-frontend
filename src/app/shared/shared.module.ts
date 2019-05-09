@@ -49,7 +49,7 @@ import {
 
     PercentageProgressBarComponent,
     FlexLayoutModule,
-
+    MaterialModule,
     FooterComponent,
     NavbarComponent,
     SidenavLinksComponent

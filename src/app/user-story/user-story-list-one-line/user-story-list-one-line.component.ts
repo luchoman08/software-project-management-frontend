@@ -12,7 +12,7 @@ import {
 })
 
 export class UserStoryListOneLineComponent implements OnInit {
-
+  displayedColumns = ['subject', 'punctuations'];
   @Input() public userStories: UserStory[];
   @Input() public includePunctuations: boolean; // include global number of points or punctuations of story, are mutually exclusive
   constructor(
@@ -33,7 +33,6 @@ export class UserStoryListOneLineComponent implements OnInit {
         type: 'number'
       }
     });
-
     dialogRef.afterClosed().subscribe(value => {
       userStory.total_points = value;
     });

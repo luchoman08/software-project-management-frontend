@@ -5,6 +5,7 @@ import {
   MatButtonToggleModule,
   MatStepperModule,
   MatInputModule,
+  MatTableModule,
   MatExpansionModule,
   MatCardModule,
   MatRippleModule,
@@ -27,7 +28,7 @@ import {
 
 @NgModule({
   imports: [
-
+    MatTableModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatStepperModule,
@@ -67,6 +68,7 @@ import {
     MatTooltipModule,
     MatDialogModule,
     MatIconModule,
+    MatTableModule,
     MatOptionModule,
     MatProgressBarModule,
     MatSidenavModule,

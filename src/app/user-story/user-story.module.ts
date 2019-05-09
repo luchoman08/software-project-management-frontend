@@ -6,15 +6,6 @@ import { FormsModule, } from '@angular/forms';
 import { UserStoryDetailComponent } from './userstory-detail/userstory-detail.component';
 import { UserStoryListComponent } from './userstory-list/userstory-list.component';
 import { UserStoryListOneLineComponent } from './user-story-list-one-line/user-story-list-one-line.component';
-import {
-  MatFormFieldModule,
-  MatInputModule,
-  MatTooltipModule,
-  MatDialogModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatIconModule
-} from '@angular/material';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -27,15 +18,8 @@ import { SharedModule } from '../shared/shared.module';
         UserStoryRoutingModule,
         CommonModule,
         FormsModule,
-        MatFormFieldModule,
-        MatTooltipModule,
         SharedModule,
         DragDropModule,
-        MatDialogModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule,
-        MatButtonToggleModule,
     ],
     declarations: [
       UserStoryDetailComponent,

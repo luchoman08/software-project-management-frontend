@@ -7,38 +7,40 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table">
-                <thead class=" text-primary">
-                    <th>
-                        Nombre
-                    </th>
-                    <th>
-                        {{developer_punctuations? 'Puntos por habilidad': 'Horas disponibles a la semana'}}
-                    </th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let developer of developers">
-                        <td>
-                            {{developer.full_name}}
-                        </td>
-                        <td>
-                            <app-developer-punctuations  *ngIf="developer_punctuations; else available_hours" [developer]="developer"></app-developer-punctuations>
-                            <ng-template #available_hours>
-                                <p *ngIf="developer.available_hours_per_week; else noAvailableHoursBlock"> {{developer.available_hours_per_week}}
-                                    <button mat-raised-button type="button" matTooltip="Editar horas disponibles" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                        <i *ngIf="developer.available_hours_per_week" (click)="openEditAvailableHoursPerWeekDialog(developer)" class="material-icons small ">edit</i>
-                                    </button>
-                                </p>
-                                <ng-template #noAvailableHoursBlock>
-                                    <button mat-raised-button type="button" matTooltip="Adicionar horas disponibles" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                        <i (click)="openEditAvailableHoursPerWeekDialog(developer)" class="material-icons">add_circle</i>
-                                    </button>
-                                </ng-template>
-                            </ng-template>
-                        </td>
-                    </tr>
+            <table mat-table [dataSource]="developers">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let developer"> {{developer.full_name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="punctuations">
+                    <th mat-header-cell *matHeaderCellDef>
+                        {{developer_punctuations? 'Puntos por habilidad': 'Horas disponibles a la semana'}}</th>
+                    <td mat-cell *matCellDef="let developer">
+                        <app-developer-punctuations *ngIf="developer_punctuations; else available_hours"
+                            [developer]="developer"></app-developer-punctuations>
+                        <ng-template #available_hours>
+                            <p *ngIf="developer.available_hours_per_week; else noAvailableHoursBlock">
+                                {{developer.available_hours_per_week}}
+                                <button mat-icon-button (click)="openEditAvailableHoursPerWeekDialog(developer)"
+                                    matTooltip="Editar horas disponibles" [matTooltipPosition]="'above'">
+                                    <mat-icon *ngIf="developer.available_hours_per_week" aria-label="Add points">edit
+                                    </mat-icon>
+                                </button>
+                            </p>
+                            <ng-template #noAvailableHoursBlock>
 
-                </tbody>
+                                <button mat-icon-button matTooltip="Adicionar horas disponibles"
+                                    [matTooltipPosition]="'above'"
+                                    (click)="openEditAvailableHoursPerWeekDialog(developer)">
+                                    <mat-icon aria-label="Add points">add_circle</mat-icon>
+                                </button>
+                            </ng-template>
+                        </ng-template>
+
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
     </div>
