@@ -59,7 +59,7 @@ export class AssignmentComponent implements OnInit {
     get selectedSprint(): Sprint {
       return this.formSelectSprint.get('sprint').value;
     }
-    get selectedSimpleProject(): Project {
+    get selectedProject(): Project {
       return this.formSelectProject.get('project').value;
     }
     prevStep() {

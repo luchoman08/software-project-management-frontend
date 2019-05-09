@@ -4,21 +4,21 @@
     <mat-step [stepControl]="formSelectProject">
       <form [formGroup]="formSelectProject">
         <ng-template matStepLabel>Seleccione el proyecto</ng-template>
-        <mat-form-field>
+        <mat-form-field class="full-width-component">
           <mat-select
           placeholder="Proyecto"
           [formControl]="formSelectProject.controls['project']"
             required>
             <mat-option
-            *ngFor="let simpleProject of projects"
-            [value]="simpleProject">
-              {{ simpleProject.name }}
+            *ngFor="let project of projects"
+            [value]="project">
+              {{ project.name }}
             </mat-option>
           </mat-select>
           <mat-error *ngIf="formSelectProject.get('project').hasError('required')">Por favor, seleccione un proyecto</mat-error>
         </mat-form-field>
         <div>
-          <button (click)="selectedSimpleProject? initSimpleSprints(selectedSimpleProject.id) : null" mat-button matStepperNext>Siguiente</button>
+          <button (click)="selectedProject? initSimpleSprints(selectedProject.id) : null" mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -42,7 +42,7 @@
         </mat-form-field>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
-          <button (click)="initSimpleDevelopers(selectedSimpleProject.id)" mat-button matStepperNext>Siguiente</button>
+          <button (click)="initSimpleDevelopers(selectedProject.id)" mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
