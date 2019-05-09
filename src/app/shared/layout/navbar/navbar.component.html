@@ -1,26 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-wrapper">
-          <a class="navbar-brand" href="#">{{title}}</a>
-        </div>
-        <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navigation">
-
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                        <i class="material-icons">person</i>
-                        <p>
-                            <span class="d-lg-none d-md-block">Account</span>
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="toggleRightSidenav()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Asignación de tareas</h1>
+</mat-toolbar>

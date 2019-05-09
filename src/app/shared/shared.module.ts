@@ -15,11 +15,15 @@ import {
 
 import { MaterialModule } from '../material.module';
 
-import { SingleDataDialogEditOrAddComponent, PercentageProgressBarComponent } from './components';
+import {
+  SingleDataDialogEditOrAddComponent,
+  PercentageProgressBarComponent
+} from './components';
+
 import {
   FooterComponent,
   NavbarComponent,
-  SidebarComponent
+  SidenavLinksComponent
 } from './layout';
 
 
@@ -35,8 +39,8 @@ import {
 
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
-  ],
+    SidenavLinksComponent
+],
   exports: [
     CapitalizePipe,
     FirstWordPipe,
@@ -48,7 +52,7 @@ import {
 
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidenavLinksComponent
   ],
   providers: [
     AssignedToPipe,
