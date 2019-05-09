@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { UserStory } from '../models/user-story.model';
-import { Developer } from '../models/developer.model';
+import { UserStory } from '../../core/models';
 
 @Pipe({
   name: 'assignedTo',

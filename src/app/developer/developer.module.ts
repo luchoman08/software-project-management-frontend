@@ -16,17 +16,17 @@ import {
   DeveloperCompatibilityWithUserStoryComponent
 } from './developer-compatibility-with-user-story/developer-compatibility-with-user-story.component';
 
-import { CommonComponentsModule } from '../page-components/common-components/common-components.module';
 import { DeveloperPairComponent } from './developer-pair/developer-pair.component';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { DeveloperSelectPairDialogComponent } from './developer-select-pair-dialog/developer-select-pair-dialog.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     NgDragDropModule.forRoot(),
-    CommonComponentsModule,
     FormsModule,
     ReactiveFormsModule,
     DeveloperRoutingModule,

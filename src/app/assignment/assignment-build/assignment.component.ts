@@ -1,10 +1,8 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Project, Sprint, Developer, AssignmentByUniqueCost, UserStoryGroup } from '../../core/models';
-import { LoadingBarService } from '@ngx-loading-bar/core';
-
 import { Errors } from '../../core/models';
-import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
+import { ProjectsService, SprintsService, DevelopersService, LoadingBarService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
 import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
 import { ActivatedRoute } from '@angular/router';
@@ -39,7 +37,7 @@ export class AssignmentComponent implements OnInit {
     private sprintsService: SprintsService,
     private assignmentService: AssignmentService,
     private developerService: DevelopersService,
-    private loadingBar: LoadingBarService) {
+    private loader: LoadingBarService) {
       this.userStoryGroups = new Array<UserStoryGroup>();
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
@@ -68,7 +66,7 @@ export class AssignmentComponent implements OnInit {
       this.step--;
     }
   initSimpleSprints(project_id) {
-    this.loadingBar.start();
+    this.loader.start();
     this.sprintsService.getProjectSprints(project_id, true)
     .subscribe((sprints: Sprint[]) => {
       this.sprints = sprints;
@@ -77,16 +75,16 @@ export class AssignmentComponent implements OnInit {
       } else {
         this.formSelectSprint.controls['sprint'].enable();
       }
-      this.loadingBar.complete();
+      this.loader.complete();
       this.nextStep();
     })
   }
   initSimpleDevelopers(project_id) {
-    this.loadingBar.start();
+    this.loader.start();
     this.developerService.getProjectDevelopers(project_id)
     .subscribe((developers: Developer[]) => {
       this.developers = developers;
-      this.loadingBar.complete();
+      this.loader.complete();
     })
   }
   getAssignmentByPunctuation(): void {
@@ -132,12 +130,12 @@ export class AssignmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadingBar.start();
+    this.loader.start();
     this.projectService.getByMemberId('303456')
     .subscribe (
       (projects: Project[]) => {
         this.projects = projects;
-        this.loadingBar.complete();
+        this.loader.complete();
       },
       errors => {
         this.projectErrors  = errors;

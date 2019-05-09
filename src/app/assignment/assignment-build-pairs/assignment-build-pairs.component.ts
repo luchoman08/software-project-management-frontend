@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Project, Sprint, Developer } from '../../core/models';
-import { LoadingBarService } from '@ngx-loading-bar/core';
 
 import { Errors } from '../../core/models';
-import { ProjectsService, SprintsService, DevelopersService } from '../../core/services';
+import { ProjectsService, SprintsService, DevelopersService, LoadingBarService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
 import { AssignmentByPairs } from '../../core/models/assignment-by-pairs.model';
 import { DeveloperPair } from '../../core/models/developer-pair.model';
@@ -37,7 +36,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
     private sprintsService: SprintsService,
     private assignmentService: AssignmentService,
     private developerService: DevelopersService,
-    private loadingBar: LoadingBarService) {
+    private loader: LoadingBarService) {
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
       this.assignmentByPairs = new AssignmentByPairs();
@@ -64,7 +63,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
       this.step--;
     }
   initSprints(project_id) {
-    this.loadingBar.start();
+    this.loader.start();
     this.sprintsService.getProjectSprints(project_id, true)
     .subscribe((sprints: Sprint[]) => {
       this.sprints = sprints;
@@ -73,7 +72,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
       } else {
         this.formSelectSprint.controls['sprint'].enable();
       }
-      this.loadingBar.complete();
+      this.loader.complete();
       this.nextStep();
     })
   }
@@ -93,11 +92,11 @@ export class AssignmentBuildPairsComponent implements OnInit {
   }
 
   initDevelopers(project_id) {
-    this.loadingBar.start();
+    this.loader.start();
     this.developerService.getProjectDevelopers(project_id)
     .subscribe((developers: Developer[]) => {
       this.developers = developers;
-      this.loadingBar.complete();
+      this.loader.complete();
     })
   }
   getAssignmentByPairs(): void {
@@ -118,14 +117,14 @@ export class AssignmentBuildPairsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadingBar.start();
+    this.loader.start();
 
     this.projectsService.getByMemberId('303456')
     .subscribe (
       (projects: Project[]) => {
         console.log('projects', projects);
         this.projects = projects;
-        this.loadingBar.complete();
+        this.loader.complete();
       },
       errors => {
         console.log(errors, 'errors at build pairs get projects');

@@ -28,7 +28,6 @@
     "@angular/platform-browser-dynamic": "^7.2.14",
     "@angular/platform-server": "^7.2.14",
     "@angular/router": "^7.2.14",
-    "@ngx-loading-bar/core": "^4.2.0",
     "bootstrap": "4.1.0",
     "bootstrap-material-design": "4.1.1",
     "bootstrap-notify": "3.1.3",

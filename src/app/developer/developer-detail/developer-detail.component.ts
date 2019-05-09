@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Developer } from '../../core/models';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { SIMPLEDEVELS } from '../../mocks';
-import { SingleDataDialogEditOrAddComponent } from '../../page-components/common-components';
+import { SingleDataDialogEditOrAddComponent } from '../../shared/components';
 @Component({
   selector: 'app-developer-detail',
   templateUrl: './developer-detail.component.html',

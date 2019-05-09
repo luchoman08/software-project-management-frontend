@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Developer } from '../../core/models';
 import { MatDialog } from '@angular/material';
-import { SingleDataDialogEditOrAddComponent } from '../../page-components/common-components';
+import { SingleDataDialogEditOrAddComponent } from '../../shared/components';
 import { Punctuation } from '../../core/models/punctuation';
 
 @Component({

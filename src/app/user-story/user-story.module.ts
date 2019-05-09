@@ -21,6 +21,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { UserStoryPointsComponent } from './user-story-points/user-story-points.component';
 import { UserStoryGroupComponent } from './user-story-group/user-story-group.component';
 import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
       imports: [
         UserStoryRoutingModule,
@@ -28,6 +29,7 @@ import { UserStoryGroupsComponent } from './user-story-groups/user-story-groups.
         FormsModule,
         MatFormFieldModule,
         MatTooltipModule,
+        SharedModule,
         DragDropModule,
         MatDialogModule,
         MatInputModule,

@@ -4,18 +4,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 
 import { AppRoutingModule } from './app.routing';
-import { MainPageComponentsModule } from './page-components/main-components/main-components.module';
-
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-
 import { HttpClientModule } from '@angular/common/http'
 
-import { CommonComponentsModule } from './page-components/common-components/common-components.module';
 
 import { ProjectsService } from './core/services/projects.service';
 import { SprintsService } from './core/services/sprints.service';
@@ -26,6 +21,7 @@ import { AssignmentService } from './core/services/assginment.service';
 import { PunctuationsModule } from './punctuations/punctuations.module';
 import { DeveloperModule } from './developer/developer.module';
 import { AssignmentModule } from './assignment/assignment.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
@@ -35,16 +31,14 @@ import { AssignmentModule } from './assignment/assignment.module';
     ReactiveFormsModule,
     HttpModule,
     MaterialModule,
-    MainPageComponentsModule,
     RouterModule,
     CoreModule,
+    SharedModule,
     PunctuationsModule,
     DeveloperModule,
     AssignmentModule,
     FlexLayoutModule,
-    LoadingBarModule,
     AppRoutingModule,
-    CommonComponentsModule,
   ],
   declarations: [
     /**

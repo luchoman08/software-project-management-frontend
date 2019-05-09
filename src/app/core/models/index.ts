@@ -5,5 +5,6 @@ export * from './developer.model';
 export * from './project.model';
 export * from './sprint.model';
 export * from './user-story.model';
-export * from './generics'
+export * from './generics';
+export * from './developer-pair.model';
 export * from './usre-story-group.model';

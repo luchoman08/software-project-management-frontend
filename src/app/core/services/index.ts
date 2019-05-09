@@ -7,3 +7,4 @@ export * from './user-stories.service';
 export * from './developers-service';
 export * from './auth.service';
 export * from './page-components.service';
+export * from './loading-bar.service';

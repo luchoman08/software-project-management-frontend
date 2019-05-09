@@ -7,13 +7,12 @@ import {
     ApiService,
     JwtService,
     PageComponentsService,
+    LoadingBarService,
 } from './services';
-import { CapitalizePipe } from './pipes/capitalize.pipe';
-import { FirstWordPipe } from './pipes/firstWord.pipe';
+
 import { HttpProjectManagerInterceptor } from './interceptors/project-manager.interceptor';
 import { ProjectManagersService } from './services/project-interface.service';
-import { AssignedToPipe } from './pipes/assignedTo.pipe';
-import { AssignedToPairPipe } from './pipes/assigned-to-pair.pipe';
+
 
 @NgModule({
   imports: [
@@ -25,11 +24,8 @@ import { AssignedToPairPipe } from './pipes/assigned-to-pair.pipe';
     ApiService,
     JwtService,
     ProjectManagersService,
-    AssignedToPipe,
-    AssignedToPairPipe,
+    LoadingBarService,
     PageComponentsService,
   ],
-  declarations: [CapitalizePipe, FirstWordPipe, AssignedToPipe, AssignedToPairPipe],
-  exports: [CapitalizePipe, FirstWordPipe, AssignedToPipe, AssignedToPairPipe]
 })
 export class CoreModule { }

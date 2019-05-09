@@ -3,7 +3,7 @@ import { UserStory } from '../../core/models/user-story.model';
 import { MatDialog } from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
-} from '../../page-components/common-components';
+} from '../../shared/components';
 // import { SIMPLEUSERSTORIES } from '../../mocks/simple-mocks/simple-user-stories';
 @Component({
   selector: 'app-user-story-list-one-line',

@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
 import { Developer } from '../../core/models';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {
   SingleDataDialogEditOrAddComponent
-} from '../../page-components/common-components/single-data-dialog-edit-or-add/single-data-dialog-edit-or-add.component';
-import { CapitalizePipe } from '../../core/pipes/capitalize.pipe';
+} from '../../shared/components';
 
 @Component({
   selector: 'app-developer-list-one-line',

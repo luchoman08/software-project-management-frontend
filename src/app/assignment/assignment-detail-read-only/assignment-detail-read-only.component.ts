@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material';
 import { DeveloperSelectDialogComponent } from '../../developer/developer-select-dialog/developer-select-dialog.component';
 import { Developer } from '../../core/models';
 import { developerPercentageOcupation } from '../../core/lib';
-import { AssignedToPipe } from '../../core/pipes/assignedTo.pipe';
+import { AssignedToPipe } from '../../shared/pipes/assignedTo.pipe';
 import { getBusinessDatesCount } from '../../core/lib/calendar.lib';
 import { UserStoriesService } from '../../core/services/user-stories.service';
 

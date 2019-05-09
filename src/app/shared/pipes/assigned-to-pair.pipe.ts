@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DeveloperPair } from '../models/developer-pair.model';
-import { UserStory } from '../models';
+import { DeveloperPair, UserStory } from '../../core/models';
+
 
 @Pipe({
   name: 'assignedToPair',
