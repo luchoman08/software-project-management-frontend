@@ -17,7 +17,7 @@ import {
 } from './developer-compatibility-with-user-story/developer-compatibility-with-user-story.component';
 
 import { DeveloperPairComponent } from './developer-pair/developer-pair.component';
-import { NgDragDropModule } from 'ng-drag-drop';
+//import { NgDragDropModule } from 'ng-drag-drop';
 import { DeveloperSelectPairDialogComponent } from './developer-select-pair-dialog/developer-select-pair-dialog.component';
 import { SharedModule } from '../shared/shared.module';
 
@@ -26,7 +26,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    NgDragDropModule.forRoot(),
+    //NgDragDropModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     DeveloperRoutingModule,
