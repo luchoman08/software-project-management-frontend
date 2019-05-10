@@ -5,7 +5,7 @@
     <mat-expansion-panel *ngFor="let pair of assignment.pairs" (click)="selectedPair = pair">
       <mat-expansion-panel-header >
         <mat-panel-title>
-          {{pair.joinedName}}
+          <p>{{pair.joinedName}}</p>
         </mat-panel-title>
         <mat-panel-description>
           <p *ngIf="(assignment.userStories | assignedToPair : pair).length > 0 ; else no_stories_assigned"> Historias asignadas a  {{pair.joinedName}}</p>
@@ -17,7 +17,7 @@
           <div class="user-story-assignment"  *ngFor="let userStory of assignment.userStories | assignedToPair : pair" (click)="selecteduserStory = userStory" fxLayout="column">
             <div fxLayout="row">
               <p class="user_story_reference" *ngIf="userStory.reference"> #{{userStory.reference}} </p>
-              <p [matTooltip]="assignmentByPunctuation? '': 'Puntos:' + userStory.total_points">{{userStory.subject}} </p>
+              <p >{{userStory.subject}} </p>
               <span class="spacer"></span>
               <mat-icon (click)="openSelectPair(userStory)" matTooltip="Reasignar" matTooltipPosition="above" class="left-icon">settings_backup_restore</mat-icon>
             </div>
