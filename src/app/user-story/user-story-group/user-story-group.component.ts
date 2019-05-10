@@ -14,9 +14,9 @@ import {
   templateUrl: './user-story-group.component.html',
   styleUrls: ['./user-story-group.component.scss']
 })
-export class UserStoryGroupComponent implements OnInit{
+export class UserStoryGroupComponent implements OnInit {
   @Input() userStories: UserStory[];
-  defaultGroupId: String = "";
+  defaultGroupId: String = '';
   groups: Array<UserStoryGroup> = new Array<UserStoryGroup>();
 
   constructor(

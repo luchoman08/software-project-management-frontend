@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
         }
     toggleRightSidenav() {
         this.sidenav.toggle();
-    } 
+    }
     ngOnInit() {
         this.sidenav.setSidenav(this.snav);
     }

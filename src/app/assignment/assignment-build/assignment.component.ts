@@ -122,7 +122,7 @@ export class AssignmentComponent implements OnInit {
   getAssignment(): void {
     if ( this.assignType === AssignmentType.BY_PUNCTUATIONS ) {
       this.getAssignmentByPunctuation();
-    } else if( this.assignType === AssignmentType.UNIQUE_COST ) {
+    } else if ( this.assignType === AssignmentType.UNIQUE_COST ) {
       this.getSimpleAssignment();
     } else if ( this.assignType === AssignmentType.HISTORTY_GROUPS ) {
       this.getAssigmentByGroupedHistories();
