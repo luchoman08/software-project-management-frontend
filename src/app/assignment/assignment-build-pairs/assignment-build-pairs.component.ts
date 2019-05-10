@@ -107,6 +107,7 @@ export class AssignmentBuildPairsComponent implements OnInit {
     this.assignmentService.generateAssignmentByPairs(assignmentByPairs)
     .subscribe(
       (assignment: AssignmentByPairs) => {
+        window.scrollTo(0, 0);
         this.assignmentOutput = assignment;
       }
     );

@@ -111,6 +111,7 @@ export class AssignmentComponent implements OnInit {
     assignmentByUniqueCost.userStories = this.selectedSprint.user_stories;
     this.assignmentService.generarAsignacionSimple(assignmentByUniqueCost)
     .subscribe( (assignment: AssignmentByUniqueCost) => {
+      window.scrollTo(0, 0);
       this.assignmentOutput = assignment;
     }
   );
