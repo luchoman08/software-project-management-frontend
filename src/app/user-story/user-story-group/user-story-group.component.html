@@ -1,24 +1,29 @@
-<div class="main-content">
-    <h3>Puedes arrastrar y soltar historias de usuario para cambiar de grupo</h3>
-    <div class="row">
-        <div cdkDropListGroup>
-            <div *ngFor="let group of groups; let i = index" class="example-container">
+<div>
+    <h2>*Puedes arrastrar y soltar historias de usuario para cambiar de grupo</h2>
+    <div fxLayout="row wrap" cdkDropListGroup>
+        <mat-card *ngFor="let group of groups; let i = index">
+            <mat-card-title>
                 <div contenteditable="true" [textContent]="group.name" (input)="group.name=$event.target.textContent">
                 </div>
-                <div cdkDropList #groupList="cdkDropList" class="example-list" [cdkDropListData]="group.user_stories"
-                    class="example-list" (cdkDropListDropped)="drop($event)">
-                    
-                    <ng-container *ngIf="group.user_stories.length > 0; else emptyGroup">
-                        <div class="example-box" *ngFor="let userstory of group.user_stories" cdkDrag
-                            class="list-group-item">
-                            {{userstory.subject}}</div>
-                    </ng-container>
-                    <ng-template  #emptyGroup><div> Agrega historias arrastrando y soltando </div></ng-template> 
+            </mat-card-title>
+            <mat-card-content>
+                <div class="container">
+                    <div cdkDropList class="list" [cdkDropListData]="group.user_stories" class="list"
+                        (cdkDropListDropped)="drop($event)">
+
+                        <ng-container *ngIf="group.user_stories.length > 0; else emptyGroup">
+                            <div class="box" *ngFor="let userstory of group.user_stories" cdkDrag>
+                                {{userstory.subject}}</div>
+                        </ng-container>
+                        <ng-template #emptyGroup>
+                            <div> Agrega historias arrastrando y soltando </div>
+                        </ng-template>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </mat-card-content>
+        </mat-card>
     </div>
-    <button (click)="openAddGroup()" mat-fab color="primary" class="generic-principal-button">
+    <button (click)="openAddGroup()" mat-fab color="warn" class="generic-principal-button">
         <mat-icon>add</mat-icon>
     </button>
 </div>

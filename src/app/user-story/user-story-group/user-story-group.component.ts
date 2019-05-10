@@ -1,12 +1,14 @@
 import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
-import { UserStory } from '../../core/models/user-story.model';
-import { v4 as uuid } from 'uuid';
-import { UserStoryGroup } from '../../core/models';
 import { MatDialog } from '@angular/material';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+
+import { UserStory } from '../../core/models/user-story.model';
+import { UserStoryGroup } from '../../core/models';
+
 import {
   SingleDataDialogEditOrAddComponent
 } from '../../shared/components';
+
 @Component({
   selector: 'app-user-story-group',
   templateUrl: './user-story-group.component.html',
@@ -16,6 +18,7 @@ export class UserStoryGroupComponent implements OnInit{
   @Input() userStories: UserStory[];
   defaultGroupId: String = "";
   groups: Array<UserStoryGroup> = new Array<UserStoryGroup>();
+
   constructor(
     public dialog: MatDialog,
     private cd: ChangeDetectorRef
@@ -31,10 +34,13 @@ export class UserStoryGroupComponent implements OnInit{
      this.getDefaultGroup().user_stories = this.userStories;
      this.cd.markForCheck();
    }
-   getDefaultGroup(): UserStoryGroup {
+   getGroups() {
+     return this.groups.filter(group => group.id !== this.defaultGroupId);
+   }
+   private getDefaultGroup(): UserStoryGroup {
      return this.groups.find(group => group.id === this.defaultGroupId);
    }
-   drop(event: CdkDragDrop<UserStory[]>) {
+   private drop(event: CdkDragDrop<UserStory[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

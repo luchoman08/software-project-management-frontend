@@ -1,8 +1,6 @@
 <div class="card main-content">
     <div class="card-header card-header-primary">
         <h4 class="card-title ">Lista de historias de usuario </h4>
-
-
         <p class="card-category" *ngIf="userStories.length === 0; else categoryForStories">No hay historias que mostrar
         </p>
         <ng-template #categoryForStories>
