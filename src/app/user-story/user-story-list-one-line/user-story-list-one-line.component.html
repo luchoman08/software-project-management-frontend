@@ -8,41 +8,44 @@
         </ng-template>
     </div>
     <div class="card-body">
-            <table mat-table [dataSource]="userStories" class="table table-stories">
+        <table mat-table [dataSource]="userStories" class="table table-stories">
 
-                <ng-container matColumnDef="subject">
-                    <th mat-header-cell *matHeaderCellDef> Detalle </th>
-                    <td mat-cell *matCellDef="let userStory"> {{userStory.subject}} </td>
-                </ng-container>
-                <ng-container matColumnDef="punctuations">
-                        <th mat-header-cell *matHeaderCellDef>  {{includePunctuations? 'Puntos por caracteristica': 'Puntos'}} </th>
-                        <td mat-cell *matCellDef="let userStory">
-                                <ng-container *ngIf="includePunctuations">
-                                        <app-user-story-points [userStory]="userStory"></app-user-story-points>
-                                    </ng-container>
-                                    <ng-container *ngIf="!includePunctuations">
-                                        <p *ngIf="userStory.total_points; else noPointsBlock"> {{userStory.total_points}}
-                                            <button  mat-icon-button
-                                            (click)="openEditPointsDialog(userStory)"
-                                             matTooltip="Editar tarea"
-                                                [matTooltipPosition]="'above'"
-                                                class="btn btn-primary btn-link btn-sm btn-just-icon">
-                                                    <mat-icon *ngIf="userStory.total_points" aria-label="Add points">edit
-                                                        </mat-icon>
-                                            </button>
-                                        </p>
-                                        <ng-template #noPointsBlock>
-                                            <button (click)="openEditPointsDialog(userStory)" mat-icon-button
-                                                class="btn btn-primary btn-link btn-sm" data-original-title="Editar tarea">
-                                                <mat-icon aria-label="Add points">add_circle</mat-icon>
-                                            </button>
-                                        </ng-template>
-                                    </ng-container>
-                                    
-                        </td>
+            <ng-container matColumnDef="subject">
+                <th mat-header-cell *matHeaderCellDef> Detalle </th>
+                <td mat-cell *matCellDef="let userStory"> {{userStory.subject}} </td>
+            </ng-container>
+            <ng-container matColumnDef="punctuations">
+                <th mat-header-cell *matHeaderCellDef> {{includePunctuations? 'Puntos por caracteristica': 'Puntos'}}
+                </th>
+                <td mat-cell *matCellDef="let userStory">
+                    <ng-container *ngIf="includePunctuations">
+                        <app-user-story-points [userStory]="userStory"></app-user-story-points>
                     </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-        </div>
+                    <ng-container *ngIf="!includePunctuations">
+                        <div fxLayout="row" fxLayoutAlign="center center"
+                            *ngIf="userStory.total_points; else noPointsBlock">
+                            <p> {{userStory.total_points}}</p>
+                            <button mat-icon-button (click)="openEditPointsDialog(userStory)" matTooltip="Editar tarea"
+                                [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                <mat-icon *ngIf="userStory.total_points" aria-label="Add points">edit
+                                </mat-icon>
+                            </button>
+
+                        </div>
+                        <ng-template #noPointsBlock>
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <button (click)="openEditPointsDialog(userStory)" mat-icon-button
+                                    class="btn btn-primary btn-link btn-sm" data-original-title="Editar tarea">
+                                    <mat-icon aria-label="Add points">add_circle</mat-icon>
+                                </button>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
     </div>
+</div>

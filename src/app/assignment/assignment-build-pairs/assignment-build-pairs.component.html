@@ -3,13 +3,14 @@
     <mat-step>
       <ng-template matStepLabel>Tipo de asignacion</ng-template>
       <form [formGroup]="assignment_type_form">
-          <mat-checkbox  formControlName="assign_type_cntrl" required>
-            Parejas incompatibles?
-          </mat-checkbox>
-          <br />
-          <small>
-            * Asignar parejas de desarrolladores cuyas habilidades son lo más distintas posibles, de tal forma que se compementan
-          </small>
+        <mat-checkbox formControlName="assign_type_cntrl" required>
+          Parejas incompatibles?
+        </mat-checkbox>
+        <br />
+        <small>
+          * Asignar parejas de desarrolladores cuyas habilidades son lo más distintas posibles, de tal forma que se
+          compementan
+        </small>
       </form>
       <button mat-button matStepperNext>Siguiente</button>
     </mat-step>
@@ -18,8 +19,7 @@
       <form [formGroup]="formSelectProject">
         <ng-template matStepLabel>Seleccione el proyecto</ng-template>
         <mat-form-field>
-          <mat-select  placeholder="Proyecto" [formControl]="formSelectProject.get('project')"
-            required>
+          <mat-select placeholder="Proyecto" [formControl]="formSelectProject.get('project')" required>
             <mat-option *ngFor="let project of projects" [value]="project">
               {{ project.name }}
             </mat-option>
@@ -28,8 +28,7 @@
             proyecto</mat-error>
         </mat-form-field>
         <div>
-          <button (click)="project? initSprints(project.id) : null" mat-button
-            matStepperNext>Siguiente</button>
+          <button (click)="project? initSprints(project.id) : null" mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -38,7 +37,7 @@
       <form [formGroup]="formSelectSprint">
         <ng-template matStepLabel>Seleccione el sprint</ng-template>
         <mat-form-field>
-          <mat-select  [placeholder]="sprints.length > 0 ? 'Sprint' : 'No hay sprints'"
+          <mat-select [placeholder]="sprints.length > 0 ? 'Sprint' : 'No hay sprints'"
             [formControl]="formSelectSprint.controls['sprint']" required>
 
             <mat-option *ngFor="let sprint of sprints" [value]="sprint">
@@ -59,7 +58,8 @@
 
     <mat-step>
       <ng-template matStepLabel>Completar o modificar historias</ng-template>
-      <app-user-story-list-one-line *ngIf="sprint" [includePunctuations]="true" [userStories]="sprint.user_stories">
+      <app-user-story-list-one-line fxLayout="row" fxLayoutAlign="center center" *ngIf="sprint"
+        [includePunctuations]="true" [userStories]="sprint.user_stories">
       </app-user-story-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
@@ -69,16 +69,17 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Completar o modificar desarrolladores</ng-template>
-      <app-developer-list-one-line *ngIf="developers" [developer_punctuations]="true" [developers]="developers">
+      <app-developer-list-one-line fxLayout="row" fxLayoutAlign="center center" *ngIf="developers"
+        [developer_punctuations]="true" [developers]="developers">
       </app-developer-list-one-line>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <button mat-button matStepperNext (click)="getPairs()"> Siguiente</button>
       </div>
-    </mat-step>   
+    </mat-step>
     <mat-step>
       <ng-template matStepLabel>Editar parejas</ng-template>
-      <app-developer-pair *ngIf="developerPairs; else gettingPairs"  [pairs]="developerPairs"></app-developer-pair>
+      <app-developer-pair *ngIf="developerPairs; else gettingPairs" [pairs]="developerPairs"></app-developer-pair>
       <ng-template #gettingPairs>
         <p>Cargando parejas generadas...</p>
       </ng-template>

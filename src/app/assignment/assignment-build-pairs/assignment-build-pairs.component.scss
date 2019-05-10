@@ -2,7 +2,9 @@
 .example-headers-align .mat-expansion-panel-header-description {
   flex-basis: 0;
 }
-
+.mat-form-field{
+  width: 50%;
+}
 .example-headers-align .mat-expansion-panel-header-description {
   justify-content: space-between;
   align-items: center;
