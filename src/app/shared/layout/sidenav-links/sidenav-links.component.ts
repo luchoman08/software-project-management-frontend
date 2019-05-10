@@ -11,35 +11,31 @@ const ROUTES: RouteInfo[] = [
   {
       path: 'assignment/uniquecost',
       params: {assign_type: AssignmentType.UNIQUE_COST},
-      title: 'Simple Assignment',
+      title: 'Puntuación única',
       icon: 'unarchive',
       class: ''
   },
   {
       path: 'assignment/bypunctuation',
       params: {assign_type: AssignmentType.BY_PUNCTUATIONS},
-      title: 'Assignment by Punctuation',
+      title: 'Puntuación multiple',
       icon: 'unarchive',
       class: ''
   },
   {
       path: 'assignment/bygroups',
       params: {assign_type: AssignmentType.HISTORTY_GROUPS},
-      title: 'Assignment by groups',
+      title: 'Historias agrupadas',
       icon: 'unarchive',
       class: ''
   },
   {
       path: 'assignment/bypairs',
-      title: 'Assignment by pairs',
+      title: 'Programación en parejas',
       params: {},
       icon: 'unarchive',
       class: ''
   },
-
-  { path: 'userstories/list', params: {}, title: 'List Simple User Stories',  icon: 'unarchive', class: '' },
-  { path: 'userstories/listoneline', params: {}, title: 'One Line User Sotries',  icon: 'unarchive', class: '' },
-  { path: 'developers',  params: {}, title: 'Detail Simple Developer',  icon: 'unarchive', class: '' },
 ];
 
 
