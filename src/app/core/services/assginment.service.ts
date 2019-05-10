@@ -34,12 +34,12 @@ export class AssignmentService {
   }
 
   generarAsignacionSimple(
-    _assignmentByUniqueCost: AssignmentByUniqueCost
+    assignmentByUniqueCost: AssignmentByUniqueCost
   ): Observable<AssignmentByUniqueCost> {
     return this.apiService
-      .post('/uniquecostassign/', AssignmentByUniqueCost)
-      .pipe(map((_assignmentByUniqueCost: AssignmentByUniqueCost) => {
-        return AssignmentByUniqueCost.fromJSON(_assignmentByUniqueCost);
+      .post('/uniquecostassign/', assignmentByUniqueCost)
+      .pipe(map((result: AssignmentByUniqueCost) => {
+        return AssignmentByUniqueCost.fromJSON(result);
       }));
   }
   generateAssignmentByPairs(
