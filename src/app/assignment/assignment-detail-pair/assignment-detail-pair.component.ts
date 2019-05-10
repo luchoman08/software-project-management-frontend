@@ -28,6 +28,7 @@ export class AssignmentDetailPairComponent implements OnInit {
     console.log(this.assignment.pairs, 'userStory, selected devel and pair in at open select pair')
     const dialogRef = this.dialog.open(DeveloperSelectPairDialogComponent, {
       width: '620px',
+      
       data: {
         pairs: this.assignment.pairs.filter((pair: DeveloperPair) => {
           return !userStory.assignedTo( pair.developer1 ) &&

@@ -2,7 +2,7 @@
 <div mat-dialog-content>
     <mat-form-field>
   <mat-select  [(ngModel)]="dataOutput.selectedPair" 
-  placeholder="Par de desarrolladores"
+        placeholder="Par de desarrolladores"
       required >
 
     <mat-option   *ngFor="let pair of developerPairs" [value]="pair">
