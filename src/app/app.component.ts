@@ -7,6 +7,7 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { PageComponentsService, LoadingBarService } from './core/services';
 
 
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',

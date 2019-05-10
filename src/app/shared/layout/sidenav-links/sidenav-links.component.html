@@ -1,3 +1,5 @@
-<a *ngFor="let menuItem of menuItems" class="nav-link" [routerLink]="[menuItem.path, menuItem.params]">          
-    <p> <mat-icon inline="true">unarchive</mat-icon> {{menuItem.title}}</p>
-</a>
+<button mat-button fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px" *ngFor="let menuItem of menuItems"
+    class="nav-link" routerLinkActive="router-link-active" [routerLink]="[menuItem.path, menuItem.params]">
+    <mat-icon inline="true">unarchive</mat-icon>
+    {{menuItem.title}}
+</button>

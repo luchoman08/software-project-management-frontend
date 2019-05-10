@@ -49,7 +49,7 @@ export class SidenavLinksComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItems = ROUTES;
   }
 
 }

@@ -1,0 +1,8 @@
+@import 'scss/_variables.scss';
+.nav-link {
+    width: 100%;
+}
+.router-link-active {
+    background-color: $primary;
+    color: white;
+}
