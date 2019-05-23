@@ -9,6 +9,7 @@ import { AssignmentByPunctuation } from '../models/assignment-by-punctuations.mo
 import { AssignmentByPairs } from '../models/assignment-by-pairs.model';
 import { DeveloperPair } from '../models/developer-pair.model';
 import { Developer } from '../models/developer.model';
+import { AssignmentByUserStoryGroups } from '../models';
 
 @Injectable()
 export class AssignmentService {
@@ -32,8 +33,16 @@ export class AssignmentService {
       return DeveloperPair.makeFromJsonArray(pairs);
     }));
   }
-
-  generarAsignacionSimple(
+  generateAssignmentByStoryGroups(
+    assigmnetByGruops: AssignmentByUserStoryGroups
+  ): Observable<AssignmentByUserStoryGroups> {
+    return this.apiService
+    .post('/gropusassign/', assigmnetByGruops)
+    .pipe(map((result: AssignmentByUserStoryGroups) => {
+      return AssignmentByUserStoryGroups.fromJSON(result);
+    }))
+  }
+  generateAssignmentByUniqueCost(
     assignmentByUniqueCost: AssignmentByUniqueCost
   ): Observable<AssignmentByUniqueCost> {
     return this.apiService
