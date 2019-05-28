@@ -109,7 +109,7 @@ export class AssignmentComponent implements OnInit {
     assignmentByUniqueCost.endDate = new Date(this.selectedSprint.estimated_finish);
     assignmentByUniqueCost.developers = this.developers;
     assignmentByUniqueCost.userStories = this.selectedSprint.user_stories;
-    this.assignmentService.generarAsignacionSimple(assignmentByUniqueCost)
+    this.assignmentService.generateAssignmentByUniqueCost(assignmentByUniqueCost)
     .subscribe( (assignment: AssignmentByUniqueCost) => {
       window.scrollTo(0, 0);
       this.assignmentOutput = assignment;
