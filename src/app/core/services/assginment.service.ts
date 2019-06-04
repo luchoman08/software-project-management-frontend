@@ -37,8 +37,9 @@ export class AssignmentService {
     assigmnetByGruops: AssignmentByUserStoryGroups
   ): Observable<AssignmentByUserStoryGroups> {
     return this.apiService
-    .post('/gropusassign/', assigmnetByGruops)
+    .post('/groupassign/', assigmnetByGruops)
     .pipe(map((result: AssignmentByUserStoryGroups) => {
+      console.log(assigmnetByGruops, 'assignment by groups');
       return AssignmentByUserStoryGroups.fromJSON(result);
     }))
   }

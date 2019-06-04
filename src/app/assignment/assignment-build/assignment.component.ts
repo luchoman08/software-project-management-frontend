@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Project, Sprint, Developer, AssignmentByUniqueCost, UserStoryGroup } from '../../core/models';
+import { Project, Sprint, Developer, AssignmentByUniqueCost, UserStoryGroup, AssignmentByUserStoryGroups } from '../../core/models';
 import { Errors } from '../../core/models';
 import { ProjectsService, SprintsService, DevelopersService, LoadingBarService } from '../../core/services';
 import { AssignmentService } from '../../core/services/assginment.service';
@@ -65,7 +65,7 @@ export class AssignmentComponent implements OnInit {
     prevStep() {
       this.step--;
     }
-  initSimpleSprints(project_id) {
+  initSimpleSprints( project_id ) {
     this.loader.start();
     this.sprintsService.getProjectSprints(project_id, true)
     .subscribe((sprints: Sprint[]) => {
@@ -95,7 +95,6 @@ export class AssignmentComponent implements OnInit {
     this.assignmentService.generateAssignmentByPunctuations(assignmentByPunctuation)
     .subscribe(
       (assignment: AssignmentByPunctuation) => {
-        // console.log(JSON.stringify(response), 'response after assignment by punctuation');
         this.assignmentOutput = new AssignmentByUniqueCost();
         this.assignmentOutput.userStories = assignment.userStories;
         this.assignmentOutput.developers = assignment.developers;
@@ -103,13 +102,13 @@ export class AssignmentComponent implements OnInit {
     );
   }
   getSimpleAssignment(): void {
-    const assignmentByUniqueCost = new AssignmentByUniqueCost();
-    assignmentByUniqueCost.relationHoursPoints = 1;
-    assignmentByUniqueCost.startDate = new Date(this.selectedSprint.estimated_start);
-    assignmentByUniqueCost.endDate = new Date(this.selectedSprint.estimated_finish);
-    assignmentByUniqueCost.developers = this.developers;
-    assignmentByUniqueCost.userStories = this.selectedSprint.user_stories;
-    this.assignmentService.generateAssignmentByUniqueCost(assignmentByUniqueCost)
+    const assignment = new AssignmentByUniqueCost();
+    assignment.relationHoursPoints = 1;
+    assignment.startDate = new Date(this.selectedSprint.estimated_start);
+    assignment.endDate = new Date(this.selectedSprint.estimated_finish);
+    assignment.developers = this.developers;
+    assignment.userStories = this.selectedSprint.user_stories;
+    this.assignmentService.generateAssignmentByUniqueCost(assignment)
     .subscribe( (assignment: AssignmentByUniqueCost) => {
       window.scrollTo(0, 0);
       this.assignmentOutput = assignment;
@@ -118,7 +117,21 @@ export class AssignmentComponent implements OnInit {
 
   }
   getAssigmentByGroupedHistories() {
-    // TO DO
+    console.log('executing assignment by grouped stories');
+    const assignment = new AssignmentByUserStoryGroups();
+    assignment.relationHoursPoints = 1;
+    assignment.startDate = new Date(this.selectedSprint.estimated_start);
+    assignment.endDate = new Date(this.selectedSprint.estimated_finish);
+    assignment.developers = this.developers;
+    assignment.userStories = this.selectedSprint.user_stories;
+    console.log(this.selectedSprint, 'selected sprint');
+    console.log(assignment, 'assignment');
+    this.assignmentService.generateAssignmentByStoryGroups(assignment)
+    .subscribe( (assignment: AssignmentByUserStoryGroups) => {
+      window.scrollTo(0, 0);
+      this.assignmentOutput = assignment;
+    }
+  );
   }
   getAssignment(): void {
     if ( this.assignType === AssignmentType.BY_PUNCTUATIONS ) {

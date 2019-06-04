@@ -31,7 +31,7 @@ export class UserStoryGroupComponent implements OnInit {
      this.groups.push(defaultGroup);
    }
    ngOnInit() {
-     this.getDefaultGroup().user_stories = this.userStories;
+     this.getDefaultGroup().user_stories = JSON.parse(JSON.stringify(this.userStories));
      this.cd.markForCheck();
    }
    getGroups() {
