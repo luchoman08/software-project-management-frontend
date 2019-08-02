@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Project, Sprint, Developer, AssignmentByUniqueCost, UserStoryGroup, AssignmentByUserStoryGroups } from '../../core/models';
 import { Errors } from '../../core/models';
@@ -7,6 +7,8 @@ import { AssignmentService } from '../../core/services/assginment.service';
 import { AssignmentByPunctuation } from '../../core/models/assignment-by-punctuations.model';
 import { ActivatedRoute } from '@angular/router';
 import { AssignmentType } from '../../core/enums';
+import { UserStoryGroupsComponent } from 'app/user-story/user-story-groups/user-story-groups.component';
+import { UserStoryGroupComponent } from 'app/user-story/user-story-group/user-story-group.component';
 
 
 
@@ -22,7 +24,7 @@ export class AssignmentComponent implements OnInit {
   developers: Developer[];
   step = 0;
   assignmentOutput: AssignmentByUniqueCost;
-  userStoryGroups: Array<UserStoryGroup>; // only for group assign
+  @ViewChild('userStoryGroups') userStoryGroupsComponent: UserStoryGroupComponent;
   errors: Errors = {errors: {}};
   formSelectProject: FormGroup;
   formSelectSprint: FormGroup;
@@ -38,7 +40,6 @@ export class AssignmentComponent implements OnInit {
     private assignmentService: AssignmentService,
     private developerService: DevelopersService,
     private loader: LoadingBarService) {
-      this.userStoryGroups = new Array<UserStoryGroup>();
       this.sprints = new Array<Sprint>();
       this.assignmentOutput = null;
       this.formSelectProject = this._formBuilder.group({
@@ -124,12 +125,14 @@ export class AssignmentComponent implements OnInit {
     assignment.endDate = new Date(this.selectedSprint.estimated_finish);
     assignment.developers = this.developers;
     assignment.userStories = this.selectedSprint.user_stories;
+    assignment.user_stories_group = this.userStoryGroupsComponent.getGroups();
     console.log(this.selectedSprint, 'selected sprint');
     console.log(assignment, 'assignment');
     this.assignmentService.generateAssignmentByStoryGroups(assignment)
-    .subscribe( (assignment: AssignmentByUserStoryGroups) => {
+    .subscribe( (outputAssign: AssignmentByUserStoryGroups) => {
       window.scrollTo(0, 0);
-      this.assignmentOutput = assignment;
+     
+      this.assignmentOutput = outputAssign;
     }
   );
   }

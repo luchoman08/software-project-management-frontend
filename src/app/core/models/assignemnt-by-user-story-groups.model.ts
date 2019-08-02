@@ -21,4 +21,7 @@ export class AssignmentByUserStoryGroups {
         assignment.user_stories_group = json.user_stories_group;
         return assignment;
     }
+    constructor() {
+        this.assign_same_quantity_of_tasks = true;
+    }
 }

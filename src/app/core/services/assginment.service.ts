@@ -34,12 +34,12 @@ export class AssignmentService {
     }));
   }
   generateAssignmentByStoryGroups(
-    assigmnetByGruops: AssignmentByUserStoryGroups
+    assignmetByGruops: AssignmentByUserStoryGroups
   ): Observable<AssignmentByUserStoryGroups> {
     return this.apiService
-    .post('/groupassign/', assigmnetByGruops)
+    .post('/groupassign/', assignmetByGruops)
     .pipe(map((result: AssignmentByUserStoryGroups) => {
-      console.log(assigmnetByGruops, 'assignment by groups');
+      console.log(result, 'result assign by groups');
       return AssignmentByUserStoryGroups.fromJSON(result);
     }))
   }
